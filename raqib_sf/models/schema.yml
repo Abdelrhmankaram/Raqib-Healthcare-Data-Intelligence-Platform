@@ -21,4 +21,39 @@ models:
       - name: is_valid_phone_number
         data_tests:
           - accepted_values:
-              values: [True, False]
+              arguments:
+                values: [true, false]
+
+  - name: providers
+
+    columns:
+      - name: npi
+        data_tests:
+          - unique
+          - not_null
+
+      - name: provider_first_name
+        data_tests:
+          - not_null
+
+      - name: provider_last_name
+        data_tests:
+          - not_null
+
+      - name: is_valid_enumeration_date
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: is_valid_join_date
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [true, false]
+
+      - name: provider_sex
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Female', 'Male', 'Unknown']
