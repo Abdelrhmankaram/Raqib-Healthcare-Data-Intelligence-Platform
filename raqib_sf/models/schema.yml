@@ -89,3 +89,33 @@ models:
         data_tests:
           - unique
           - not_null
+
+  - name: stg_lab_events
+
+    columns:
+      - name: lab_event_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: patient_id
+        data_tests:
+          - not_null
+      
+      - name: specimen_id
+        data_tests:
+          - not_null
+      
+      - name: item_id
+        data_tests:
+          - not_null
+
+      - name: result_value
+        data_tests:
+          - not_null
+
+      - name: abnormal_flag
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['High', 'Low', 'Normal']
