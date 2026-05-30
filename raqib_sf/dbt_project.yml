@@ -1,4 +1,3 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
@@ -31,6 +30,25 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   raqib_sf:
-    # Config indicated by + and applies to all files under models/example/
-    example:
+    +materialized: view
+
+    staging:
       +materialized: view
+      +schema: staging
+      +tags: ["staging"]
+
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+      +tags: ["intermediate"]
+
+    marts:
+      +materialized: incremental
+      +incremental_strategy: merge
+      +on_schema_change: sync_all_columns 
+      +tags: ["marts"]
+
+data_tests:
+  +store_failures: true
+  +schema: _test_failures
+
