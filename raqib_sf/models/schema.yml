@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: emergency_contacts
+  - name: stg_emergency_contacts
 
     columns:
       - name: patient_id
@@ -24,7 +24,7 @@ models:
               arguments:
                 values: [true, false]
 
-  - name: providers
+  - name: stg_providers
 
     columns:
       - name: npi
@@ -57,3 +57,27 @@ models:
           - accepted_values:
               arguments:
                 values: ['Female', 'Male', 'Unknown']
+
+  - name: stg_diagnosis
+
+    columns:
+      - name: diagnosis_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: patient_id
+        data_tests:
+          - not_null
+
+      - name: domain
+        data_tests:
+          - not_null
+
+      - name: sub_domain
+        data_tests:
+          - not_null
+
+      - name: sub_domain_1
+        data_tests:
+          - not_null 
