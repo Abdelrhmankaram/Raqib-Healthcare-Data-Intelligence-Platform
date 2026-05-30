@@ -1,0 +1,52 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw healthcare data ingested from AWS S3 — untransformed and unvalidated"
+    database: raw
+    schema: public
+
+    tables:
+      - name: raw_patients
+        identifier: patients
+        description: "Core patient demographic records including personal details and identifiers. One row per patient."
+
+      - name: raw_emergency_contacts
+        identifier: emergency_contacts
+        description: "Emergency contact information associated with each patient, including relationship and contact details."
+
+      - name: raw_admissions
+        identifier: admissions
+        description: "Hospital admission and discharge records. Tracks each patient visit including admission time, discharge time, and admission type."
+
+      - name: raw_diagnosis
+        identifier: diagnosis
+        description: "Diagnosis records assigned to patients during admissions, including ICD codes and diagnosis descriptions."
+
+      - name: raw_lab_events
+        identifier: lab_events
+        description: "Individual laboratory test results tied to patient admissions, including test values, units, and result timestamps."
+
+      - name: raw_lab_specimen_types
+        identifier: lab_specimen_types
+        description: "Reference table for laboratory specimen types (e.g. blood, urine, tissue) used to classify lab events."
+
+      - name: raw_providers
+        identifier: providers
+        description: "Healthcare provider records including physicians and clinical staff responsible for patient care."
+
+      - name: raw_services
+        identifier: services
+        description: "Medical services and procedures rendered to patients during admissions, including service type and timing."
+
+      - name: raw_transfers
+        identifier: transfers
+        description: "Patient transfer records tracking movement between wards, units, or facilities during an admission."
+
+      - name: raw_drugs
+        identifier: drugs
+        description: "Reference table for drugs and medications including drug names, categories, and identifiers."
+
+      - name: raw_prescriptions
+        identifier: prescriptions
+        description: "Prescription records linking patients and admissions to prescribed drugs, including dosage, frequency, and prescription dates."
