@@ -3,15 +3,16 @@ version: 2
 models:
   - name: emergency_contacts
 
-    columns: 
+    columns:
       - name: patient_id
         data_tests:
-        - not_null
-      
+          - not_null
+
       - name: emergency_contact_bloodtype
         data_tests:
           - accepted_values:
-              values: ["A+", "AB+", "B+", "O+", "O-", "AB-", "A-", "B-"]
+              arguments:
+                values: ["A+", "AB+", "B+", "O+", "O-", "AB-", "A-", "B-"]
 
       - name: emergency_contact_phone_number
         data_tests:
@@ -20,4 +21,5 @@ models:
       - name: is_valid_phone_number
         data_tests:
           - accepted_values:
-            values: [True, False]
+              arguments:
+                values: [true, false]
