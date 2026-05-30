@@ -81,3 +81,11 @@ models:
       - name: sub_domain_1
         data_tests:
           - not_null 
+    
+  - name: lab_specimen_types
+
+    columns:
+      - name: item_id
+        data_tests:
+          - unique
+          - not_null
