@@ -1,0 +1,1057 @@
+[0m19:03:54.212097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bfba900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d18f9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d18fd90>]}
+
+
+============================== 19:03:54.220994 | 7b0075b6-c4e5-403c-9128-200f763bdd40 ==============================
+[0m19:03:54.220994 [info ] [MainThread]: Running with dbt=1.11.11
+[0m19:03:54.221770 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/user/Documents/Raqib/raqib_sf/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'empty': 'None', 'log_cache_events': 'False', 'profiles_dir': '/Users/user/Documents/Raqib/raqib_sf', 'target_path': 'None', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'quiet': 'False', 'use_colors': 'True', 'static_parser': 'True', 'log_format': 'default', 'write_json': 'True', 'partial_parse': 'True', 'no_print': 'None', 'introspect': 'True', 'printer_width': '80', 'cache_selected_only': 'False', 'debug': 'False', 'version_check': 'True'}
+[0m19:03:54.252186 [info ] [MainThread]: dbt version: 1.11.11
+[0m19:03:54.252746 [info ] [MainThread]: python version: 3.13.13
+[0m19:03:54.253183 [info ] [MainThread]: python path: /Users/user/Documents/Raqib/.venv/bin/python
+[0m19:03:54.253600 [info ] [MainThread]: os info: macOS-12.7.6-x86_64-i386-64bit-Mach-O
+[0m19:03:54.770377 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m19:03:54.771220 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m19:03:54.771785 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m19:03:54.869773 [info ] [MainThread]: Using profiles dir at /Users/user/Documents/Raqib/raqib_sf
+[0m19:03:54.870688 [info ] [MainThread]: Using profiles.yml file at /Users/user/Documents/Raqib/raqib_sf/profiles.yml
+[0m19:03:54.871501 [info ] [MainThread]: Using dbt_project.yml file at /Users/user/Documents/Raqib/raqib_sf/dbt_project.yml
+[0m19:03:54.875784 [info ] [MainThread]: adapter type: snowflake
+[0m19:03:54.876877 [info ] [MainThread]: adapter version: 1.11.5
+[0m19:03:55.073372 [info ] [MainThread]: Configuration:
+[0m19:03:55.074049 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m19:03:55.074541 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m19:03:55.075074 [info ] [MainThread]: Required dependencies:
+[0m19:03:55.075613 [debug] [MainThread]: Executing "git --help"
+[0m19:03:55.112276 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m19:03:55.114610 [debug] [MainThread]: STDERR: "b''"
+[0m19:03:55.115380 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m19:03:55.116070 [info ] [MainThread]: Connection:
+[0m19:03:55.116716 [info ] [MainThread]:   account: OFNFMZZ-WH33726
+[0m19:03:55.117457 [info ] [MainThread]:   user: dbt_user
+[0m19:03:55.117974 [info ] [MainThread]:   database: dev
+[0m19:03:55.118440 [info ] [MainThread]:   warehouse: raqib_wh
+[0m19:03:55.118861 [info ] [MainThread]:   role: raqib_role
+[0m19:03:55.119274 [info ] [MainThread]:   schema: dbt_dev
+[0m19:03:55.119677 [info ] [MainThread]:   authenticator: None
+[0m19:03:55.120069 [info ] [MainThread]:   oauth_client_id: None
+[0m19:03:55.120566 [info ] [MainThread]:   query_tag: None
+[0m19:03:55.121138 [info ] [MainThread]:   client_session_keep_alive: False
+[0m19:03:55.121897 [info ] [MainThread]:   host: None
+[0m19:03:55.122411 [info ] [MainThread]:   port: None
+[0m19:03:55.123082 [info ] [MainThread]:   proxy_host: None
+[0m19:03:55.123550 [info ] [MainThread]:   proxy_port: None
+[0m19:03:55.123991 [info ] [MainThread]:   protocol: None
+[0m19:03:55.124427 [info ] [MainThread]:   connect_retries: 1
+[0m19:03:55.124843 [info ] [MainThread]:   connect_timeout: None
+[0m19:03:55.125287 [info ] [MainThread]:   retry_on_database_errors: False
+[0m19:03:55.125695 [info ] [MainThread]:   retry_all: False
+[0m19:03:55.126088 [info ] [MainThread]:   insecure_mode: False
+[0m19:03:55.126903 [info ] [MainThread]:   reuse_connections: True
+[0m19:03:55.127739 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m19:03:55.128232 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m19:03:55.129969 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m19:03:55.491296 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m19:03:55.543655 [debug] [MainThread]: Using snowflake connection "debug"
+[0m19:03:55.544365 [debug] [MainThread]: On debug: select 1 as id
+[0m19:03:55.544783 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:03:55.548240 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m19:03:55.548736 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m19:03:55.549297 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m19:03:55.549854 [info ] [MainThread]: [31m1 check failed:[0m
+[0m19:03:55.550401 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  Valid PEM but no BEGIN/END delimiters for a private key found. Are you sure this is a private key?
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m19:03:55.551467 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.4439449, "process_in_blocks": "0", "process_kernel_time": 0.511234, "process_mem_max_rss": "138227712", "process_out_blocks": "0", "process_user_time": 2.690515}
+[0m19:03:55.552776 [debug] [MainThread]: Command `dbt debug` failed at 19:03:55.552618 after 1.45 seconds
+[0m19:03:55.553268 [debug] [MainThread]: Connection 'debug' was left open.
+[0m19:03:55.553683 [debug] [MainThread]: On debug: No close available on handle
+[0m19:03:55.554171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e299e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e2d3530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e0e5f20>]}
+[0m19:03:55.554729 [debug] [MainThread]: Flushing usage events
+[0m19:03:59.483263 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:09:18.239645 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f2e6900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1104c39d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1104c3d90>]}
+
+
+============================== 19:09:18.248085 | c7321120-3aac-4de1-8a08-3200a5dfbc81 ==============================
+[0m19:09:18.248085 [info ] [MainThread]: Running with dbt=1.11.11
+[0m19:09:18.249245 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'debug': 'False', 'warn_error': 'None', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'partial_parse': 'True', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'introspect': 'True', 'fail_fast': 'False', 'no_print': 'None', 'version_check': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/user/Documents/Raqib/raqib_sf', 'static_parser': 'True', 'log_path': '/Users/user/Documents/Raqib/raqib_sf/logs', 'empty': 'None', 'log_format': 'default'}
+[0m19:09:18.271616 [info ] [MainThread]: dbt version: 1.11.11
+[0m19:09:18.272240 [info ] [MainThread]: python version: 3.13.13
+[0m19:09:18.272714 [info ] [MainThread]: python path: /Users/user/Documents/Raqib/.venv/bin/python
+[0m19:09:18.273166 [info ] [MainThread]: os info: macOS-12.7.6-x86_64-i386-64bit-Mach-O
+[0m19:09:18.277163 [info ] [MainThread]: Using profiles dir at /Users/user/Documents/Raqib/raqib_sf
+[0m19:09:18.277598 [info ] [MainThread]: Using profiles.yml file at /Users/user/Documents/Raqib/raqib_sf/profiles.yml
+[0m19:09:18.278153 [info ] [MainThread]: Using dbt_project.yml file at /Users/user/Documents/Raqib/raqib_sf/dbt_project.yml
+[0m19:09:18.440700 [info ] [MainThread]: Configuration:
+[0m19:09:18.441248 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m19:09:18.441662 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m19:09:18.442062 [info ] [MainThread]: Required dependencies:
+[0m19:09:18.442567 [debug] [MainThread]: Executing "git --help"
+[0m19:09:18.472857 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m19:09:18.474732 [debug] [MainThread]: STDERR: "b''"
+[0m19:09:18.475582 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m19:09:18.476382 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m19:09:18.476823 [info ] [MainThread]: [31m1 check failed:[0m
+[0m19:09:18.477220 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Could not find profile named 'raqib_sf'
+
+
+[0m19:09:18.478745 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.34756982, "process_in_blocks": "0", "process_kernel_time": 0.34508, "process_mem_max_rss": "105320448", "process_out_blocks": "0", "process_user_time": 2.138319}
+[0m19:09:18.479587 [debug] [MainThread]: Command `dbt debug` failed at 19:09:18.479413 after 0.35 seconds
+[0m19:09:18.480496 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f7328b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110663d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1105e1480>]}
+[0m19:09:18.481311 [debug] [MainThread]: Flushing usage events
+[0m19:09:20.699791 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:09:43.131403 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108aba900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109c9f9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109c9fd90>]}
+
+
+============================== 19:09:43.138912 | 6f710e0c-c819-45e7-b7e3-a53845ecd6e2 ==============================
+[0m19:09:43.138912 [info ] [MainThread]: Running with dbt=1.11.11
+[0m19:09:43.139818 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'introspect': 'True', 'quiet': 'False', 'printer_width': '80', 'no_print': 'None', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'partial_parse': 'True', 'debug': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'static_parser': 'True', 'warn_error': 'None', 'log_path': '/Users/user/Documents/Raqib/raqib_sf/logs', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'profiles_dir': '/Users/user/Documents/Raqib/raqib_sf', 'write_json': 'True', 'fail_fast': 'False'}
+[0m19:09:43.159475 [info ] [MainThread]: dbt version: 1.11.11
+[0m19:09:43.159958 [info ] [MainThread]: python version: 3.13.13
+[0m19:09:43.160363 [info ] [MainThread]: python path: /Users/user/Documents/Raqib/.venv/bin/python
+[0m19:09:43.160775 [info ] [MainThread]: os info: macOS-12.7.6-x86_64-i386-64bit-Mach-O
+[0m19:09:43.653642 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m19:09:43.654240 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m19:09:43.654682 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m19:09:43.752266 [info ] [MainThread]: Using profiles dir at /Users/user/Documents/Raqib/raqib_sf
+[0m19:09:43.752935 [info ] [MainThread]: Using profiles.yml file at /Users/user/Documents/Raqib/raqib_sf/profiles.yml
+[0m19:09:43.753410 [info ] [MainThread]: Using dbt_project.yml file at /Users/user/Documents/Raqib/raqib_sf/dbt_project.yml
+[0m19:09:43.757050 [info ] [MainThread]: adapter type: snowflake
+[0m19:09:43.757576 [info ] [MainThread]: adapter version: 1.11.5
+[0m19:09:43.921686 [info ] [MainThread]: Configuration:
+[0m19:09:43.922232 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m19:09:43.922646 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m19:09:43.923053 [info ] [MainThread]: Required dependencies:
+[0m19:09:43.923597 [debug] [MainThread]: Executing "git --help"
+[0m19:09:43.963604 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m19:09:43.966112 [debug] [MainThread]: STDERR: "b''"
+[0m19:09:43.967447 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m19:09:43.968954 [info ] [MainThread]: Connection:
+[0m19:09:43.969674 [info ] [MainThread]:   account: OFNFMZZ-WH33726
+[0m19:09:43.970388 [info ] [MainThread]:   user: dbt_user
+[0m19:09:43.972274 [info ] [MainThread]:   database: dev
+[0m19:09:43.972998 [info ] [MainThread]:   warehouse: raqib_wh
+[0m19:09:43.974113 [info ] [MainThread]:   role: raqib_role
+[0m19:09:43.974848 [info ] [MainThread]:   schema: dbt_dev
+[0m19:09:43.975598 [info ] [MainThread]:   authenticator: None
+[0m19:09:43.976440 [info ] [MainThread]:   oauth_client_id: None
+[0m19:09:43.976955 [info ] [MainThread]:   query_tag: None
+[0m19:09:43.977862 [info ] [MainThread]:   client_session_keep_alive: False
+[0m19:09:43.978655 [info ] [MainThread]:   host: None
+[0m19:09:43.979830 [info ] [MainThread]:   port: None
+[0m19:09:43.980611 [info ] [MainThread]:   proxy_host: None
+[0m19:09:43.981118 [info ] [MainThread]:   proxy_port: None
+[0m19:09:43.981559 [info ] [MainThread]:   protocol: None
+[0m19:09:43.982048 [info ] [MainThread]:   connect_retries: 1
+[0m19:09:43.982475 [info ] [MainThread]:   connect_timeout: None
+[0m19:09:43.982898 [info ] [MainThread]:   retry_on_database_errors: False
+[0m19:09:43.983464 [info ] [MainThread]:   retry_all: False
+[0m19:09:43.984307 [info ] [MainThread]:   insecure_mode: False
+[0m19:09:43.985112 [info ] [MainThread]:   reuse_connections: True
+[0m19:09:43.986672 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m19:09:43.987300 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m19:09:43.989386 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m19:09:44.173972 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m19:09:44.271719 [debug] [MainThread]: Using snowflake connection "debug"
+[0m19:09:44.272399 [debug] [MainThread]: On debug: select 1 as id
+[0m19:09:44.272851 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:09:46.167107 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.894 seconds
+[0m19:09:46.168915 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m19:09:46.169630 [info ] [MainThread]: [32mAll checks passed![0m
+[0m19:09:46.170792 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 3.1448286, "process_in_blocks": "0", "process_kernel_time": 0.465957, "process_mem_max_rss": "148836352", "process_out_blocks": "0", "process_user_time": 3.006848}
+[0m19:09:46.171889 [debug] [MainThread]: Command `dbt debug` succeeded at 19:09:46.171668 after 3.15 seconds
+[0m19:09:46.172548 [debug] [MainThread]: Connection 'debug' was left open.
+[0m19:09:46.173172 [debug] [MainThread]: On debug: Close
+[0m19:09:46.799478 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ada2060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10addb890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10abeb240>]}
+[0m19:09:46.800330 [debug] [MainThread]: Flushing usage events
+[0m19:09:48.497519 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:44:42.797960 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112122900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1133079d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113307d90>]}
+
+
+============================== 16:44:42.807358 | 31511c75-74e6-4934-9cda-0d9056fa6cad ==============================
+[0m16:44:42.807358 [info ] [MainThread]: Running with dbt=1.11.11
+[0m16:44:42.808384 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'invocation_command': 'dbt debug', 'version_check': 'True', 'indirect_selection': 'eager', 'quiet': 'False', 'profiles_dir': '/Users/user/Documents/Raqib/raqib_sf', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'target_path': 'None', 'log_path': '/Users/user/Documents/Raqib/raqib_sf/logs', 'partial_parse': 'True', 'printer_width': '80', 'log_cache_events': 'False', 'introspect': 'True', 'write_json': 'True', 'warn_error': 'None', 'log_format': 'default', 'use_experimental_parser': 'False', 'no_print': 'None'}
+[0m16:44:42.832623 [info ] [MainThread]: dbt version: 1.11.11
+[0m16:44:42.833164 [info ] [MainThread]: python version: 3.13.13
+[0m16:44:42.833566 [info ] [MainThread]: python path: /Users/user/Documents/Raqib/.venv/bin/python
+[0m16:44:42.833998 [info ] [MainThread]: os info: macOS-12.7.6-x86_64-i386-64bit-Mach-O
+[0m16:44:43.380844 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m16:44:43.381809 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m16:44:43.382490 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m16:44:43.470376 [info ] [MainThread]: Using profiles dir at /Users/user/Documents/Raqib/raqib_sf
+[0m16:44:43.470940 [info ] [MainThread]: Using profiles.yml file at /Users/user/Documents/Raqib/raqib_sf/profiles.yml
+[0m16:44:43.471439 [info ] [MainThread]: Using dbt_project.yml file at /Users/user/Documents/Raqib/raqib_sf/dbt_project.yml
+[0m16:44:43.472661 [info ] [MainThread]: adapter type: snowflake
+[0m16:44:43.473147 [info ] [MainThread]: adapter version: 1.11.5
+[0m16:44:43.621616 [info ] [MainThread]: Configuration:
+[0m16:44:43.622257 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:44:43.622705 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m16:44:43.623140 [info ] [MainThread]: Required dependencies:
+[0m16:44:43.623633 [debug] [MainThread]: Executing "git --help"
+[0m16:44:43.648293 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:44:43.650197 [debug] [MainThread]: STDERR: "b''"
+[0m16:44:43.651173 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:44:43.651756 [info ] [MainThread]: Connection:
+[0m16:44:43.652309 [info ] [MainThread]:   account: OFNFMZZ-WH33726
+[0m16:44:43.652834 [info ] [MainThread]:   user: dbt_user
+[0m16:44:43.653286 [info ] [MainThread]:   database: dev
+[0m16:44:43.653713 [info ] [MainThread]:   warehouse: raqib_wh
+[0m16:44:43.654539 [info ] [MainThread]:   role: raqib_role
+[0m16:44:43.655233 [info ] [MainThread]:   schema: dbt_dev
+[0m16:44:43.655721 [info ] [MainThread]:   authenticator: None
+[0m16:44:43.656166 [info ] [MainThread]:   oauth_client_id: None
+[0m16:44:43.656565 [info ] [MainThread]:   query_tag: None
+[0m16:44:43.657086 [info ] [MainThread]:   client_session_keep_alive: False
+[0m16:44:43.657699 [info ] [MainThread]:   host: None
+[0m16:44:43.658207 [info ] [MainThread]:   port: None
+[0m16:44:43.658851 [info ] [MainThread]:   proxy_host: None
+[0m16:44:43.659297 [info ] [MainThread]:   proxy_port: None
+[0m16:44:43.659796 [info ] [MainThread]:   protocol: None
+[0m16:44:43.660397 [info ] [MainThread]:   connect_retries: 1
+[0m16:44:43.661042 [info ] [MainThread]:   connect_timeout: None
+[0m16:44:43.661678 [info ] [MainThread]:   retry_on_database_errors: False
+[0m16:44:43.662390 [info ] [MainThread]:   retry_all: False
+[0m16:44:43.662880 [info ] [MainThread]:   insecure_mode: False
+[0m16:44:43.663333 [info ] [MainThread]:   reuse_connections: True
+[0m16:44:43.663759 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m16:44:43.664165 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m16:44:43.665469 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m16:44:43.805431 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m16:44:43.876738 [debug] [MainThread]: Using snowflake connection "debug"
+[0m16:44:43.877385 [debug] [MainThread]: On debug: select 1 as id
+[0m16:44:43.877837 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:44:45.549488 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.672 seconds
+[0m16:44:45.550880 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m16:44:45.551511 [info ] [MainThread]: [32mAll checks passed![0m
+[0m16:44:45.552736 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 2.8684669, "process_in_blocks": "0", "process_kernel_time": 0.561966, "process_mem_max_rss": "147734528", "process_out_blocks": "0", "process_user_time": 2.761383}
+[0m16:44:45.553491 [debug] [MainThread]: Command `dbt debug` succeeded at 16:44:45.553327 after 2.87 seconds
+[0m16:44:45.554124 [debug] [MainThread]: Connection 'debug' was left open.
+[0m16:44:45.554776 [debug] [MainThread]: On debug: Close
+[0m16:44:45.772552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1143fe060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11443b890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11424f240>]}
+[0m16:44:45.773398 [debug] [MainThread]: Flushing usage events
+[0m16:44:46.550659 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:44:54.815192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109972900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ac4b750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ac4b890>]}
+
+
+============================== 16:44:54.821744 | 068b2f0d-328c-475f-8a89-30074c9c264e ==============================
+[0m16:44:54.821744 [info ] [MainThread]: Running with dbt=1.11.11
+[0m16:44:54.822854 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/Users/user/Documents/Raqib/raqib_sf', 'use_colors': 'True', 'invocation_command': 'dbt build', 'printer_width': '80', 'log_cache_events': 'False', 'debug': 'False', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'log_path': '/Users/user/Documents/Raqib/raqib_sf/logs', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'introspect': 'True', 'static_parser': 'True', 'write_json': 'True', 'indirect_selection': 'eager', 'quiet': 'False', 'no_print': 'None', 'target_path': 'None', 'use_experimental_parser': 'False', 'cache_selected_only': 'False'}
+[0m16:44:55.294845 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m16:44:55.295471 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m16:44:55.295965 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m16:44:55.577235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '068b2f0d-328c-475f-8a89-30074c9c264e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e65220>]}
+[0m16:44:55.672043 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '068b2f0d-328c-475f-8a89-30074c9c264e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bb79260>]}
+[0m16:44:55.674996 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m16:44:55.845576 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m16:44:55.846899 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:44:55.847446 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '068b2f0d-328c-475f-8a89-30074c9c264e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bac7650>]}
+[0m16:44:57.818391 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values` defined on
+'emergency_contacts' in package 'raqib_sf' (models/schema.yml). Arguments to
+generic tests should be nested under the `arguments` property.
+[0m16:44:57.819183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '068b2f0d-328c-475f-8a89-30074c9c264e', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aac6990>]}
+[0m16:44:58.158924 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.raqib_sf.intermediate
+- models.raqib_sf.marts
+[0m16:44:58.171668 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '068b2f0d-328c-475f-8a89-30074c9c264e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c2dac10>]}
+[0m16:44:58.297195 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/user/Documents/Raqib/raqib_sf/target/manifest.json
+[0m16:44:58.301484 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/user/Documents/Raqib/raqib_sf/target/semantic_manifest.json
+[0m16:44:58.514934 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '068b2f0d-328c-475f-8a89-30074c9c264e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10db30e20>]}
+[0m16:44:58.515631 [info ] [MainThread]: Found 1 model, 4 data tests, 11 sources, 537 macros
+[0m16:44:58.518735 [info ] [MainThread]: 
+[0m16:44:58.519272 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:44:58.519742 [info ] [MainThread]: 
+[0m16:44:58.520459 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m16:44:58.526591 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m16:44:58.589772 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m16:44:58.590303 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m16:44:58.590764 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:44:59.216515 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.626 seconds
+[0m16:44:59.219555 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now create_dev_dbt_dev__test_failures)
+[0m16:44:59.220560 [debug] [ThreadPool]: Creating schema "database: "dev"
+schema: "dbt_dev__test_failures"
+"
+[0m16:44:59.226422 [debug] [ThreadPool]: Using snowflake connection "create_dev_dbt_dev__test_failures"
+[0m16:44:59.226875 [debug] [ThreadPool]: On create_dev_dbt_dev__test_failures: create schema if not exists dev.dbt_dev__test_failures
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "create_dev_dbt_dev__test_failures"} */
+[0m16:44:59.334085 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c4b718-0001-cdf8-0002-8ab60001ad82
+[0m16:44:59.334725 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 003001 (42501): SQL access control error:
+Insufficient privileges to operate on database 'DEV'. Your primary role RAQIB_ROLE must have CREATE SCHEMA granted on DATABASE DEV.
+[0m16:44:59.335424 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro create_schema
+[0m16:44:59.335940 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m16:44:59.337312 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:44:59.337806 [debug] [MainThread]: Connection 'create_dev_dbt_dev__test_failures' was left open.
+[0m16:44:59.338270 [debug] [MainThread]: On create_dev_dbt_dev__test_failures: Close
+[0m16:44:59.500611 [info ] [MainThread]: 
+[0m16:44:59.501264 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.98 seconds (0.98s).
+[0m16:44:59.501987 [error] [MainThread]: Encountered an error:
+Database Error
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on database 'DEV'. Your primary role RAQIB_ROLE must have CREATE SCHEMA granted on DATABASE DEV.
+[0m16:44:59.502766 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m16:44:59.503645 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 4.7847977, "process_in_blocks": "0", "process_kernel_time": 0.490169, "process_mem_max_rss": "189128704", "process_out_blocks": "0", "process_user_time": 5.251311}
+[0m16:44:59.504430 [debug] [MainThread]: Command `dbt build` failed at 16:44:59.504270 after 4.79 seconds
+[0m16:44:59.504945 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ac70950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d6181b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d618ec0>]}
+[0m16:44:59.505422 [debug] [MainThread]: Flushing usage events
+[0m16:45:00.087711 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:02:18.982360 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111f22900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11310b750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11310b890>]}
+
+
+============================== 17:02:18.991915 | f1c012e9-9756-437b-abee-f36d8158983e ==============================
+[0m17:02:18.991915 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:02:18.992807 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'write_json': 'True', 'introspect': 'True', 'quiet': 'False', 'debug': 'False', 'printer_width': '80', 'indirect_selection': 'eager', 'version_check': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'invocation_command': 'dbt build', 'empty': 'False', 'log_format': 'default', 'no_print': 'None', 'warn_error': 'None', 'log_path': '/Users/user/Documents/Raqib/raqib_sf/logs', 'use_experimental_parser': 'False', 'target_path': 'None', 'cache_selected_only': 'False', 'static_parser': 'True', 'use_colors': 'True', 'profiles_dir': '/Users/user/Documents/Raqib/raqib_sf'}
+[0m17:02:19.510337 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m17:02:19.511012 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m17:02:19.511650 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m17:02:19.781791 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f1c012e9-9756-437b-abee-f36d8158983e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112415220>]}
+[0m17:02:19.871323 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f1c012e9-9756-437b-abee-f36d8158983e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11402d260>]}
+[0m17:02:19.874779 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m17:02:20.052207 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:02:20.284699 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:02:20.285959 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models/schema.yml
+[0m17:02:20.961306 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.raqib_sf.intermediate
+- models.raqib_sf.marts
+[0m17:02:20.979592 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f1c012e9-9756-437b-abee-f36d8158983e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115514e50>]}
+[0m17:02:21.110969 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/user/Documents/Raqib/raqib_sf/target/manifest.json
+[0m17:02:21.114559 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/user/Documents/Raqib/raqib_sf/target/semantic_manifest.json
+[0m17:02:21.146715 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f1c012e9-9756-437b-abee-f36d8158983e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112f868a0>]}
+[0m17:02:21.147434 [info ] [MainThread]: Found 1 model, 4 data tests, 11 sources, 537 macros
+[0m17:02:21.151574 [info ] [MainThread]: 
+[0m17:02:21.152150 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:02:21.152687 [info ] [MainThread]: 
+[0m17:02:21.153533 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:02:21.160383 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m17:02:21.237262 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m17:02:21.237848 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m17:02:21.238308 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:02:22.397583 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 1.159 seconds
+[0m17:02:22.400737 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now create_dev_dbt_dev__test_failures)
+[0m17:02:22.401711 [debug] [ThreadPool]: Creating schema "database: "dev"
+schema: "dbt_dev__test_failures"
+"
+[0m17:02:22.408068 [debug] [ThreadPool]: Using snowflake connection "create_dev_dbt_dev__test_failures"
+[0m17:02:22.408557 [debug] [ThreadPool]: On create_dev_dbt_dev__test_failures: create schema if not exists dev.dbt_dev__test_failures
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "create_dev_dbt_dev__test_failures"} */
+[0m17:02:22.561883 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.153 seconds
+[0m17:02:22.565270 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dev_dbt_dev__test_failures, now list_dev_dbt_dev__test_failures)
+[0m17:02:22.592811 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev__test_failures"
+[0m17:02:22.593362 [debug] [ThreadPool]: On list_dev_dbt_dev__test_failures: show objects in dev.dbt_dev__test_failures
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev__test_failures"} */;
+[0m17:02:22.727684 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.134 seconds
+[0m17:02:22.730795 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f1c012e9-9756-437b-abee-f36d8158983e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1156ae970>]}
+[0m17:02:22.736874 [debug] [Thread-2 (]: Began running node model.raqib_sf.emergency_contacts
+[0m17:02:22.737652 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev__test_failures, now model.raqib_sf.emergency_contacts)
+[0m17:02:22.738259 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.emergency_contacts
+[0m17:02:22.749147 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.emergency_contacts"
+[0m17:02:22.751400 [debug] [Thread-2 (]: Finished running node model.raqib_sf.emergency_contacts
+[0m17:02:22.752918 [debug] [Thread-3 (]: Began running node test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc
+[0m17:02:22.753541 [info ] [Thread-3 (]: 1 of 4 START test accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_  [RUN]
+[0m17:02:22.754100 [debug] [Thread-5 (]: Began running node test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d
+[0m17:02:22.754610 [debug] [Thread-2 (]: Began running node test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f
+[0m17:02:22.755245 [debug] [Thread-3 (]: Acquiring new snowflake connection 'test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc'
+[0m17:02:22.755862 [debug] [Thread-4 (]: Began running node test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef
+[0m17:02:22.756705 [info ] [Thread-5 (]: 3 of 4 START test not_null_emergency_contacts_emergency_contact_phone_number ... [RUN]
+[0m17:02:22.757391 [info ] [Thread-2 (]: 4 of 4 START test not_null_emergency_contacts_patient_id ....................... [RUN]
+[0m17:02:22.758085 [debug] [Thread-3 (]: Began compiling node test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc
+[0m17:02:22.758645 [info ] [Thread-4 (]: 2 of 4 START test accepted_values_emergency_contacts_is_valid_phone_number__True__False  [RUN]
+[0m17:02:22.759561 [debug] [Thread-5 (]: Acquiring new snowflake connection 'test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d'
+[0m17:02:22.760353 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.raqib_sf.emergency_contacts, now test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f)
+[0m17:02:22.768842 [debug] [Thread-3 (]: Writing injected SQL for node "test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc"
+[0m17:02:22.769508 [debug] [Thread-4 (]: Acquiring new snowflake connection 'test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef'
+[0m17:02:22.770106 [debug] [Thread-5 (]: Began compiling node test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d
+[0m17:02:22.770630 [debug] [Thread-2 (]: Began compiling node test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f
+[0m17:02:22.771288 [debug] [Thread-4 (]: Began compiling node test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef
+[0m17:02:22.786077 [debug] [Thread-5 (]: Writing injected SQL for node "test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d"
+[0m17:02:22.792683 [debug] [Thread-2 (]: Writing injected SQL for node "test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f"
+[0m17:02:22.800065 [debug] [Thread-3 (]: Began executing node test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc
+[0m17:02:22.804692 [debug] [Thread-4 (]: Writing injected SQL for node "test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef"
+[0m17:02:22.831174 [debug] [Thread-2 (]: Began executing node test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f
+[0m17:02:22.835753 [debug] [Thread-3 (]: Applying CREATE to: dev.dbt_dev__test_failures.accepted_values_emergency_cont_958653ea746f4e5fd4084f9f4edcc825
+[0m17:02:22.839143 [debug] [Thread-2 (]: Applying CREATE to: dev.dbt_dev__test_failures.not_null_emergency_contacts_patient_id
+[0m17:02:22.839670 [debug] [Thread-5 (]: Began executing node test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d
+[0m17:02:22.846284 [debug] [Thread-4 (]: Began executing node test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef
+[0m17:02:22.881016 [debug] [Thread-5 (]: Applying CREATE to: dev.dbt_dev__test_failures.not_null_emergency_contacts_emergency_contact_phone_number
+[0m17:02:22.895138 [debug] [Thread-3 (]: Using snowflake connection "test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc"
+[0m17:02:22.897229 [debug] [Thread-2 (]: Using snowflake connection "test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f"
+[0m17:02:22.900326 [debug] [Thread-4 (]: Applying CREATE to: dev.dbt_dev__test_failures.accepted_values_emergency_cont_85868add8ba9d96a326ae036898efd1e
+[0m17:02:22.902294 [debug] [Thread-5 (]: Using snowflake connection "test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d"
+[0m17:02:22.902876 [debug] [Thread-3 (]: On test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc: create or replace transient table dev.dbt_dev__test_failures.accepted_values_emergency_cont_958653ea746f4e5fd4084f9f4edcc825
+    
+    
+    
+    as (
+    
+  
+    
+    
+
+with  __dbt__cte__emergency_contacts as (
+WITH raw_emergency_contacts AS (
+    SELECT *
+    FROM raw.public.emergency_contacts
+)
+
+SELECT
+    "Patient_ID" AS patient_id,
+    INITCAP("emergency_contact_name") AS emergency_contact_name,
+    "emergency_contact_relationship" AS emergency_contact_relationship,
+    "emergency_contact_bloodtype" AS emergency_contact_bloodtype,
+    "emergency_contact_number" AS emergency_contact_phone_number,
+    REGEXP_LIKE("emergency_contact_number", '^\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}$') AS is_valid_phone_number
+    
+FROM raw_emergency_contacts
+), all_values as (
+
+    select
+        emergency_contact_bloodtype as value_field,
+        count(*) as n_records
+
+    from __dbt__cte__emergency_contacts
+    group by emergency_contact_bloodtype
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'A+','AB+','B+','O+','O-','AB-','A-','B-'
+)
+
+
+
+  
+  
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc"} */;
+[0m17:02:22.903453 [debug] [Thread-2 (]: On test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f: create or replace transient table dev.dbt_dev__test_failures.not_null_emergency_contacts_patient_id
+    
+    
+    
+    as (
+    
+  
+    
+    
+
+
+
+with __dbt__cte__emergency_contacts as (
+WITH raw_emergency_contacts AS (
+    SELECT *
+    FROM raw.public.emergency_contacts
+)
+
+SELECT
+    "Patient_ID" AS patient_id,
+    INITCAP("emergency_contact_name") AS emergency_contact_name,
+    "emergency_contact_relationship" AS emergency_contact_relationship,
+    "emergency_contact_bloodtype" AS emergency_contact_bloodtype,
+    "emergency_contact_number" AS emergency_contact_phone_number,
+    REGEXP_LIKE("emergency_contact_number", '^\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}$') AS is_valid_phone_number
+    
+FROM raw_emergency_contacts
+) select *
+from __dbt__cte__emergency_contacts
+where patient_id is null
+
+
+
+  
+  
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f"} */;
+[0m17:02:22.905340 [debug] [Thread-4 (]: Using snowflake connection "test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef"
+[0m17:02:22.905855 [debug] [Thread-5 (]: On test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d: create or replace transient table dev.dbt_dev__test_failures.not_null_emergency_contacts_emergency_contact_phone_number
+    
+    
+    
+    as (
+    
+  
+    
+    
+
+
+
+with __dbt__cte__emergency_contacts as (
+WITH raw_emergency_contacts AS (
+    SELECT *
+    FROM raw.public.emergency_contacts
+)
+
+SELECT
+    "Patient_ID" AS patient_id,
+    INITCAP("emergency_contact_name") AS emergency_contact_name,
+    "emergency_contact_relationship" AS emergency_contact_relationship,
+    "emergency_contact_bloodtype" AS emergency_contact_bloodtype,
+    "emergency_contact_number" AS emergency_contact_phone_number,
+    REGEXP_LIKE("emergency_contact_number", '^\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}$') AS is_valid_phone_number
+    
+FROM raw_emergency_contacts
+) select *
+from __dbt__cte__emergency_contacts
+where emergency_contact_phone_number is null
+
+
+
+  
+  
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d"} */;
+[0m17:02:22.906385 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m17:02:22.907266 [debug] [Thread-4 (]: On test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef: create or replace transient table dev.dbt_dev__test_failures.accepted_values_emergency_cont_85868add8ba9d96a326ae036898efd1e
+    
+    
+    
+    as (
+    
+  
+    
+    
+
+with  __dbt__cte__emergency_contacts as (
+WITH raw_emergency_contacts AS (
+    SELECT *
+    FROM raw.public.emergency_contacts
+)
+
+SELECT
+    "Patient_ID" AS patient_id,
+    INITCAP("emergency_contact_name") AS emergency_contact_name,
+    "emergency_contact_relationship" AS emergency_contact_relationship,
+    "emergency_contact_bloodtype" AS emergency_contact_bloodtype,
+    "emergency_contact_number" AS emergency_contact_phone_number,
+    REGEXP_LIKE("emergency_contact_number", '^\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}$') AS is_valid_phone_number
+    
+FROM raw_emergency_contacts
+), all_values as (
+
+    select
+        is_valid_phone_number as value_field,
+        count(*) as n_records
+
+    from __dbt__cte__emergency_contacts
+    group by is_valid_phone_number
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'True','False'
+)
+
+
+
+  
+  
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef"} */;
+[0m17:02:22.907825 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m17:02:22.951757 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m17:02:23.192661 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c4b72a-0001-cdcf-0002-8ab60001b486
+[0m17:02:23.193579 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:23.210950 [debug] [Thread-2 (]: Database Error in test not_null_emergency_contacts_patient_id (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:23.212081 [error] [Thread-2 (]: 4 of 4 ERROR not_null_emergency_contacts_patient_id ............................ [[31mERROR[0m in 0.45s]
+[0m17:02:23.213310 [debug] [Thread-2 (]: Finished running node test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f
+[0m17:02:23.214084 [debug] [Thread-8 (]: Marking all children of 'test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f' to be skipped because of status 'error'.  Reason: Database Error in test not_null_emergency_contacts_patient_id (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized..
+[0m17:02:23.725525 [debug] [Thread-4 (]: Snowflake adapter: Snowflake query id: 01c4b72a-0001-cdcf-0002-8ab60001b48e
+[0m17:02:23.726272 [debug] [Thread-4 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:23.733685 [debug] [Thread-4 (]: Database Error in test accepted_values_emergency_contacts_is_valid_phone_number__True__False (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:23.734466 [error] [Thread-4 (]: 2 of 4 ERROR accepted_values_emergency_contacts_is_valid_phone_number__True__False  [[31mERROR[0m in 0.96s]
+[0m17:02:23.735367 [debug] [Thread-4 (]: Finished running node test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef
+[0m17:02:23.736094 [debug] [Thread-8 (]: Marking all children of 'test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef' to be skipped because of status 'error'.  Reason: Database Error in test accepted_values_emergency_contacts_is_valid_phone_number__True__False (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized..
+[0m17:02:23.738195 [debug] [Thread-5 (]: Snowflake adapter: Snowflake query id: 01c4b72a-0001-cdcf-0002-8ab60001b48a
+[0m17:02:23.738884 [debug] [Thread-5 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:23.746345 [debug] [Thread-5 (]: Database Error in test not_null_emergency_contacts_emergency_contact_phone_number (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:23.747110 [error] [Thread-5 (]: 3 of 4 ERROR not_null_emergency_contacts_emergency_contact_phone_number ........ [[31mERROR[0m in 0.99s]
+[0m17:02:23.748018 [debug] [Thread-5 (]: Finished running node test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d
+[0m17:02:23.748763 [debug] [Thread-8 (]: Marking all children of 'test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d' to be skipped because of status 'error'.  Reason: Database Error in test not_null_emergency_contacts_emergency_contact_phone_number (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized..
+[0m17:02:23.806468 [debug] [Thread-3 (]: Snowflake adapter: Snowflake query id: 01c4b72a-0001-cdcf-0002-8ab60001b492
+[0m17:02:23.807506 [debug] [Thread-3 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:23.816116 [debug] [Thread-3 (]: Database Error in test accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_ (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:23.817065 [error] [Thread-3 (]: 1 of 4 ERROR accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_  [[31mERROR[0m in 1.06s]
+[0m17:02:23.818642 [debug] [Thread-3 (]: Finished running node test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc
+[0m17:02:23.819507 [debug] [Thread-8 (]: Marking all children of 'test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc' to be skipped because of status 'error'.  Reason: Database Error in test accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_ (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized..
+[0m17:02:23.821331 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:02:23.821784 [debug] [MainThread]: Connection 'test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f' was left open.
+[0m17:02:23.822247 [debug] [MainThread]: On test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f: Close
+[0m17:02:24.011395 [debug] [MainThread]: Connection 'test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc' was left open.
+[0m17:02:24.011991 [debug] [MainThread]: On test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc: Close
+[0m17:02:24.236042 [debug] [MainThread]: Connection 'test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d' was left open.
+[0m17:02:24.236702 [debug] [MainThread]: On test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d: Close
+[0m17:02:24.513326 [debug] [MainThread]: Connection 'test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef' was left open.
+[0m17:02:24.513922 [debug] [MainThread]: On test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef: Close
+[0m17:02:24.720160 [info ] [MainThread]: 
+[0m17:02:24.722980 [info ] [MainThread]: Finished running 4 data tests in 0 hours 0 minutes and 3.57 seconds (3.57s).
+[0m17:02:24.725091 [debug] [MainThread]: Command end result
+[0m17:02:24.772609 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/user/Documents/Raqib/raqib_sf/target/manifest.json
+[0m17:02:24.775820 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/user/Documents/Raqib/raqib_sf/target/semantic_manifest.json
+[0m17:02:24.784750 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/user/Documents/Raqib/raqib_sf/target/run_results.json
+[0m17:02:24.785210 [info ] [MainThread]: 
+[0m17:02:24.785746 [info ] [MainThread]: [31mCompleted with 4 errors, 0 partial successes, and 0 warnings:[0m
+[0m17:02:24.786191 [info ] [MainThread]: 
+[0m17:02:24.786759 [error] [MainThread]: [31mFailure in test not_null_emergency_contacts_patient_id (models/schema.yml)[0m
+[0m17:02:24.787331 [error] [MainThread]:   Database Error in test not_null_emergency_contacts_patient_id (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:24.787795 [info ] [MainThread]: 
+[0m17:02:24.788385 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/schema.yml/not_null_emergency_contacts_patient_id.sql
+[0m17:02:24.788864 [info ] [MainThread]: 
+[0m17:02:24.789575 [info ] [MainThread]:   See test failures:
+  -------------------------------------------------------------------------------
+  select * from dev.dbt_dev__test_failures.not_null_emergency_contacts_patient_id
+  -------------------------------------------------------------------------------
+[0m17:02:24.790051 [info ] [MainThread]: 
+[0m17:02:24.790705 [error] [MainThread]: [31mFailure in test accepted_values_emergency_contacts_is_valid_phone_number__True__False (models/schema.yml)[0m
+[0m17:02:24.791231 [error] [MainThread]:   Database Error in test accepted_values_emergency_contacts_is_valid_phone_number__True__False (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:24.791674 [info ] [MainThread]: 
+[0m17:02:24.792252 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/schema.yml/accepted_values_emergency_cont_85868add8ba9d96a326ae036898efd1e.sql
+[0m17:02:24.792939 [info ] [MainThread]: 
+[0m17:02:24.793488 [info ] [MainThread]:   See test failures:
+  --------------------------------------------------------------------------------------------------------
+  select * from dev.dbt_dev__test_failures.accepted_values_emergency_cont_85868add8ba9d96a326ae036898efd1e
+  --------------------------------------------------------------------------------------------------------
+[0m17:02:24.793967 [info ] [MainThread]: 
+[0m17:02:24.794508 [error] [MainThread]: [31mFailure in test not_null_emergency_contacts_emergency_contact_phone_number (models/schema.yml)[0m
+[0m17:02:24.795341 [error] [MainThread]:   Database Error in test not_null_emergency_contacts_emergency_contact_phone_number (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:24.795876 [info ] [MainThread]: 
+[0m17:02:24.796553 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/schema.yml/not_null_emergency_contacts_emergency_contact_phone_number.sql
+[0m17:02:24.797046 [info ] [MainThread]: 
+[0m17:02:24.797620 [info ] [MainThread]:   See test failures:
+  ---------------------------------------------------------------------------------------------------
+  select * from dev.dbt_dev__test_failures.not_null_emergency_contacts_emergency_contact_phone_number
+  ---------------------------------------------------------------------------------------------------
+[0m17:02:24.798099 [info ] [MainThread]: 
+[0m17:02:24.798647 [error] [MainThread]: [31mFailure in test accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_ (models/schema.yml)[0m
+[0m17:02:24.799213 [error] [MainThread]:   Database Error in test accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_ (models/schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'RAW.PUBLIC.EMERGENCY_CONTACTS' does not exist or not authorized.
+[0m17:02:24.799708 [info ] [MainThread]: 
+[0m17:02:24.800478 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/schema.yml/accepted_values_emergency_cont_958653ea746f4e5fd4084f9f4edcc825.sql
+[0m17:02:24.801082 [info ] [MainThread]: 
+[0m17:02:24.801721 [info ] [MainThread]:   See test failures:
+  --------------------------------------------------------------------------------------------------------
+  select * from dev.dbt_dev__test_failures.accepted_values_emergency_cont_958653ea746f4e5fd4084f9f4edcc825
+  --------------------------------------------------------------------------------------------------------
+[0m17:02:24.802292 [info ] [MainThread]: 
+[0m17:02:24.803222 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=4 SKIP=0 NO-OP=0 TOTAL=4
+[0m17:02:24.804805 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 5.9332104, "process_in_blocks": "0", "process_kernel_time": 0.661198, "process_mem_max_rss": "167751680", "process_out_blocks": "0", "process_user_time": 4.756383}
+[0m17:02:24.806065 [debug] [MainThread]: Command `dbt build` failed at 17:02:24.805782 after 5.93 seconds
+[0m17:02:24.808354 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115b81bf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113130950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11562fe90>]}
+[0m17:02:24.808993 [debug] [MainThread]: Flushing usage events
+[0m17:02:25.666128 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:09:17.232732 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11057a900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111767750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111767890>]}
+
+
+============================== 17:09:17.241981 | 4baa7c11-c591-4024-8af6-c17894483077 ==============================
+[0m17:09:17.241981 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:09:17.243060 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'empty': 'False', 'write_json': 'True', 'debug': 'False', 'target_path': 'None', 'partial_parse': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'log_format': 'default', 'invocation_command': 'dbt build', 'quiet': 'False', 'profiles_dir': '/Users/user/Documents/Raqib/raqib_sf', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_path': '/Users/user/Documents/Raqib/raqib_sf/logs', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'indirect_selection': 'eager', 'log_cache_events': 'False'}
+[0m17:09:17.773712 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m17:09:17.774357 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m17:09:17.774812 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m17:09:18.086610 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4baa7c11-c591-4024-8af6-c17894483077', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110a71220>]}
+[0m17:09:18.174778 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4baa7c11-c591-4024-8af6-c17894483077', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112695260>]}
+[0m17:09:18.176433 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m17:09:18.332089 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:09:18.550569 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:09:18.551108 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m17:09:18.551504 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:09:18.559141 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.raqib_sf.marts
+- models.raqib_sf.intermediate
+[0m17:09:18.620939 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4baa7c11-c591-4024-8af6-c17894483077', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112aa6050>]}
+[0m17:09:18.752151 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/user/Documents/Raqib/raqib_sf/target/manifest.json
+[0m17:09:18.755613 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/user/Documents/Raqib/raqib_sf/target/semantic_manifest.json
+[0m17:09:18.786156 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4baa7c11-c591-4024-8af6-c17894483077', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1126dfe30>]}
+[0m17:09:18.786817 [info ] [MainThread]: Found 1 model, 4 data tests, 11 sources, 537 macros
+[0m17:09:18.790051 [info ] [MainThread]: 
+[0m17:09:18.790674 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:09:18.791140 [info ] [MainThread]: 
+[0m17:09:18.791871 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:09:18.798169 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m17:09:18.871520 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m17:09:18.872112 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m17:09:18.872769 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:09:20.716089 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.843 seconds
+[0m17:09:20.720240 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_dbt_dev__test_failures)
+[0m17:09:20.736576 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev__test_failures"
+[0m17:09:20.737105 [debug] [ThreadPool]: On list_dev_dbt_dev__test_failures: show objects in dev.dbt_dev__test_failures
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev__test_failures"} */;
+[0m17:09:20.858660 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.121 seconds
+[0m17:09:20.861844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4baa7c11-c591-4024-8af6-c17894483077', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112796a50>]}
+[0m17:09:20.866337 [debug] [Thread-2 (]: Began running node model.raqib_sf.emergency_contacts
+[0m17:09:20.867130 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev__test_failures, now model.raqib_sf.emergency_contacts)
+[0m17:09:20.867695 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.emergency_contacts
+[0m17:09:20.876664 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.emergency_contacts"
+[0m17:09:20.879205 [debug] [Thread-2 (]: Finished running node model.raqib_sf.emergency_contacts
+[0m17:09:20.880716 [debug] [Thread-5 (]: Began running node test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d
+[0m17:09:20.881273 [debug] [Thread-3 (]: Began running node test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc
+[0m17:09:20.881815 [debug] [Thread-4 (]: Began running node test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef
+[0m17:09:20.882362 [debug] [Thread-2 (]: Began running node test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f
+[0m17:09:20.882963 [info ] [Thread-5 (]: 3 of 4 START test not_null_emergency_contacts_emergency_contact_phone_number ... [RUN]
+[0m17:09:20.883654 [info ] [Thread-3 (]: 1 of 4 START test accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_  [RUN]
+[0m17:09:20.884258 [info ] [Thread-4 (]: 2 of 4 START test accepted_values_emergency_contacts_is_valid_phone_number__True__False  [RUN]
+[0m17:09:20.884834 [info ] [Thread-2 (]: 4 of 4 START test not_null_emergency_contacts_patient_id ....................... [RUN]
+[0m17:09:20.885682 [debug] [Thread-5 (]: Acquiring new snowflake connection 'test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d'
+[0m17:09:20.886310 [debug] [Thread-3 (]: Acquiring new snowflake connection 'test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc'
+[0m17:09:20.886877 [debug] [Thread-4 (]: Acquiring new snowflake connection 'test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef'
+[0m17:09:20.887352 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.raqib_sf.emergency_contacts, now test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f)
+[0m17:09:20.887885 [debug] [Thread-5 (]: Began compiling node test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d
+[0m17:09:20.888345 [debug] [Thread-3 (]: Began compiling node test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc
+[0m17:09:20.888853 [debug] [Thread-4 (]: Began compiling node test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef
+[0m17:09:20.889497 [debug] [Thread-2 (]: Began compiling node test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f
+[0m17:09:20.912305 [debug] [Thread-5 (]: Writing injected SQL for node "test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d"
+[0m17:09:20.932483 [debug] [Thread-3 (]: Writing injected SQL for node "test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc"
+[0m17:09:20.938144 [debug] [Thread-4 (]: Writing injected SQL for node "test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef"
+[0m17:09:20.944333 [debug] [Thread-2 (]: Writing injected SQL for node "test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f"
+[0m17:09:20.945580 [debug] [Thread-3 (]: Began executing node test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc
+[0m17:09:20.946185 [debug] [Thread-5 (]: Began executing node test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d
+[0m17:09:20.952310 [debug] [Thread-4 (]: Began executing node test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef
+[0m17:09:20.970757 [debug] [Thread-2 (]: Began executing node test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f
+[0m17:09:20.982947 [debug] [Thread-3 (]: Applying CREATE to: dev.dbt_dev__test_failures.accepted_values_emergency_cont_958653ea746f4e5fd4084f9f4edcc825
+[0m17:09:20.995390 [debug] [Thread-4 (]: Applying CREATE to: dev.dbt_dev__test_failures.accepted_values_emergency_cont_85868add8ba9d96a326ae036898efd1e
+[0m17:09:20.996422 [debug] [Thread-5 (]: Applying CREATE to: dev.dbt_dev__test_failures.not_null_emergency_contacts_emergency_contact_phone_number
+[0m17:09:20.999075 [debug] [Thread-2 (]: Applying CREATE to: dev.dbt_dev__test_failures.not_null_emergency_contacts_patient_id
+[0m17:09:21.050957 [debug] [Thread-3 (]: Using snowflake connection "test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc"
+[0m17:09:21.051496 [debug] [Thread-4 (]: Using snowflake connection "test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef"
+[0m17:09:21.057375 [debug] [Thread-5 (]: Using snowflake connection "test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d"
+[0m17:09:21.059111 [debug] [Thread-2 (]: Using snowflake connection "test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f"
+[0m17:09:21.059686 [debug] [Thread-3 (]: On test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc: create or replace transient table dev.dbt_dev__test_failures.accepted_values_emergency_cont_958653ea746f4e5fd4084f9f4edcc825
+    
+    
+    
+    as (
+    
+  
+    
+    
+
+with  __dbt__cte__emergency_contacts as (
+WITH raw_emergency_contacts AS (
+    SELECT *
+    FROM raw.public.emergency_contacts
+)
+
+SELECT
+    "Patient_ID" AS patient_id,
+    INITCAP("emergency_contact_name") AS emergency_contact_name,
+    "emergency_contact_relationship" AS emergency_contact_relationship,
+    "emergency_contact_bloodtype" AS emergency_contact_bloodtype,
+    "emergency_contact_number" AS emergency_contact_phone_number,
+    REGEXP_LIKE("emergency_contact_number", '^\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}$') AS is_valid_phone_number
+    
+FROM raw_emergency_contacts
+), all_values as (
+
+    select
+        emergency_contact_bloodtype as value_field,
+        count(*) as n_records
+
+    from __dbt__cte__emergency_contacts
+    group by emergency_contact_bloodtype
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'A+','AB+','B+','O+','O-','AB-','A-','B-'
+)
+
+
+
+  
+  
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc"} */;
+[0m17:09:21.060328 [debug] [Thread-4 (]: On test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef: create or replace transient table dev.dbt_dev__test_failures.accepted_values_emergency_cont_85868add8ba9d96a326ae036898efd1e
+    
+    
+    
+    as (
+    
+  
+    
+    
+
+with  __dbt__cte__emergency_contacts as (
+WITH raw_emergency_contacts AS (
+    SELECT *
+    FROM raw.public.emergency_contacts
+)
+
+SELECT
+    "Patient_ID" AS patient_id,
+    INITCAP("emergency_contact_name") AS emergency_contact_name,
+    "emergency_contact_relationship" AS emergency_contact_relationship,
+    "emergency_contact_bloodtype" AS emergency_contact_bloodtype,
+    "emergency_contact_number" AS emergency_contact_phone_number,
+    REGEXP_LIKE("emergency_contact_number", '^\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}$') AS is_valid_phone_number
+    
+FROM raw_emergency_contacts
+), all_values as (
+
+    select
+        is_valid_phone_number as value_field,
+        count(*) as n_records
+
+    from __dbt__cte__emergency_contacts
+    group by is_valid_phone_number
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'True','False'
+)
+
+
+
+  
+  
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef"} */;
+[0m17:09:21.060930 [debug] [Thread-5 (]: On test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d: create or replace transient table dev.dbt_dev__test_failures.not_null_emergency_contacts_emergency_contact_phone_number
+    
+    
+    
+    as (
+    
+  
+    
+    
+
+
+
+with __dbt__cte__emergency_contacts as (
+WITH raw_emergency_contacts AS (
+    SELECT *
+    FROM raw.public.emergency_contacts
+)
+
+SELECT
+    "Patient_ID" AS patient_id,
+    INITCAP("emergency_contact_name") AS emergency_contact_name,
+    "emergency_contact_relationship" AS emergency_contact_relationship,
+    "emergency_contact_bloodtype" AS emergency_contact_bloodtype,
+    "emergency_contact_number" AS emergency_contact_phone_number,
+    REGEXP_LIKE("emergency_contact_number", '^\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}$') AS is_valid_phone_number
+    
+FROM raw_emergency_contacts
+) select *
+from __dbt__cte__emergency_contacts
+where emergency_contact_phone_number is null
+
+
+
+  
+  
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d"} */;
+[0m17:09:21.061508 [debug] [Thread-2 (]: On test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f: create or replace transient table dev.dbt_dev__test_failures.not_null_emergency_contacts_patient_id
+    
+    
+    
+    as (
+    
+  
+    
+    
+
+
+
+with __dbt__cte__emergency_contacts as (
+WITH raw_emergency_contacts AS (
+    SELECT *
+    FROM raw.public.emergency_contacts
+)
+
+SELECT
+    "Patient_ID" AS patient_id,
+    INITCAP("emergency_contact_name") AS emergency_contact_name,
+    "emergency_contact_relationship" AS emergency_contact_relationship,
+    "emergency_contact_bloodtype" AS emergency_contact_bloodtype,
+    "emergency_contact_number" AS emergency_contact_phone_number,
+    REGEXP_LIKE("emergency_contact_number", '^\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}$') AS is_valid_phone_number
+    
+FROM raw_emergency_contacts
+) select *
+from __dbt__cte__emergency_contacts
+where patient_id is null
+
+
+
+  
+  
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f"} */;
+[0m17:09:21.062178 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m17:09:21.062692 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m17:09:21.063202 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m17:09:22.059422 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.996 seconds
+[0m17:09:22.067769 [debug] [Thread-2 (]: Writing runtime sql for node "test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f"
+[0m17:09:22.069589 [debug] [Thread-2 (]: Using snowflake connection "test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f"
+[0m17:09:22.070166 [debug] [Thread-2 (]: On test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from dev.dbt_dev__test_failures.not_null_emergency_contacts_patient_id
+    
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f"} */
+[0m17:09:22.262343 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 1.200 seconds
+[0m17:09:22.264658 [debug] [Thread-3 (]: Writing runtime sql for node "test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc"
+[0m17:09:22.266787 [debug] [Thread-3 (]: Using snowflake connection "test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc"
+[0m17:09:22.267427 [debug] [Thread-3 (]: On test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from dev.dbt_dev__test_failures.accepted_values_emergency_cont_958653ea746f4e5fd4084f9f4edcc825
+    
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc"} */
+[0m17:09:22.269511 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 1.206 seconds
+[0m17:09:22.271083 [debug] [Thread-5 (]: Writing runtime sql for node "test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d"
+[0m17:09:22.272713 [debug] [Thread-5 (]: Using snowflake connection "test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d"
+[0m17:09:22.273264 [debug] [Thread-5 (]: On test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from dev.dbt_dev__test_failures.not_null_emergency_contacts_emergency_contact_phone_number
+    
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d"} */
+[0m17:09:22.275565 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.205 seconds
+[0m17:09:22.288688 [info ] [Thread-2 (]: 4 of 4 PASS not_null_emergency_contacts_patient_id ............................. [[32mPASS[0m in 1.40s]
+[0m17:09:22.289855 [debug] [Thread-2 (]: Finished running node test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f
+[0m17:09:22.297966 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 1.235 seconds
+[0m17:09:22.299521 [debug] [Thread-4 (]: Writing runtime sql for node "test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef"
+[0m17:09:22.300720 [debug] [Thread-4 (]: Using snowflake connection "test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef"
+[0m17:09:22.301200 [debug] [Thread-4 (]: On test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+        select *
+        from dev.dbt_dev__test_failures.accepted_values_emergency_cont_85868add8ba9d96a326ae036898efd1e
+    
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef"} */
+[0m17:09:22.453690 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.186 seconds
+[0m17:09:22.456253 [info ] [Thread-3 (]: 1 of 4 PASS accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_  [[32mPASS[0m in 1.57s]
+[0m17:09:22.457195 [debug] [Thread-3 (]: Finished running node test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc
+[0m17:09:22.460617 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.159 seconds
+[0m17:09:22.463890 [info ] [Thread-4 (]: 2 of 4 PASS accepted_values_emergency_contacts_is_valid_phone_number__True__False  [[32mPASS[0m in 1.58s]
+[0m17:09:22.465110 [debug] [Thread-4 (]: Finished running node test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef
+[0m17:09:22.477509 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.204 seconds
+[0m17:09:22.480924 [info ] [Thread-5 (]: 3 of 4 PASS not_null_emergency_contacts_emergency_contact_phone_number ......... [[32mPASS[0m in 1.60s]
+[0m17:09:22.481844 [debug] [Thread-5 (]: Finished running node test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d
+[0m17:09:22.483716 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:09:22.484225 [debug] [MainThread]: Connection 'test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f' was left open.
+[0m17:09:22.484682 [debug] [MainThread]: On test.raqib_sf.not_null_emergency_contacts_patient_id.0c6b18c81f: Close
+[0m17:09:22.726739 [debug] [MainThread]: Connection 'test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d' was left open.
+[0m17:09:22.727482 [debug] [MainThread]: On test.raqib_sf.not_null_emergency_contacts_emergency_contact_phone_number.3d62a2d79d: Close
+[0m17:09:22.911041 [debug] [MainThread]: Connection 'test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc' was left open.
+[0m17:09:22.911607 [debug] [MainThread]: On test.raqib_sf.accepted_values_emergency_contacts_emergency_contact_bloodtype__A___AB___B___O___O___AB___A___B_.a0fc477cdc: Close
+[0m17:09:23.098840 [debug] [MainThread]: Connection 'test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef' was left open.
+[0m17:09:23.099477 [debug] [MainThread]: On test.raqib_sf.accepted_values_emergency_contacts_is_valid_phone_number__True__False.910ee7fbef: Close
+[0m17:09:23.335520 [info ] [MainThread]: 
+[0m17:09:23.336362 [info ] [MainThread]: Finished running 4 data tests in 0 hours 0 minutes and 4.54 seconds (4.54s).
+[0m17:09:23.338322 [debug] [MainThread]: Command end result
+[0m17:09:23.384926 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/user/Documents/Raqib/raqib_sf/target/manifest.json
+[0m17:09:23.387524 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/user/Documents/Raqib/raqib_sf/target/semantic_manifest.json
+[0m17:09:23.396449 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/user/Documents/Raqib/raqib_sf/target/run_results.json
+[0m17:09:23.396910 [info ] [MainThread]: 
+[0m17:09:23.397462 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:09:23.397922 [info ] [MainThread]: 
+[0m17:09:23.398521 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m17:09:23.399612 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 6.273894, "process_in_blocks": "0", "process_kernel_time": 0.605861, "process_mem_max_rss": "162390016", "process_out_blocks": "0", "process_user_time": 4.092724}
+[0m17:09:23.400331 [debug] [MainThread]: Command `dbt build` succeeded at 17:09:23.400188 after 6.27 seconds
+[0m17:09:23.400945 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112e07930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11178ca10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112d96c90>]}
+[0m17:09:23.401488 [debug] [MainThread]: Flushing usage events
+[0m17:09:24.193545 [debug] [MainThread]: An error was encountered while trying to flush usage events
