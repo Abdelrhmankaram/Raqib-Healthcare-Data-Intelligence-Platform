@@ -1,7 +1,7 @@
 import requests
 import os
 
-def download_all_drug_labels(output_folder="fda_downloads"):
+def download_all_drug_labels(output_folder="Data/fda_downloads"):
 
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)

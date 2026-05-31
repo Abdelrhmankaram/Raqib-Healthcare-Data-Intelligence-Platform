@@ -56,7 +56,7 @@ def parse_single_zip(zip_file_path):
     return flattened_records
 
 
-def build_single_master_csv(download_dir="fda_downloads"):
+def build_single_master_csv(download_dir="Data/fda_downloads"):
     """
     Iterates through all zip archives, accumulates structured rows,
     and exports one comprehensive master CSV file.
@@ -100,5 +100,5 @@ def build_single_master_csv(download_dir="fda_downloads"):
 
 if __name__ == "__main__":
 
-    target_directory = "fda_downloads"
+    target_directory = "Data/fda_downloads"
     build_single_master_csv(download_dir=target_directory)
