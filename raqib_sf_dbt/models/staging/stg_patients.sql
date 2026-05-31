@@ -1,46 +1,46 @@
-with raw_patients as (
-    select *
-    from {{ source('raw', 'raw_patients') }}
+WITH raw_patients AS (
+    SELECT *
+    FROM {{ source('raw', 'raw_patients') }}
 )
 
-select 
+SELECT 
     patient_id,
-    initcap(first_name || ' ' || last_name) as full_name,
-    try_to_date(birthdate) as birthdate,
-    year(try_to_date(birthdate)) as birth_year,
-    case 
-        when deathdate is not null then true
-        else false
-    end as is_dead,
-    try_to_date(deathdate) as deathdate,
+    INITCAP(first_name || ' ' || last_name) AS full_name,
+    TRY_TO_DATE(birthdate) AS birthdate,
+    YEAR(TRY_TO_DATE(birthdate)) AS birth_year,
+    CASE 
+        WHEN deathdate IS NOT NULL THEN TRUE
+        ELSE FALSE
+    END AS is_dead,
+    TRY_TO_DATE(deathdate) AS deathdate,
     ssn,
     blood_type,
-    case 
-        when marital = 'S' then 'Single'
-        when marital = 'M' then 'Married'
-        when marital = 'D' then 'Divorced'
-        when marital = 'W' then 'Widowed'
-    end as marital_status,
-    initcap(replace(race, '/', ' / ')) AS race,
-    case
-        when upper(trim(ethnicity)) in ('HISPANIC', 'HISPANIC OR LATINO')
-            then 'Hispanic or Latino'
-        when upper(trim(ethnicity)) in ('NONHISPANIC', 'NOT HISPANIC OR LATINO')
-            then 'Not Hispanic or Latino'
-        else 'Unknown'
-    end as ethnicity,
-    case 
-        when gender = 'F' then 'Female'
-        when gender = 'M' then 'Male'
-        else 'Unknown'
-    end as gender,
-    initcap(language) as spoken_language,
-    trim(regexp_replace(regexp_replace(birthplace, ',', ''), '\\s+\\S+$', '')) AS birth_city,
+    CASE 
+        WHEN marital = 'S' THEN 'Single'
+        WHEN marital = 'M' THEN 'Married'
+        WHEN marital = 'D' THEN 'Divorced'
+        WHEN marital = 'W' THEN 'Widowed'
+    END AS marital_status,
+    INITCAP(REPLACE(race, '/', ' / ')) AS race,
+    CASE
+        WHEN UPPER(TRIM(ethnicity)) IN ('HISPANIC', 'HISPANIC OR LATINO')
+            THEN 'Hispanic or Latino'
+        WHEN UPPER(TRIM(ethnicity)) IN ('NONHISPANIC', 'NOT HISPANIC OR LATINO')
+            THEN 'Not Hispanic or Latino'
+        ELSE 'Unknown'
+    END AS ethnicity,
+    CASE 
+        WHEN gender = 'F' THEN 'Female'
+        WHEN gender = 'M' THEN 'Male'
+        ELSE 'Unknown'
+    END AS gender,
+    INITCAP(language) AS spoken_language,
+    TRIM(REGEXP_REPLACE(REGEXP_REPLACE(birthplace, ',', ''), '\\s+\\S+$', '')) AS birth_city,
     address,
-    initcap(city) as city,
-    initcap(country) as country,
+    INITCAP(city) AS city,
+    INITCAP(country) AS country,
     healthcare_expenses,
     healthcare_coverage,
-    income as income_usd
+    income AS income_usd
   
-from raw_patients
+FROM raw_patients

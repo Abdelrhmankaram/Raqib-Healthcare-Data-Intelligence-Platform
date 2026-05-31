@@ -145,4 +145,27 @@ models:
         data_tests:
           - not_null
 
+  - name: stg_patients
+    columns:
+      - name: patient_id
+        data_tests:
+          - not_null
+          - unique
       
+      - name: marital_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Single', 'Married', 'Divorced', 'Widowed']
+
+      - name: ethnicity
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Hispanic or Latino', 'Not Hispanic or Latino', 'Unknown'] 
+
+      - name: gender
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Female', 'Male', 'Unknown']
