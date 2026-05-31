@@ -18,7 +18,7 @@ SELECT
         'hour',
         admitted_in_timestamp,
         admitted_out_timestamp
-    ) AS stay_duation_hours,
+    ) AS stay_duration_hours,
     admission_location,
     discharge_location,
     insurance_type,
