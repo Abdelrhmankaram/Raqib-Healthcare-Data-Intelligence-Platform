@@ -115,3 +115,34 @@ models:
           - accepted_values:
               arguments:
                 values: ['High', 'Low', 'Normal']
+
+  - name: stg_services
+    columns:
+      - name: patient_id
+        data_tests:
+          - not_null
+      
+      - name: service_id
+        data_tests:
+          - not_null
+
+  - name: stg_transfers
+    columns: 
+      - name: transfer_id
+        data_tests:
+          - not_null
+          - unique
+      
+      - name: patient_id
+        data_tests:
+          - not_null
+      
+      - name: from_department
+        data_tests:
+          - not_null
+      
+      - name: to_department
+        data_tests:
+          - not_null
+
+      
