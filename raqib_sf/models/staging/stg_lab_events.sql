@@ -1,7 +1,7 @@
 WITH raw_lab_events AS (
 
     SELECT *
-    FROM {{ sourece('raw', 'raw_lab_events') }}
+    FROM {{ source('raw', 'raw_lab_events') }}
 
 ),
 renamed_cols AS (

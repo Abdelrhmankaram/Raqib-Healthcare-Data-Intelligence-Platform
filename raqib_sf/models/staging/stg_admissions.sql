@@ -1,6 +1,6 @@
 with raw_admissions as (
     select * 
-    from {{ source('raw', 'admissions') }}
+    from {{ source('raw', 'raw_admissions') }}
 )
 
 select 

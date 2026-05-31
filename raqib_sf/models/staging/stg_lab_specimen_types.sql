@@ -7,7 +7,7 @@ SELECT
     itemid AS item_id,
     label,
     fluid,
-    category.
+    category,
     sub_domain_key,
     specialty
     

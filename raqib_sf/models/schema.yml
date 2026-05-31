@@ -70,11 +70,7 @@ models:
         data_tests:
           - not_null
 
-      - name: domain
-        data_tests:
-          - not_null
-
-      - name: sub_domain
+      - name: sub_domain_key
         data_tests:
           - not_null
 

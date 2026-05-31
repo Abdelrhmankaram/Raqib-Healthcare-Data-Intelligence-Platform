@@ -8,8 +8,6 @@ select
     patient_id,
     admission_id,
     provider_id,
-    admission_id,
-    provider_id,
     TRIM(REGEXP_REPLACE(description, '\\s*\\([^)]+\\)', '')) as description,
     REGEXP_SUBSTR(description, '\\(([^)]+)\\)', 1, 1, 'e', 1) AS description_type,
     TRIM(SPLIT_PART(REGEXP_REPLACE(specialty, '\\s*/\\s*', ' & '), ' & ', 1)) AS specialty_1,
