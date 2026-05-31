@@ -146,26 +146,41 @@ models:
           - not_null
 
   - name: stg_patients
+
     columns:
       - name: patient_id
         data_tests:
+          - unique
+          - not_null
+      - name: patient_first_name
+        data_tests:
+          - not_null
+      - name: patient_last_name
+        data_tests:
+          - not_null
+      - name: ssn
+        data_tests:
           - not_null
           - unique
-      
+      - name: blood_type
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["A+", "AB+", "B+", "O+", "O-", "AB-", "A-", "B-"]
       - name: marital_status
         data_tests:
           - accepted_values:
               arguments:
-                values: ['Single', 'Married', 'Divorced', 'Widowed']
+                values: ['Married', 'Single', 'Divorced', 'Widowed', 'Unknown']
+      
+  - name: stg_drugs
 
-      - name: ethnicity
+    columns:
+      - name: drug_id
         data_tests:
-          - accepted_values:
-              arguments:
-                values: ['Hispanic or Latino', 'Not Hispanic or Latino', 'Unknown'] 
+          - unique
+          - not_null
 
-      - name: gender
+      - name: brand_name
         data_tests:
-          - accepted_values:
-              arguments:
-                values: ['Female', 'Male', 'Unknown']
+          - not_null
