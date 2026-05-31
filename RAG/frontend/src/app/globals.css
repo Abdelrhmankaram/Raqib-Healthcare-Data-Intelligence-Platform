@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #081b1e;
+  --background-soft: #12363d;
+  --surface: rgba(255, 250, 241, 0.84);
+  --surface-strong: rgba(255, 252, 247, 0.96);
+  --border: rgba(16, 54, 59, 0.12);
+  --text-primary: #102427;
+  --text-secondary: #5d7376;
+  --accent: #ff7a59;
+  --accent-secondary: #4eb7a7;
+  --success: #1c8f68;
+  --error: #c44a32;
+  --shadow: 0 24px 70px rgba(4, 24, 26, 0.2);
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body), sans-serif;
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at top left, rgba(255, 122, 89, 0.18), transparent 30%),
+    radial-gradient(circle at 88% 12%, rgba(78, 183, 167, 0.18), transparent 26%),
+    linear-gradient(160deg, var(--background) 0%, var(--background-soft) 48%, var(--background) 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent 90%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.soft-card {
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.58);
+  padding: 1.1rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  background: rgba(16, 54, 59, 0.08);
+  padding: 0.55rem 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  padding: 0.7rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.message-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16, 54, 59, 0.24) transparent;
+}
+
+.message-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.message-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(16, 54, 59, 0.22);
+}
