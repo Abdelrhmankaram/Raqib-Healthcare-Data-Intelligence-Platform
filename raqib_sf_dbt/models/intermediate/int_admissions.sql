@@ -14,6 +14,7 @@ SELECT
         admitted_in_timestamp,
         admitted_out_timestamp
     ) AS stay_duration_days,
+    admission_type,
     DATEDIFF(
         'hour',
         admitted_in_timestamp,
