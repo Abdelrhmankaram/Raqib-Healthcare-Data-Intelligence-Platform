@@ -1,0 +1,1 @@
+{{ test_accepted_values(column_name="emergency_contact_bloodtype", model=get_where_subquery(ref('emergency_contacts')), values=["A+","AB+","B+","O+","O-","AB-","A-","B-"]) }}

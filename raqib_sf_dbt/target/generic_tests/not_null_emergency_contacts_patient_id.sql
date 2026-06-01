@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="patient_id", model=get_where_subquery(ref('emergency_contacts'))) }}
