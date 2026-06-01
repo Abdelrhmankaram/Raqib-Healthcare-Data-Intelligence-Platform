@@ -184,3 +184,15 @@ models:
       - name: brand_name
         data_tests:
           - not_null
+
+  - name: stg_admissions
+
+    columns:
+      - name: admission_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: patient_id
+        data_tests:
+          - not_null
