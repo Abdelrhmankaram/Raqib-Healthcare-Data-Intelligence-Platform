@@ -9,7 +9,10 @@ select
         when brand_name is null and generic_name like 'Atropine Sulfate Injection%' then 'AtroPen'
         when brand_name is null and generic_name like 'Midazolam Injection%' then 'Versed'
     end as brand_name,
-    initcap(generic_name) as generic_name,
+    case 
+        when generic_name is not null then initcap(generic_name) 
+        when generic_name is null then brand_name
+    end as generic_name,
     initcap(route) as route,
     indications,
     dosage,

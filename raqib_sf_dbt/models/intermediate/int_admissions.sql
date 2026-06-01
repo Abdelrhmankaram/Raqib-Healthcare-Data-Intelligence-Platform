@@ -4,6 +4,7 @@ WITH stg_admissions AS (
 )
 
 SELECT 
+    {{ dbt_utils.surrogate_key(['admission_id']) }} AS admission_key,
     admission_id,
     patient_id,
     provider_id,

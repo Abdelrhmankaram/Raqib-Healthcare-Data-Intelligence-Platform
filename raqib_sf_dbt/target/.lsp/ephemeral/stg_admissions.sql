@@ -7,6 +7,7 @@ WITH raw_admissions AS (
 SELECT 
     admission_id,
     patient_id,
+    provider_id,
     TRY_CAST(admission_datetime_in AS TIMESTAMP) AS admitted_in_timestamp,
     TRY_CAST(admission_datetime_out AS TIMESTAMP) AS admitted_out_timestamp,
     upper(LEFT(admission_type, 1)) || LOWER(SUBSTR(admission_type, 2)) AS admission_type,

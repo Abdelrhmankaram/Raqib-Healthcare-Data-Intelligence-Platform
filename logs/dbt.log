@@ -143,3 +143,19 @@ https://docs.getdbt.com/docs/configure-your-profile
 {"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"019e81e7-0a42-7a61-8c81-a1745bd7eda9","level":"debug","msg":"No active cloud project configured, skipping remote license","name":"Generic","pid":85520,"thread":"tokio-rt-worker","ts":"2026-06-01T06:37:42.886688Z"}}
 {"data":{"columns":[],"is_inline":true,"node_name":"license_info","output_format":"json","preview":"{\n  \"status\": \"not_found\",\n  \"licensing_enabled\": true\n}","unique_id":"license.info"},"info":{"category":"","code":"Q041","extra":{},"invocation_id":"019e81e7-0a42-7a61-8c81-a1745bd7eda9","level":"info","msg":"{\n  \"status\": \"not_found\",\n  \"licensing_enabled\": true\n}","name":"ShowNode","pid":85520,"thread":"tokio-rt-worker","ts":"2026-06-01T06:37:42.887943Z"}}
 {"data":{"completed_at":"2026-06-01T06:37:43.581023Z","elapsed":0.7029950022697449,"success":true},"info":{"category":"","code":"Q039","extra":{},"invocation_id":"019e81e7-0a42-7a61-8c81-a1745bd7eda9","level":"info","msg":"\n==================== Execution Summary =====================\nFinished 'license' successfully [702ms]","name":"CommandCompleted","pid":85520,"thread":"tokio-rt-worker","ts":"2026-06-01T06:37:43.584381Z"}}
+[0m11:50:27.410866 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b9a900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d979d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d97d90>]}
+
+
+============================== 11:50:27.419057 | d23eba4d-0781-49a6-8ca0-aef380259cec ==============================
+[0m11:50:27.419057 [info ] [MainThread]: Running with dbt=1.11.11
+[0m11:50:27.420042 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'log_cache_events': 'False', 'write_json': 'True', 'invocation_command': 'dbt deps', 'target_path': 'None', 'no_print': 'None', 'introspect': 'True', 'use_colors': 'True', 'log_format': 'default', 'quiet': 'False', 'printer_width': '80', 'partial_parse': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': '/Users/user/.dbt', 'debug': 'False', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True'}
+[0m11:50:27.421422 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/user/Documents/Raqib/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:50:27.422477 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": false, "command_wall_clock_time": 0.13022612, "process_in_blocks": "0", "process_kernel_time": 0.425728, "process_mem_max_rss": "103075840", "process_out_blocks": "0", "process_user_time": 2.04367}
+[0m11:50:27.423229 [debug] [MainThread]: Command `dbt deps` failed at 11:50:27.423062 after 0.13 seconds
+[0m11:50:27.423756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106db6520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c82d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106dcdae0>]}
+[0m11:50:27.424359 [debug] [MainThread]: Flushing usage events
+[0m11:50:28.686707 [debug] [MainThread]: An error was encountered while trying to flush usage events
