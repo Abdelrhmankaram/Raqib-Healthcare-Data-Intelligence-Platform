@@ -2,7 +2,7 @@ with raw_drugs as (
     select * 
     from {{ source('raw', 'drugs') }}
 )
-cd
+
 select 
     case 
         when brand_name is not null then initcap(brand_name)

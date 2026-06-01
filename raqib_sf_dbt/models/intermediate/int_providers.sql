@@ -4,7 +4,7 @@ WITH stg_providers AS (
 )
 
 SELECT 
-    {{ dbt_utils.surrogate_key(['provider_id']) }} AS provider_key,
+    {{ dbt_utils.generate_surrogate_key(['provider_id']) }} AS provider_key,
     npi,
     provider_first_name,
     provider_last_name,
