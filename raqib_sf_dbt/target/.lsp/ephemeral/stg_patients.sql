@@ -6,15 +6,15 @@ WITH raw_patients AS (
 
 SELECT 
     patient_id,
+    ssn,
     INITCAP(first_name || ' ' || last_name) AS full_name,
     TRY_TO_DATE(birthdate) AS birthdate,
     YEAR(TRY_TO_DATE(birthdate)) AS birth_year,
+    TRY_TO_DATE(deathdate) AS deathdate,
     CASE 
         WHEN deathdate IS NOT NULL THEN TRUE
         ELSE FALSE
     END AS is_dead,
-    TRY_TO_DATE(deathdate) AS deathdate,
-    ssn,
     blood_type,
     CASE 
         WHEN marital = 'S' THEN 'Single'
@@ -40,8 +40,8 @@ SELECT
     address,
     INITCAP(city) AS city,
     INITCAP(country) AS country,
-    healthcare_expenses,
-    healthcare_coverage,
+    TRY_CAST(healthcare_expenses AS FLOAT) AS healthcare_expenses,
+    TRY_CAST(healthcare_coverage AS FLOAT) AS healthcare_coverage,
     income AS income_usd
   
 FROM raw_patients
