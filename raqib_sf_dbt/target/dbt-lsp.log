@@ -12387,3 +12387,530 @@
 09:51:45.760127 [info ]: Started scheduling
 09:51:45.760208 [info ]: Finished scheduling [  0.00s]
 09:51:45.766718 [info ]: Cached model count updated: 11 models (accurate)
+09:54:35.586076 [info ]: Started loading project
+09:54:35.586686 [info ]: Loading profiles.yml
+09:54:35.638298 [info ]: Finished loading project [  0.05s]
+09:54:35.639012 [info ]: Cached model count updated: 11 models (accurate)
+09:54:36.791108 [info ]: Started loading project
+09:54:36.791822 [info ]: Loading profiles.yml
+09:54:36.848354 [info ]: Cached model count updated: 22 models (estimate)
+09:54:36.848378 [info ]: Cached model count updated: 11 models (accurate)
+09:54:36.848429 [info ]: Started scheduling
+09:54:36.848769 [info ]: Finished scheduling [  0.00s]
+09:54:36.848792 [debug]: Compilation - 11 nodes selected: {"model.raqib_sf.stg_admissions", "model.raqib_sf.stg_diagnosis", "model.raqib_sf.stg_drugs", "model.raqib_sf.stg_emergency_contacts", "model.raqib_sf.stg_lab_events", "model.raqib_sf.stg_lab_specimen_types", "model.raqib_sf.stg_patients", "model.raqib_sf.stg_prescriptions", "model.raqib_sf.stg_providers", "model.raqib_sf.stg_services", "model.raqib_sf.stg_transfers"}
+09:54:37.439661 [info ]: Started building task graph
+09:54:37.439930 [info ]: Finished building task graph [  0.00s]
+09:54:37.440253 [info ]: Started rendering (11 nodes)
+09:54:37.440278 [info ]: Started model dbt_dev_staging.stg_transfers
+09:54:37.440296 [debug]: Started rendering model dbt_dev_staging.stg_transfers
+09:54:37.440329 [info ]: Started model dbt_dev_staging.stg_services
+09:54:37.440367 [info ]: Finished loading project [  0.65s]
+09:54:37.440378 [debug]: Started rendering model dbt_dev_staging.stg_services
+09:54:37.440424 [info ]: Started model dbt_dev_staging.stg_providers
+09:54:37.440451 [debug]: Started rendering model dbt_dev_staging.stg_providers
+09:54:37.440488 [info ]: Started model dbt_dev_staging.stg_prescriptions
+09:54:37.440510 [debug]: Started rendering model dbt_dev_staging.stg_prescriptions
+09:54:37.440541 [info ]: Started model dbt_dev_staging.stg_patients
+09:54:37.440585 [debug]: Started rendering model dbt_dev_staging.stg_patients
+09:54:37.440654 [info ]: Started model dbt_dev_staging.stg_lab_specimen_types
+09:54:37.440684 [debug]: Started rendering model dbt_dev_staging.stg_lab_specimen_types
+09:54:37.440821 [info ]: Started model dbt_dev_staging.stg_lab_events
+09:54:37.440853 [debug]: Started rendering model dbt_dev_staging.stg_lab_events
+09:54:37.440887 [info ]: Started model dbt_dev_staging.stg_emergency_contacts
+09:54:37.440911 [debug]: Started rendering model dbt_dev_staging.stg_emergency_contacts
+09:54:37.440955 [info ]: Started model dbt_dev_staging.stg_drugs
+09:54:37.441081 [debug]: Started rendering model dbt_dev_staging.stg_drugs
+09:54:37.441134 [info ]: Started model dbt_dev_staging.stg_diagnosis
+09:54:37.441156 [debug]: Started rendering model dbt_dev_staging.stg_diagnosis
+09:54:37.441185 [info ]: Started model dbt_dev_staging.stg_admissions
+09:54:37.441203 [debug]: Started rendering model dbt_dev_staging.stg_admissions
+09:54:37.441341 [debug]: Compiled SQL for node model.raqib_sf.stg_transfers at target/.lsp/compiled/models/staging/stg_transfers.sql
+09:54:37.441491 [debug]: Compiled SQL for node model.raqib_sf.stg_services at target/.lsp/compiled/models/staging/stg_services.sql
+09:54:37.441622 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_transfers [success]
+09:54:37.441635 [debug]: Compiled SQL for node model.raqib_sf.stg_providers at target/.lsp/compiled/models/staging/stg_providers.sql
+09:54:37.441670 [info ]: Started analyzing (11 nodes)
+09:54:37.441692 [debug]: Started analyzing model dbt_dev_staging.stg_transfers
+09:54:37.441712 [debug]: Compiled SQL for node model.raqib_sf.stg_patients at target/.lsp/compiled/models/staging/stg_patients.sql
+09:54:37.441780 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_services [success]
+09:54:37.441815 [debug]: Started analyzing model dbt_dev_staging.stg_services
+09:54:37.441851 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_providers [success]
+09:54:37.441972 [debug]: Started analyzing model dbt_dev_staging.stg_providers
+09:54:37.442012 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_patients [success]
+09:54:37.442044 [debug]: Started analyzing model dbt_dev_staging.stg_patients
+09:54:37.442060 [debug]: Compiled SQL for node model.raqib_sf.stg_diagnosis at target/.lsp/compiled/models/staging/stg_diagnosis.sql
+09:54:37.442070 [debug]: Compiled SQL for node model.raqib_sf.stg_emergency_contacts at target/.lsp/compiled/models/staging/stg_emergency_contacts.sql
+09:54:37.442200 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_diagnosis [success]
+09:54:37.442242 [debug]: Compiled SQL for node model.raqib_sf.stg_lab_specimen_types at target/.lsp/compiled/models/staging/stg_lab_specimen_types.sql
+09:54:37.442293 [debug]: Started analyzing model dbt_dev_staging.stg_diagnosis
+09:54:37.442340 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_emergency_contacts [success]
+09:54:37.442370 [debug]: Started analyzing model dbt_dev_staging.stg_emergency_contacts
+09:54:37.442813 [info ]:  Succeeded [  0.00s] model dbt_dev_staging.stg_emergency_contacts (ephemeral)
+09:54:37.442864 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_emergency_contacts [success]
+09:54:37.442898 [info ]:  Succeeded [  0.00s] model dbt_dev_staging.stg_transfers (ephemeral)
+09:54:37.442928 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_transfers [success]
+09:54:37.442981 [error]: dbt1501: Failed to render SQL not a key type: Source not found for source name: raw, table name: drugs
+(in models/staging/stg_drugs.sql:3:10)
+  --> models/staging/stg_drugs.sql:3:10
+09:54:37.443028 [debug]: Started analyzing model dbt_dev_staging.stg_drugs
+09:54:37.443249 [info ]:     Failed [  0.00s] model dbt_dev_staging.stg_drugs (ephemeral)
+09:54:37.443469 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_drugs [skipped]
+09:54:37.443511 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_lab_specimen_types [success]
+09:54:37.443542 [debug]: Started analyzing model dbt_dev_staging.stg_lab_specimen_types
+09:54:37.443609 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_drugs [error]
+09:54:37.443916 [info ]:  Succeeded [  0.00s] model dbt_dev_staging.stg_lab_specimen_types (ephemeral)
+09:54:37.444569 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_lab_specimen_types [success]
+09:54:37.448383 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_providers (ephemeral)
+09:54:37.448425 [debug]: Finished analyzing [  0.01s] model dbt_dev_staging.stg_providers [success]
+09:54:37.449428 [debug]: Compiled SQL for node model.raqib_sf.stg_lab_events at target/.lsp/compiled/models/staging/stg_lab_events.sql
+09:54:37.449438 [debug]: Compiled SQL for node model.raqib_sf.stg_admissions at target/.lsp/compiled/models/staging/stg_admissions.sql
+09:54:37.449541 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_lab_events [success]
+09:54:37.449584 [debug]: Started analyzing model dbt_dev_staging.stg_lab_events
+09:54:37.449586 [debug]: Compiled SQL for node model.raqib_sf.stg_prescriptions at target/.lsp/compiled/models/staging/stg_prescriptions.sql
+09:54:37.449627 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_admissions [success]
+09:54:37.449657 [debug]: Started analyzing model dbt_dev_staging.stg_admissions
+09:54:37.449695 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_prescriptions [success]
+09:54:37.449717 [info ]: Finished rendering [  0.01s] (11 nodes, 0 skipped, 1 errors)
+09:54:37.449749 [debug]: Started analyzing model dbt_dev_staging.stg_prescriptions
+09:54:37.450070 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_prescriptions (ephemeral)
+09:54:37.450115 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_prescriptions [success]
+09:54:37.450718 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_admissions (ephemeral)
+09:54:37.450763 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_admissions [success]
+09:54:37.451693 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_lab_events (ephemeral)
+09:54:37.451739 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_lab_events [success]
+09:54:37.453686 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_patients (ephemeral)
+09:54:37.453737 [debug]: Finished analyzing [  0.01s] model dbt_dev_staging.stg_patients [success]
+09:54:37.457374 [info ]:  Succeeded [  0.02s] model dbt_dev_staging.stg_services (ephemeral)
+09:54:37.457409 [debug]: Finished analyzing [  0.02s] model dbt_dev_staging.stg_services [success]
+09:54:37.464206 [info ]:  Succeeded [  0.02s] model dbt_dev_staging.stg_diagnosis (ephemeral)
+09:54:37.464247 [debug]: Finished analyzing [  0.02s] model dbt_dev_staging.stg_diagnosis [success]
+09:54:37.464259 [info ]: Finished analyzing [  0.02s] (11 nodes, 1 skipped, 0 errors)
+09:54:37.473353 [info ]: Started scheduling
+09:54:37.473428 [info ]: Finished scheduling [  0.00s]
+09:54:37.481738 [info ]: Cached model count updated: 11 models (accurate)
+09:58:02.073182 [info ]: Started loading project
+09:58:02.073763 [info ]: Loading profiles.yml
+09:58:02.078065 [info ]: Started loading project
+09:58:02.078416 [info ]: Loading profiles.yml
+09:58:02.078471 [info ]: Finished loading project [  0.01s]
+09:58:02.693492 [info ]:    Started resolving packages from packages.yml
+09:58:03.088622 [info ]:   Finished [  0.40s] resolving packages from packages.yml (1 items)
+09:58:03.088845 [debug]:    Started loading packages
+09:58:03.092572 [debug]:     Loaded [  0.00s] packages
+09:58:03.093629 [info ]: Finished loading project [  1.02s]
+09:58:03.094109 [info ]: Started parsing
+09:58:03.164858 [debug]: Finished parsing models/sources.yml [  0.00s]
+09:58:03.166002 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+09:58:03.170512 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_admissions.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_admissions.sql:7:5
+09:58:03.170699 [debug]: Finished parsing models/intermediate/int_admissions.sql [  0.00s]
+09:58:03.171919 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_diagnosis.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_diagnosis.sql:7:5
+09:58:03.172145 [debug]: Finished parsing models/intermediate/int_diagnosis.sql [  0.00s]
+09:58:03.173246 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_drugs.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_drugs.sql:7:5
+09:58:03.173427 [debug]: Finished parsing models/intermediate/int_drugs.sql [  0.00s]
+09:58:03.174800 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_emergency_contact.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_emergency_contact.sql:7:5
+09:58:03.174931 [debug]: Finished parsing models/intermediate/int_emergency_contact.sql [  0.00s]
+09:58:03.176018 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_lab_events.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_lab_events.sql:7:5
+09:58:03.176254 [debug]: Finished parsing models/intermediate/int_lab_events.sql [  0.00s]
+09:58:03.177471 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_lab_specimen_types.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_lab_specimen_types.sql:7:5
+09:58:03.177725 [debug]: Finished parsing models/intermediate/int_lab_specimen_types.sql [  0.00s]
+09:58:03.179025 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_patients.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_patients.sql:7:5
+09:58:03.179245 [debug]: Finished parsing models/intermediate/int_patients.sql [  0.00s]
+09:58:03.180325 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_prescriptions.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_prescriptions.sql:7:5
+09:58:03.180526 [debug]: Finished parsing models/intermediate/int_prescriptions.sql [  0.00s]
+09:58:03.181639 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_providers.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_providers.sql:7:5
+09:58:03.181930 [debug]: Finished parsing models/intermediate/int_providers.sql [  0.00s]
+09:58:03.182756 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_services.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_services.sql:7:5
+09:58:03.182980 [debug]: Finished parsing models/intermediate/int_services.sql [  0.00s]
+09:58:03.184013 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_transfers.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_transfers.sql:7:5
+09:58:03.184375 [debug]: Finished parsing models/intermediate/int_transfers.sql [  0.00s]
+09:58:03.185553 [debug]: Finished parsing models/staging/stg_admissions.sql [  0.00s]
+09:58:03.186689 [debug]: Finished parsing models/staging/stg_diagnosis.sql [  0.00s]
+09:58:03.188260 [debug]: Finished parsing models/staging/stg_drugs.sql [  0.00s]
+09:58:03.190138 [debug]: Finished parsing models/staging/stg_emergency_contacts.sql [  0.00s]
+09:58:03.191116 [debug]: Finished parsing models/staging/stg_lab_events.sql [  0.00s]
+09:58:03.192162 [debug]: Finished parsing models/staging/stg_lab_specimen_types.sql [  0.00s]
+09:58:03.193034 [debug]: Finished parsing models/staging/stg_patients.sql [  0.00s]
+09:58:03.194326 [debug]: Finished parsing models/staging/stg_prescriptions.sql [  0.00s]
+09:58:03.195534 [debug]: Finished parsing models/staging/stg_providers.sql [  0.00s]
+09:58:03.196766 [debug]: Finished parsing models/staging/stg_services.sql [  0.00s]
+09:58:03.215655 [debug]: Finished parsing models/staging/stg_transfers.sql [  0.02s]
+09:58:03.217209 [error]: dbt1048: Source 'raw.drugs' not found in project. Searched for 'drugs'
+  --> models/staging/stg_drugs.sql:3:10
+09:58:03.219491 [info ]: Cached model count updated: 22 models (estimate)
+09:58:03.219539 [info ]: Cached model count updated: 11 models (accurate)
+09:58:03.219610 [info ]: Started scheduling
+09:58:03.219714 [info ]: Finished scheduling [  0.00s]
+09:58:03.219737 [debug]: Compilation - 0 nodes selected: {}
+09:58:03.219830 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+09:58:03.219851 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+09:58:03.219867 [info ]: Started scheduling
+09:58:03.220056 [info ]: Finished scheduling [  0.00s]
+09:58:03.220153 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "SERVICES" }) and interval: None
+09:58:03.220177 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "LAB_EVENTS" }) and interval: None
+09:58:03.220190 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "DIAGNOSIS" }) and interval: None
+09:58:03.220201 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "PATIENTS" }) and interval: None
+09:58:03.220210 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "PRESCRIPTIONS" }) and interval: None
+09:58:03.220220 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "PROVIDERS" }) and interval: None
+09:58:03.220229 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "ADMISSIONS" }) and interval: None
+09:58:03.220239 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "EMERGENCY_CONTACTS" }) and interval: None
+09:58:03.220248 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "LAB_SPECIMEN_TYPES" }) and interval: None
+09:58:03.220257 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "TRANSFERS" }) and interval: None
+09:58:03.726935 [info ]: Started building task graph
+09:58:03.726972 [info ]: Finished building task graph [  0.00s]
+09:58:03.736419 [info ]: Started scheduling
+09:58:03.736502 [info ]: Finished scheduling [  0.00s]
+09:58:03.747022 [info ]: Cached model count updated: 11 models (accurate)
+09:58:03.747091 [info ]: Finished parsing [  0.65s]
+09:58:04.894103 [info ]: Started loading project
+09:58:04.894559 [info ]: Loading profiles.yml
+09:58:04.941477 [info ]: Cached model count updated: 22 models (estimate)
+09:58:04.941507 [info ]: Cached model count updated: 11 models (accurate)
+09:58:04.941564 [info ]: Started scheduling
+09:58:04.941818 [info ]: Finished scheduling [  0.00s]
+09:58:04.941846 [debug]: Compilation - 11 nodes selected: {"model.raqib_sf.stg_admissions", "model.raqib_sf.stg_diagnosis", "model.raqib_sf.stg_drugs", "model.raqib_sf.stg_emergency_contacts", "model.raqib_sf.stg_lab_events", "model.raqib_sf.stg_lab_specimen_types", "model.raqib_sf.stg_patients", "model.raqib_sf.stg_prescriptions", "model.raqib_sf.stg_providers", "model.raqib_sf.stg_services", "model.raqib_sf.stg_transfers"}
+09:58:05.453337 [info ]: Started building task graph
+09:58:05.453515 [info ]: Finished building task graph [  0.00s]
+09:58:05.453731 [info ]: Started rendering (11 nodes)
+09:58:05.453754 [info ]: Started model dbt_dev_staging.stg_transfers
+09:58:05.453769 [debug]: Started rendering model dbt_dev_staging.stg_transfers
+09:58:05.453822 [info ]: Started model dbt_dev_staging.stg_services
+09:58:05.453847 [debug]: Started rendering model dbt_dev_staging.stg_services
+09:58:05.453865 [info ]: Started model dbt_dev_staging.stg_providers
+09:58:05.453876 [debug]: Started rendering model dbt_dev_staging.stg_providers
+09:58:05.453880 [info ]: Finished loading project [  0.56s]
+09:58:05.453904 [info ]: Started model dbt_dev_staging.stg_prescriptions
+09:58:05.453925 [debug]: Started rendering model dbt_dev_staging.stg_prescriptions
+09:58:05.453960 [info ]: Started model dbt_dev_staging.stg_patients
+09:58:05.453980 [debug]: Started rendering model dbt_dev_staging.stg_patients
+09:58:05.454012 [info ]: Started model dbt_dev_staging.stg_lab_specimen_types
+09:58:05.454082 [debug]: Started rendering model dbt_dev_staging.stg_lab_specimen_types
+09:58:05.454126 [info ]: Started model dbt_dev_staging.stg_lab_events
+09:58:05.454151 [debug]: Started rendering model dbt_dev_staging.stg_lab_events
+09:58:05.454184 [info ]: Started model dbt_dev_staging.stg_emergency_contacts
+09:58:05.454233 [debug]: Started rendering model dbt_dev_staging.stg_emergency_contacts
+09:58:05.454271 [info ]: Started model dbt_dev_staging.stg_drugs
+09:58:05.454400 [debug]: Started rendering model dbt_dev_staging.stg_drugs
+09:58:05.454448 [info ]: Started model dbt_dev_staging.stg_diagnosis
+09:58:05.454471 [debug]: Started rendering model dbt_dev_staging.stg_diagnosis
+09:58:05.454506 [info ]: Started model dbt_dev_staging.stg_admissions
+09:58:05.454528 [debug]: Started rendering model dbt_dev_staging.stg_admissions
+09:58:05.456164 [error]: dbt1501: Failed to render SQL not a key type: Source not found for source name: raw, table name: drugs
+(in models/staging/stg_drugs.sql:3:10)
+  --> models/staging/stg_drugs.sql:3:10
+09:58:05.456221 [info ]: Started analyzing (11 nodes)
+09:58:05.456233 [debug]: Started analyzing model dbt_dev_staging.stg_drugs
+09:58:05.456255 [info ]:     Failed [  0.00s] model dbt_dev_staging.stg_drugs (ephemeral)
+09:58:05.456280 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_drugs [skipped]
+09:58:05.456318 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_drugs [error]
+09:58:05.458784 [debug]: Compiled SQL for node model.raqib_sf.stg_prescriptions at target/.lsp/compiled/models/staging/stg_prescriptions.sql
+09:58:05.459443 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_prescriptions [success]
+09:58:05.459580 [debug]: Compiled SQL for node model.raqib_sf.stg_services at target/.lsp/compiled/models/staging/stg_services.sql
+09:58:05.459598 [debug]: Started analyzing model dbt_dev_staging.stg_prescriptions
+09:58:05.459918 [debug]: Compiled SQL for node model.raqib_sf.stg_admissions at target/.lsp/compiled/models/staging/stg_admissions.sql
+09:58:05.460076 [debug]: Compiled SQL for node model.raqib_sf.stg_lab_specimen_types at target/.lsp/compiled/models/staging/stg_lab_specimen_types.sql
+09:58:05.460086 [debug]: Compiled SQL for node model.raqib_sf.stg_patients at target/.lsp/compiled/models/staging/stg_patients.sql
+09:58:05.460155 [debug]: Compiled SQL for node model.raqib_sf.stg_transfers at target/.lsp/compiled/models/staging/stg_transfers.sql
+09:58:05.460199 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_services [success]
+09:58:05.460229 [debug]: Compiled SQL for node model.raqib_sf.stg_diagnosis at target/.lsp/compiled/models/staging/stg_diagnosis.sql
+09:58:05.460249 [debug]: Compiled SQL for node model.raqib_sf.stg_providers at target/.lsp/compiled/models/staging/stg_providers.sql
+09:58:05.460310 [debug]: Compiled SQL for node model.raqib_sf.stg_emergency_contacts at target/.lsp/compiled/models/staging/stg_emergency_contacts.sql
+09:58:05.460319 [debug]: Started analyzing model dbt_dev_staging.stg_services
+09:58:05.460343 [debug]: Compiled SQL for node model.raqib_sf.stg_lab_events at target/.lsp/compiled/models/staging/stg_lab_events.sql
+09:58:05.460521 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_admissions [success]
+09:58:05.460579 [debug]: Started analyzing model dbt_dev_staging.stg_admissions
+09:58:05.460684 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_lab_specimen_types [success]
+09:58:05.460715 [debug]: Started analyzing model dbt_dev_staging.stg_lab_specimen_types
+09:58:05.460749 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_patients [success]
+09:58:05.460776 [debug]: Started analyzing model dbt_dev_staging.stg_patients
+09:58:05.460806 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_transfers [success]
+09:58:05.460839 [debug]: Started analyzing model dbt_dev_staging.stg_transfers
+09:58:05.460871 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_lab_events [success]
+09:58:05.460896 [debug]: Started analyzing model dbt_dev_staging.stg_lab_events
+09:58:05.460928 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_emergency_contacts [success]
+09:58:05.460970 [debug]: Started analyzing model dbt_dev_staging.stg_emergency_contacts
+09:58:05.461005 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_diagnosis [success]
+09:58:05.461700 [debug]: Started analyzing model dbt_dev_staging.stg_diagnosis
+09:58:05.461756 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_providers [success]
+09:58:05.461778 [info ]: Finished rendering [  0.01s] (11 nodes, 0 skipped, 1 errors)
+09:58:05.461805 [debug]: Started analyzing model dbt_dev_staging.stg_providers
+09:58:05.461847 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_lab_specimen_types (ephemeral)
+09:58:05.462430 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_lab_specimen_types [success]
+09:58:05.462659 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_admissions (ephemeral)
+09:58:05.462704 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_admissions [success]
+09:58:05.462745 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_prescriptions (ephemeral)
+09:58:05.462784 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_prescriptions [success]
+09:58:05.462818 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_emergency_contacts (ephemeral)
+09:58:05.462847 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_emergency_contacts [success]
+09:58:05.462881 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_transfers (ephemeral)
+09:58:05.462913 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_transfers [success]
+09:58:05.463220 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_lab_events (ephemeral)
+09:58:05.463250 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_lab_events [success]
+09:58:05.465484 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_providers (ephemeral)
+09:58:05.465517 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_providers [success]
+09:58:05.467640 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_patients (ephemeral)
+09:58:05.467674 [debug]: Finished analyzing [  0.01s] model dbt_dev_staging.stg_patients [success]
+09:58:05.470312 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_services (ephemeral)
+09:58:05.470351 [debug]: Finished analyzing [  0.01s] model dbt_dev_staging.stg_services [success]
+09:58:05.476709 [info ]:  Succeeded [  0.02s] model dbt_dev_staging.stg_diagnosis (ephemeral)
+09:58:05.476759 [debug]: Finished analyzing [  0.02s] model dbt_dev_staging.stg_diagnosis [success]
+09:58:05.476771 [info ]: Finished analyzing [  0.02s] (11 nodes, 1 skipped, 0 errors)
+09:58:05.489384 [info ]: Started scheduling
+09:58:05.489517 [info ]: Finished scheduling [  0.00s]
+09:58:05.496053 [info ]: Cached model count updated: 11 models (accurate)
+09:58:46.581844 [info ]: Started loading project
+09:58:46.582335 [info ]: Loading profiles.yml
+09:58:46.586736 [info ]: Started loading project
+09:58:46.587120 [info ]: Loading profiles.yml
+09:58:46.587178 [info ]: Finished loading project [  0.01s]
+09:58:47.046858 [info ]:    Started resolving packages from packages.yml
+09:58:47.167011 [info ]:   Finished [  0.12s] resolving packages from packages.yml (1 items)
+09:58:47.167243 [debug]:    Started loading packages
+09:58:47.171156 [debug]:     Loaded [  0.00s] packages
+09:58:47.172036 [info ]: Finished loading project [  0.59s]
+09:58:47.172404 [info ]: Started parsing
+09:58:47.236732 [debug]: Finished parsing models/intermediate/schema.yml [  0.00s]
+09:58:47.237370 [debug]: Finished parsing models/sources.yml [  0.00s]
+09:58:47.238503 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+09:58:47.242120 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_admissions.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_admissions.sql:7:5
+09:58:47.242405 [debug]: Finished parsing models/intermediate/int_admissions.sql [  0.00s]
+09:58:47.243931 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_diagnosis.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_diagnosis.sql:7:5
+09:58:47.244258 [debug]: Finished parsing models/intermediate/int_diagnosis.sql [  0.00s]
+09:58:47.245263 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_drugs.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_drugs.sql:7:5
+09:58:47.245476 [debug]: Finished parsing models/intermediate/int_drugs.sql [  0.00s]
+09:58:47.246806 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_emergency_contact.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_emergency_contact.sql:7:5
+09:58:47.247045 [debug]: Finished parsing models/intermediate/int_emergency_contact.sql [  0.00s]
+09:58:47.248142 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_lab_events.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_lab_events.sql:7:5
+09:58:47.248357 [debug]: Finished parsing models/intermediate/int_lab_events.sql [  0.00s]
+09:58:47.249148 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_lab_specimen_types.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_lab_specimen_types.sql:7:5
+09:58:47.249345 [debug]: Finished parsing models/intermediate/int_lab_specimen_types.sql [  0.00s]
+09:58:47.250476 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_patients.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_patients.sql:7:5
+09:58:47.250712 [debug]: Finished parsing models/intermediate/int_patients.sql [  0.00s]
+09:58:47.251619 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_prescriptions.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_prescriptions.sql:7:5
+09:58:47.251837 [debug]: Finished parsing models/intermediate/int_prescriptions.sql [  0.00s]
+09:58:47.252925 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_providers.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_providers.sql:7:5
+09:58:47.253227 [debug]: Finished parsing models/intermediate/int_providers.sql [  0.00s]
+09:58:47.254376 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_services.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_services.sql:7:5
+09:58:47.254602 [debug]: Finished parsing models/intermediate/int_services.sql [  0.00s]
+09:58:47.255488 [error]: dbt1501: Failed to render SQL unknown function: In dispatch: No macro named 'generate_surrogate_key' found within namespace: 'dbt_utils'
+    Searched for: 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.snowflake__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.default__generate_surrogate_key', 'raqib_sf.generate_surrogate_key', 'raqib_sf.generate_surrogate_key'
+(in models/intermediate/int_transfers.sql:7:5)
+(in dbt_packages/dbt_utils/macros/sql/generate_surrogate_key.sql:2:31)
+  --> models/intermediate/int_transfers.sql:7:5
+09:58:47.255804 [debug]: Finished parsing models/intermediate/int_transfers.sql [  0.00s]
+09:58:47.256827 [debug]: Finished parsing models/staging/stg_admissions.sql [  0.00s]
+09:58:47.257807 [debug]: Finished parsing models/staging/stg_diagnosis.sql [  0.00s]
+09:58:47.259024 [debug]: Finished parsing models/staging/stg_drugs.sql [  0.00s]
+09:58:47.260161 [debug]: Finished parsing models/staging/stg_emergency_contacts.sql [  0.00s]
+09:58:47.261394 [debug]: Finished parsing models/staging/stg_lab_events.sql [  0.00s]
+09:58:47.262670 [debug]: Finished parsing models/staging/stg_lab_specimen_types.sql [  0.00s]
+09:58:47.263523 [debug]: Finished parsing models/staging/stg_patients.sql [  0.00s]
+09:58:47.264492 [debug]: Finished parsing models/staging/stg_prescriptions.sql [  0.00s]
+09:58:47.265281 [debug]: Finished parsing models/staging/stg_providers.sql [  0.00s]
+09:58:47.266218 [debug]: Finished parsing models/staging/stg_services.sql [  0.00s]
+09:58:47.284184 [debug]: Finished parsing models/staging/stg_transfers.sql [  0.02s]
+09:58:47.285669 [error]: dbt1048: Source 'raw.drugs' not found in project. Searched for 'drugs'
+  --> models/staging/stg_drugs.sql:3:10
+09:58:47.287566 [info ]: Cached model count updated: 22 models (estimate)
+09:58:47.287583 [info ]: Cached model count updated: 11 models (accurate)
+09:58:47.287628 [info ]: Started scheduling
+09:58:47.287695 [info ]: Finished scheduling [  0.00s]
+09:58:47.287710 [debug]: Compilation - 0 nodes selected: {}
+09:58:47.287724 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+09:58:47.287734 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+09:58:47.287743 [info ]: Started scheduling
+09:58:47.287922 [info ]: Finished scheduling [  0.00s]
+09:58:47.288020 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "SERVICES" }) and interval: None
+09:58:47.288046 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "TRANSFERS" }) and interval: None
+09:58:47.288058 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "PATIENTS" }) and interval: None
+09:58:47.288068 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "PRESCRIPTIONS" }) and interval: None
+09:58:47.288078 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "DIAGNOSIS" }) and interval: None
+09:58:47.288088 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "EMERGENCY_CONTACTS" }) and interval: None
+09:58:47.288099 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "LAB_EVENTS" }) and interval: None
+09:58:47.288109 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "PROVIDERS" }) and interval: None
+09:58:47.288119 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "LAB_SPECIMEN_TYPES" }) and interval: None
+09:58:47.288129 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "ADMISSIONS" }) and interval: None
+09:58:47.814956 [info ]: Started building task graph
+09:58:47.814994 [info ]: Finished building task graph [  0.00s]
+09:58:47.825032 [info ]: Started scheduling
+09:58:47.825119 [info ]: Finished scheduling [  0.00s]
+09:58:47.837073 [info ]: Cached model count updated: 11 models (accurate)
+09:58:47.837133 [info ]: Finished parsing [  0.66s]
+09:58:48.977669 [info ]: Started loading project
+09:58:48.978142 [info ]: Loading profiles.yml
+09:58:49.022927 [info ]: Cached model count updated: 22 models (estimate)
+09:58:49.022957 [info ]: Cached model count updated: 11 models (accurate)
+09:58:49.023012 [info ]: Started scheduling
+09:58:49.023223 [info ]: Finished scheduling [  0.00s]
+09:58:49.023244 [debug]: Compilation - 11 nodes selected: {"model.raqib_sf.stg_admissions", "model.raqib_sf.stg_diagnosis", "model.raqib_sf.stg_drugs", "model.raqib_sf.stg_emergency_contacts", "model.raqib_sf.stg_lab_events", "model.raqib_sf.stg_lab_specimen_types", "model.raqib_sf.stg_patients", "model.raqib_sf.stg_prescriptions", "model.raqib_sf.stg_providers", "model.raqib_sf.stg_services", "model.raqib_sf.stg_transfers"}
+09:58:49.603696 [info ]: Started building task graph
+09:58:49.603977 [info ]: Finished building task graph [  0.00s]
+09:58:49.604358 [info ]: Started rendering (11 nodes)
+09:58:49.604425 [info ]: Started model dbt_dev_staging.stg_transfers
+09:58:49.604468 [debug]: Started rendering model dbt_dev_staging.stg_transfers
+09:58:49.604526 [info ]: Started model dbt_dev_staging.stg_services
+09:58:49.604548 [debug]: Started rendering model dbt_dev_staging.stg_services
+09:58:49.604582 [info ]: Started model dbt_dev_staging.stg_providers
+09:58:49.604602 [debug]: Started rendering model dbt_dev_staging.stg_providers
+09:58:49.604631 [info ]: Started model dbt_dev_staging.stg_prescriptions
+09:58:49.604651 [debug]: Started rendering model dbt_dev_staging.stg_prescriptions
+09:58:49.604681 [info ]: Started model dbt_dev_staging.stg_patients
+09:58:49.604963 [info ]: Finished loading project [  0.63s]
+09:58:49.604805 [debug]: Started rendering model dbt_dev_staging.stg_patients
+09:58:49.605025 [info ]: Started model dbt_dev_staging.stg_lab_specimen_types
+09:58:49.605050 [debug]: Started rendering model dbt_dev_staging.stg_lab_specimen_types
+09:58:49.605080 [info ]: Started model dbt_dev_staging.stg_lab_events
+09:58:49.605100 [debug]: Started rendering model dbt_dev_staging.stg_lab_events
+09:58:49.605135 [info ]: Started model dbt_dev_staging.stg_emergency_contacts
+09:58:49.605159 [debug]: Started rendering model dbt_dev_staging.stg_emergency_contacts
+09:58:49.605202 [info ]: Started model dbt_dev_staging.stg_drugs
+09:58:49.605225 [debug]: Started rendering model dbt_dev_staging.stg_drugs
+09:58:49.605260 [info ]: Started model dbt_dev_staging.stg_diagnosis
+09:58:49.605284 [debug]: Started rendering model dbt_dev_staging.stg_diagnosis
+09:58:49.605320 [info ]: Started model dbt_dev_staging.stg_admissions
+09:58:49.605341 [debug]: Started rendering model dbt_dev_staging.stg_admissions
+09:58:49.607512 [debug]: Compiled SQL for node model.raqib_sf.stg_patients at target/.lsp/compiled/models/staging/stg_patients.sql
+09:58:49.608803 [debug]: Compiled SQL for node model.raqib_sf.stg_emergency_contacts at target/.lsp/compiled/models/staging/stg_emergency_contacts.sql
+09:58:49.610665 [info ]: Started analyzing (11 nodes)
+09:58:49.610688 [debug]: Started analyzing model dbt_dev_staging.stg_patients
+09:58:49.610737 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_patients [success]
+09:58:49.610743 [debug]: Compiled SQL for node model.raqib_sf.stg_prescriptions at target/.lsp/compiled/models/staging/stg_prescriptions.sql
+09:58:49.611353 [debug]: Compiled SQL for node model.raqib_sf.stg_providers at target/.lsp/compiled/models/staging/stg_providers.sql
+09:58:49.611466 [error]: dbt1501: Failed to render SQL not a key type: Source not found for source name: raw, table name: drugs
+(in models/staging/stg_drugs.sql:3:10)
+  --> models/staging/stg_drugs.sql:3:10
+09:58:49.611522 [debug]: Started analyzing model dbt_dev_staging.stg_drugs
+09:58:49.611556 [info ]:     Failed [  0.01s] model dbt_dev_staging.stg_drugs (ephemeral)
+09:58:49.611592 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_drugs [skipped]
+09:58:49.611641 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_drugs [error]
+09:58:49.611734 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_emergency_contacts [success]
+09:58:49.611775 [debug]: Started analyzing model dbt_dev_staging.stg_emergency_contacts
+09:58:49.611975 [debug]: Compiled SQL for node model.raqib_sf.stg_lab_events at target/.lsp/compiled/models/staging/stg_lab_events.sql
+09:58:49.612126 [debug]: Compiled SQL for node model.raqib_sf.stg_lab_specimen_types at target/.lsp/compiled/models/staging/stg_lab_specimen_types.sql
+09:58:49.612205 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_emergency_contacts (ephemeral)
+09:58:49.612250 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_emergency_contacts [success]
+09:58:49.612322 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_prescriptions [success]
+09:58:49.612357 [debug]: Started analyzing model dbt_dev_staging.stg_prescriptions
+09:58:49.612721 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_prescriptions (ephemeral)
+09:58:49.612877 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_prescriptions [success]
+09:58:49.611448 [debug]: Compiled SQL for node model.raqib_sf.stg_admissions at target/.lsp/compiled/models/staging/stg_admissions.sql
+09:58:49.613019 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_providers [success]
+09:58:49.613063 [debug]: Started analyzing model dbt_dev_staging.stg_providers
+09:58:49.613105 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_lab_events [success]
+09:58:49.613135 [debug]: Started analyzing model dbt_dev_staging.stg_lab_events
+09:58:49.613170 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_lab_specimen_types [success]
+09:58:49.613198 [debug]: Started analyzing model dbt_dev_staging.stg_lab_specimen_types
+09:58:49.613286 [debug]: Compiled SQL for node model.raqib_sf.stg_transfers at target/.lsp/compiled/models/staging/stg_transfers.sql
+09:58:49.613533 [debug]: Compiled SQL for node model.raqib_sf.stg_diagnosis at target/.lsp/compiled/models/staging/stg_diagnosis.sql
+09:58:49.613722 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_admissions [success]
+09:58:49.613764 [debug]: Started analyzing model dbt_dev_staging.stg_admissions
+09:58:49.614018 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_diagnosis [success]
+09:58:49.614071 [debug]: Started analyzing model dbt_dev_staging.stg_diagnosis
+09:58:49.614849 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_transfers [success]
+09:58:49.614893 [debug]: Started analyzing model dbt_dev_staging.stg_transfers
+09:58:49.614932 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_admissions (ephemeral)
+09:58:49.614971 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_admissions [success]
+09:58:49.615646 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_transfers (ephemeral)
+09:58:49.615714 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_transfers [success]
+09:58:49.615969 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_lab_specimen_types (ephemeral)
+09:58:49.616175 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_lab_specimen_types [success]
+09:58:49.617029 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_lab_events (ephemeral)
+09:58:49.617076 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_lab_events [success]
+09:58:49.618604 [debug]: Compiled SQL for node model.raqib_sf.stg_services at target/.lsp/compiled/models/staging/stg_services.sql
+09:58:49.618891 [debug]: Finished rendering [  0.01s] model dbt_dev_staging.stg_services [success]
+09:58:49.619021 [info ]: Finished rendering [  0.01s] (11 nodes, 0 skipped, 1 errors)
+09:58:49.619063 [debug]: Started analyzing model dbt_dev_staging.stg_services
+09:58:49.620003 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_providers (ephemeral)
+09:58:49.620059 [debug]: Finished analyzing [  0.01s] model dbt_dev_staging.stg_providers [success]
+09:58:49.624021 [info ]:  Succeeded [  0.02s] model dbt_dev_staging.stg_patients (ephemeral)
+09:58:49.624071 [debug]: Finished analyzing [  0.01s] model dbt_dev_staging.stg_patients [success]
+09:58:49.634752 [info ]:  Succeeded [  0.03s] model dbt_dev_staging.stg_services (ephemeral)
+09:58:49.634810 [debug]: Finished analyzing [  0.02s] model dbt_dev_staging.stg_services [success]
+09:58:49.644854 [info ]:  Succeeded [  0.04s] model dbt_dev_staging.stg_diagnosis (ephemeral)
+09:58:49.644941 [debug]: Finished analyzing [  0.03s] model dbt_dev_staging.stg_diagnosis [success]
+09:58:49.644967 [info ]: Finished analyzing [  0.03s] (11 nodes, 1 skipped, 0 errors)
+09:58:49.661098 [info ]: Started scheduling
+09:58:49.661181 [info ]: Finished scheduling [  0.00s]
+09:58:49.670750 [info ]: Cached model count updated: 11 models (accurate)
