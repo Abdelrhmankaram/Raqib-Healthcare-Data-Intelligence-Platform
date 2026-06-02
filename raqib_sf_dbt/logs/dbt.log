@@ -10181,3 +10181,3153 @@ FROM stg_prescriptions
 [0m15:42:44.182738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de018e07ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ddff30740a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7de018d90a90>]}
 [0m15:42:44.183193 [debug] [MainThread]: Flushing usage events
 [0m15:42:44.879025 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:07:28.429837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd39c8fee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd38bbc310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd38bbc2b0>]}
+
+
+============================== 17:07:28.432473 | 8e4ce636-7c57-42db-b7fa-d5667739c5cf ==============================
+[0m17:07:28.432473 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:07:28.433010 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'log_format': 'default', 'quiet': 'False', 'static_parser': 'True', 'invocation_command': 'dbt run -s models/intermediate/int_clinical_events.sql', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'version_check': 'True', 'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'introspect': 'True', 'profiles_dir': '/home/youssef/.dbt', 'log_path': '/home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/logs', 'indirect_selection': 'eager', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'printer_width': '80'}
+[0m17:07:28.984803 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m17:07:28.985385 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m17:07:28.985832 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m17:07:29.202595 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8e4ce636-7c57-42db-b7fa-d5667739c5cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd13f500a0>]}
+[0m17:07:29.277158 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8e4ce636-7c57-42db-b7fa-d5667739c5cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd38b6a620>]}
+[0m17:07:29.277952 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m17:07:29.395263 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:07:29.557615 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m17:07:29.558759 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models/intermediate/int_clinical_events.sql
+[0m17:07:29.962033 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.raqib_sf.marts
+[0m17:07:29.982677 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8e4ce636-7c57-42db-b7fa-d5667739c5cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd13fadc00>]}
+[0m17:07:30.134349 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:07:30.136529 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:07:30.148174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8e4ce636-7c57-42db-b7fa-d5667739c5cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd125d5120>]}
+[0m17:07:30.148795 [info ] [MainThread]: Found 22 models, 50 data tests, 11 sources, 653 macros
+[0m17:07:30.149212 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8e4ce636-7c57-42db-b7fa-d5667739c5cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd125d5d80>]}
+[0m17:07:30.152529 [info ] [MainThread]: 
+[0m17:07:30.152974 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:07:30.153398 [info ] [MainThread]: 
+[0m17:07:30.153983 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:07:30.154880 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m17:07:30.191402 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m17:07:30.191898 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m17:07:30.192293 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:07:31.161572 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.969 seconds
+[0m17:07:31.189063 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_dbt_dev_intermediate)
+[0m17:07:31.223421 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev_intermediate"
+[0m17:07:31.224023 [debug] [ThreadPool]: On list_dev_dbt_dev_intermediate: show objects in dev.dbt_dev_intermediate
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev_intermediate"} */;
+[0m17:07:31.426280 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.202 seconds
+[0m17:07:31.440302 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8e4ce636-7c57-42db-b7fa-d5667739c5cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd38b41f00>]}
+[0m17:07:31.449156 [debug] [Thread-2 (]: Began running node model.raqib_sf.int_clinical_events
+[0m17:07:31.451583 [info ] [Thread-2 (]: 1 of 1 START sql view model dbt_dev_intermediate.int_clinical_events ........... [RUN]
+[0m17:07:31.453634 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev_intermediate, now model.raqib_sf.int_clinical_events)
+[0m17:07:31.455379 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.int_clinical_events
+[0m17:07:31.494969 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:07:31.499473 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:07:31.503458 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:07:31.507171 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:07:31.511075 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:07:31.515779 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:07:31.519386 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:07:31.549257 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:07:31.549966 [debug] [Thread-2 (]: Began executing node model.raqib_sf.int_clinical_events
+[0m17:07:31.580843 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.int_clinical_events"
+[0m17:07:31.589426 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.int_clinical_events"
+[0m17:07:31.590304 [debug] [Thread-2 (]: On model.raqib_sf.int_clinical_events: create or replace   view dev.dbt_dev_intermediate.int_clinical_events
+  
+  
+  
+  
+  as (
+    WITH  __dbt__cte__stg_admissions as (
+WITH raw_admissions AS (
+    SELECT * 
+    FROM raw.public.admissions
+)
+
+SELECT 
+    admission_id,
+    patient_id,
+    admission_provider_id AS provider_id,
+    CAST(admission_datetime_in AS TIMESTAMP) AS admitted_in_timestamp,
+    CAST(admission_datetime_out AS TIMESTAMP) AS admitted_out_timestamp,
+    UPPER(LEFT(admission_type, 1)) || LOWER(SUBSTR(admission_type, 2)) AS admission_type,
+    admission_location,
+    discharge_location,
+    INITCAP(insurance_type) AS insurance_type,
+    total_cost,
+    payer_coverage,
+    hospital_expire_flag,
+    primary_sdk
+
+FROM raw_admissions
+),  __dbt__cte__stg_diagnosis as (
+WITH raw_diagnosis AS (
+    SELECT * 
+    FROM raw.public.diagnosis
+)
+
+SELECT 
+    diagnosis_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    sub_domain_key,
+    TRIM(REGEXP_REPLACE(description, '\\s*\\([^)]+\\)', '')) AS description,
+    REGEXP_SUBSTR(description, '\\(([^)]+)\\)', 1, 1, 'e', 1) AS description_type,
+    TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 1)) AS sub_domain_1,
+    NULLIF(TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 2)), '') AS sub_domain_2
+FROM raw_diagnosis
+),  __dbt__cte__stg_lab_events as (
+WITH raw_lab_events AS (
+
+    SELECT *
+    FROM raw.public.lab_events
+
+)
+
+SELECT
+    lab_event_id,
+    patient_id,
+    admission_id,
+    specimen_id,
+    item_id,
+    provider_id,
+    CONVERT_TIMEZONE('UTC', done_datetime::TIMESTAMP_TZ)    AS lab_done_at,
+    CONVERT_TIMEZONE('UTC', stored_datetime::TIMESTAMP_TZ)  AS lab_stored_at,
+    TRY_CAST(value AS FLOAT) AS result_value,
+    TRIM(measurement_unit) AS measurement_unit,
+    TRY_CAST(range_lower AS FLOAT) AS range_lower,
+    TRY_CAST(range_higher AS FLOAT) AS range_higher,
+    TRIM(abnormal_flag) AS abnormal_flag,
+    TRY_CAST(cost AS FLOAT) AS cost
+
+FROM raw_lab_events
+),  __dbt__cte__stg_prescriptions as (
+WITH raw_prescriptions AS (
+    SELECT *
+    FROM raw.public.prescriptions 
+)
+SELECT 
+    prescription_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    drug_id,
+    prescribed_date,
+    INITCAP(status) AS status
+FROM raw_prescriptions
+),  __dbt__cte__stg_services as (
+WITH raw_services AS (
+    SELECT *
+    FROM raw.public.services
+)
+
+SELECT 
+    patient_id,
+    admission_id,
+    service_id,
+    REGEXP_LIKE(service_id, '^SVC[0-9]+$') AS is_valid_service_id,
+    CASE 
+        WHEN CONTAINS(service_name, '–') 
+        THEN TRIM(SPLIT_PART(service_name, '–', 1))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(SPLIT_PART(service_name, '(', 1))
+        ELSE service_name 
+    END AS service_name,
+
+    CASE 
+        WHEN CONTAINS(service_name, '–')
+        THEN TRIM(SPLIT_PART(service_name, '–', 2))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(REPLACE(SPLIT_PART(service_name, '(', 2), ')', ''))
+        ELSE NULL
+    END AS service_sub_type,
+    INITCAP(category) AS category,
+    TRY_CAST(cost AS FLOAT) AS cost,
+    duration AS service_duration_in_minutes
+    
+FROM raw_services
+),  __dbt__cte__stg_transfers as (
+WITH raw_transfers AS (
+    SELECT *
+    FROM raw.public.transfers
+)
+
+SELECT 
+    transfer_id,
+    patient_id,
+    provider_id,
+    from_department,
+    to_department,
+    (from_department = to_department) AS is_same_department_transfer,
+    from_room,
+    to_room,
+    (from_room = to_room) AS is_same_room_transfer,
+    REGEXP_LIKE(from_room, '^R[0-9]+$') AND REGEXP_LIKE(to_room, '^R[0-9]+$') AS is_valid_room,
+    CAST(transfer_datetime AS TIMESTAMP) AS transfer_datetime,
+    transfer_reason
+    
+FROM raw_transfers
+),  __dbt__cte__stg_drugs as (
+with raw_drugs as (
+    select * 
+    from raw.public.drugs
+)
+
+select 
+    drug_id,
+    case 
+        when brand_name is not null then initcap(brand_name)
+        when brand_name is null and generic_name like 'Atropine Sulfate Injection%' then 'AtroPen'
+        when brand_name is null and generic_name like 'Midazolam Injection%' then 'Versed'
+    end as brand_name,
+    case 
+        when generic_name is not null then initcap(generic_name) 
+        when generic_name is null then brand_name
+    end as generic_name,
+    initcap(route) as route,
+    indications,
+    dosage,
+    contraindications,
+    side_effects,
+    warnings,
+    has_contraindications,
+    has_side_effects
+    
+from raw_drugs
+where not (
+    generic_name = 'Tadalafil'
+    AND brand_name is null
+)
+), admissions AS (
+    SELECT *
+    FROM __dbt__cte__stg_admissions
+),
+
+diagnosis AS (
+    SELECT *
+    FROM __dbt__cte__stg_diagnosis
+),
+
+lab_events AS (
+    SELECT *
+    FROM __dbt__cte__stg_lab_events
+),
+
+prescriptions AS (
+    SELECT *
+    FROM __dbt__cte__stg_prescriptions
+),
+
+services AS (
+    SELECT *
+    FROM __dbt__cte__stg_services
+),
+
+transfers AS (
+    SELECT *
+    FROM __dbt__cte__stg_transfers
+),
+
+drugs AS (
+    SELECT *
+    FROM __dbt__cte__stg_drugs
+),
+
+-- =====================
+-- DIAGNOSIS EVENTS
+-- =====================
+
+diagnosis_events AS (
+
+    SELECT
+        d.patient_id,
+        d.admission_id,
+        d.provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'DIAGNOSIS' AS event_type,
+
+        d.description AS event_detail,
+
+        COALESCE(
+            d.sub_domain_1,
+            d.sub_domain_2,
+            'General'
+        ) AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        NULL AS status_flag
+
+    FROM diagnosis d
+
+    LEFT JOIN admissions a
+        ON d.admission_id = a.admission_id
+),
+
+-- =====================
+-- LAB EVENTS
+-- =====================
+
+lab_timeline AS (
+
+    SELECT
+        patient_id,
+        admission_id,
+        provider_id,
+
+        lab_done_at AS event_timestamp,
+
+        'LAB' AS event_type,
+
+        CONCAT(
+            'Lab result: ',
+            item_id
+        ) AS event_detail,
+
+        item_id AS category,
+
+        result_value AS numeric_value,
+
+        measurement_unit AS unit,
+
+        abnormal_flag AS status_flag
+
+    FROM lab_events
+),
+
+-- =====================
+-- PRESCRIPTION EVENTS
+-- =====================
+
+prescription_events AS (
+
+    SELECT
+        p.patient_id,
+        p.admission_id,
+        p.provider_id,
+
+        p.prescribed_date AS event_timestamp,
+
+        'PRESCRIPTION' AS event_type,
+
+        COALESCE(
+            d.generic_name,
+            d.brand_name
+        ) AS event_detail,
+
+        d.route AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        p.status AS status_flag
+
+    FROM prescriptions p
+
+    LEFT JOIN drugs d
+        ON p.drug_id = d.drug_id
+),
+
+-- =====================
+-- SERVICE EVENTS
+-- =====================
+
+service_events AS (
+
+    SELECT
+        s.patient_id,
+        s.admission_id,
+
+        NULL AS provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'SERVICE' AS event_type,
+
+        s.service_name AS event_detail,
+
+        s.category AS category,
+
+        s.cost AS numeric_value,
+
+        'USD' AS unit,
+
+        NULL AS status_flag
+
+    FROM services s
+
+    LEFT JOIN admissions a
+        ON s.admission_id = a.admission_id
+),
+
+-- =====================
+-- TRANSFER EVENTS
+-- =====================
+
+transfer_events AS (
+
+    SELECT
+        patient_id,
+        NULL AS admission_id,
+        provider_id,
+
+        transfer_datetime AS event_timestamp,
+
+        'TRANSFER' AS event_type,
+
+        CONCAT(
+            from_department,
+            ' → ',
+            to_department
+        ) AS event_detail,
+
+        transfer_reason AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        CASE
+            WHEN is_same_department_transfer
+                THEN 'SAME_DEPARTMENT'
+            ELSE 'DEPARTMENT_CHANGE'
+        END AS status_flag
+
+    FROM transfers
+)
+
+SELECT * FROM diagnosis_events
+
+UNION ALL
+
+SELECT * FROM lab_timeline
+
+UNION ALL
+
+SELECT * FROM prescription_events
+
+UNION ALL
+
+SELECT * FROM service_events
+
+UNION ALL
+
+SELECT * FROM transfer_events
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.int_clinical_events"} */;
+[0m17:07:31.940704 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c4c80f-0001-cf14-0002-8ab600050826
+[0m17:07:31.942605 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 000904 (42000): SQL compilation error: error line 125 at position 4
+invalid identifier 'PROVIDER_ID'
+[0m17:07:31.947670 [debug] [Thread-2 (]: Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  000904 (42000): SQL compilation error: error line 125 at position 4
+  invalid identifier 'PROVIDER_ID'
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:07:31.954242 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8e4ce636-7c57-42db-b7fa-d5667739c5cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd1175e8f0>]}
+[0m17:07:31.957124 [error] [Thread-2 (]: 1 of 1 ERROR creating sql view model dbt_dev_intermediate.int_clinical_events .. [[31mERROR[0m in 0.50s]
+[0m17:07:31.959887 [debug] [Thread-2 (]: Finished running node model.raqib_sf.int_clinical_events
+[0m17:07:31.962460 [debug] [Thread-8 (]: Marking all children of 'model.raqib_sf.int_clinical_events' to be skipped because of status 'error'.  Reason: Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  000904 (42000): SQL compilation error: error line 125 at position 4
+  invalid identifier 'PROVIDER_ID'
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql.
+[0m17:07:31.968444 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:07:31.969974 [debug] [MainThread]: Connection 'model.raqib_sf.int_clinical_events' was left open.
+[0m17:07:31.971420 [debug] [MainThread]: On model.raqib_sf.int_clinical_events: Close
+[0m17:07:32.163698 [info ] [MainThread]: 
+[0m17:07:32.165627 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.01 seconds (2.01s).
+[0m17:07:32.168764 [debug] [MainThread]: Command end result
+[0m17:07:32.258592 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:07:32.260453 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:07:32.267471 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/run_results.json
+[0m17:07:32.267898 [info ] [MainThread]: 
+[0m17:07:32.268420 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:07:32.268833 [info ] [MainThread]: 
+[0m17:07:32.269326 [error] [MainThread]: [31mFailure in model int_clinical_events (models/intermediate/int_clinical_events.sql)[0m
+[0m17:07:32.269802 [error] [MainThread]:   Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  000904 (42000): SQL compilation error: error line 125 at position 4
+  invalid identifier 'PROVIDER_ID'
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:07:32.270187 [info ] [MainThread]: 
+[0m17:07:32.270665 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:07:32.271034 [info ] [MainThread]: 
+[0m17:07:32.271472 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:07:32.272357 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.9138734, "process_in_blocks": "16", "process_kernel_time": 0.168927, "process_mem_max_rss": "233432", "process_out_blocks": "5928", "process_user_time": 4.374109}
+[0m17:07:32.272848 [debug] [MainThread]: Command `dbt run` failed at 17:07:32.272743 after 3.91 seconds
+[0m17:07:32.273266 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd39c8fee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd13a15570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76bd1068acb0>]}
+[0m17:07:32.273704 [debug] [MainThread]: Flushing usage events
+[0m17:07:33.268361 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:08:35.106731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a771ca7eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a770a00310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a770a002b0>]}
+
+
+============================== 17:08:35.109299 | 3c6cec9f-9d65-499c-9100-0f6fe519a0a9 ==============================
+[0m17:08:35.109299 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:08:35.109913 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run -s models/intermediate/int_clinical_events.sql', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'target_path': 'None', 'no_print': 'None', 'warn_error': 'None', 'cache_selected_only': 'False', 'profiles_dir': '/home/youssef/.dbt', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'log_path': '/home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/logs', 'static_parser': 'True', 'write_json': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'quiet': 'False', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False'}
+[0m17:08:35.660760 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m17:08:35.661325 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m17:08:35.661764 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m17:08:35.878706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3c6cec9f-9d65-499c-9100-0f6fe519a0a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a770b80b80>]}
+[0m17:08:35.954637 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3c6cec9f-9d65-499c-9100-0f6fe519a0a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a773690c10>]}
+[0m17:08:35.955432 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m17:08:36.063397 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:08:36.226391 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:08:36.227627 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models/intermediate/int_clinical_events.sql
+[0m17:08:36.631293 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.raqib_sf.marts
+[0m17:08:36.651628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3c6cec9f-9d65-499c-9100-0f6fe519a0a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a7507995d0>]}
+[0m17:08:36.800833 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:08:36.803013 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:08:36.814753 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3c6cec9f-9d65-499c-9100-0f6fe519a0a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a74a503df0>]}
+[0m17:08:36.815364 [info ] [MainThread]: Found 22 models, 50 data tests, 11 sources, 653 macros
+[0m17:08:36.815804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3c6cec9f-9d65-499c-9100-0f6fe519a0a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a750332ec0>]}
+[0m17:08:36.819034 [info ] [MainThread]: 
+[0m17:08:36.819472 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:08:36.819841 [info ] [MainThread]: 
+[0m17:08:36.820397 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:08:36.821332 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m17:08:36.855616 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m17:08:36.856102 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m17:08:36.856498 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:08:37.527540 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.671 seconds
+[0m17:08:37.557797 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_dbt_dev_intermediate)
+[0m17:08:37.597446 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev_intermediate"
+[0m17:08:37.598169 [debug] [ThreadPool]: On list_dev_dbt_dev_intermediate: show objects in dev.dbt_dev_intermediate
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev_intermediate"} */;
+[0m17:08:37.772537 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.173 seconds
+[0m17:08:37.786207 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3c6cec9f-9d65-499c-9100-0f6fe519a0a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a74a502320>]}
+[0m17:08:37.794907 [debug] [Thread-2 (]: Began running node model.raqib_sf.int_clinical_events
+[0m17:08:37.797521 [info ] [Thread-2 (]: 1 of 1 START sql view model dbt_dev_intermediate.int_clinical_events ........... [RUN]
+[0m17:08:37.799757 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev_intermediate, now model.raqib_sf.int_clinical_events)
+[0m17:08:37.801441 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.int_clinical_events
+[0m17:08:37.838269 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:08:37.843984 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:08:37.848138 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:08:37.851854 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:08:37.855703 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:08:37.860301 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:08:37.864936 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:08:37.899063 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:08:37.899996 [debug] [Thread-2 (]: Began executing node model.raqib_sf.int_clinical_events
+[0m17:08:37.934629 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.int_clinical_events"
+[0m17:08:37.942921 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.int_clinical_events"
+[0m17:08:37.943881 [debug] [Thread-2 (]: On model.raqib_sf.int_clinical_events: create or replace   view dev.dbt_dev_intermediate.int_clinical_events
+  
+  
+  
+  
+  as (
+    WITH  __dbt__cte__stg_admissions as (
+WITH raw_admissions AS (
+    SELECT * 
+    FROM raw.public.admissions
+)
+
+SELECT 
+    admission_id,
+    patient_id,
+    admission_provider_id AS provider_id,
+    CAST(admission_datetime_in AS TIMESTAMP) AS admitted_in_timestamp,
+    CAST(admission_datetime_out AS TIMESTAMP) AS admitted_out_timestamp,
+    UPPER(LEFT(admission_type, 1)) || LOWER(SUBSTR(admission_type, 2)) AS admission_type,
+    admission_location,
+    discharge_location,
+    INITCAP(insurance_type) AS insurance_type,
+    total_cost,
+    payer_coverage,
+    hospital_expire_flag,
+    primary_sdk
+
+FROM raw_admissions
+),  __dbt__cte__stg_diagnosis as (
+WITH raw_diagnosis AS (
+    SELECT * 
+    FROM raw.public.diagnosis
+)
+
+SELECT 
+    diagnosis_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    sub_domain_key,
+    TRIM(REGEXP_REPLACE(description, '\\s*\\([^)]+\\)', '')) AS description,
+    REGEXP_SUBSTR(description, '\\(([^)]+)\\)', 1, 1, 'e', 1) AS description_type,
+    TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 1)) AS sub_domain_1,
+    NULLIF(TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 2)), '') AS sub_domain_2
+FROM raw_diagnosis
+),  __dbt__cte__stg_lab_events as (
+WITH raw_lab_events AS (
+
+    SELECT *
+    FROM raw.public.lab_events
+
+)
+
+SELECT
+    lab_event_id,
+    patient_id,
+    admission_id,
+    specimen_id,
+    item_id,
+    provider_id,
+    CONVERT_TIMEZONE('UTC', done_datetime::TIMESTAMP_TZ)    AS lab_done_at,
+    CONVERT_TIMEZONE('UTC', stored_datetime::TIMESTAMP_TZ)  AS lab_stored_at,
+    TRY_CAST(value AS FLOAT) AS result_value,
+    TRIM(measurement_unit) AS measurement_unit,
+    TRY_CAST(range_lower AS FLOAT) AS range_lower,
+    TRY_CAST(range_higher AS FLOAT) AS range_higher,
+    TRIM(abnormal_flag) AS abnormal_flag,
+    TRY_CAST(cost AS FLOAT) AS cost
+
+FROM raw_lab_events
+),  __dbt__cte__stg_prescriptions as (
+WITH raw_prescriptions AS (
+    SELECT *
+    FROM raw.public.prescriptions 
+)
+SELECT 
+    prescription_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    drug_id,
+    prescribed_date,
+    INITCAP(status) AS status
+FROM raw_prescriptions
+),  __dbt__cte__stg_services as (
+WITH raw_services AS (
+    SELECT *
+    FROM raw.public.services
+)
+
+SELECT 
+    patient_id,
+    admission_id,
+    service_id,
+    REGEXP_LIKE(service_id, '^SVC[0-9]+$') AS is_valid_service_id,
+    CASE 
+        WHEN CONTAINS(service_name, '–') 
+        THEN TRIM(SPLIT_PART(service_name, '–', 1))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(SPLIT_PART(service_name, '(', 1))
+        ELSE service_name 
+    END AS service_name,
+
+    CASE 
+        WHEN CONTAINS(service_name, '–')
+        THEN TRIM(SPLIT_PART(service_name, '–', 2))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(REPLACE(SPLIT_PART(service_name, '(', 2), ')', ''))
+        ELSE NULL
+    END AS service_sub_type,
+    INITCAP(category) AS category,
+    TRY_CAST(cost AS FLOAT) AS cost,
+    duration AS service_duration_in_minutes
+    
+FROM raw_services
+),  __dbt__cte__stg_transfers as (
+WITH raw_transfers AS (
+    SELECT *
+    FROM raw.public.transfers
+)
+
+SELECT 
+    transfer_id,
+    patient_id,
+    provider_id,
+    from_department,
+    to_department,
+    (from_department = to_department) AS is_same_department_transfer,
+    from_room,
+    to_room,
+    (from_room = to_room) AS is_same_room_transfer,
+    REGEXP_LIKE(from_room, '^R[0-9]+$') AND REGEXP_LIKE(to_room, '^R[0-9]+$') AS is_valid_room,
+    CAST(transfer_datetime AS TIMESTAMP) AS transfer_datetime,
+    transfer_reason
+    
+FROM raw_transfers
+),  __dbt__cte__stg_drugs as (
+with raw_drugs as (
+    select * 
+    from raw.public.drugs
+)
+
+select 
+    drug_id,
+    case 
+        when brand_name is not null then initcap(brand_name)
+        when brand_name is null and generic_name like 'Atropine Sulfate Injection%' then 'AtroPen'
+        when brand_name is null and generic_name like 'Midazolam Injection%' then 'Versed'
+    end as brand_name,
+    case 
+        when generic_name is not null then initcap(generic_name) 
+        when generic_name is null then brand_name
+    end as generic_name,
+    initcap(route) as route,
+    indications,
+    dosage,
+    contraindications,
+    side_effects,
+    warnings,
+    has_contraindications,
+    has_side_effects
+    
+from raw_drugs
+where not (
+    generic_name = 'Tadalafil'
+    AND brand_name is null
+)
+), admissions AS (
+    SELECT *
+    FROM __dbt__cte__stg_admissions
+),
+
+diagnosis AS (
+    SELECT *
+    FROM __dbt__cte__stg_diagnosis
+),
+
+lab_events AS (
+    SELECT *
+    FROM __dbt__cte__stg_lab_events
+),
+
+prescriptions AS (
+    SELECT *
+    FROM __dbt__cte__stg_prescriptions
+),
+
+services AS (
+    SELECT *
+    FROM __dbt__cte__stg_services
+),
+
+transfers AS (
+    SELECT *
+    FROM __dbt__cte__stg_transfers
+),
+
+drugs AS (
+    SELECT *
+    FROM __dbt__cte__stg_drugs
+),
+
+-- =====================
+-- DIAGNOSIS EVENTS
+-- =====================
+
+diagnosis_events AS (
+
+    SELECT
+        d.patient_id,
+        d.admission_id,
+        d.provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'DIAGNOSIS' AS event_type,
+
+        d.description AS event_detail,
+
+        COALESCE(
+            d.sub_domain_1,
+            d.sub_domain_2,
+            'General'
+        ) AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        NULL AS status_flag
+
+    FROM diagnosis d
+
+    LEFT JOIN admissions a
+        ON d.admission_id = a.admission_id
+),
+
+-- =====================
+-- LAB EVENTS
+-- =====================
+
+lab_timeline AS (
+
+    SELECT
+        patient_id,
+        admission_id,
+        provider_id,
+
+        lab_done_at AS event_timestamp,
+
+        'LAB' AS event_type,
+
+        CONCAT(
+            'Lab result: ',
+            item_id
+        ) AS event_detail,
+
+        item_id AS category,
+
+        result_value AS numeric_value,
+
+        measurement_unit AS unit,
+
+        abnormal_flag AS status_flag
+
+    FROM lab_events
+),
+
+-- =====================
+-- PRESCRIPTION EVENTS
+-- =====================
+
+prescription_events AS (
+
+    SELECT
+        p.patient_id,
+        p.admission_id,
+        p.provider_id,
+
+        p.prescribed_date AS event_timestamp,
+
+        'PRESCRIPTION' AS event_type,
+
+        COALESCE(
+            d.generic_name,
+            d.brand_name
+        ) AS event_detail,
+
+        d.route AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        p.status AS status_flag
+
+    FROM prescriptions p
+
+    LEFT JOIN drugs d
+        ON p.drug_id = d.drug_id
+),
+
+-- =====================
+-- SERVICE EVENTS
+-- =====================
+
+service_events AS (
+
+    SELECT
+        s.patient_id,
+        s.admission_id,
+
+        NULL AS provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'SERVICE' AS event_type,
+
+        s.service_name AS event_detail,
+
+        s.category AS category,
+
+        s.cost AS numeric_value,
+
+        'USD' AS unit,
+
+        NULL AS status_flag
+
+    FROM services s
+
+    LEFT JOIN admissions a
+        ON s.admission_id = a.admission_id
+),
+
+-- =====================
+-- TRANSFER EVENTS
+-- =====================
+
+transfer_events AS (
+
+    SELECT
+        patient_id,
+        NULL AS admission_id,
+        NULL AS provider_id,
+
+        transfer_datetime AS event_timestamp,
+
+        'TRANSFER' AS event_type,
+
+        CONCAT(
+            from_department,
+            ' → ',
+            to_department
+        ) AS event_detail,
+
+        transfer_reason AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        CASE
+            WHEN is_same_department_transfer
+                THEN 'SAME_DEPARTMENT'
+            ELSE 'DEPARTMENT_CHANGE'
+        END AS status_flag
+
+    FROM transfers
+)
+
+SELECT * FROM diagnosis_events
+
+UNION ALL
+
+SELECT * FROM lab_timeline
+
+UNION ALL
+
+SELECT * FROM prescription_events
+
+UNION ALL
+
+SELECT * FROM service_events
+
+UNION ALL
+
+SELECT * FROM transfer_events
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.int_clinical_events"} */;
+[0m17:08:38.240800 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c4c810-0001-cf00-0002-8ab600049fee
+[0m17:08:38.241328 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 000904 (42000): SQL compilation error: error line 125 at position 4
+invalid identifier 'PROVIDER_ID'
+[0m17:08:38.242694 [debug] [Thread-2 (]: Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  000904 (42000): SQL compilation error: error line 125 at position 4
+  invalid identifier 'PROVIDER_ID'
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:08:38.244480 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3c6cec9f-9d65-499c-9100-0f6fe519a0a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a74988eb00>]}
+[0m17:08:38.245228 [error] [Thread-2 (]: 1 of 1 ERROR creating sql view model dbt_dev_intermediate.int_clinical_events .. [[31mERROR[0m in 0.44s]
+[0m17:08:38.245922 [debug] [Thread-2 (]: Finished running node model.raqib_sf.int_clinical_events
+[0m17:08:38.246619 [debug] [Thread-8 (]: Marking all children of 'model.raqib_sf.int_clinical_events' to be skipped because of status 'error'.  Reason: Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  000904 (42000): SQL compilation error: error line 125 at position 4
+  invalid identifier 'PROVIDER_ID'
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql.
+[0m17:08:38.248526 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:08:38.248947 [debug] [MainThread]: Connection 'model.raqib_sf.int_clinical_events' was left open.
+[0m17:08:38.249354 [debug] [MainThread]: On model.raqib_sf.int_clinical_events: Close
+[0m17:08:38.406961 [info ] [MainThread]: 
+[0m17:08:38.407701 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.59 seconds (1.59s).
+[0m17:08:38.408977 [debug] [MainThread]: Command end result
+[0m17:08:38.482125 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:08:38.484269 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:08:38.491486 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/run_results.json
+[0m17:08:38.491916 [info ] [MainThread]: 
+[0m17:08:38.492378 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:08:38.492783 [info ] [MainThread]: 
+[0m17:08:38.493246 [error] [MainThread]: [31mFailure in model int_clinical_events (models/intermediate/int_clinical_events.sql)[0m
+[0m17:08:38.493708 [error] [MainThread]:   Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  000904 (42000): SQL compilation error: error line 125 at position 4
+  invalid identifier 'PROVIDER_ID'
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:08:38.494077 [info ] [MainThread]: 
+[0m17:08:38.494575 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:08:38.494963 [info ] [MainThread]: 
+[0m17:08:38.495394 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:08:38.496283 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.45776, "process_in_blocks": "0", "process_kernel_time": 0.169941, "process_mem_max_rss": "233380", "process_out_blocks": "5928", "process_user_time": 4.274534}
+[0m17:08:38.496825 [debug] [MainThread]: Command `dbt run` failed at 17:08:38.496711 after 3.46 seconds
+[0m17:08:38.497274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a771ca7eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a75014f190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a773526050>]}
+[0m17:08:38.497764 [debug] [MainThread]: Flushing usage events
+[0m17:08:39.315746 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:10:53.655668 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724ebbaf3f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724ebaa2c310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724ebaa2c2b0>]}
+
+
+============================== 17:10:53.658332 | f1c68914-4cbc-4636-8bb3-a2cc3a3742ab ==============================
+[0m17:10:53.658332 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:10:53.658886 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/home/youssef/.dbt', 'write_json': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run -s models/intermediate/int_clinical_events.sql', 'log_cache_events': 'False', 'debug': 'False', 'fail_fast': 'False', 'cache_selected_only': 'False', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'quiet': 'False', 'version_check': 'True', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'use_colors': 'True', 'log_format': 'default', 'warn_error': 'None', 'log_path': '/home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/logs', 'empty': 'False'}
+[0m17:10:54.205098 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m17:10:54.205673 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m17:10:54.206103 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m17:10:54.423781 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f1c68914-4cbc-4636-8bb3-a2cc3a3742ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724ebd822ce0>]}
+[0m17:10:54.499318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f1c68914-4cbc-4636-8bb3-a2cc3a3742ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724ebd4d4c70>]}
+[0m17:10:54.500103 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m17:10:54.608890 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:10:54.770982 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:10:54.772240 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models/staging/stg_transfers.sql
+[0m17:10:55.352674 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.raqib_sf.marts
+[0m17:10:55.371771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f1c68914-4cbc-4636-8bb3-a2cc3a3742ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724e943c7e20>]}
+[0m17:10:55.516578 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:10:55.518516 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:10:55.530159 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f1c68914-4cbc-4636-8bb3-a2cc3a3742ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724e9422c340>]}
+[0m17:10:55.530770 [info ] [MainThread]: Found 22 models, 50 data tests, 11 sources, 653 macros
+[0m17:10:55.531172 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f1c68914-4cbc-4636-8bb3-a2cc3a3742ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724ebd5f68c0>]}
+[0m17:10:55.534377 [info ] [MainThread]: 
+[0m17:10:55.534807 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:10:55.535184 [info ] [MainThread]: 
+[0m17:10:55.535756 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:10:55.536744 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m17:10:55.573589 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m17:10:55.574071 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m17:10:55.574520 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:10:56.497885 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.923 seconds
+[0m17:10:56.523098 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_dbt_dev_intermediate)
+[0m17:10:56.558163 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev_intermediate"
+[0m17:10:56.558862 [debug] [ThreadPool]: On list_dev_dbt_dev_intermediate: show objects in dev.dbt_dev_intermediate
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev_intermediate"} */;
+[0m17:10:56.717046 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.157 seconds
+[0m17:10:56.731191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f1c68914-4cbc-4636-8bb3-a2cc3a3742ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724e943eb490>]}
+[0m17:10:56.739500 [debug] [Thread-2 (]: Began running node model.raqib_sf.int_clinical_events
+[0m17:10:56.741702 [info ] [Thread-2 (]: 1 of 1 START sql view model dbt_dev_intermediate.int_clinical_events ........... [RUN]
+[0m17:10:56.744064 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev_intermediate, now model.raqib_sf.int_clinical_events)
+[0m17:10:56.745908 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.int_clinical_events
+[0m17:10:56.783735 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:10:56.788457 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:10:56.792260 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:10:56.796059 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:10:56.799670 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:10:56.803168 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:10:56.807836 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:10:56.837467 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:10:56.838680 [debug] [Thread-2 (]: Began executing node model.raqib_sf.int_clinical_events
+[0m17:10:56.868509 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.int_clinical_events"
+[0m17:10:56.876159 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.int_clinical_events"
+[0m17:10:56.876988 [debug] [Thread-2 (]: On model.raqib_sf.int_clinical_events: create or replace   view dev.dbt_dev_intermediate.int_clinical_events
+  
+  
+  
+  
+  as (
+    WITH  __dbt__cte__stg_admissions as (
+WITH raw_admissions AS (
+    SELECT * 
+    FROM raw.public.admissions
+)
+
+SELECT 
+    admission_id,
+    patient_id,
+    admission_provider_id AS provider_id,
+    CAST(admission_datetime_in AS TIMESTAMP) AS admitted_in_timestamp,
+    CAST(admission_datetime_out AS TIMESTAMP) AS admitted_out_timestamp,
+    UPPER(LEFT(admission_type, 1)) || LOWER(SUBSTR(admission_type, 2)) AS admission_type,
+    admission_location,
+    discharge_location,
+    INITCAP(insurance_type) AS insurance_type,
+    total_cost,
+    payer_coverage,
+    hospital_expire_flag,
+    primary_sdk
+
+FROM raw_admissions
+),  __dbt__cte__stg_diagnosis as (
+WITH raw_diagnosis AS (
+    SELECT * 
+    FROM raw.public.diagnosis
+)
+
+SELECT 
+    diagnosis_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    sub_domain_key,
+    TRIM(REGEXP_REPLACE(description, '\\s*\\([^)]+\\)', '')) AS description,
+    REGEXP_SUBSTR(description, '\\(([^)]+)\\)', 1, 1, 'e', 1) AS description_type,
+    TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 1)) AS sub_domain_1,
+    NULLIF(TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 2)), '') AS sub_domain_2
+FROM raw_diagnosis
+),  __dbt__cte__stg_lab_events as (
+WITH raw_lab_events AS (
+
+    SELECT *
+    FROM raw.public.lab_events
+
+)
+
+SELECT
+    lab_event_id,
+    patient_id,
+    admission_id,
+    specimen_id,
+    item_id,
+    provider_id,
+    CONVERT_TIMEZONE('UTC', done_datetime::TIMESTAMP_TZ)    AS lab_done_at,
+    CONVERT_TIMEZONE('UTC', stored_datetime::TIMESTAMP_TZ)  AS lab_stored_at,
+    TRY_CAST(value AS FLOAT) AS result_value,
+    TRIM(measurement_unit) AS measurement_unit,
+    TRY_CAST(range_lower AS FLOAT) AS range_lower,
+    TRY_CAST(range_higher AS FLOAT) AS range_higher,
+    TRIM(abnormal_flag) AS abnormal_flag,
+    TRY_CAST(cost AS FLOAT) AS cost
+
+FROM raw_lab_events
+),  __dbt__cte__stg_prescriptions as (
+WITH raw_prescriptions AS (
+    SELECT *
+    FROM raw.public.prescriptions 
+)
+SELECT 
+    prescription_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    drug_id,
+    prescribed_date,
+    INITCAP(status) AS status
+FROM raw_prescriptions
+),  __dbt__cte__stg_services as (
+WITH raw_services AS (
+    SELECT *
+    FROM raw.public.services
+)
+
+SELECT 
+    patient_id,
+    admission_id,
+    service_id,
+    REGEXP_LIKE(service_id, '^SVC[0-9]+$') AS is_valid_service_id,
+    CASE 
+        WHEN CONTAINS(service_name, '–') 
+        THEN TRIM(SPLIT_PART(service_name, '–', 1))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(SPLIT_PART(service_name, '(', 1))
+        ELSE service_name 
+    END AS service_name,
+
+    CASE 
+        WHEN CONTAINS(service_name, '–')
+        THEN TRIM(SPLIT_PART(service_name, '–', 2))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(REPLACE(SPLIT_PART(service_name, '(', 2), ')', ''))
+        ELSE NULL
+    END AS service_sub_type,
+    INITCAP(category) AS category,
+    TRY_CAST(cost AS FLOAT) AS cost,
+    duration AS service_duration_in_minutes
+    
+FROM raw_services
+),  __dbt__cte__stg_transfers as (
+WITH raw_transfers AS (
+    SELECT *
+    FROM raw.public.transfers
+)
+
+SELECT 
+    transfer_id,
+    patient_id,
+    from_department,
+    to_department,
+    (from_department = to_department) AS is_same_department_transfer,
+    from_room,
+    to_room,
+    (from_room = to_room) AS is_same_room_transfer,
+    REGEXP_LIKE(from_room, '^R[0-9]+$') AND REGEXP_LIKE(to_room, '^R[0-9]+$') AS is_valid_room,
+    CAST(transfer_datetime AS TIMESTAMP) AS transfer_datetime,
+    transfer_reason
+    
+FROM raw_transfers
+),  __dbt__cte__stg_drugs as (
+with raw_drugs as (
+    select * 
+    from raw.public.drugs
+)
+
+select 
+    drug_id,
+    case 
+        when brand_name is not null then initcap(brand_name)
+        when brand_name is null and generic_name like 'Atropine Sulfate Injection%' then 'AtroPen'
+        when brand_name is null and generic_name like 'Midazolam Injection%' then 'Versed'
+    end as brand_name,
+    case 
+        when generic_name is not null then initcap(generic_name) 
+        when generic_name is null then brand_name
+    end as generic_name,
+    initcap(route) as route,
+    indications,
+    dosage,
+    contraindications,
+    side_effects,
+    warnings,
+    has_contraindications,
+    has_side_effects
+    
+from raw_drugs
+where not (
+    generic_name = 'Tadalafil'
+    AND brand_name is null
+)
+), admissions AS (
+    SELECT *
+    FROM __dbt__cte__stg_admissions
+),
+
+diagnosis AS (
+    SELECT *
+    FROM __dbt__cte__stg_diagnosis
+),
+
+lab_events AS (
+    SELECT *
+    FROM __dbt__cte__stg_lab_events
+),
+
+prescriptions AS (
+    SELECT *
+    FROM __dbt__cte__stg_prescriptions
+),
+
+services AS (
+    SELECT *
+    FROM __dbt__cte__stg_services
+),
+
+transfers AS (
+    SELECT *
+    FROM __dbt__cte__stg_transfers
+),
+
+drugs AS (
+    SELECT *
+    FROM __dbt__cte__stg_drugs
+),
+
+-- =====================
+-- DIAGNOSIS EVENTS
+-- =====================
+
+diagnosis_events AS (
+
+    SELECT
+        d.patient_id,
+        d.admission_id,
+        d.provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'DIAGNOSIS' AS event_type,
+
+        d.description AS event_detail,
+
+        COALESCE(
+            d.sub_domain_1,
+            d.sub_domain_2,
+            'General'
+        ) AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        NULL AS status_flag
+
+    FROM diagnosis d
+
+    LEFT JOIN admissions a
+        ON d.admission_id = a.admission_id
+),
+
+-- =====================
+-- LAB EVENTS
+-- =====================
+
+lab_timeline AS (
+
+    SELECT
+        patient_id,
+        admission_id,
+        provider_id,
+
+        lab_done_at AS event_timestamp,
+
+        'LAB' AS event_type,
+
+        CONCAT(
+            'Lab result: ',
+            item_id
+        ) AS event_detail,
+
+        item_id AS category,
+
+        result_value AS numeric_value,
+
+        measurement_unit AS unit,
+
+        abnormal_flag AS status_flag
+
+    FROM lab_events
+),
+
+-- =====================
+-- PRESCRIPTION EVENTS
+-- =====================
+
+prescription_events AS (
+
+    SELECT
+        p.patient_id,
+        p.admission_id,
+        p.provider_id,
+
+        p.prescribed_date AS event_timestamp,
+
+        'PRESCRIPTION' AS event_type,
+
+        COALESCE(
+            d.generic_name,
+            d.brand_name
+        ) AS event_detail,
+
+        d.route AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        p.status AS status_flag
+
+    FROM prescriptions p
+
+    LEFT JOIN drugs d
+        ON p.drug_id = d.drug_id
+),
+
+-- =====================
+-- SERVICE EVENTS
+-- =====================
+
+service_events AS (
+
+    SELECT
+        s.patient_id,
+        s.admission_id,
+
+        NULL AS provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'SERVICE' AS event_type,
+
+        s.service_name AS event_detail,
+
+        s.category AS category,
+
+        s.cost AS numeric_value,
+
+        'USD' AS unit,
+
+        NULL AS status_flag
+
+    FROM services s
+
+    LEFT JOIN admissions a
+        ON s.admission_id = a.admission_id
+),
+
+-- =====================
+-- TRANSFER EVENTS
+-- =====================
+
+transfer_events AS (
+
+    SELECT
+        patient_id,
+        NULL AS admission_id,
+        NULL AS provider_id,
+
+        transfer_datetime AS event_timestamp,
+
+        'TRANSFER' AS event_type,
+
+        CONCAT(
+            from_department,
+            ' → ',
+            to_department
+        ) AS event_detail,
+
+        transfer_reason AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        CASE
+            WHEN is_same_department_transfer
+                THEN 'SAME_DEPARTMENT'
+            ELSE 'DEPARTMENT_CHANGE'
+        END AS status_flag
+
+    FROM transfers
+)
+
+SELECT * FROM diagnosis_events
+
+UNION ALL
+
+SELECT * FROM lab_timeline
+
+UNION ALL
+
+SELECT * FROM prescription_events
+
+UNION ALL
+
+SELECT * FROM service_events
+
+UNION ALL
+
+SELECT * FROM transfer_events
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.int_clinical_events"} */;
+[0m17:10:57.146418 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c4c812-0001-cf14-0002-8ab600050832
+[0m17:10:57.146960 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 000904 (42000): SQL compilation error: error line 128 at position 4
+invalid identifier 'FROM_ROOM'
+[0m17:10:57.148274 [debug] [Thread-2 (]: Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  000904 (42000): SQL compilation error: error line 128 at position 4
+  invalid identifier 'FROM_ROOM'
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:10:57.150220 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f1c68914-4cbc-4636-8bb3-a2cc3a3742ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724e77347e80>]}
+[0m17:10:57.151044 [error] [Thread-2 (]: 1 of 1 ERROR creating sql view model dbt_dev_intermediate.int_clinical_events .. [[31mERROR[0m in 0.41s]
+[0m17:10:57.151823 [debug] [Thread-2 (]: Finished running node model.raqib_sf.int_clinical_events
+[0m17:10:57.152578 [debug] [Thread-8 (]: Marking all children of 'model.raqib_sf.int_clinical_events' to be skipped because of status 'error'.  Reason: Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  000904 (42000): SQL compilation error: error line 128 at position 4
+  invalid identifier 'FROM_ROOM'
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql.
+[0m17:10:57.154528 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:10:57.154996 [debug] [MainThread]: Connection 'model.raqib_sf.int_clinical_events' was left open.
+[0m17:10:57.155467 [debug] [MainThread]: On model.raqib_sf.int_clinical_events: Close
+[0m17:10:57.319279 [info ] [MainThread]: 
+[0m17:10:57.321113 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.78 seconds (1.78s).
+[0m17:10:57.324219 [debug] [MainThread]: Command end result
+[0m17:10:57.407294 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:10:57.409222 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:10:57.416025 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/run_results.json
+[0m17:10:57.416455 [info ] [MainThread]: 
+[0m17:10:57.416919 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:10:57.417330 [info ] [MainThread]: 
+[0m17:10:57.417805 [error] [MainThread]: [31mFailure in model int_clinical_events (models/intermediate/int_clinical_events.sql)[0m
+[0m17:10:57.418265 [error] [MainThread]:   Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  000904 (42000): SQL compilation error: error line 128 at position 4
+  invalid identifier 'FROM_ROOM'
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:10:57.418665 [info ] [MainThread]: 
+[0m17:10:57.419118 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:10:57.419544 [info ] [MainThread]: 
+[0m17:10:57.419957 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:10:57.420840 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.8334196, "process_in_blocks": "0", "process_kernel_time": 0.166684, "process_mem_max_rss": "235088", "process_out_blocks": "5928", "process_user_time": 4.496498}
+[0m17:10:57.421351 [debug] [MainThread]: Command `dbt run` failed at 17:10:57.421231 after 3.83 seconds
+[0m17:10:57.421780 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724ebbaf3f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724ebd343a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x724ebd4d4c70>]}
+[0m17:10:57.422223 [debug] [MainThread]: Flushing usage events
+[0m17:10:58.314714 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:12:28.476392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f2a799bee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f2a68f0310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f2a68f02b0>]}
+
+
+============================== 17:12:28.478992 | 29e3fdc1-bfae-4f86-8c6c-e9ec312e9995 ==============================
+[0m17:12:28.478992 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:12:28.479544 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'printer_width': '80', 'log_cache_events': 'False', 'no_print': 'None', 'debug': 'False', 'target_path': 'None', 'quiet': 'False', 'version_check': 'True', 'warn_error': 'None', 'profiles_dir': '/home/youssef/.dbt', 'use_colors': 'True', 'partial_parse': 'True', 'log_format': 'default', 'log_path': '/home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/logs', 'introspect': 'True', 'empty': 'False', 'static_parser': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'invocation_command': 'dbt run -s models/intermediate/int_clinical_events.sql'}
+[0m17:12:29.031533 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m17:12:29.032116 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m17:12:29.032571 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m17:12:29.254170 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '29e3fdc1-bfae-4f86-8c6c-e9ec312e9995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f281c7c0a0>]}
+[0m17:12:29.333496 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '29e3fdc1-bfae-4f86-8c6c-e9ec312e9995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f2a689e620>]}
+[0m17:12:29.334585 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m17:12:29.447620 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:12:29.611853 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:12:29.613166 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models/staging/stg_transfers.sql
+[0m17:12:30.198428 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.raqib_sf.marts
+[0m17:12:30.217280 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '29e3fdc1-bfae-4f86-8c6c-e9ec312e9995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f2802c7df0>]}
+[0m17:12:30.362121 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:12:30.364009 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:12:30.375450 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '29e3fdc1-bfae-4f86-8c6c-e9ec312e9995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f28181f460>]}
+[0m17:12:30.376044 [info ] [MainThread]: Found 22 models, 50 data tests, 11 sources, 653 macros
+[0m17:12:30.376487 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '29e3fdc1-bfae-4f86-8c6c-e9ec312e9995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f28181e140>]}
+[0m17:12:30.379645 [info ] [MainThread]: 
+[0m17:12:30.380060 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:12:30.380482 [info ] [MainThread]: 
+[0m17:12:30.381031 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:12:30.382001 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m17:12:30.415924 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m17:12:30.416440 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m17:12:30.416824 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:12:31.259645 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.843 seconds
+[0m17:12:31.287827 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_dbt_dev_intermediate)
+[0m17:12:31.326794 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev_intermediate"
+[0m17:12:31.327495 [debug] [ThreadPool]: On list_dev_dbt_dev_intermediate: show objects in dev.dbt_dev_intermediate
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev_intermediate"} */;
+[0m17:12:31.476345 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.148 seconds
+[0m17:12:31.490815 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '29e3fdc1-bfae-4f86-8c6c-e9ec312e9995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f2802eb490>]}
+[0m17:12:31.499296 [debug] [Thread-2 (]: Began running node model.raqib_sf.int_clinical_events
+[0m17:12:31.501554 [info ] [Thread-2 (]: 1 of 1 START sql view model dbt_dev_intermediate.int_clinical_events ........... [RUN]
+[0m17:12:31.503581 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev_intermediate, now model.raqib_sf.int_clinical_events)
+[0m17:12:31.505124 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.int_clinical_events
+[0m17:12:31.541206 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:12:31.545329 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:12:31.549084 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:12:31.552662 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:12:31.556149 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:12:31.559671 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:12:31.564191 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:12:31.593583 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:12:31.594268 [debug] [Thread-2 (]: Began executing node model.raqib_sf.int_clinical_events
+[0m17:12:31.624255 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.int_clinical_events"
+[0m17:12:31.631617 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.int_clinical_events"
+[0m17:12:31.632472 [debug] [Thread-2 (]: On model.raqib_sf.int_clinical_events: create or replace   view dev.dbt_dev_intermediate.int_clinical_events
+  
+  
+  
+  
+  as (
+    WITH  __dbt__cte__stg_admissions as (
+WITH raw_admissions AS (
+    SELECT * 
+    FROM raw.public.admissions
+)
+
+SELECT 
+    admission_id,
+    patient_id,
+    admission_provider_id AS provider_id,
+    CAST(admission_datetime_in AS TIMESTAMP) AS admitted_in_timestamp,
+    CAST(admission_datetime_out AS TIMESTAMP) AS admitted_out_timestamp,
+    UPPER(LEFT(admission_type, 1)) || LOWER(SUBSTR(admission_type, 2)) AS admission_type,
+    admission_location,
+    discharge_location,
+    INITCAP(insurance_type) AS insurance_type,
+    total_cost,
+    payer_coverage,
+    hospital_expire_flag,
+    primary_sdk
+
+FROM raw_admissions
+),  __dbt__cte__stg_diagnosis as (
+WITH raw_diagnosis AS (
+    SELECT * 
+    FROM raw.public.diagnosis
+)
+
+SELECT 
+    diagnosis_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    sub_domain_key,
+    TRIM(REGEXP_REPLACE(description, '\\s*\\([^)]+\\)', '')) AS description,
+    REGEXP_SUBSTR(description, '\\(([^)]+)\\)', 1, 1, 'e', 1) AS description_type,
+    TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 1)) AS sub_domain_1,
+    NULLIF(TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 2)), '') AS sub_domain_2
+FROM raw_diagnosis
+),  __dbt__cte__stg_lab_events as (
+WITH raw_lab_events AS (
+
+    SELECT *
+    FROM raw.public.lab_events
+
+)
+
+SELECT
+    lab_event_id,
+    patient_id,
+    admission_id,
+    specimen_id,
+    item_id,
+    provider_id,
+    CONVERT_TIMEZONE('UTC', done_datetime::TIMESTAMP_TZ)    AS lab_done_at,
+    CONVERT_TIMEZONE('UTC', stored_datetime::TIMESTAMP_TZ)  AS lab_stored_at,
+    TRY_CAST(value AS FLOAT) AS result_value,
+    TRIM(measurement_unit) AS measurement_unit,
+    TRY_CAST(range_lower AS FLOAT) AS range_lower,
+    TRY_CAST(range_higher AS FLOAT) AS range_higher,
+    TRIM(abnormal_flag) AS abnormal_flag,
+    TRY_CAST(cost AS FLOAT) AS cost
+
+FROM raw_lab_events
+),  __dbt__cte__stg_prescriptions as (
+WITH raw_prescriptions AS (
+    SELECT *
+    FROM raw.public.prescriptions 
+)
+SELECT 
+    prescription_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    drug_id,
+    prescribed_date,
+    INITCAP(status) AS status
+FROM raw_prescriptions
+),  __dbt__cte__stg_services as (
+WITH raw_services AS (
+    SELECT *
+    FROM raw.public.services
+)
+
+SELECT 
+    patient_id,
+    admission_id,
+    service_id,
+    REGEXP_LIKE(service_id, '^SVC[0-9]+$') AS is_valid_service_id,
+    CASE 
+        WHEN CONTAINS(service_name, '–') 
+        THEN TRIM(SPLIT_PART(service_name, '–', 1))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(SPLIT_PART(service_name, '(', 1))
+        ELSE service_name 
+    END AS service_name,
+
+    CASE 
+        WHEN CONTAINS(service_name, '–')
+        THEN TRIM(SPLIT_PART(service_name, '–', 2))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(REPLACE(SPLIT_PART(service_name, '(', 2), ')', ''))
+        ELSE NULL
+    END AS service_sub_type,
+    INITCAP(category) AS category,
+    TRY_CAST(cost AS FLOAT) AS cost,
+    duration AS service_duration_in_minutes
+    
+FROM raw_services
+),  __dbt__cte__stg_transfers as (
+WITH raw_transfers AS (
+    SELECT *
+    FROM raw.public.transfers
+)
+
+SELECT 
+    transfer_id,
+    patient_id,
+    from_department,
+    to_department,
+    (from_department = to_department) AS is_same_department_transfer,
+    CAST(transfer_datetime AS TIMESTAMP) AS transfer_datetime,
+    transfer_reason
+    
+FROM raw_transfers
+),  __dbt__cte__stg_drugs as (
+with raw_drugs as (
+    select * 
+    from raw.public.drugs
+)
+
+select 
+    drug_id,
+    case 
+        when brand_name is not null then initcap(brand_name)
+        when brand_name is null and generic_name like 'Atropine Sulfate Injection%' then 'AtroPen'
+        when brand_name is null and generic_name like 'Midazolam Injection%' then 'Versed'
+    end as brand_name,
+    case 
+        when generic_name is not null then initcap(generic_name) 
+        when generic_name is null then brand_name
+    end as generic_name,
+    initcap(route) as route,
+    indications,
+    dosage,
+    contraindications,
+    side_effects,
+    warnings,
+    has_contraindications,
+    has_side_effects
+    
+from raw_drugs
+where not (
+    generic_name = 'Tadalafil'
+    AND brand_name is null
+)
+), admissions AS (
+    SELECT *
+    FROM __dbt__cte__stg_admissions
+),
+
+diagnosis AS (
+    SELECT *
+    FROM __dbt__cte__stg_diagnosis
+),
+
+lab_events AS (
+    SELECT *
+    FROM __dbt__cte__stg_lab_events
+),
+
+prescriptions AS (
+    SELECT *
+    FROM __dbt__cte__stg_prescriptions
+),
+
+services AS (
+    SELECT *
+    FROM __dbt__cte__stg_services
+),
+
+transfers AS (
+    SELECT *
+    FROM __dbt__cte__stg_transfers
+),
+
+drugs AS (
+    SELECT *
+    FROM __dbt__cte__stg_drugs
+),
+
+-- =====================
+-- DIAGNOSIS EVENTS
+-- =====================
+
+diagnosis_events AS (
+
+    SELECT
+        d.patient_id,
+        d.admission_id,
+        d.provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'DIAGNOSIS' AS event_type,
+
+        d.description AS event_detail,
+
+        COALESCE(
+            d.sub_domain_1,
+            d.sub_domain_2,
+            'General'
+        ) AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        NULL AS status_flag
+
+    FROM diagnosis d
+
+    LEFT JOIN admissions a
+        ON d.admission_id = a.admission_id
+),
+
+-- =====================
+-- LAB EVENTS
+-- =====================
+
+lab_timeline AS (
+
+    SELECT
+        patient_id,
+        admission_id,
+        provider_id,
+
+        lab_done_at AS event_timestamp,
+
+        'LAB' AS event_type,
+
+        CONCAT(
+            'Lab result: ',
+            item_id
+        ) AS event_detail,
+
+        item_id AS category,
+
+        result_value AS numeric_value,
+
+        measurement_unit AS unit,
+
+        abnormal_flag AS status_flag
+
+    FROM lab_events
+),
+
+-- =====================
+-- PRESCRIPTION EVENTS
+-- =====================
+
+prescription_events AS (
+
+    SELECT
+        p.patient_id,
+        p.admission_id,
+        p.provider_id,
+
+        p.prescribed_date AS event_timestamp,
+
+        'PRESCRIPTION' AS event_type,
+
+        COALESCE(
+            d.generic_name,
+            d.brand_name
+        ) AS event_detail,
+
+        d.route AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        p.status AS status_flag
+
+    FROM prescriptions p
+
+    LEFT JOIN drugs d
+        ON p.drug_id = d.drug_id
+),
+
+-- =====================
+-- SERVICE EVENTS
+-- =====================
+
+service_events AS (
+
+    SELECT
+        s.patient_id,
+        s.admission_id,
+
+        NULL AS provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'SERVICE' AS event_type,
+
+        s.service_name AS event_detail,
+
+        s.category AS category,
+
+        s.cost AS numeric_value,
+
+        'USD' AS unit,
+
+        NULL AS status_flag
+
+    FROM services s
+
+    LEFT JOIN admissions a
+        ON s.admission_id = a.admission_id
+),
+
+-- =====================
+-- TRANSFER EVENTS
+-- =====================
+
+transfer_events AS (
+
+    SELECT
+        patient_id,
+        NULL AS admission_id,
+        NULL AS provider_id,
+
+        transfer_datetime AS event_timestamp,
+
+        'TRANSFER' AS event_type,
+
+        CONCAT(
+            from_department,
+            ' → ',
+            to_department
+        ) AS event_detail,
+
+        transfer_reason AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        CASE
+            WHEN is_same_department_transfer
+                THEN 'SAME_DEPARTMENT'
+            ELSE 'DEPARTMENT_CHANGE'
+        END AS status_flag
+
+    FROM transfers
+)
+
+SELECT * FROM diagnosis_events
+
+UNION ALL
+
+SELECT * FROM lab_timeline
+
+UNION ALL
+
+SELECT * FROM prescription_events
+
+UNION ALL
+
+SELECT * FROM service_events
+
+UNION ALL
+
+SELECT * FROM transfer_events
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.int_clinical_events"} */;
+[0m17:12:31.873739 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c4c814-0001-cf14-0002-8ab600050852
+[0m17:12:31.875736 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 001790 (42601): SQL compilation error:
+inconsistent data type for result columns for set operator input branches, expected TIMESTAMP_TZ(9), got TIMESTAMP_NTZ(9)
+[0m17:12:31.881079 [debug] [Thread-2 (]: Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  001790 (42601): SQL compilation error:
+  inconsistent data type for result columns for set operator input branches, expected TIMESTAMP_TZ(9), got TIMESTAMP_NTZ(9)
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:12:31.886702 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '29e3fdc1-bfae-4f86-8c6c-e9ec312e9995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f263237e80>]}
+[0m17:12:31.888875 [error] [Thread-2 (]: 1 of 1 ERROR creating sql view model dbt_dev_intermediate.int_clinical_events .. [[31mERROR[0m in 0.38s]
+[0m17:12:31.890988 [debug] [Thread-2 (]: Finished running node model.raqib_sf.int_clinical_events
+[0m17:12:31.892573 [debug] [Thread-8 (]: Marking all children of 'model.raqib_sf.int_clinical_events' to be skipped because of status 'error'.  Reason: Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  001790 (42601): SQL compilation error:
+  inconsistent data type for result columns for set operator input branches, expected TIMESTAMP_TZ(9), got TIMESTAMP_NTZ(9)
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql.
+[0m17:12:31.895484 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:12:31.896182 [debug] [MainThread]: Connection 'model.raqib_sf.int_clinical_events' was left open.
+[0m17:12:31.896876 [debug] [MainThread]: On model.raqib_sf.int_clinical_events: Close
+[0m17:12:32.053849 [info ] [MainThread]: 
+[0m17:12:32.055752 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.67 seconds (1.67s).
+[0m17:12:32.058640 [debug] [MainThread]: Command end result
+[0m17:12:32.135131 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:12:32.137040 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:12:32.143815 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/run_results.json
+[0m17:12:32.144232 [info ] [MainThread]: 
+[0m17:12:32.144724 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:12:32.145129 [info ] [MainThread]: 
+[0m17:12:32.145611 [error] [MainThread]: [31mFailure in model int_clinical_events (models/intermediate/int_clinical_events.sql)[0m
+[0m17:12:32.146073 [error] [MainThread]:   Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  001790 (42601): SQL compilation error:
+  inconsistent data type for result columns for set operator input branches, expected TIMESTAMP_TZ(9), got TIMESTAMP_NTZ(9)
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:12:32.146472 [info ] [MainThread]: 
+[0m17:12:32.146918 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:12:32.147291 [info ] [MainThread]: 
+[0m17:12:32.147718 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:12:32.148600 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.7410874, "process_in_blocks": "0", "process_kernel_time": 0.162858, "process_mem_max_rss": "235132", "process_out_blocks": "5928", "process_user_time": 4.531055}
+[0m17:12:32.149124 [debug] [MainThread]: Command `dbt run` failed at 17:12:32.149013 after 3.74 seconds
+[0m17:12:32.149579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f2a799bee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f2a78fa590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79f26017ec50>]}
+[0m17:12:32.150022 [debug] [MainThread]: Flushing usage events
+[0m17:12:33.030346 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:14:44.057880 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764c1e1e7fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764c1d13c310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764c1d13c2b0>]}
+
+
+============================== 17:14:44.060514 | 1b481420-bf01-48ee-8296-c6600a3c01e6 ==============================
+[0m17:14:44.060514 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:14:44.061070 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'empty': 'False', 'no_print': 'None', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'log_format': 'default', 'profiles_dir': '/home/youssef/.dbt', 'printer_width': '80', 'log_path': '/home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/logs', 'write_json': 'True', 'use_colors': 'True', 'target_path': 'None', 'invocation_command': 'dbt run -s models/intermediate/int_clinical_events.sql', 'indirect_selection': 'eager', 'debug': 'False', 'use_experimental_parser': 'False', 'quiet': 'False', 'fail_fast': 'False', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'introspect': 'True', 'static_parser': 'True'}
+[0m17:14:44.615175 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m17:14:44.615789 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m17:14:44.616269 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m17:14:44.830368 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1b481420-bf01-48ee-8296-c6600a3c01e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764bfc500700>]}
+[0m17:14:44.905061 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1b481420-bf01-48ee-8296-c6600a3c01e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764c1d0ddcf0>]}
+[0m17:14:44.905876 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m17:14:45.016360 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:14:45.179179 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:14:45.180454 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models/staging/stg_transfers.sql
+[0m17:14:45.756092 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.raqib_sf.marts
+[0m17:14:45.775277 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1b481420-bf01-48ee-8296-c6600a3c01e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764bf6acbeb0>]}
+[0m17:14:45.921285 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:14:45.923206 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:14:45.934538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1b481420-bf01-48ee-8296-c6600a3c01e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764bf692c3a0>]}
+[0m17:14:45.935135 [info ] [MainThread]: Found 22 models, 50 data tests, 11 sources, 653 macros
+[0m17:14:45.935563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1b481420-bf01-48ee-8296-c6600a3c01e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764bf692c0d0>]}
+[0m17:14:45.938765 [info ] [MainThread]: 
+[0m17:14:45.939201 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:14:45.939585 [info ] [MainThread]: 
+[0m17:14:45.940131 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:14:45.941086 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m17:14:45.975651 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m17:14:45.976145 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m17:14:45.976550 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:14:46.635842 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.659 seconds
+[0m17:14:46.643888 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_dbt_dev_intermediate)
+[0m17:14:46.657470 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev_intermediate"
+[0m17:14:46.657930 [debug] [ThreadPool]: On list_dev_dbt_dev_intermediate: show objects in dev.dbt_dev_intermediate
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev_intermediate"} */;
+[0m17:14:46.802948 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.144 seconds
+[0m17:14:46.815732 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1b481420-bf01-48ee-8296-c6600a3c01e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764bf6ae3f10>]}
+[0m17:14:46.824954 [debug] [Thread-2 (]: Began running node model.raqib_sf.int_clinical_events
+[0m17:14:46.827194 [info ] [Thread-2 (]: 1 of 1 START sql view model dbt_dev_intermediate.int_clinical_events ........... [RUN]
+[0m17:14:46.828950 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev_intermediate, now model.raqib_sf.int_clinical_events)
+[0m17:14:46.830409 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.int_clinical_events
+[0m17:14:46.858602 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:14:46.863222 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:14:46.867715 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:14:46.871237 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:14:46.875028 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:14:46.878388 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:14:46.882862 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:14:46.912699 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:14:46.913465 [debug] [Thread-2 (]: Began executing node model.raqib_sf.int_clinical_events
+[0m17:14:46.943503 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.int_clinical_events"
+[0m17:14:46.950942 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.int_clinical_events"
+[0m17:14:46.951743 [debug] [Thread-2 (]: On model.raqib_sf.int_clinical_events: create or replace   view dev.dbt_dev_intermediate.int_clinical_events
+  
+  
+  
+  
+  as (
+    WITH  __dbt__cte__stg_admissions as (
+WITH raw_admissions AS (
+    SELECT * 
+    FROM raw.public.admissions
+)
+
+SELECT 
+    admission_id,
+    patient_id,
+    admission_provider_id AS provider_id,
+    CAST(admission_datetime_in AS TIMESTAMP) AS admitted_in_timestamp,
+    CAST(admission_datetime_out AS TIMESTAMP) AS admitted_out_timestamp,
+    UPPER(LEFT(admission_type, 1)) || LOWER(SUBSTR(admission_type, 2)) AS admission_type,
+    admission_location,
+    discharge_location,
+    INITCAP(insurance_type) AS insurance_type,
+    total_cost,
+    payer_coverage,
+    hospital_expire_flag,
+    primary_sdk
+
+FROM raw_admissions
+),  __dbt__cte__stg_diagnosis as (
+WITH raw_diagnosis AS (
+    SELECT * 
+    FROM raw.public.diagnosis
+)
+
+SELECT 
+    diagnosis_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    sub_domain_key,
+    TRIM(REGEXP_REPLACE(description, '\\s*\\([^)]+\\)', '')) AS description,
+    REGEXP_SUBSTR(description, '\\(([^)]+)\\)', 1, 1, 'e', 1) AS description_type,
+    TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 1)) AS sub_domain_1,
+    NULLIF(TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 2)), '') AS sub_domain_2
+FROM raw_diagnosis
+),  __dbt__cte__stg_lab_events as (
+WITH raw_lab_events AS (
+
+    SELECT *
+    FROM raw.public.lab_events
+
+)
+
+SELECT
+    lab_event_id,
+    patient_id,
+    admission_id,
+    specimen_id,
+    item_id,
+    provider_id,
+    CONVERT_TIMEZONE('UTC', done_datetime::TIMESTAMP_TZ)    AS lab_done_at,
+    CONVERT_TIMEZONE('UTC', stored_datetime::TIMESTAMP_TZ)  AS lab_stored_at,
+    TRY_CAST(value AS FLOAT) AS result_value,
+    TRIM(measurement_unit) AS measurement_unit,
+    TRY_CAST(range_lower AS FLOAT) AS range_lower,
+    TRY_CAST(range_higher AS FLOAT) AS range_higher,
+    TRIM(abnormal_flag) AS abnormal_flag,
+    TRY_CAST(cost AS FLOAT) AS cost
+
+FROM raw_lab_events
+),  __dbt__cte__stg_prescriptions as (
+WITH raw_prescriptions AS (
+    SELECT *
+    FROM raw.public.prescriptions 
+)
+SELECT 
+    prescription_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    drug_id,
+    prescribed_date,
+    INITCAP(status) AS status
+FROM raw_prescriptions
+),  __dbt__cte__stg_services as (
+WITH raw_services AS (
+    SELECT *
+    FROM raw.public.services
+)
+
+SELECT 
+    patient_id,
+    admission_id,
+    service_id,
+    REGEXP_LIKE(service_id, '^SVC[0-9]+$') AS is_valid_service_id,
+    CASE 
+        WHEN CONTAINS(service_name, '–') 
+        THEN TRIM(SPLIT_PART(service_name, '–', 1))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(SPLIT_PART(service_name, '(', 1))
+        ELSE service_name 
+    END AS service_name,
+
+    CASE 
+        WHEN CONTAINS(service_name, '–')
+        THEN TRIM(SPLIT_PART(service_name, '–', 2))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(REPLACE(SPLIT_PART(service_name, '(', 2), ')', ''))
+        ELSE NULL
+    END AS service_sub_type,
+    INITCAP(category) AS category,
+    TRY_CAST(cost AS FLOAT) AS cost,
+    duration AS service_duration_in_minutes
+    
+FROM raw_services
+),  __dbt__cte__stg_transfers as (
+WITH raw_transfers AS (
+    SELECT *
+    FROM raw.public.transfers
+)
+
+SELECT 
+    transfer_id,
+    patient_id,
+    from_department,
+    to_department,
+    (from_department = to_department) AS is_same_department_transfer,
+    transfer_datetime,
+    transfer_reason
+    
+FROM raw_transfers
+),  __dbt__cte__stg_drugs as (
+with raw_drugs as (
+    select * 
+    from raw.public.drugs
+)
+
+select 
+    drug_id,
+    case 
+        when brand_name is not null then initcap(brand_name)
+        when brand_name is null and generic_name like 'Atropine Sulfate Injection%' then 'AtroPen'
+        when brand_name is null and generic_name like 'Midazolam Injection%' then 'Versed'
+    end as brand_name,
+    case 
+        when generic_name is not null then initcap(generic_name) 
+        when generic_name is null then brand_name
+    end as generic_name,
+    initcap(route) as route,
+    indications,
+    dosage,
+    contraindications,
+    side_effects,
+    warnings,
+    has_contraindications,
+    has_side_effects
+    
+from raw_drugs
+where not (
+    generic_name = 'Tadalafil'
+    AND brand_name is null
+)
+), admissions AS (
+    SELECT *
+    FROM __dbt__cte__stg_admissions
+),
+
+diagnosis AS (
+    SELECT *
+    FROM __dbt__cte__stg_diagnosis
+),
+
+lab_events AS (
+    SELECT *
+    FROM __dbt__cte__stg_lab_events
+),
+
+prescriptions AS (
+    SELECT *
+    FROM __dbt__cte__stg_prescriptions
+),
+
+services AS (
+    SELECT *
+    FROM __dbt__cte__stg_services
+),
+
+transfers AS (
+    SELECT *
+    FROM __dbt__cte__stg_transfers
+),
+
+drugs AS (
+    SELECT *
+    FROM __dbt__cte__stg_drugs
+),
+
+-- =====================
+-- DIAGNOSIS EVENTS
+-- =====================
+
+diagnosis_events AS (
+
+    SELECT
+        d.patient_id,
+        d.admission_id,
+        d.provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'DIAGNOSIS' AS event_type,
+
+        d.description AS event_detail,
+
+        COALESCE(
+            d.sub_domain_1,
+            d.sub_domain_2,
+            'General'
+        ) AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        NULL AS status_flag
+
+    FROM diagnosis d
+
+    LEFT JOIN admissions a
+        ON d.admission_id = a.admission_id
+),
+
+-- =====================
+-- LAB EVENTS
+-- =====================
+
+lab_timeline AS (
+
+    SELECT
+        patient_id,
+        admission_id,
+        provider_id,
+
+        lab_done_at AS event_timestamp,
+
+        'LAB' AS event_type,
+
+        CONCAT(
+            'Lab result: ',
+            item_id
+        ) AS event_detail,
+
+        item_id AS category,
+
+        result_value AS numeric_value,
+
+        measurement_unit AS unit,
+
+        abnormal_flag AS status_flag
+
+    FROM lab_events
+),
+
+-- =====================
+-- PRESCRIPTION EVENTS
+-- =====================
+
+prescription_events AS (
+
+    SELECT
+        p.patient_id,
+        p.admission_id,
+        p.provider_id,
+
+        p.prescribed_date AS event_timestamp,
+
+        'PRESCRIPTION' AS event_type,
+
+        COALESCE(
+            d.generic_name,
+            d.brand_name
+        ) AS event_detail,
+
+        d.route AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        p.status AS status_flag
+
+    FROM prescriptions p
+
+    LEFT JOIN drugs d
+        ON p.drug_id = d.drug_id
+),
+
+-- =====================
+-- SERVICE EVENTS
+-- =====================
+
+service_events AS (
+
+    SELECT
+        s.patient_id,
+        s.admission_id,
+
+        NULL AS provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'SERVICE' AS event_type,
+
+        s.service_name AS event_detail,
+
+        s.category AS category,
+
+        s.cost AS numeric_value,
+
+        'USD' AS unit,
+
+        NULL AS status_flag
+
+    FROM services s
+
+    LEFT JOIN admissions a
+        ON s.admission_id = a.admission_id
+),
+
+-- =====================
+-- TRANSFER EVENTS
+-- =====================
+
+transfer_events AS (
+
+    SELECT
+        patient_id,
+        NULL AS admission_id,
+        NULL AS provider_id,
+
+        transfer_datetime AS event_timestamp,
+
+        'TRANSFER' AS event_type,
+
+        CONCAT(
+            from_department,
+            ' → ',
+            to_department
+        ) AS event_detail,
+
+        transfer_reason AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        CASE
+            WHEN is_same_department_transfer
+                THEN 'SAME_DEPARTMENT'
+            ELSE 'DEPARTMENT_CHANGE'
+        END AS status_flag
+
+    FROM transfers
+)
+
+SELECT * FROM diagnosis_events
+
+UNION ALL
+
+SELECT * FROM lab_timeline
+
+UNION ALL
+
+SELECT * FROM prescription_events
+
+UNION ALL
+
+SELECT * FROM service_events
+
+UNION ALL
+
+SELECT * FROM transfer_events
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.int_clinical_events"} */;
+[0m17:14:47.175026 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c4c816-0001-cf14-0002-8ab60005086a
+[0m17:14:47.176882 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 001790 (42601): SQL compilation error:
+inconsistent data type for result columns for set operator input branches, expected TIMESTAMP_TZ(9), got TIMESTAMP_NTZ(9)
+[0m17:14:47.181800 [debug] [Thread-2 (]: Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  001790 (42601): SQL compilation error:
+  inconsistent data type for result columns for set operator input branches, expected TIMESTAMP_TZ(9), got TIMESTAMP_NTZ(9)
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:14:47.188479 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b481420-bf01-48ee-8296-c6600a3c01e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764bf5b23e80>]}
+[0m17:14:47.190924 [error] [Thread-2 (]: 1 of 1 ERROR creating sql view model dbt_dev_intermediate.int_clinical_events .. [[31mERROR[0m in 0.36s]
+[0m17:14:47.193784 [debug] [Thread-2 (]: Finished running node model.raqib_sf.int_clinical_events
+[0m17:14:47.196232 [debug] [Thread-8 (]: Marking all children of 'model.raqib_sf.int_clinical_events' to be skipped because of status 'error'.  Reason: Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  001790 (42601): SQL compilation error:
+  inconsistent data type for result columns for set operator input branches, expected TIMESTAMP_TZ(9), got TIMESTAMP_NTZ(9)
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql.
+[0m17:14:47.202208 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:14:47.203206 [debug] [MainThread]: Connection 'model.raqib_sf.int_clinical_events' was left open.
+[0m17:14:47.204133 [debug] [MainThread]: On model.raqib_sf.int_clinical_events: Close
+[0m17:14:47.370448 [info ] [MainThread]: 
+[0m17:14:47.372349 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.43 seconds (1.43s).
+[0m17:14:47.375447 [debug] [MainThread]: Command end result
+[0m17:14:47.463359 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:14:47.465418 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:14:47.471912 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/run_results.json
+[0m17:14:47.472301 [info ] [MainThread]: 
+[0m17:14:47.472770 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:14:47.473166 [info ] [MainThread]: 
+[0m17:14:47.473647 [error] [MainThread]: [31mFailure in model int_clinical_events (models/intermediate/int_clinical_events.sql)[0m
+[0m17:14:47.474109 [error] [MainThread]:   Database Error in model int_clinical_events (models/intermediate/int_clinical_events.sql)
+  001790 (42601): SQL compilation error:
+  inconsistent data type for result columns for set operator input branches, expected TIMESTAMP_TZ(9), got TIMESTAMP_NTZ(9)
+  compiled code at target/run/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:14:47.474512 [info ] [MainThread]: 
+[0m17:14:47.474987 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/intermediate/int_clinical_events.sql
+[0m17:14:47.475383 [info ] [MainThread]: 
+[0m17:14:47.475800 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:14:47.476691 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.4862504, "process_in_blocks": "0", "process_kernel_time": 0.172651, "process_mem_max_rss": "235112", "process_out_blocks": "5928", "process_user_time": 4.418082}
+[0m17:14:47.477183 [debug] [MainThread]: Command `dbt run` failed at 17:14:47.477075 after 3.49 seconds
+[0m17:14:47.477628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764c1e1e7fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764c1d0ddcf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764c1e17a0b0>]}
+[0m17:14:47.478051 [debug] [MainThread]: Flushing usage events
+[0m17:14:48.366839 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:17:58.119981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa7d0bff10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa7c014310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa7c0142b0>]}
+
+
+============================== 17:17:58.122790 | 63b1b02c-e876-4936-95fe-f22adf36a424 ==============================
+[0m17:17:58.122790 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:17:58.123340 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'empty': 'False', 'write_json': 'True', 'version_check': 'True', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'use_colors': 'True', 'profiles_dir': '/home/youssef/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'no_print': 'None', 'quiet': 'False', 'invocation_command': 'dbt run -s models/intermediate/int_clinical_events.sql', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'introspect': 'True', 'warn_error': 'None', 'static_parser': 'True', 'debug': 'False', 'partial_parse': 'True', 'target_path': 'None', 'log_path': '/home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/logs'}
+[0m17:17:58.686738 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m17:17:58.687302 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m17:17:58.687792 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m17:17:58.905846 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '63b1b02c-e876-4936-95fe-f22adf36a424', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa57b8c0a0>]}
+[0m17:17:58.981014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '63b1b02c-e876-4936-95fe-f22adf36a424', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa7c014e80>]}
+[0m17:17:58.981857 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m17:17:59.093909 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:17:59.261942 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 3 files changed.
+[0m17:17:59.263231 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models/staging/stg_prescriptions.sql
+[0m17:17:59.263807 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models/staging/stg_lab_events.sql
+[0m17:17:59.264327 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models/staging/stg_transfers.sql
+[0m17:17:59.895950 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.raqib_sf.marts
+[0m17:17:59.915419 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '63b1b02c-e876-4936-95fe-f22adf36a424', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa559cd8d0>]}
+[0m17:18:00.066424 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:18:00.068398 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:18:00.080040 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '63b1b02c-e876-4936-95fe-f22adf36a424', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa558a0250>]}
+[0m17:18:00.080643 [info ] [MainThread]: Found 22 models, 50 data tests, 11 sources, 653 macros
+[0m17:18:00.081076 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '63b1b02c-e876-4936-95fe-f22adf36a424', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa558a0e80>]}
+[0m17:18:00.084401 [info ] [MainThread]: 
+[0m17:18:00.084842 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:18:00.085215 [info ] [MainThread]: 
+[0m17:18:00.085770 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:18:00.086787 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m17:18:00.122106 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m17:18:00.122616 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m17:18:00.122995 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:18:01.138582 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.016 seconds
+[0m17:18:01.146652 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_dbt_dev_intermediate)
+[0m17:18:01.161655 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev_intermediate"
+[0m17:18:01.162175 [debug] [ThreadPool]: On list_dev_dbt_dev_intermediate: show objects in dev.dbt_dev_intermediate
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev_intermediate"} */;
+[0m17:18:01.299263 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.137 seconds
+[0m17:18:01.305175 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '63b1b02c-e876-4936-95fe-f22adf36a424', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa55847310>]}
+[0m17:18:01.309885 [debug] [Thread-2 (]: Began running node model.raqib_sf.int_clinical_events
+[0m17:18:01.311137 [info ] [Thread-2 (]: 1 of 1 START sql view model dbt_dev_intermediate.int_clinical_events ........... [RUN]
+[0m17:18:01.312305 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev_intermediate, now model.raqib_sf.int_clinical_events)
+[0m17:18:01.313786 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.int_clinical_events
+[0m17:18:01.347524 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:18:01.352034 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:18:01.355825 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:18:01.360507 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:18:01.363937 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:18:01.367476 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:18:01.371004 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:18:01.400877 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m17:18:01.401602 [debug] [Thread-2 (]: Began executing node model.raqib_sf.int_clinical_events
+[0m17:18:01.433373 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.int_clinical_events"
+[0m17:18:01.440727 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.int_clinical_events"
+[0m17:18:01.441543 [debug] [Thread-2 (]: On model.raqib_sf.int_clinical_events: create or replace   view dev.dbt_dev_intermediate.int_clinical_events
+  
+  
+  
+  
+  as (
+    WITH  __dbt__cte__stg_admissions as (
+WITH raw_admissions AS (
+    SELECT * 
+    FROM raw.public.admissions
+)
+
+SELECT 
+    admission_id,
+    patient_id,
+    admission_provider_id AS provider_id,
+    CAST(admission_datetime_in AS TIMESTAMP) AS admitted_in_timestamp,
+    CAST(admission_datetime_out AS TIMESTAMP) AS admitted_out_timestamp,
+    UPPER(LEFT(admission_type, 1)) || LOWER(SUBSTR(admission_type, 2)) AS admission_type,
+    admission_location,
+    discharge_location,
+    INITCAP(insurance_type) AS insurance_type,
+    total_cost,
+    payer_coverage,
+    hospital_expire_flag,
+    primary_sdk
+
+FROM raw_admissions
+),  __dbt__cte__stg_diagnosis as (
+WITH raw_diagnosis AS (
+    SELECT * 
+    FROM raw.public.diagnosis
+)
+
+SELECT 
+    diagnosis_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    sub_domain_key,
+    TRIM(REGEXP_REPLACE(description, '\\s*\\([^)]+\\)', '')) AS description,
+    REGEXP_SUBSTR(description, '\\(([^)]+)\\)', 1, 1, 'e', 1) AS description_type,
+    TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 1)) AS sub_domain_1,
+    NULLIF(TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 2)), '') AS sub_domain_2
+FROM raw_diagnosis
+),  __dbt__cte__stg_lab_events as (
+WITH raw_lab_events AS (
+
+    SELECT *
+    FROM raw.public.lab_events
+
+)
+
+SELECT
+    lab_event_id,
+    patient_id,
+    admission_id,
+    specimen_id,
+    item_id,
+    provider_id,
+    CAST(done_datetime AS TIMESTAMP)    AS lab_done_at,
+    CAST(stored_datetime AS TIMESTAMP)  AS lab_stored_at,
+    TRY_CAST(value AS FLOAT) AS result_value,
+    TRIM(measurement_unit) AS measurement_unit,
+    TRY_CAST(range_lower AS FLOAT) AS range_lower,
+    TRY_CAST(range_higher AS FLOAT) AS range_higher,
+    TRIM(abnormal_flag) AS abnormal_flag,
+    TRY_CAST(cost AS FLOAT) AS cost
+
+FROM raw_lab_events 
+
+--  CONVERT_TIMEZONE('UTC', done_datetime::TIMESTAMP_TZ)    AS lab_done_at,
+--     CONVERT_TIMEZONE('UTC', stored_datetime::TIMESTAMP_TZ)  AS lab_stored_at,
+),  __dbt__cte__stg_prescriptions as (
+WITH raw_prescriptions AS (
+    SELECT *
+    FROM raw.public.prescriptions 
+)
+SELECT 
+    prescription_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    drug_id,
+    CAST(prescribed_date AS TIMESTAMP) AS prescribed_date,
+    INITCAP(status) AS status
+FROM raw_prescriptions
+),  __dbt__cte__stg_services as (
+WITH raw_services AS (
+    SELECT *
+    FROM raw.public.services
+)
+
+SELECT 
+    patient_id,
+    admission_id,
+    service_id,
+    REGEXP_LIKE(service_id, '^SVC[0-9]+$') AS is_valid_service_id,
+    CASE 
+        WHEN CONTAINS(service_name, '–') 
+        THEN TRIM(SPLIT_PART(service_name, '–', 1))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(SPLIT_PART(service_name, '(', 1))
+        ELSE service_name 
+    END AS service_name,
+
+    CASE 
+        WHEN CONTAINS(service_name, '–')
+        THEN TRIM(SPLIT_PART(service_name, '–', 2))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(REPLACE(SPLIT_PART(service_name, '(', 2), ')', ''))
+        ELSE NULL
+    END AS service_sub_type,
+    INITCAP(category) AS category,
+    TRY_CAST(cost AS FLOAT) AS cost,
+    duration AS service_duration_in_minutes
+    
+FROM raw_services
+),  __dbt__cte__stg_transfers as (
+WITH raw_transfers AS (
+    SELECT *
+    FROM raw.public.transfers
+)
+
+SELECT 
+    transfer_id,
+    patient_id,
+    from_department,
+    to_department,
+    (from_department = to_department) AS is_same_department_transfer,
+    CAST(transfer_datetime AS TIMESTAMP) AS transfer_datetime,
+    transfer_reason
+    
+FROM raw_transfers
+),  __dbt__cte__stg_drugs as (
+with raw_drugs as (
+    select * 
+    from raw.public.drugs
+)
+
+select 
+    drug_id,
+    case 
+        when brand_name is not null then initcap(brand_name)
+        when brand_name is null and generic_name like 'Atropine Sulfate Injection%' then 'AtroPen'
+        when brand_name is null and generic_name like 'Midazolam Injection%' then 'Versed'
+    end as brand_name,
+    case 
+        when generic_name is not null then initcap(generic_name) 
+        when generic_name is null then brand_name
+    end as generic_name,
+    initcap(route) as route,
+    indications,
+    dosage,
+    contraindications,
+    side_effects,
+    warnings,
+    has_contraindications,
+    has_side_effects
+    
+from raw_drugs
+where not (
+    generic_name = 'Tadalafil'
+    AND brand_name is null
+)
+), admissions AS (
+    SELECT *
+    FROM __dbt__cte__stg_admissions
+),
+
+diagnosis AS (
+    SELECT *
+    FROM __dbt__cte__stg_diagnosis
+),
+
+lab_events AS (
+    SELECT *
+    FROM __dbt__cte__stg_lab_events
+),
+
+prescriptions AS (
+    SELECT *
+    FROM __dbt__cte__stg_prescriptions
+),
+
+services AS (
+    SELECT *
+    FROM __dbt__cte__stg_services
+),
+
+transfers AS (
+    SELECT *
+    FROM __dbt__cte__stg_transfers
+),
+
+drugs AS (
+    SELECT *
+    FROM __dbt__cte__stg_drugs
+),
+
+-- =====================
+-- DIAGNOSIS EVENTS
+-- =====================
+
+diagnosis_events AS (
+
+    SELECT
+        d.patient_id,
+        d.admission_id,
+        d.provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'DIAGNOSIS' AS event_type,
+
+        d.description AS event_detail,
+
+        COALESCE(
+            d.sub_domain_1,
+            d.sub_domain_2,
+            'General'
+        ) AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        NULL AS status_flag
+
+    FROM diagnosis d
+
+    LEFT JOIN admissions a
+        ON d.admission_id = a.admission_id
+),
+
+-- =====================
+-- LAB EVENTS
+-- =====================
+
+lab_timeline AS (
+
+    SELECT
+        patient_id,
+        admission_id,
+        provider_id,
+
+        lab_done_at AS event_timestamp,
+
+        'LAB' AS event_type,
+
+        CONCAT(
+            'Lab result: ',
+            item_id
+        ) AS event_detail,
+
+        item_id AS category,
+
+        result_value AS numeric_value,
+
+        measurement_unit AS unit,
+
+        abnormal_flag AS status_flag
+
+    FROM lab_events
+),
+
+-- =====================
+-- PRESCRIPTION EVENTS
+-- =====================
+
+prescription_events AS (
+
+    SELECT
+        p.patient_id,
+        p.admission_id,
+        p.provider_id,
+
+        p.prescribed_date AS event_timestamp,
+
+        'PRESCRIPTION' AS event_type,
+
+        COALESCE(
+            d.generic_name,
+            d.brand_name
+        ) AS event_detail,
+
+        d.route AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        p.status AS status_flag
+
+    FROM prescriptions p
+
+    LEFT JOIN drugs d
+        ON p.drug_id = d.drug_id
+),
+
+-- =====================
+-- SERVICE EVENTS
+-- =====================
+
+service_events AS (
+
+    SELECT
+        s.patient_id,
+        s.admission_id,
+
+        NULL AS provider_id,
+
+        a.admitted_in_timestamp AS event_timestamp,
+
+        'SERVICE' AS event_type,
+
+        s.service_name AS event_detail,
+
+        s.category AS category,
+
+        s.cost AS numeric_value,
+
+        'USD' AS unit,
+
+        NULL AS status_flag
+
+    FROM services s
+
+    LEFT JOIN admissions a
+        ON s.admission_id = a.admission_id
+),
+
+-- =====================
+-- TRANSFER EVENTS
+-- =====================
+
+transfer_events AS (
+
+    SELECT
+        patient_id,
+        NULL AS admission_id,
+        NULL AS provider_id,
+
+        transfer_datetime AS event_timestamp,
+
+        'TRANSFER' AS event_type,
+
+        CONCAT(
+            from_department,
+            ' → ',
+            to_department
+        ) AS event_detail,
+
+        transfer_reason AS category,
+
+        NULL AS numeric_value,
+        NULL AS unit,
+
+        CASE
+            WHEN is_same_department_transfer
+                THEN 'SAME_DEPARTMENT'
+            ELSE 'DEPARTMENT_CHANGE'
+        END AS status_flag
+
+    FROM transfers
+)
+
+SELECT * FROM diagnosis_events
+
+UNION ALL
+
+SELECT * FROM lab_timeline
+
+UNION ALL
+
+SELECT * FROM prescription_events
+
+UNION ALL
+
+SELECT * FROM service_events
+
+UNION ALL
+
+SELECT * FROM transfer_events
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.int_clinical_events"} */;
+[0m17:18:02.725328 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.282 seconds
+[0m17:18:02.786686 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '63b1b02c-e876-4936-95fe-f22adf36a424', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa54ad35b0>]}
+[0m17:18:02.787817 [info ] [Thread-2 (]: 1 of 1 OK created sql view model dbt_dev_intermediate.int_clinical_events ...... [[32mSUCCESS 1[0m in 1.47s]
+[0m17:18:02.788956 [debug] [Thread-2 (]: Finished running node model.raqib_sf.int_clinical_events
+[0m17:18:02.790291 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:18:02.790735 [debug] [MainThread]: Connection 'model.raqib_sf.int_clinical_events' was left open.
+[0m17:18:02.791141 [debug] [MainThread]: On model.raqib_sf.int_clinical_events: Close
+[0m17:18:02.949405 [info ] [MainThread]: 
+[0m17:18:02.950257 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.86 seconds (2.86s).
+[0m17:18:02.951644 [debug] [MainThread]: Command end result
+[0m17:18:03.116249 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:18:03.118205 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:18:03.125701 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/run_results.json
+[0m17:18:03.126117 [info ] [MainThread]: 
+[0m17:18:03.126598 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:18:03.126982 [info ] [MainThread]: 
+[0m17:18:03.127395 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:18:03.128333 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.0774684, "process_in_blocks": "0", "process_kernel_time": 0.173519, "process_mem_max_rss": "234444", "process_out_blocks": "5912", "process_user_time": 4.639159}
+[0m17:18:03.128895 [debug] [MainThread]: Command `dbt run` succeeded at 17:18:03.128778 after 5.08 seconds
+[0m17:18:03.129340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa7d0bff10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa7d01e260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75aa5416d660>]}
+[0m17:18:03.129786 [debug] [MainThread]: Flushing usage events
+[0m17:18:03.825409 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:22:14.832462 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c294907eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c293858310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c2938582b0>]}
+
+
+============================== 17:22:14.835019 | f60bff23-0810-4b82-bc09-82d908a7964a ==============================
+[0m17:22:14.835019 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:22:14.835575 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'debug': 'False', 'log_path': '/home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/logs', 'target_path': 'None', 'profiles_dir': '/home/youssef/.dbt', 'printer_width': '80', 'log_cache_events': 'False', 'introspect': 'True', 'version_check': 'True', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run -s models/intermediate/int_transfers.sql', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'empty': 'False', 'partial_parse': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'log_format': 'default', 'no_print': 'None'}
+[0m17:22:15.394750 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m17:22:15.395336 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m17:22:15.395795 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m17:22:15.613464 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f60bff23-0810-4b82-bc09-82d908a7964a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c2937d8b80>]}
+[0m17:22:15.689029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f60bff23-0810-4b82-bc09-82d908a7964a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c2962ccc10>]}
+[0m17:22:15.689832 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m17:22:15.800600 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:22:15.962973 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 0 files added, 2 files changed.
+[0m17:22:15.964046 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models/intermediate/int_clinical_events.sql
+[0m17:22:15.964574 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models/intermediate/int_services.sql
+[0m17:22:15.965042 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models/intermediate/int_transfers.sql
+[0m17:22:16.369466 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.raqib_sf.marts
+[0m17:22:16.389626 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f60bff23-0810-4b82-bc09-82d908a7964a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c26eaedcc0>]}
+[0m17:22:16.537587 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:22:16.539680 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:22:16.550899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f60bff23-0810-4b82-bc09-82d908a7964a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c26d174580>]}
+[0m17:22:16.551499 [info ] [MainThread]: Found 21 models, 50 data tests, 11 sources, 653 macros
+[0m17:22:16.551909 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f60bff23-0810-4b82-bc09-82d908a7964a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c26d174430>]}
+[0m17:22:16.555075 [info ] [MainThread]: 
+[0m17:22:16.555492 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:22:16.555852 [info ] [MainThread]: 
+[0m17:22:16.556386 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:22:16.557290 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m17:22:16.591745 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m17:22:16.592293 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m17:22:16.592738 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:22:17.341326 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.748 seconds
+[0m17:22:17.368532 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_dbt_dev_intermediate)
+[0m17:22:17.404687 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev_intermediate"
+[0m17:22:17.405411 [debug] [ThreadPool]: On list_dev_dbt_dev_intermediate: show objects in dev.dbt_dev_intermediate
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev_intermediate"} */;
+[0m17:22:17.529495 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.123 seconds
+[0m17:22:17.543203 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f60bff23-0810-4b82-bc09-82d908a7964a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c26e79dc00>]}
+[0m17:22:17.553458 [debug] [Thread-2 (]: Began running node model.raqib_sf.int_transfers
+[0m17:22:17.556200 [info ] [Thread-2 (]: 1 of 1 START sql view model dbt_dev_intermediate.int_transfers ................. [RUN]
+[0m17:22:17.558424 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev_intermediate, now model.raqib_sf.int_transfers)
+[0m17:22:17.559102 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.int_transfers
+[0m17:22:17.573425 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_transfers"
+[0m17:22:17.575583 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_transfers"
+[0m17:22:17.576176 [debug] [Thread-2 (]: Began executing node model.raqib_sf.int_transfers
+[0m17:22:17.609368 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.int_transfers"
+[0m17:22:17.611608 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.int_transfers"
+[0m17:22:17.612357 [debug] [Thread-2 (]: On model.raqib_sf.int_transfers: create or replace   view dev.dbt_dev_intermediate.int_transfers
+  
+  
+  
+  
+  as (
+    with  __dbt__cte__stg_transfers as (
+WITH raw_transfers AS (
+    SELECT *
+    FROM raw.public.transfers
+)
+
+SELECT 
+    transfer_id,
+    patient_id,
+    from_department,
+    to_department,
+    (from_department = to_department) AS is_same_department_transfer,
+    CAST(transfer_datetime AS TIMESTAMP) AS transfer_datetime,
+    transfer_reason
+    
+FROM raw_transfers
+), stg_transfers as (
+    select * 
+    from __dbt__cte__stg_transfers
+)
+
+select 
+    *
+
+from stg_transfers
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.int_transfers"} */;
+[0m17:22:17.907127 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.294 seconds
+[0m17:22:17.962035 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f60bff23-0810-4b82-bc09-82d908a7964a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c26c459ba0>]}
+[0m17:22:17.962894 [info ] [Thread-2 (]: 1 of 1 OK created sql view model dbt_dev_intermediate.int_transfers ............ [[32mSUCCESS 1[0m in 0.40s]
+[0m17:22:17.963643 [debug] [Thread-2 (]: Finished running node model.raqib_sf.int_transfers
+[0m17:22:17.965131 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:22:17.965778 [debug] [MainThread]: Connection 'model.raqib_sf.int_transfers' was left open.
+[0m17:22:17.966458 [debug] [MainThread]: On model.raqib_sf.int_transfers: Close
+[0m17:22:18.127402 [info ] [MainThread]: 
+[0m17:22:18.129415 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.57 seconds (1.57s).
+[0m17:22:18.132880 [debug] [MainThread]: Command end result
+[0m17:22:18.207644 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:22:18.209604 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:22:18.216513 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/run_results.json
+[0m17:22:18.216911 [info ] [MainThread]: 
+[0m17:22:18.217381 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:22:18.217757 [info ] [MainThread]: 
+[0m17:22:18.218153 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:22:18.219003 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.455356, "process_in_blocks": "544", "process_kernel_time": 0.17567, "process_mem_max_rss": "232604", "process_out_blocks": "5752", "process_user_time": 4.280978}
+[0m17:22:18.219508 [debug] [MainThread]: Command `dbt run` succeeded at 17:22:18.219399 after 3.46 seconds
+[0m17:22:18.219961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c294907eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c294865ba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c296166050>]}
+[0m17:22:18.220435 [debug] [MainThread]: Flushing usage events
+[0m17:22:19.081517 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:22:30.431598 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7af052ae7fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7af051a20310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7af051a202b0>]}
+
+
+============================== 17:22:30.434359 | dcd0bb75-a2eb-4410-bbe5-231a9cf5b4ea ==============================
+[0m17:22:30.434359 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:22:30.434904 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'no_print': 'None', 'profiles_dir': '/home/youssef/.dbt', 'log_format': 'default', 'use_colors': 'True', 'static_parser': 'True', 'log_path': '/home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/logs', 'log_cache_events': 'False', 'write_json': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'quiet': 'False', 'partial_parse': 'True', 'invocation_command': 'dbt run -s models/intermediate/int_int_services.sql', 'target_path': 'None', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'version_check': 'True', 'fail_fast': 'False', 'indirect_selection': 'eager', 'empty': 'False', 'use_experimental_parser': 'False'}
+[0m17:22:30.984172 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m17:22:30.984733 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m17:22:30.985179 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m17:22:31.208505 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'dcd0bb75-a2eb-4410-bbe5-231a9cf5b4ea', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7af02d5f0700>]}
+[0m17:22:31.286001 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'dcd0bb75-a2eb-4410-bbe5-231a9cf5b4ea', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7af0519d1cf0>]}
+[0m17:22:31.286902 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m17:22:31.398327 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:22:31.567004 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:22:31.567486 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m17:22:31.567827 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:22:31.577040 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.raqib_sf.marts
+[0m17:22:31.638628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'dcd0bb75-a2eb-4410-bbe5-231a9cf5b4ea', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7af02c31e140>]}
+[0m17:22:31.874148 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:22:31.876125 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:22:31.887991 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'dcd0bb75-a2eb-4410-bbe5-231a9cf5b4ea', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7af02c3339a0>]}
+[0m17:22:31.888646 [info ] [MainThread]: Found 21 models, 50 data tests, 11 sources, 653 macros
+[0m17:22:31.889065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dcd0bb75-a2eb-4410-bbe5-231a9cf5b4ea', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7af02c37c880>]}
+[0m17:22:31.891238 [warn ] [MainThread]: The selection criterion 'models/intermediate/int_int_services.sql' does not match any enabled nodes
+[0m17:22:31.892644 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m17:22:31.894876 [debug] [MainThread]: Command end result
+[0m17:22:31.956156 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:22:31.958343 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:22:31.962065 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/run_results.json
+[0m17:22:31.963045 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.6004615, "process_in_blocks": "0", "process_kernel_time": 0.146817, "process_mem_max_rss": "211752", "process_out_blocks": "3944", "process_user_time": 3.589541}
+[0m17:22:31.963733 [debug] [MainThread]: Command `dbt run` succeeded at 17:22:31.963614 after 1.60 seconds
+[0m17:22:31.964211 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7af052ae7fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7af0544875e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7af054487c70>]}
+[0m17:22:31.964692 [debug] [MainThread]: Flushing usage events
+[0m17:22:32.690440 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:22:44.512478 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed866fbfd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed8543c310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed8543c2b0>]}
+
+
+============================== 17:22:44.515079 | 12c377d8-9894-4c95-834a-1e5ccbe71517 ==============================
+[0m17:22:44.515079 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:22:44.515656 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'use_colors': 'True', 'profiles_dir': '/home/youssef/.dbt', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'empty': 'False', 'invocation_command': 'dbt run -s models/intermediate/int_services.sql', 'no_print': 'None', 'use_experimental_parser': 'False', 'log_path': '/home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'target_path': 'None', 'partial_parse': 'True', 'introspect': 'True', 'debug': 'False'}
+[0m17:22:45.064455 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m17:22:45.065024 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m17:22:45.065481 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m17:22:45.288586 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '12c377d8-9894-4c95-834a-1e5ccbe71517', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed8870f400>]}
+[0m17:22:45.365715 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '12c377d8-9894-4c95-834a-1e5ccbe71517', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed6524f700>]}
+[0m17:22:45.366552 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m17:22:45.480983 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m17:22:45.648091 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:22:45.648558 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m17:22:45.648901 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:22:45.657623 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.raqib_sf.marts
+[0m17:22:45.720325 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '12c377d8-9894-4c95-834a-1e5ccbe71517', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed5bf36170>]}
+[0m17:22:45.953707 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:22:45.955696 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:22:45.967276 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '12c377d8-9894-4c95-834a-1e5ccbe71517', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed5bf57af0>]}
+[0m17:22:45.967920 [info ] [MainThread]: Found 21 models, 50 data tests, 11 sources, 653 macros
+[0m17:22:45.968501 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '12c377d8-9894-4c95-834a-1e5ccbe71517', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed5bf940d0>]}
+[0m17:22:45.971933 [info ] [MainThread]: 
+[0m17:22:45.972346 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:22:45.972712 [info ] [MainThread]: 
+[0m17:22:45.973241 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:22:45.974146 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m17:22:46.011153 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m17:22:46.011673 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m17:22:46.012050 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:22:46.781802 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.769 seconds
+[0m17:22:46.807962 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_dbt_dev_intermediate)
+[0m17:22:46.846051 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev_intermediate"
+[0m17:22:46.846861 [debug] [ThreadPool]: On list_dev_dbt_dev_intermediate: show objects in dev.dbt_dev_intermediate
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev_intermediate"} */;
+[0m17:22:47.090870 [debug] [ThreadPool]: SQL status: SUCCESS 9 in 0.243 seconds
+[0m17:22:47.104936 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '12c377d8-9894-4c95-834a-1e5ccbe71517', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed5bf55420>]}
+[0m17:22:47.113134 [debug] [Thread-2 (]: Began running node model.raqib_sf.int_services
+[0m17:22:47.115288 [info ] [Thread-2 (]: 1 of 1 START sql view model dbt_dev_intermediate.int_services .................. [RUN]
+[0m17:22:47.117209 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev_intermediate, now model.raqib_sf.int_services)
+[0m17:22:47.118725 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.int_services
+[0m17:22:47.152518 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_services"
+[0m17:22:47.154659 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_services"
+[0m17:22:47.155372 [debug] [Thread-2 (]: Began executing node model.raqib_sf.int_services
+[0m17:22:47.186325 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.int_services"
+[0m17:22:47.188102 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.int_services"
+[0m17:22:47.188627 [debug] [Thread-2 (]: On model.raqib_sf.int_services: create or replace   view dev.dbt_dev_intermediate.int_services
+  
+  
+  
+  
+  as (
+    with  __dbt__cte__stg_services as (
+WITH raw_services AS (
+    SELECT *
+    FROM raw.public.services
+)
+
+SELECT 
+    patient_id,
+    admission_id,
+    service_id,
+    REGEXP_LIKE(service_id, '^SVC[0-9]+$') AS is_valid_service_id,
+    CASE 
+        WHEN CONTAINS(service_name, '–') 
+        THEN TRIM(SPLIT_PART(service_name, '–', 1))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(SPLIT_PART(service_name, '(', 1))
+        ELSE service_name 
+    END AS service_name,
+
+    CASE 
+        WHEN CONTAINS(service_name, '–')
+        THEN TRIM(SPLIT_PART(service_name, '–', 2))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(REPLACE(SPLIT_PART(service_name, '(', 2), ')', ''))
+        ELSE NULL
+    END AS service_sub_type,
+    INITCAP(category) AS category,
+    TRY_CAST(cost AS FLOAT) AS cost,
+    duration AS service_duration_in_minutes
+    
+FROM raw_services
+), stg_services as (
+    select * 
+    from __dbt__cte__stg_services
+)
+
+select 
+    * 
+from stg_services
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.int_services"} */;
+[0m17:22:47.498046 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.309 seconds
+[0m17:22:47.524769 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '12c377d8-9894-4c95-834a-1e5ccbe71517', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed8543ead0>]}
+[0m17:22:47.525635 [info ] [Thread-2 (]: 1 of 1 OK created sql view model dbt_dev_intermediate.int_services ............. [[32mSUCCESS 1[0m in 0.41s]
+[0m17:22:47.526480 [debug] [Thread-2 (]: Finished running node model.raqib_sf.int_services
+[0m17:22:47.527850 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:22:47.528229 [debug] [MainThread]: Connection 'model.raqib_sf.int_services' was left open.
+[0m17:22:47.528617 [debug] [MainThread]: On model.raqib_sf.int_services: Close
+[0m17:22:47.689708 [info ] [MainThread]: 
+[0m17:22:47.691666 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.72 seconds (1.72s).
+[0m17:22:47.694687 [debug] [MainThread]: Command end result
+[0m17:22:47.781460 [debug] [MainThread]: Wrote artifact WritableManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/manifest.json
+[0m17:22:47.783383 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m17:22:47.790614 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/youssef/Documents/Raqib/Raqib/raqib_sf_dbt/target/run_results.json
+[0m17:22:47.791025 [info ] [MainThread]: 
+[0m17:22:47.791496 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:22:47.791875 [info ] [MainThread]: 
+[0m17:22:47.792278 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m17:22:47.793140 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.348658, "process_in_blocks": "0", "process_kernel_time": 0.180598, "process_mem_max_rss": "227156", "process_out_blocks": "3992", "process_user_time": 4.01407}
+[0m17:22:47.793881 [debug] [MainThread]: Command `dbt run` succeeded at 17:22:47.793766 after 3.35 seconds
+[0m17:22:47.794322 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed866fbfd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed8870f400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aed866a94e0>]}
+[0m17:22:47.794765 [debug] [MainThread]: Flushing usage events
+[0m17:22:48.610673 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,6 +1,7 @@
+with  __dbt__cte__stg_transfers as (
 WITH raw_transfers AS (
     SELECT *
-    FROM {{ source('raw', 'raw_transfers') }}
+    FROM raw.public.transfers
 )
 
 SELECT 
@@ -13,5 +14,12 @@ SELECT
     transfer_reason
     
 FROM raw_transfers
+), stg_transfers as (
+    select * 
+    from __dbt__cte__stg_transfers
+)
 
+select 
+    *
 
+from stg_transfers
