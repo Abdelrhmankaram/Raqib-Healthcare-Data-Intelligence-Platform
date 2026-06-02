@@ -35,10 +35,21 @@ SELECT
         ELSE 'Unknown'
     END AS gender,
     INITCAP(language) AS spoken_language,
-    TRIM(REGEXP_REPLACE(REGEXP_REPLACE(birthplace, ',', ''), '\\s+\\S+$', '')) AS birth_city,
+    INITCAP(TRIM(SPLIT_PART(birthplace, ',', 1))) AS birth_city,
+    CASE UPPER(TRIM(SPLIT_PARTS(birthplace, ',',2)))
+    WHEN 'CT' THEN 'Connecticut'
+    WHEN 'ME' THEN 'Maine'
+    WHEN 'MA' THEN 'Massachusetts'
+    WHEN 'NH' THEN 'New Hampshire'
+    WHEN 'RI' THEN 'Rhode Island'
+    WHEN 'VT' THEN 'Vermont'
+    WHEN 'NY' THEN 'New York'
+    AS birth_state,
     address,
     INITCAP(city) AS city,
-    INITCAP(country) AS country,
+    CASE UPPER(TRIM(country))
+    WHEN 'US' THEN 'United States'
+    WHEN 'UK' THEN 'United Kingdom' AS country,
     TRY_CAST(healthcare_expenses AS FLOAT) AS healthcare_expenses,
     TRY_CAST(healthcare_coverage AS FLOAT) AS healthcare_coverage,
     income AS income_usd
