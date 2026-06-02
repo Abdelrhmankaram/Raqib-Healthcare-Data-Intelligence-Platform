@@ -39,8 +39,9 @@ with stg_services as (
     from __dbt__cte__stg_services
 )
 
-select 
+SELECT
+    md5(cast(coalesce(cast(service_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS service_key,
     * 
-from stg_services
+FROM stg_services
 --EPHEMERAL-SELECT-WRAPPER-END
 )

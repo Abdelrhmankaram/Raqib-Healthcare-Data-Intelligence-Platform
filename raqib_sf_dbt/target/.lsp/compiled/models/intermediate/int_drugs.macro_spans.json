@@ -14,14 +14,40 @@
     },
     "expanded_span": {
       "start": {
-        "line": 37,
+        "line": 34,
         "col": 11,
-        "index": 868
+        "index": 875
       },
       "stop": {
-        "line": 37,
+        "line": 34,
         "col": 32,
-        "index": 889
+        "index": 896
+      }
+    }
+  },
+  {
+    "macro_span": {
+      "start": {
+        "line": 7,
+        "col": 5,
+        "index": 82
+      },
+      "stop": {
+        "line": 7,
+        "col": 56,
+        "index": 133
+      }
+    },
+    "expanded_span": {
+      "start": {
+        "line": 38,
+        "col": 5,
+        "index": 911
+      },
+      "stop": {
+        "line": 38,
+        "col": 89,
+        "index": 995
       }
     }
   }
