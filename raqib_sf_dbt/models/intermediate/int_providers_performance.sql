@@ -23,9 +23,7 @@ prescriptions AS (
     FROM {{ ref('stg_prescriptions') }}
 ),
 
--- =========================
--- ENCOUNTER METRICS
--- =========================
+
 encounter_metrics AS (
     SELECT
         provider_id,
@@ -46,9 +44,7 @@ encounter_metrics AS (
     GROUP BY provider_id
 ),
 
--- =========================
--- DIAGNOSIS METRICS
--- =========================
+
 diagnosis_metrics AS (
     SELECT
         provider_id,
@@ -57,9 +53,7 @@ diagnosis_metrics AS (
     GROUP BY provider_id
 ),
 
--- =========================
--- LAB METRICS
--- =========================
+
 lab_metrics AS (
     SELECT
         provider_id,
@@ -68,9 +62,6 @@ lab_metrics AS (
     GROUP BY provider_id
 ),
 
--- =========================
--- PRESCRIPTION METRICS
--- =========================
 prescription_metrics AS (
     SELECT
         provider_id,
@@ -79,9 +70,6 @@ prescription_metrics AS (
     GROUP BY provider_id
 )
 
--- =========================
--- FINAL MODEL
--- =========================
 SELECT
     {{ dbt_utils.generate_surrogate_key(['provider_id']) }} AS provider_performance_key,
     p.provider_id,
@@ -92,19 +80,12 @@ SELECT
     p.provider_city,
     p.provider_state_code,
 
-    -- =====================
-    -- CORE ACTIVITY
-    -- =====================
+   
     COALESCE(em.total_encounters, 0) AS total_encounters,
     COALESCE(em.unique_patients, 0) AS unique_patients,
     COALESCE(dm.total_diagnoses, 0) AS total_diagnoses,
     COALESCE(lm.total_lab_orders, 0) AS total_lab_orders,
     COALESCE(pm.total_prescriptions, 0) AS total_prescriptions,
-
-    -- =====================
-    -- PERFORMANCE METRICS
-    -- =====================
-
     COALESCE(em.mortality_rate, 0) AS mortality_rate
 
 FROM providers p
