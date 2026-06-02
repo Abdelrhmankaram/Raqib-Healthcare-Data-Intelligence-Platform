@@ -8,7 +8,7 @@ SELECT
     INITCAP(provider_first_name) AS provider_first_name,
     INITCAP(provider_last_name) AS provider_last_name,
     INITCAP(provider_name_prefix) AS provider_name_prefix,
-    REGEXP_LIKE(provider_name_prefix, '%.') AS is_valid_prefix,
+    REGEXP_LIKE(provider_name_prefix, '\\.$') AS is_valid_prefix,
     INITCAP(provider_address) AS provider_address,
     INITCAP(provider_city) AS provider_city,
     TRIM(provider_state_code) AS provider_state_code,
@@ -22,12 +22,12 @@ SELECT
     provider_telephone_number,
     CAST(provider_enumeration_date AS DATE) AS provider_enumeration_date,
     CASE 
-        WHEN TRY_TO_DATE(provider_enumeration_date, 'YYYY-MM-DD') IS NOT NULL THEN TRUE
+        WHEN CAST(provider_enumeration_date AS DATE) IS NOT NULL THEN TRUE
         ELSE FALSE
     END AS is_valid_enumeration_date,
     CAST(provider_join_date AS DATE) AS provider_join_date,
     CASE 
-        WHEN TRY_TO_DATE(provider_join_date, 'YYYY-MM-DD') IS NOT NULL THEN TRUE
+        WHEN DATE(provider_join_date, 'YYYY-MM-DD') IS NOT NULL THEN TRUE
         ELSE FALSE
     END AS is_valid_join_date,
     provider_specialty

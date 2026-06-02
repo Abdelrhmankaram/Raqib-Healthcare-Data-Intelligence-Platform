@@ -1,4 +1,0 @@
--- 1row per admission
--- adding lenght of stay, age at admission, age group(child wla adult w kda), (payer coverage %)
--- main joins (admissions, patients, providers)
--- columns (admission_id, patient_id, provider_id, provider_speciality,primary_sdk, admitted_at_timestamp, out_timestamp, admission_typr, admission_location,is_active_encounter, discharge_location, LOS, age_at_admission,age group, is_30d_readmission, total_cost, out_of_pocket_cost, payer_coverage(%), is_emergency_admission) 
