@@ -4,7 +4,7 @@ WITH raw_providers AS (
 )
 
 SELECT 
-    npi,
+    npi AS provider_id,
     INITCAP(provider_first_name) AS provider_first_name,
     INITCAP(provider_last_name) AS provider_last_name,
     INITCAP(provider_name_prefix) AS provider_name_prefix,
