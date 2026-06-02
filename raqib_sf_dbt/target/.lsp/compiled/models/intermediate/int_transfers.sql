@@ -1,4 +1,4 @@
-__dbt__cte__stg_transfers as (
+with __dbt__cte__stg_transfers as (
 WITH raw_transfers AS (
     SELECT *
     FROM raw.public.transfers
@@ -16,4 +16,17 @@ SELECT
 FROM raw_transfers
 
 
+)
+--EPHEMERAL-SELECT-WRAPPER-START
+select * from (
+with stg_transfers as (
+    select * 
+    from __dbt__cte__stg_transfers
+)
+
+select 
+    *
+
+from stg_transfers
+--EPHEMERAL-SELECT-WRAPPER-END
 )

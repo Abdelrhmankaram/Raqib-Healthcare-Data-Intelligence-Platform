@@ -8,6 +8,6 @@ SELECT
     admission_id,
     provider_id,
     drug_id,
-    prescribed_date,
+    CAST(prescribed_date AS TIMESTAMP) AS prescribed_date,
     INITCAP(status) AS status
 FROM raw_prescriptions
