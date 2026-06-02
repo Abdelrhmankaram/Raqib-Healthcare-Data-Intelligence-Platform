@@ -196,3 +196,20 @@ models:
       - name: patient_id
         data_tests:
           - not_null
+
+  - name: stg_prescriptions
+    columns:
+      - name: prescription_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: patient_id
+        data_tests:
+          - not_null
+
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['completed', 'Active', 'Discontinued']
