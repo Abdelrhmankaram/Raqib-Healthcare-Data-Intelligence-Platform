@@ -42,6 +42,7 @@ html, body, [data-testid="stAppViewContainer"] {
     border-right: 1px solid #2e2e4a;
 }
 [data-testid="stSidebar"] * { color: #e8e4dc !important; }
+[data-testid="stSidebar"] .pill * { color: inherit !important; }
 [data-testid="stSidebar"] .stFileUploader label { color: #a09892 !important; font-size: 0.75rem; }
 [data-testid="stSidebar"] input,
 [data-testid="stSidebar"] .stTextInput input {
@@ -49,6 +50,42 @@ html, body, [data-testid="stAppViewContainer"] {
     border: 1px solid #3a3a5a !important;
     color: #e8e4dc !important;
     border-radius: 4px;
+}
+
+/* Fix selectbox and other white background elements */
+[data-testid="stSidebar"] div[data-baseweb="select"],
+[data-testid="stSidebar"] .stSelectbox,
+[data-testid="stSidebar"] .stNumberInput,
+[data-testid="stSidebar"] .stSlider {
+    color: var(--ink) !important;
+}
+
+[data-testid="stSidebar"] div[data-baseweb="select"] div,
+[data-testid="stSidebar"] .stSelectbox div,
+[data-testid="stSidebar"] .stNumberInput div,
+[data-testid="stSidebar"] .stSlider div {
+    color: var(--ink) !important;
+}
+
+[data-testid="stSidebar"] span, 
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label {
+    color: #e8e4dc !important;
+}
+
+/* File uploader styling */
+[data-testid="stSidebar"] .stFileUploader {
+    color: var(--ink) !important;
+}
+[data-testid="stSidebar"] .stFileUploader * {
+    color: var(--ink) !important;
+}
+[data-testid="stSidebar"] .stFileUploader button {
+    color: var(--ink) !important;
+}
+[data-testid="stSidebar"] .stFileUploader div span,
+[data-testid="stSidebar"] .stFileUploader div p {
+    color: var(--ink) !important;
 }
 
 /* Main title */
@@ -129,7 +166,7 @@ html, body, [data-testid="stAppViewContainer"] {
     text-transform: uppercase;
     font-weight: 500;
 }
-.pill-green { background: #d4edda; color: #1a5c2a; }
+.pill-green { background: #000000; color: #1a5c2a; }
 .pill-red   { background: #fde8e8; color: #8b1c1c; }
 .pill-blue  { background: #dbeafe; color: #1e3a8a; }
 
@@ -371,7 +408,7 @@ else:
     with col2:
         send = st.button("Send →")
 
-    if (send or question) and question.strip():
+    if send and question.strip():
         q = question.strip()
 
         with st.spinner("Thinking…"):
