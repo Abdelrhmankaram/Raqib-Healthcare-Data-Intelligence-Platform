@@ -43,6 +43,8 @@ models:
       +tags: ["intermediate"]
 
     marts:
+      +database: prod
+      +schema: marts
       +materialized: incremental
       +incremental_strategy: merge
       +on_schema_change: sync_all_columns 

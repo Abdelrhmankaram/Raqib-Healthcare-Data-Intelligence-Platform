@@ -1,3 +1,4 @@
 .env
+.venv
 .DS_Store
 raqib_sf_dbt/profiles.yml
