@@ -12,7 +12,6 @@ stg_providers AS (
 )
 
 
-
 SELECT 
 
     {{ dbt_utils.generate_surrogate_key(['admission_id']) }} AS encounter_key,
