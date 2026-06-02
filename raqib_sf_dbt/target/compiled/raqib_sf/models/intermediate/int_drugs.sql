@@ -34,5 +34,7 @@ where not (
      from __dbt__cte__stg_drugs
 )
 
-SELECT *
+SELECT
+    md5(cast(coalesce(cast(drug_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS drug_key,
+    *
 FROM stg_drugs

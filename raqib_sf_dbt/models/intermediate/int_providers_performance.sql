@@ -71,7 +71,7 @@ prescription_metrics AS (
 )
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['provider_id']) }} AS provider_performance_key,
+    {{ dbt_utils.generate_surrogate_key(['p.provider_id']) }} AS provider_performance_key,
     p.provider_id,
 
     p.provider_first_name,

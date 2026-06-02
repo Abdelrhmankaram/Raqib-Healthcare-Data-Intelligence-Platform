@@ -9,7 +9,7 @@ drugs AS (
 )
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['prescription_id']) }}  AS prescription_key,
+    {{ dbt_utils.generate_surrogate_key(['p.prescription_id']) }}  AS prescription_key,
     p.prescription_id,
     p.patient_id,
     p.admission_id,

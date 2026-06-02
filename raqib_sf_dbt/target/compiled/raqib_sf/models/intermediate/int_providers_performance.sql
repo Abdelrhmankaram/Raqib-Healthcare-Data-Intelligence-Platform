@@ -88,8 +88,8 @@ SELECT
     specimen_id,
     item_id,
     provider_id,
-    CONVERT_TIMEZONE('UTC', done_datetime::TIMESTAMP_TZ)    AS lab_done_at,
-    CONVERT_TIMEZONE('UTC', stored_datetime::TIMESTAMP_TZ)  AS lab_stored_at,
+    CAST(done_datetime AS TIMESTAMP)    AS lab_done_at,
+    CAST(stored_datetime AS TIMESTAMP)  AS lab_stored_at,
     TRY_CAST(value AS FLOAT) AS result_value,
     TRIM(measurement_unit) AS measurement_unit,
     TRY_CAST(range_lower AS FLOAT) AS range_lower,
@@ -97,7 +97,10 @@ SELECT
     TRIM(abnormal_flag) AS abnormal_flag,
     TRY_CAST(cost AS FLOAT) AS cost
 
-FROM raw_lab_events
+FROM raw_lab_events 
+
+--  CONVERT_TIMEZONE('UTC', done_datetime::TIMESTAMP_TZ)    AS lab_done_at,
+--     CONVERT_TIMEZONE('UTC', stored_datetime::TIMESTAMP_TZ)  AS lab_stored_at,
 ),  __dbt__cte__stg_prescriptions as (
 WITH raw_prescriptions AS (
     SELECT *
@@ -109,7 +112,7 @@ SELECT
     admission_id,
     provider_id,
     drug_id,
-    prescribed_date,
+    CAST(prescribed_date AS TIMESTAMP) AS prescribed_date,
     INITCAP(status) AS status
 FROM raw_prescriptions
 ), providers AS (
@@ -137,9 +140,7 @@ prescriptions AS (
     FROM __dbt__cte__stg_prescriptions
 ),
 
--- =========================
--- ENCOUNTER METRICS
--- =========================
+
 encounter_metrics AS (
     SELECT
         provider_id,
@@ -160,9 +161,7 @@ encounter_metrics AS (
     GROUP BY provider_id
 ),
 
--- =========================
--- DIAGNOSIS METRICS
--- =========================
+
 diagnosis_metrics AS (
     SELECT
         provider_id,
@@ -171,9 +170,7 @@ diagnosis_metrics AS (
     GROUP BY provider_id
 ),
 
--- =========================
--- LAB METRICS
--- =========================
+
 lab_metrics AS (
     SELECT
         provider_id,
@@ -182,9 +179,6 @@ lab_metrics AS (
     GROUP BY provider_id
 ),
 
--- =========================
--- PRESCRIPTION METRICS
--- =========================
 prescription_metrics AS (
     SELECT
         provider_id,
@@ -193,10 +187,8 @@ prescription_metrics AS (
     GROUP BY provider_id
 )
 
--- =========================
--- FINAL MODEL
--- =========================
 SELECT
+    md5(cast(coalesce(cast(p.provider_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS provider_performance_key,
     p.provider_id,
 
     p.provider_first_name,
@@ -205,19 +197,12 @@ SELECT
     p.provider_city,
     p.provider_state_code,
 
-    -- =====================
-    -- CORE ACTIVITY
-    -- =====================
+   
     COALESCE(em.total_encounters, 0) AS total_encounters,
     COALESCE(em.unique_patients, 0) AS unique_patients,
     COALESCE(dm.total_diagnoses, 0) AS total_diagnoses,
     COALESCE(lm.total_lab_orders, 0) AS total_lab_orders,
     COALESCE(pm.total_prescriptions, 0) AS total_prescriptions,
-
-    -- =====================
-    -- PERFORMANCE METRICS
-    -- =====================
-
     COALESCE(em.mortality_rate, 0) AS mortality_rate
 
 FROM providers p

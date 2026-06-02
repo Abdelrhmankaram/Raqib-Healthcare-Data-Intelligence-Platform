@@ -51,7 +51,7 @@ latest_status AS (
 )
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['patient_id']) }} AS patient_360_key,
+    {{ dbt_utils.generate_surrogate_key(['p.patient_id']) }} AS patient_360_key,
     p.patient_id,
     p.full_name,
     p.gender,

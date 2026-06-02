@@ -20,8 +20,8 @@ SELECT
     specimen_id,
     item_id,
     provider_id,
-    CONVERT_TIMEZONE('UTC', done_datetime::TIMESTAMP_TZ)    AS lab_done_at,
-    CONVERT_TIMEZONE('UTC', stored_datetime::TIMESTAMP_TZ)  AS lab_stored_at,
+    CAST(done_datetime AS TIMESTAMP)    AS lab_done_at,
+    CAST(stored_datetime AS TIMESTAMP)  AS lab_stored_at,
     TRY_CAST(value AS FLOAT) AS result_value,
     TRIM(measurement_unit) AS measurement_unit,
     TRY_CAST(range_lower AS FLOAT) AS range_lower,
@@ -29,7 +29,10 @@ SELECT
     TRIM(abnormal_flag) AS abnormal_flag,
     TRY_CAST(cost AS FLOAT) AS cost
 
-FROM raw_lab_events
+FROM raw_lab_events 
+
+--  CONVERT_TIMEZONE('UTC', done_datetime::TIMESTAMP_TZ)    AS lab_done_at,
+--     CONVERT_TIMEZONE('UTC', stored_datetime::TIMESTAMP_TZ)  AS lab_stored_at,
 ),  __dbt__cte__stg_lab_specimen_types as (
 WITH raw_lab_specimen_types AS (
     SELECT *
@@ -71,6 +74,7 @@ specimen_types AS (
 )
 
 SELECT
+    md5(cast(coalesce(cast(lab_event_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS lab_event_key,
     le.lab_event_id,
     le.patient_id,
     le.admission_id,

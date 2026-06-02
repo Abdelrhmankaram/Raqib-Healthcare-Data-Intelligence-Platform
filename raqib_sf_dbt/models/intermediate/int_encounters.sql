@@ -22,7 +22,7 @@ providers AS (
 base AS (
 
     SELECT
-        {{ dbt_utils.generate_surrogate_key(['admission_id']) }} AS encounter_key
+        {{ dbt_utils.generate_surrogate_key(['admission_id']) }} AS encounter_key,
         a.admission_id,
         a.patient_id,
         a.provider_id,

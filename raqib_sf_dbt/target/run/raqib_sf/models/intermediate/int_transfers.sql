@@ -26,9 +26,10 @@ FROM raw_transfers
     from __dbt__cte__stg_transfers
 )
 
-select 
+SELECT
+    md5(cast(coalesce(cast(transfer_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS transfer_key,
     *
 
-from stg_transfers
+FROM stg_transfers
   );
 

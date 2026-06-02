@@ -90,6 +90,7 @@ patients AS (
 )
 
 SELECT
+    md5(cast(coalesce(cast(p.patient_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(ec.emergency_contact_name as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(ec.emergency_contact_phone_number as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS emergency_contact_key,
     ec.patient_id,
 
     p.full_name,
