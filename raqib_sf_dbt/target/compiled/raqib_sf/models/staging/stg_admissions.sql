@@ -1,20 +1,21 @@
-with raw_admissions as (
-    select * 
-    from raw.public.admissions
+WITH raw_admissions AS (
+    SELECT * 
+    FROM raw.public.admissions
 )
 
-select 
+SELECT 
     admission_id,
     patient_id,
-    try_cast(admission_datetime_in as timestamp) as admitted_in_timestamp,
-    try_cast(admission_datetime_out as timestamp) as admitted_out_timestamp,
-    upper(LEFT(admission_type, 1)) || lower(substr(admission_type, 2)) as admission_type,
-    admission_provider_id as provider_id,
+    admission_provider_id AS provider_id,
+    TRY_CAST(admission_datetime_in AS TIMESTAMP) AS admitted_in_timestamp,
+    TRY_CAST(admission_datetime_out AS TIMESTAMP) AS admitted_out_timestamp,
+    upper(LEFT(admission_type, 1)) || LOWER(SUBSTR(admission_type, 2)) AS admission_type,
     admission_location,
     discharge_location,
-    initcap(insurance_type) as insurance_type,
+    INITCAP(insurance_type) AS insurance_type,
     total_cost,
     payer_coverage,
-    hospital_expire_flag
+    hospital_expire_flag,
+    primary_sdk
 
-from raw_admissions
+FROM raw_admissions

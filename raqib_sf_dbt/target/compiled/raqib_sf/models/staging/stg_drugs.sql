@@ -1,6 +1,6 @@
 with raw_drugs as (
     select * 
-    from {{ source('raw', 'raw_drugs') }}
+    from raw.public.drugs
 )
 
 select 
