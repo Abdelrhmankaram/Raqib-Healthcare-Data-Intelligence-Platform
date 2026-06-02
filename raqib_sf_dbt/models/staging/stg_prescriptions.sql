@@ -1,7 +1,7 @@
 WITH raw_prescriptions AS (
     SELECT *
     FROM {{ source('raw', 'raw_prescriptions') }} 
-
+)
 SELECT 
     prescription_id,
     patient_id,
