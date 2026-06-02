@@ -1,10 +1,7 @@
-with stg_prescriptions as (
-    select * 
-    from {{ ref('stg_prescriptions') }}
+WITH stg_prescriptions AS (
+    SELECT *
+    FROM {{ ref('stg_prescriptions') }}
 )
 
-select 
-    {{ dbt_utils.generate_surrogate_key(['prescription_id']) }} AS prescription_key,
-    *
-
-from stg_prescriptions
+SELECT *
+FROM stg_prescriptions

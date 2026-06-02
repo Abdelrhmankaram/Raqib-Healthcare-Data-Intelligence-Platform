@@ -1,3 +1,4 @@
+WITH  __dbt__cte__stg_drugs as (
 with raw_drugs as (
     select * 
     from raw.public.drugs
@@ -28,3 +29,10 @@ where not (
     generic_name = 'Tadalafil'
     AND brand_name is null
 )
+), stg_drugs AS (
+     SELECT * 
+     from __dbt__cte__stg_drugs
+)
+
+SELECT *
+FROM stg_drugs
