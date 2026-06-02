@@ -4,6 +4,7 @@ with raw_drugs as (
 )
 
 select 
+    drug_id,
     case 
         when brand_name is not null then initcap(brand_name)
         when brand_name is null and generic_name like 'Atropine Sulfate Injection%' then 'AtroPen'
