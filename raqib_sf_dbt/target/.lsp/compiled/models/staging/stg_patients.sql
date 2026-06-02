@@ -7,9 +7,9 @@ SELECT
     patient_id,
     ssn,
     INITCAP(first_name || ' ' || last_name) AS full_name,
-    TRY_TO_DATE(birthdate) AS birthdate,
-    YEAR(TRY_TO_DATE(birthdate)) AS birth_year,
-    TRY_TO_DATE(deathdate) AS deathdate,
+    birthdate::DATE AS birthdate,
+    YEAR(birthdate::DATE) AS birth_year,
+    deathdate::DATE AS deathdate,
     CASE 
         WHEN deathdate IS NOT NULL THEN TRUE
         ELSE FALSE
@@ -35,12 +35,24 @@ SELECT
         ELSE 'Unknown'
     END AS gender,
     INITCAP(language) AS spoken_language,
-    TRIM(REGEXP_REPLACE(REGEXP_REPLACE(birthplace, ',', ''), '\\s+\\S+$', '')) AS birth_city,
+    INITCAP(TRIM(SPLIT_PART(birthplace, ',', 1))) AS birth_city,
+    CASE UPPER(TRIM(SPLIT_PART(birthplace, ',',2)))
+    WHEN 'CT' THEN 'Connecticut'
+    WHEN 'ME' THEN 'Maine'
+    WHEN 'MA' THEN 'Massachusetts'
+    WHEN 'NH' THEN 'New Hampshire'
+    WHEN 'RI' THEN 'Rhode Island'
+    WHEN 'VT' THEN 'Vermont'
+    WHEN 'NY' THEN 'New York'
+    END AS birth_state,
     address,
     INITCAP(city) AS city,
-    INITCAP(country) AS country,
-    TRY_CAST(healthcare_expenses AS FLOAT) AS healthcare_expenses,
-    TRY_CAST(healthcare_coverage AS FLOAT) AS healthcare_coverage,
+    CASE UPPER(TRIM(country))
+        WHEN 'US' THEN 'United States'
+        WHEN 'UK' THEN 'United Kingdom' 
+    END AS country,
+    CAST(healthcare_expenses AS FLOAT) AS healthcare_expenses,
+    CAST(healthcare_coverage AS FLOAT) AS healthcare_coverage,
     income AS income_usd
   
 FROM raw_patients
