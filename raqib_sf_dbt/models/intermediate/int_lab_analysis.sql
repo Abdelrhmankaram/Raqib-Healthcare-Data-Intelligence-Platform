@@ -9,6 +9,7 @@ specimen_types AS (
 )
 
 SELECT
+    {{ dbt_utils.generate_surrogate_key(['lab_event_id']) }} AS lab_event_key,
     le.lab_event_id,
     le.patient_id,
     le.admission_id,

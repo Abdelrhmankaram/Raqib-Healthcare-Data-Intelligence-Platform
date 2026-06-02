@@ -3,6 +3,7 @@ with stg_services as (
     from {{ ref('stg_services') }}
 )
 
-select 
+SELECT
+    {{ dbt_utils.generate_surrogate_key(['service_id']) }} AS service_key,
     * 
-from stg_services
+FROM stg_services

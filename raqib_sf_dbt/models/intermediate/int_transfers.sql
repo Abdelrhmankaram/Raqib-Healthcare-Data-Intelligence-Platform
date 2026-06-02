@@ -3,7 +3,8 @@ with stg_transfers as (
     from {{ ref('stg_transfers') }}
 )
 
-select 
+SELECT
+    {{ dbt_utils.generate_surrogate_key(['transfer_id']) }} AS transfer_key,
     *
 
-from stg_transfers
+FROM stg_transfers

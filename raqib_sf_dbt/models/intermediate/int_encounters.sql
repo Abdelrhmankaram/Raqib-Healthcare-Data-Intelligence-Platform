@@ -22,6 +22,7 @@ providers AS (
 base AS (
 
     SELECT
+        {{ dbt_utils.generate_surrogate_key(['admission_id']) }} AS encounter_key
         a.admission_id,
         a.patient_id,
         a.provider_id,
@@ -62,16 +63,12 @@ final AS (
 
     SELECT
 
-        -- Business Keys
         admission_id,
         patient_id,
         provider_id,
-
-        -- Clinical Context
+        encounter_key,
         primary_sdk,
         provider_specialty,
-
-        -- Encounter Timing
         admitted_in_timestamp AS admitted_at,
         admitted_out_timestamp AS discharged_at,
 
@@ -86,12 +83,10 @@ final AS (
             )
         ) AS length_of_stay_days,
 
-        -- Admission Details
         admission_type,
         admission_location,
         discharge_location,
 
-        -- Financial Metrics
         total_cost,
 
         payer_coverage,
@@ -105,7 +100,6 @@ final AS (
         total_cost - payer_coverage
             AS out_of_pocket_cost,
 
-        -- Patient Age at Encounter
         DATEDIFF(
             'year',
             birthdate,
@@ -119,7 +113,6 @@ final AS (
             ELSE 'Senior'
         END AS age_group,
 
-        -- Encounter Outcome
         CASE
             WHEN hospital_expire_flag THEN 'Deceased'
             ELSE 'Alive'
