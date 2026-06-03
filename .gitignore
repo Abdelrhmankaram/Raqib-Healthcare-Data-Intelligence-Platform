@@ -7,3 +7,4 @@ raqib_sf_dbt/profiles.yml
 .github/instructions/snowflake/
 .github/instructions/general-awareness.instructions.md
 .github/instructions/.managed-skills.json
+raqib_sf_dbt/target/dbt-lsp.log
