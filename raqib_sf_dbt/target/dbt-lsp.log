@@ -29825,3 +29825,248 @@ The raqib_sf.dim_diagosis model triggered this warning.
 01:25:31.466266 [info ]: Started scheduling
 01:25:31.466489 [info ]: Finished scheduling [  0.00s]
 01:25:31.479467 [info ]: Cached model count updated: 27 models (accurate)
+12:30:04.785762 [info ]: Started loading project
+12:30:04.787582 [info ]: Loading profiles.yml
+12:30:04.902904 [info ]: Cached model count updated: 28 models (estimate)
+12:30:04.902951 [info ]: Cached model count updated: 27 models (accurate)
+12:30:04.903417 [info ]: Started scheduling
+12:30:04.904026 [info ]: Finished scheduling [  0.00s]
+12:30:04.904072 [debug]: Compilation - 0 nodes selected: {}
+12:30:04.904110 [warn ]: dbt1600: The selection criterion '+fqn:model.raqib_sf.fact_transfers' does not match any enabled nodes
+12:30:04.904132 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+12:30:04.909197 [info ]: DOWNLOADING deferral manifest
+12:30:04.909270 [info ]: Finished loading project [  0.12s]
+12:30:08.280379 [warn ]: dbt1203: Failed to download deferral manifest from the dbt platform for project 70471823531787, continuing without deferral. 404 Not Found: No deferral environment defined for project with ID 70471823531787 To target a specific environment, set `defer-env-id` in your dbt_project.yml under the `dbt-cloud` block.
+12:30:08.778357 [info ]: Started building task graph
+12:30:08.778408 [info ]: Finished building task graph [  0.00s]
+12:30:08.787668 [info ]: Started scheduling
+12:30:08.787796 [info ]: Finished scheduling [  0.00s]
+12:30:08.789204 [info ]: Cached model count updated: 27 models (accurate)
+12:30:09.902593 [info ]: Started loading project
+12:30:09.903281 [info ]: Loading profiles.yml
+12:30:09.965017 [info ]: Cached model count updated: 28 models (estimate)
+12:30:09.965047 [info ]: Cached model count updated: 27 models (accurate)
+12:30:09.965164 [info ]: Started scheduling
+12:30:09.965612 [info ]: Finished scheduling [  0.00s]
+12:30:09.965656 [debug]: Compilation - 0 nodes selected: {}
+12:30:09.965706 [warn ]: dbt1600: The selection criterion '+fqn:model.raqib_sf.fact_transfers+' does not match any enabled nodes
+12:30:09.965728 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+12:30:09.968547 [info ]: DOWNLOADING deferral manifest
+12:30:09.968602 [info ]: Finished loading project [  0.07s]
+12:30:10.936747 [warn ]: dbt1203: Failed to download deferral manifest from the dbt platform for project 70471823531787, continuing without deferral. 404 Not Found: No deferral environment defined for project with ID 70471823531787 To target a specific environment, set `defer-env-id` in your dbt_project.yml under the `dbt-cloud` block.
+12:30:11.420465 [info ]: Started building task graph
+12:30:11.420501 [info ]: Finished building task graph [  0.00s]
+12:30:11.429944 [info ]: Started scheduling
+12:30:11.430076 [info ]: Finished scheduling [  0.00s]
+12:30:11.435622 [info ]: Cached model count updated: 27 models (accurate)
+12:30:12.593236 [info ]: Started loading project
+12:30:12.594078 [info ]: Loading profiles.yml
+12:30:12.642370 [info ]: Cached model count updated: 28 models (estimate)
+12:30:12.642399 [info ]: Cached model count updated: 27 models (accurate)
+12:30:12.642497 [info ]: Started scheduling
+12:30:12.642986 [info ]: Finished scheduling [  0.00s]
+12:30:12.643020 [debug]: Compilation - 26 nodes selected: {"model.raqib_sf.dim_admission_type", "model.raqib_sf.dim_date", "model.raqib_sf.dim_emergency_contacts", "model.raqib_sf.dim_insurance", "model.raqib_sf.dim_lab_types", "model.raqib_sf.dim_location", "model.raqib_sf.dim_patients", "model.raqib_sf.dim_provider", "model.raqib_sf.dim_services", "model.raqib_sf.fact_admissions", "model.raqib_sf.int_clinical_events", "model.raqib_sf.int_encounters", "model.raqib_sf.int_lab_analysis", "model.raqib_sf.int_patients_360", "model.raqib_sf.int_providers_performance", "model.raqib_sf.stg_admissions", "model.raqib_sf.stg_diagnosis", "model.raqib_sf.stg_drugs", "model.raqib_sf.stg_emergency_contacts", "model.raqib_sf.stg_lab_events", "model.raqib_sf.stg_lab_specimen_types", "model.raqib_sf.stg_patients", "model.raqib_sf.stg_prescriptions", "model.raqib_sf.stg_providers", "model.raqib_sf.stg_services", "model.raqib_sf.stg_transfers"}
+12:30:12.644377 [info ]: DOWNLOADING deferral manifest
+12:30:12.644449 [info ]: Finished loading project [  0.05s]
+12:30:13.545979 [warn ]: dbt1203: Failed to download deferral manifest from the dbt platform for project 70471823531787, continuing without deferral. 404 Not Found: No deferral environment defined for project with ID 70471823531787 To target a specific environment, set `defer-env-id` in your dbt_project.yml under the `dbt-cloud` block.
+12:30:14.010083 [info ]: Started building task graph
+12:30:14.010478 [info ]: Finished building task graph [  0.00s]
+12:30:14.010842 [info ]: Started rendering (26 nodes)
+12:30:14.010886 [info ]: Started model dbt_dev_staging.stg_transfers
+12:30:14.010959 [debug]: Started rendering model dbt_dev_staging.stg_transfers
+12:30:14.010994 [info ]: Started model dbt_dev_staging.stg_services
+12:30:14.011008 [debug]: Started rendering model dbt_dev_staging.stg_services
+12:30:14.011027 [info ]: Started model dbt_dev_staging.stg_drugs
+12:30:14.011040 [debug]: Started rendering model dbt_dev_staging.stg_drugs
+12:30:14.011075 [info ]: Started model dbt_dev_staging.stg_prescriptions
+12:30:14.011097 [debug]: Started rendering model dbt_dev_staging.stg_prescriptions
+12:30:14.011124 [info ]: Started model dbt_dev_staging.stg_diagnosis
+12:30:14.011144 [debug]: Started rendering model dbt_dev_staging.stg_diagnosis
+12:30:14.011168 [info ]: Started model dbt_dev_staging.stg_emergency_contacts
+12:30:14.011184 [debug]: Started rendering model dbt_dev_staging.stg_emergency_contacts
+12:30:14.011212 [info ]: Started model dbt_dev.int_clinical_events
+12:30:14.011234 [debug]: Started rendering model dbt_dev.int_clinical_events
+12:30:14.011262 [info ]: Started model dbt_dev_staging.stg_lab_events
+12:30:14.011285 [debug]: Started rendering model dbt_dev_staging.stg_lab_events
+12:30:14.011313 [info ]: Started model dbt_dev_marts.dim_services
+12:30:14.011331 [debug]: Started rendering model dbt_dev_marts.dim_services
+12:30:14.011364 [info ]: Started model dbt_dev_staging.stg_providers
+12:30:14.011382 [debug]: Started rendering model dbt_dev_staging.stg_providers
+12:30:14.011411 [info ]: Started model dbt_dev_staging.stg_patients
+12:30:14.011431 [debug]: Started rendering model dbt_dev_staging.stg_patients
+12:30:14.011460 [info ]: Started model dbt_dev_staging.stg_lab_specimen_types
+12:30:14.011483 [debug]: Started rendering model dbt_dev_staging.stg_lab_specimen_types
+12:30:14.011509 [info ]: Started model dbt_dev_marts.dim_emergency_contacts
+12:30:14.011504 [debug]: Compiled SQL for node model.raqib_sf.stg_drugs at target/.lsp/compiled/models/staging/stg_drugs.sql
+12:30:14.011502 [debug]: Compiled SQL for node model.raqib_sf.stg_transfers at target/.lsp/compiled/models/staging/stg_transfers.sql
+12:30:14.011527 [debug]: Started rendering model dbt_dev_marts.dim_emergency_contacts
+12:30:14.011553 [info ]: Started model dbt_dev_marts.dim_date
+12:30:14.011572 [debug]: Started rendering model dbt_dev_marts.dim_date
+12:30:14.011598 [info ]: Started model dbt_dev_staging.stg_admissions
+12:30:14.011621 [debug]: Started rendering model dbt_dev_staging.stg_admissions
+12:30:14.011621 [debug]: Compiled SQL for node model.raqib_sf.stg_services at target/.lsp/compiled/models/staging/stg_services.sql
+12:30:14.011679 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_drugs [success]
+12:30:14.011718 [info ]: Started analyzing (26 nodes)
+12:30:14.011734 [debug]: Started analyzing model dbt_dev_staging.stg_drugs
+12:30:14.011769 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_transfers [success]
+12:30:14.011795 [debug]: Started analyzing model dbt_dev_staging.stg_transfers
+12:30:14.011822 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_services [success]
+12:30:14.011829 [debug]: Compiled SQL for node model.raqib_sf.stg_emergency_contacts at target/.lsp/compiled/models/staging/stg_emergency_contacts.sql
+12:30:14.011836 [debug]: Compiled SQL for node model.raqib_sf.stg_lab_events at target/.lsp/compiled/models/staging/stg_lab_events.sql
+12:30:14.011846 [debug]: Started analyzing model dbt_dev_staging.stg_services
+12:30:14.011504 [debug]: Compiled SQL for node model.raqib_sf.stg_prescriptions at target/.lsp/compiled/models/staging/stg_prescriptions.sql
+12:30:14.012083 [debug]: Compiled SQL for node model.raqib_sf.stg_lab_specimen_types at target/.lsp/compiled/models/staging/stg_lab_specimen_types.sql
+12:30:14.012085 [debug]: Compiled SQL for node model.raqib_sf.stg_patients at target/.lsp/compiled/models/staging/stg_patients.sql
+12:30:14.012860 [debug]: Compiled SQL for node model.raqib_sf.stg_admissions at target/.lsp/compiled/models/staging/stg_admissions.sql
+12:30:14.013317 [debug]: Compiled SQL for node model.raqib_sf.dim_date at target/.lsp/compiled/models/marts/dim/dim_date.sql
+12:30:14.013402 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_lab_events [success]
+12:30:14.013456 [debug]: Started analyzing model dbt_dev_staging.stg_lab_events
+12:30:14.013537 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_prescriptions [success]
+12:30:14.013604 [debug]: Started analyzing model dbt_dev_staging.stg_prescriptions
+12:30:14.013647 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_lab_specimen_types [success]
+12:30:14.013681 [info ]: Started model dbt_dev.int_lab_analysis
+12:30:14.013699 [debug]: Compiled SQL for node model.raqib_sf.stg_diagnosis at target/.lsp/compiled/models/staging/stg_diagnosis.sql
+12:30:14.013707 [debug]: Started rendering model dbt_dev.int_lab_analysis
+12:30:14.013762 [debug]: Started analyzing model dbt_dev_staging.stg_lab_specimen_types
+12:30:14.013800 [info ]: Started model dbt_dev_marts.dim_lab_types
+12:30:14.013823 [debug]: Started rendering model dbt_dev_marts.dim_lab_types
+12:30:14.013888 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_patients [success]
+12:30:14.013928 [info ]: Started model dbt_dev_marts.dim_patients
+12:30:14.013969 [debug]: Started rendering model dbt_dev_marts.dim_patients
+12:30:14.014055 [debug]: Started analyzing model dbt_dev_staging.stg_patients
+12:30:14.014111 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_emergency_contacts [success]
+12:30:14.014245 [info ]: Started model dbt_dev.int_patients_360
+12:30:14.014273 [debug]: Started rendering model dbt_dev.int_patients_360
+12:30:14.014301 [debug]: Started analyzing model dbt_dev_staging.stg_emergency_contacts
+12:30:14.014334 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_admissions [success]
+12:30:14.014463 [info ]: Started model dbt_dev_marts.dim_insurance
+12:30:14.014493 [debug]: Started rendering model dbt_dev_marts.dim_insurance
+12:30:14.014527 [info ]: Started model dbt_dev_marts.dim_location
+12:30:14.014546 [debug]: Started rendering model dbt_dev_marts.dim_location
+12:30:14.014570 [debug]: Started analyzing model dbt_dev_staging.stg_admissions
+12:30:14.014628 [info ]: Started model dbt_dev_marts.dim_admission_type
+12:30:14.014657 [debug]: Started rendering model dbt_dev_marts.dim_admission_type
+12:30:14.014690 [info ]: Started model dbt_dev_marts.fact_admissions
+12:30:14.014778 [debug]: Started rendering model dbt_dev_marts.fact_admissions
+12:30:14.014786 [debug]: Compiled SQL for node model.raqib_sf.stg_providers at target/.lsp/compiled/models/staging/stg_providers.sql
+12:30:14.014848 [error]: dbt1501: Failed to render SQL not a key type: ref not found for package: raqib_sf, model: int_services, version: None
+(in models/marts/dim/dim_services.sql:3:10)
+  --> models/marts/dim/dim_services.sql:3:10
+12:30:14.014920 [debug]: Started analyzing model dbt_dev_marts.dim_services
+12:30:14.014980 [info ]:     Failed [  0.00s] model dbt_dev_marts.dim_services (incremental)
+12:30:14.015019 [debug]: Finished analyzing [  0.00s] model dbt_dev_marts.dim_services [skipped]
+12:30:14.015064 [error]: dbt1501: Failed to render SQL not a key type: ref not found for package: raqib_sf, model: int_emergency_contacts, version: None
+(in models/marts/dim/dim_emergency_contacts.sql:3:10)
+  --> models/marts/dim/dim_emergency_contacts.sql:3:10
+12:30:14.015109 [debug]: Started analyzing model dbt_dev_marts.dim_emergency_contacts
+12:30:14.015136 [info ]:     Failed [  0.00s] model dbt_dev_marts.dim_emergency_contacts (incremental)
+12:30:14.015173 [debug]: Finished analyzing [  0.00s] model dbt_dev_marts.dim_emergency_contacts [skipped]
+12:30:14.015207 [debug]: Finished rendering [  0.00s] model dbt_dev_marts.dim_date [success]
+12:30:14.015233 [debug]: Started analyzing model dbt_dev_marts.dim_date
+12:30:14.015264 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_diagnosis [success]
+12:30:14.015293 [debug]: Started analyzing model dbt_dev_staging.stg_diagnosis
+12:30:14.015432 [debug]: Finished rendering [  0.00s] model dbt_dev_staging.stg_providers [success]
+12:30:14.015497 [info ]: Started model dbt_dev.int_encounters
+12:30:14.015522 [debug]: Started rendering model dbt_dev.int_encounters
+12:30:14.015562 [info ]: Started model dbt_dev.int_providers_performance
+12:30:14.015588 [debug]: Started rendering model dbt_dev.int_providers_performance
+12:30:14.015613 [debug]: Started analyzing model dbt_dev_staging.stg_providers
+12:30:14.015787 [info ]: Started model dbt_dev_marts.dim_provider
+12:30:14.015823 [debug]: Started rendering model dbt_dev_marts.dim_provider
+12:30:14.016004 [info ]:  Succeeded [  0.00s] model dbt_dev_staging.stg_prescriptions (ephemeral)
+12:30:14.015822 [debug]: Compiled SQL for node model.raqib_sf.int_lab_analysis at target/.lsp/compiled/models/history/int_lab_analysis.sql
+12:30:14.016070 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_prescriptions [success]
+12:30:14.016157 [info ]:  Succeeded [  0.00s] model dbt_dev_staging.stg_transfers (ephemeral)
+12:30:14.016254 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_transfers [success]
+12:30:14.016299 [debug]: Compiled SQL for node model.raqib_sf.dim_lab_types at target/.lsp/compiled/models/marts/dim/dim_lab_types.sql
+12:30:14.016457 [debug]: Finished rendering [  0.00s] model dbt_dev.int_lab_analysis [success]
+12:30:14.016495 [debug]: Started analyzing model dbt_dev.int_lab_analysis
+12:30:14.016920 [debug]: Compiled SQL for node model.raqib_sf.dim_patients at target/.lsp/compiled/models/marts/dim/dim_patients.sql
+12:30:14.017454 [debug]: Compiled SQL for node model.raqib_sf.dim_admission_type at target/.lsp/compiled/models/marts/dim/dim_admission_type.sql
+12:30:14.018033 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_lab_events (ephemeral)
+12:30:14.018093 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_lab_events [success]
+12:30:14.018211 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_drugs (ephemeral)
+12:30:14.018259 [debug]: Finished analyzing [  0.01s] model dbt_dev_staging.stg_drugs [success]
+12:30:14.018325 [debug]: Started analyzing model dbt_dev_marts.dim_patients
+12:30:14.018366 [debug]: Finished rendering [  0.00s] model dbt_dev_marts.dim_patients [success]
+12:30:14.018397 [debug]: Finished rendering [  0.00s] model dbt_dev_marts.dim_lab_types [success]
+12:30:14.018455 [debug]: Started analyzing model dbt_dev_marts.dim_lab_types
+12:30:14.018493 [debug]: Finished rendering [  0.00s] model dbt_dev_marts.dim_admission_type [success]
+12:30:14.018522 [debug]: Started analyzing model dbt_dev_marts.dim_admission_type
+12:30:14.018626 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_admissions (ephemeral)
+12:30:14.018810 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_admissions [success]
+12:30:14.018871 [info ]:  Succeeded [  0.01s] model dbt_dev_staging.stg_emergency_contacts (ephemeral)
+12:30:14.018911 [debug]: Finished analyzing [  0.00s] model dbt_dev_staging.stg_emergency_contacts [success]
+12:30:14.019516 [debug]: Compiled SQL for node model.raqib_sf.dim_insurance at target/.lsp/compiled/models/marts/dim/dim_insurance.sql
+12:30:14.020066 [debug]: Compiled SQL for node model.raqib_sf.dim_location at target/.lsp/compiled/models/marts/dim/dim_location.sql
+12:30:14.020134 [debug]: Compiled SQL for node model.raqib_sf.int_patients_360 at target/.lsp/compiled/models/history/int_patients_360.sql
+12:30:14.021070 [debug]: Started analyzing model dbt_dev_marts.dim_insurance
+12:30:14.021151 [debug]: Finished rendering [  0.01s] model dbt_dev_marts.dim_insurance [success]
+12:30:14.021163 [debug]: Finished rendering [  0.01s] model dbt_dev.int_patients_360 [success]
+12:30:14.021205 [debug]: Started analyzing model dbt_dev.int_patients_360
+12:30:14.021243 [debug]: Finished rendering [  0.01s] model dbt_dev_marts.dim_location [success]
+12:30:14.021288 [debug]: Started analyzing model dbt_dev_marts.dim_location
+12:30:14.022363 [debug]: Compiled SQL for node model.raqib_sf.int_providers_performance at target/.lsp/compiled/models/history/int_providers_performance.sql
+12:30:14.023767 [info ]:  Succeeded [  0.01s] model dbt_dev_marts.dim_insurance (incremental)
+12:30:14.023823 [debug]: Finished analyzing [  0.00s] model dbt_dev_marts.dim_insurance [success]
+12:30:14.023937 [error]: dbt1501: Failed to render SQL not a key type: ref not found for package: raqib_sf, model: int_diagnosis, version: None
+(in models/history/int_clinical_events.sql:10:10)
+  --> models/history/int_clinical_events.sql:10:10
+12:30:14.024127 [debug]: Started analyzing model dbt_dev.int_clinical_events
+12:30:14.024184 [info ]:     Failed [  0.01s] model dbt_dev.int_clinical_events (view)
+12:30:14.024258 [debug]: Finished analyzing [  0.00s] model dbt_dev.int_clinical_events [skipped]
+12:30:14.024336 [debug]: Finished rendering [  0.01s] model dbt_dev.int_clinical_events [error]
+12:30:14.029040 [error]: dbt1501: Failed to render SQL not a key type: ref not found for package: raqib_sf, model: dim_providers, version: None
+(in models/marts/fact/fact_admissions.sql:11:10)
+  --> models/marts/fact/fact_admissions.sql:11:10
+12:30:14.029110 [debug]: Started analyzing model dbt_dev_marts.fact_admissions
+12:30:14.029386 [info ]:     Failed [  0.01s] model dbt_dev_marts.fact_admissions (incremental)
+12:30:14.029871 [debug]: Finished analyzing [  0.00s] model dbt_dev_marts.fact_admissions [skipped]
+12:30:14.030041 [debug]: Finished rendering [  0.02s] model dbt_dev_marts.fact_admissions [error]
+12:30:14.030150 [debug]: Finished rendering [  0.02s] model dbt_dev_marts.dim_services [error]
+12:30:14.030246 [debug]: Finished rendering [  0.02s] model dbt_dev_marts.dim_emergency_contacts [error]
+12:30:14.031029 [debug]: Compiled SQL for node model.raqib_sf.int_encounters at target/.lsp/compiled/models/history/int_encounters.sql
+12:30:14.032715 [info ]:  Succeeded [  0.02s] model dbt_dev_marts.dim_patients (incremental)
+12:30:14.032795 [debug]: Finished analyzing [  0.01s] model dbt_dev_marts.dim_patients [success]
+12:30:14.033017 [info ]:  Succeeded [  0.02s] model dbt_dev_staging.stg_patients (ephemeral)
+12:30:14.033063 [debug]: Finished analyzing [  0.02s] model dbt_dev_staging.stg_patients [success]
+12:30:14.033100 [info ]:  Succeeded [  0.02s] model dbt_dev_staging.stg_services (ephemeral)
+12:30:14.033132 [debug]: Finished analyzing [  0.02s] model dbt_dev_staging.stg_services [success]
+12:30:14.033165 [debug]: Finished rendering [  0.02s] model dbt_dev.int_encounters [success]
+12:30:14.033197 [debug]: Started analyzing model dbt_dev.int_encounters
+12:30:14.033234 [info ]:  Succeeded [  0.02s] model dbt_dev_staging.stg_providers (ephemeral)
+12:30:14.033266 [debug]: Finished analyzing [  0.02s] model dbt_dev_staging.stg_providers [success]
+12:30:14.034022 [info ]:  Succeeded [  0.02s] model dbt_dev_marts.dim_date (incremental)
+12:30:14.034071 [debug]: Finished analyzing [  0.02s] model dbt_dev_marts.dim_date [success]
+12:30:14.036708 [info ]:  Succeeded [  0.02s] model dbt_dev_marts.dim_location (incremental)
+12:30:14.036757 [debug]: Finished analyzing [  0.02s] model dbt_dev_marts.dim_location [success]
+12:30:14.037056 [info ]:  Succeeded [  0.02s] model dbt_dev_marts.dim_admission_type (incremental)
+12:30:14.037238 [debug]: Finished analyzing [  0.02s] model dbt_dev_marts.dim_admission_type [success]
+12:30:14.037280 [debug]: Finished rendering [  0.02s] model dbt_dev.int_providers_performance [success]
+12:30:14.037323 [debug]: Started analyzing model dbt_dev.int_providers_performance
+12:30:14.037430 [error]: dbt1501: Failed to render SQL invalid operation: value of type undefined is not callable
+(in models/marts/dim/dim_provider.sql:7:5)
+  --> models/marts/dim/dim_provider.sql:7:5
+12:30:14.037505 [debug]: Started analyzing model dbt_dev_marts.dim_provider
+12:30:14.037543 [info ]:     Failed [  0.02s] model dbt_dev_marts.dim_provider (incremental)
+12:30:14.037606 [debug]: Finished analyzing [  0.00s] model dbt_dev_marts.dim_provider [skipped]
+12:30:14.037666 [debug]: Finished rendering [  0.02s] model dbt_dev_marts.dim_provider [error]
+12:30:14.037686 [info ]: Finished rendering [  0.03s] (26 nodes, 0 skipped, 5 errors)
+12:30:14.045455 [info ]:  Succeeded [  0.03s] model dbt_dev_staging.stg_lab_specimen_types (ephemeral)
+12:30:14.046391 [debug]: Finished analyzing [  0.03s] model dbt_dev_staging.stg_lab_specimen_types [success]
+12:30:14.048653 [info ]:  Succeeded [  0.03s] model dbt_dev_marts.dim_lab_types (incremental)
+12:30:14.048703 [debug]: Finished analyzing [  0.03s] model dbt_dev_marts.dim_lab_types [success]
+12:30:14.053939 [info ]:  Succeeded [  0.04s] model dbt_dev_staging.stg_diagnosis (ephemeral)
+12:30:14.053989 [debug]: Finished analyzing [  0.04s] model dbt_dev_staging.stg_diagnosis [success]
+12:30:14.055374 [info ]:  Succeeded [  0.04s] model dbt_dev.int_patients_360 (view)
+12:30:14.055419 [debug]: Finished analyzing [  0.03s] model dbt_dev.int_patients_360 [success]
+12:30:14.057336 [info ]:  Succeeded [  0.04s] model dbt_dev.int_encounters (view)
+12:30:14.057380 [debug]: Finished analyzing [  0.02s] model dbt_dev.int_encounters [success]
+12:30:14.057432 [info ]:  Succeeded [  0.04s] model dbt_dev.int_lab_analysis (view)
+12:30:14.057464 [debug]: Finished analyzing [  0.04s] model dbt_dev.int_lab_analysis [success]
+12:30:14.065414 [info ]:  Succeeded [  0.05s] model dbt_dev.int_providers_performance (view)
+12:30:14.065468 [debug]: Finished analyzing [  0.03s] model dbt_dev.int_providers_performance [success]
+12:30:14.065479 [info ]: Finished analyzing [  0.05s] (26 nodes, 5 skipped, 0 errors)
+12:30:14.075733 [info ]: Started scheduling
+12:30:14.075895 [info ]: Finished scheduling [  0.00s]
+12:30:14.080956 [info ]: Cached model count updated: 27 models (accurate)
