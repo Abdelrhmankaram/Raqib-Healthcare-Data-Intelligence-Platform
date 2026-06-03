@@ -5,8 +5,7 @@ WITH raw_providers AS (
 
 SELECT 
     npi AS provider_id,
-    INITCAP(provider_first_name) AS provider_first_name,
-    INITCAP(provider_last_name) AS provider_last_name,
+    INITCAP(provider_first_name || ' ' || provider_last_name) AS provider_full_name,
     INITCAP(provider_name_prefix) AS provider_name_prefix,
     REGEXP_LIKE(provider_name_prefix, '\\.$') AS is_valid_prefix,
     INITCAP(provider_address) AS provider_address,
@@ -18,7 +17,7 @@ SELECT
         WHEN provider_sex_code = 'M' OR provider_sex_code = 'm' THEN 'Male'
         WHEN provider_sex_code = 'F' OR provider_sex_code = 'f' THEN 'Female'
         ELSE 'Unknown'
-    END AS provider_sex,
+    END AS provider_gender,
     provider_telephone_number,
     CAST(provider_enumeration_date AS DATE) AS provider_enumeration_date,
     CASE 

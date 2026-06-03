@@ -7,7 +7,9 @@ with patients as (
     from {{ ref('stg_patients') }}
 )
 
-select dbt_utils.generate_surrogate_key(['patient_id']) as patient_key,    
-     healthcare_expenses,
+select 
+    {{ dbt_utils.generate_surrogate_key(['patient_id']) }} as patient_key,    
+    healthcare_expenses,
     healthcare_coverage,
-    income_usd  from patients
+    income_usd  
+from patients

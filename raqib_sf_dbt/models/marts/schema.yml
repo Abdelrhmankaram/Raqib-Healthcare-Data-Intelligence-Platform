@@ -51,18 +51,6 @@ models:
         tests:
           - not_null
 
-  - name: dim_insurance
-    description: Insurance dimension table
-    columns:
-      - name: insurance_key
-        description: Surrogate key for insurance
-        tests:
-          - unique
-          - not_null
-      - name: insurance_type
-        tests:
-          - not_null
-
   - name: dim_location
     description: Location dimension table
     columns:
@@ -144,53 +132,54 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_patients')
-              field: patient_key
+              arguments:
+                to: ref('dim_patients')
+                field: patient_key
       - name: provider_key
         description: Foreign key to dim_provider
         tests:
           - relationships:
-              to: ref('dim_provider')
-              field: provider_key
+              arguments:
+                to: ref('dim_provider')
+                field: provider_key
       - name: admission_type_key
         description: Foreign key to dim_admission_type
         tests:
           - not_null
           - relationships:
-              to: ref('dim_admission_type')
-              field: admission_key
-      - name: insurance_key
-        description: Foreign key to dim_insurance
-        tests:
-          - relationships:
-              to: ref('dim_insurance')
-              field: insurance_key
+              arguments:
+                to: ref('dim_admission_type')
+                field: admission_key
       - name: admission_location_key
         description: Foreign key to dim_location for admission location
         tests:
           - relationships:
-              to: ref('dim_location')
-              field: location_key
+              arguments:
+                to: ref('dim_location')
+                field: location_key
       - name: discharge_location_key
         description: Foreign key to dim_location for discharge location
         tests:
           - relationships:
-              to: ref('dim_location')
-              field: location_key
+              arguments:
+                to: ref('dim_location')
+                field: location_key
       - name: admitted_date_key
         description: Foreign key to dim_date for admission date
         tests:
           - not_null
           - relationships:
-              to: ref('dim_date')
-              field: date_key
+              arguments:
+                to: ref('dim_date')
+                field: date_key
       - name: admitted_time_key
         description: Foreign key to dim_time for admission time
         tests:
           - not_null
           - relationships:
-              to: ref('dim_time')
-              field: time_key
+              arguments:
+                to: ref('dim_time')
+                field: time_key
       - name: total_cost
         description: Total admission cost
         tests:
@@ -199,14 +188,16 @@ models:
         description: Flag indicating if patient expired during admission
         tests:
           - accepted_values:
-              values: [0, 1]
+              arguments:
+                values: [0, 1]
       - name: length_of_stay
         description: Length of stay in days
         tests:
           - not_null
           - dbt_expectations.expect_column_values_to_be_between:
-              min_value: 0
-              max_value: 1000
+              arguments:
+                min_value: 0
+                max_value: 1000
 
   - name: fact_patient_services
     description: Fact table for patient services
@@ -216,28 +207,32 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_patients')
-              field: patient_key
+              arguments:
+                to: ref('dim_patients')
+                field: patient_key
       - name: service_id
         description: Foreign key to dim_services
         tests:
           - not_null
           - relationships:
-              to: ref('dim_services')
-              field: service_id
+              arguments:
+                to: ref('dim_services')
+                field: service_id
       - name: provider_key
         description: Foreign key to dim_provider
         tests:
           - relationships:
-              to: ref('dim_provider')
-              field: provider_key
+              arguments:
+                to: ref('dim_provider')
+                field: provider_key
       - name: date_key
         description: Foreign key to dim_date
         tests:
           - not_null
           - relationships:
-              to: ref('dim_date')
-              field: date_key
+              arguments:
+                to: ref('dim_date')
+                field: date_key
 
   - name: fact_transfers
     description: Fact table for patient transfers
@@ -247,27 +242,31 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_patients')
-              field: patient_key
+              arguments:
+                to: ref('dim_patients')
+                field: patient_key
       - name: transfer_from_location_key
         description: Foreign key to dim_location (transfer from)
         tests:
           - relationships:
-              to: ref('dim_location')
-              field: location_key
+              arguments:
+                to: ref('dim_location')
+                field: location_key
       - name: transfer_to_location_key
         description: Foreign key to dim_location (transfer to)
         tests:
           - relationships:
-              to: ref('dim_location')
-              field: location_key
+              arguments:
+                to: ref('dim_location')
+                field: location_key
       - name: transfer_date_key
         description: Foreign key to dim_date
         tests:
           - not_null
           - relationships:
-              to: ref('dim_date')
-              field: date_key
+              arguments:
+                to: ref('dim_date')
+                field: date_key
 
   - name: fact_lab_results
     description: Fact table for lab results
@@ -277,28 +276,32 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_patients')
-              field: patient_key
+              arguments:
+                to: ref('dim_patients')
+                field: patient_key
       - name: lab_type_id
         description: Foreign key to dim_lab_types
         tests:
           - not_null
           - relationships:
-              to: ref('dim_lab_types')
-              field: lab_type_id
+              arguments:
+                to: ref('dim_lab_types')
+                field: lab_type_id
       - name: provider_key
         description: Foreign key to dim_provider
         tests:
           - relationships:
-              to: ref('dim_provider')
-              field: provider_key
+              arguments:
+                to: ref('dim_provider')
+                field: provider_key
       - name: date_key
         description: Foreign key to dim_date
         tests:
           - not_null
           - relationships:
-              to: ref('dim_date')
-              field: date_key
+              arguments:
+                to: ref('dim_date')
+                field: date_key
 
   - name: fact_patient_finances
     description: Fact table for patient financial data
@@ -308,15 +311,9 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_patients')
-              field: patient_key
-      - name: insurance_key
-        description: Foreign key to dim_insurance
-        tests:
-          - not_null
-          - relationships:
-              to: ref('dim_insurance')
-              field: insurance_key
+              arguments:
+                to: ref('dim_patients')
+                field: patient_key
       - name: total_cost
         description: Total cost
         tests:
