@@ -30070,3 +30070,30 @@ The raqib_sf.dim_diagosis model triggered this warning.
 12:30:14.075733 [info ]: Started scheduling
 12:30:14.075895 [info ]: Finished scheduling [  0.00s]
 12:30:14.080956 [info ]: Cached model count updated: 27 models (accurate)
+==================== 2026-06-03T13:41:50.171060Z | d813d7b4-fb58-42fb-bb28-302e0075fa10 ====================
+13:41:50.175994 [info ]: Starting dbt LSP server
+13:41:50.177697 [info ]: Connecting to LSP client on port 8000
+13:41:50.185050 [info ]: Successfully connected to LSP client
+13:41:50.185089 [info ]: Creating LSP service...
+13:41:50.432675 [info ]: Creating LSP server...
+13:41:50.432704 [info ]: Starting LSP server...
+13:41:50.651938 [info ]: Loading ~/.dbt/profiles.yml
+13:41:51.158079 [info ]: Loading ~/.dbt/profiles.yml
+13:41:52.759255 [info ]: Loading ~/.dbt/profiles.yml
+13:41:55.557940 [info ]: Loading ~/.dbt/profiles.yml
+13:44:57.494051 [info ]: Loading ~/.dbt/profiles.yml
+13:44:59.406846 [info ]: Loading ~/.dbt/profiles.yml
+13:47:59.834815 [info ]: Loading ~/.dbt/profiles.yml
+13:48:02.000671 [info ]: Loading ~/.dbt/profiles.yml
+13:49:26.287994 [info ]: Loading ~/.dbt/profiles.yml
+13:51:02.316825 [info ]: Loading ~/.dbt/profiles.yml
+13:51:04.173515 [info ]: Loading ~/.dbt/profiles.yml
+13:51:37.066496 [info ]: Loading ~/.dbt/profiles.yml
+13:54:04.491101 [info ]: Loading ~/.dbt/profiles.yml
+13:54:06.301429 [info ]: Loading ~/.dbt/profiles.yml
+13:57:16.975469 [info ]: Loading ~/.dbt/profiles.yml
+13:57:19.231810 [info ]: Loading ~/.dbt/profiles.yml
+14:00:19.596314 [info ]: Loading ~/.dbt/profiles.yml
+14:00:22.356650 [info ]: Loading ~/.dbt/profiles.yml
+14:03:22.766133 [info ]: Loading ~/.dbt/profiles.yml
+14:03:25.787047 [info ]: Loading ~/.dbt/profiles.yml

@@ -7,7 +7,9 @@ models:
       - name: patient_id
         data_tests:
           - not_null
-
+          - relationships:
+              to: ref('stg_patients')
+              field: patient_id
       - name: emergency_contact_bloodtype
         data_tests:
           - accepted_values:
@@ -23,6 +25,7 @@ models:
           - accepted_values:
               arguments:
                 values: [true, false]
+      
 
   - name: stg_providers
 
@@ -57,6 +60,12 @@ models:
           - accepted_values:
               arguments:
                 values: ['Female', 'Male', 'Unknown']
+      
+      - name: provider_specialty
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['Oncology','Neurology','Endocrinology','General Medicine','Gynecology','Pulmonology','Family Medicine','Dermatology','Gastroenterology','Cardiology','Internal Medicine'
+              ,'ENT (Ear, Nose, and Throat)','Obstetrics','Orthopedics','Psychiatry','Surgery']
 
   - name: stg_diagnosis
 
@@ -66,13 +75,32 @@ models:
           - unique
           - not_null
 
+
+      - name : admission_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_admissions')
+              field: admission_id
+
+      - name : provider_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_providers')
+              field: provider_id
+
       - name: patient_id
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg_patients')
+              field: patient_id
 
       - name: sub_domain_key
         data_tests:
           - not_null
+
 
       - name: sub_domain_1
         data_tests:
@@ -85,7 +113,30 @@ models:
         data_tests:
           - unique
           - not_null
+      - name: category_type
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: [,'Endoscopy','Microbiology','Pathology','Neurophysiology','Lab ','Radiology ']
 
+      - name: category_sub_type
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: [' Mammography',' Nuclear Medicine',' Blood Panel',' X-ray',' CT',' MRI',' Ultrasound']
+
+
+      - name: specialty_1
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: [' Pulmonology',' Orthopedics','Cardiology','Dentistry',' Gastroenterology',' Dermatology',' Obstetrics','Oncology','General Practice','Neurology','Psychiatry','Endocrinology','Hematology']
+
+      - name: specialty_2
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: [' ENT',' Emergency Trauma','Oral Health','Burn Care',' Emergency Medicine',' Gynecology',' General Surgery','Internal Medicine','Behavioral Health','Metabolism']
+
+
+
+      - name: 
   - name: stg_lab_events
 
     columns:
