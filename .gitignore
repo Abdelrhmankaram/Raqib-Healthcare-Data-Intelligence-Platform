@@ -2,3 +2,8 @@
 .venv
 .DS_Store
 raqib_sf_dbt/profiles.yml
+# Altimate Datamates skill files (auto-generated)
+.github/instructions/datamate/
+.github/instructions/snowflake/
+.github/instructions/general-awareness.instructions.md
+.github/instructions/.managed-skills.json
