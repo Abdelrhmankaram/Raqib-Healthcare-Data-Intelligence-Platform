@@ -1,5 +1,5 @@
 with dim_location as (
-    select distinct admission_type as Location_Name from {{ ref('stg_admissions') }}
+    select distinct admission_location as Location_Name from {{ ref('stg_admissions') }}
     union
     select distinct discharge_location from {{ ref('stg_admissions') }}
 )

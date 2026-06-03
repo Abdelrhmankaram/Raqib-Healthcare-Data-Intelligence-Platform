@@ -22272,3 +22272,237 @@ ORDER BY DATE_KEY
 [0m02:11:37.164438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000266D38967A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000266F5C7E2C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000266D3BE0340>]}
 [0m02:11:37.165943 [debug] [MainThread]: Flushing usage events
 [0m02:11:37.813212 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:12:18.063948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002105FA26860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021060E38AC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021060E38910>]}
+
+
+============================== 03:12:18.068474 | 4f07cbac-2a6f-43c9-8a59-4383c46f587c ==============================
+[0m03:12:18.068474 [info ] [MainThread]: Running with dbt=1.11.8
+[0m03:12:18.069982 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'D:\\Raqib\\raqib_sf_dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run --select dim_date', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'D:\\Raqib\\raqib_sf_dbt\\logs'}
+[0m03:12:19.642662 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m03:12:19.644170 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m03:12:19.645202 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m03:12:20.017330 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4f07cbac-2a6f-43c9-8a59-4383c46f587c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021001E65DE0>]}
+[0m03:12:20.123878 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4f07cbac-2a6f-43c9-8a59-4383c46f587c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021060E3A050>]}
+[0m03:12:20.126400 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m03:12:20.645258 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m03:12:21.233239 [debug] [MainThread]: Partial parsing enabled: 15 files deleted, 15 files added, 2 files changed.
+[0m03:12:21.234335 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_diagosis.sql
+[0m03:12:21.234888 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_services.sql
+[0m03:12:21.235964 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_providers_performance.sql
+[0m03:12:21.235964 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_lab_analysis.sql
+[0m03:12:21.235964 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_insurance.sql
+[0m03:12:21.236974 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_encounters.sql
+[0m03:12:21.236974 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_clinical_events.sql
+[0m03:12:21.236974 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_provider.sql
+[0m03:12:21.238499 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_location.sql
+[0m03:12:21.238499 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_date.sql
+[0m03:12:21.238499 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_admission_type.sql
+[0m03:12:21.241080 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_emergency_contacts.sql
+[0m03:12:21.242083 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_patients.sql
+[0m03:12:21.242083 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_patients_360.sql
+[0m03:12:21.242083 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_lab_types.sql
+[0m03:12:21.243082 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_diagnosis.sql
+[0m03:12:21.243082 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_emergency_contacts.sql
+[0m03:12:21.244080 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_clinical_events.sql
+[0m03:12:21.244080 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_encounters.sql
+[0m03:12:21.244080 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\marts\dim_admission_type.sql
+[0m03:12:21.244080 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_services.sql
+[0m03:12:21.244080 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_lab_analysis.sql
+[0m03:12:21.245588 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\marts\dim_date.sql
+[0m03:12:21.245588 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_transfers.sql
+[0m03:12:21.245588 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_drugs.sql
+[0m03:12:21.245588 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\marts\dim_location.sql
+[0m03:12:21.246597 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_providers_performance.sql
+[0m03:12:21.246597 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_prescriptions.sql
+[0m03:12:21.246597 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_patients_360.sql
+[0m03:12:21.247599 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models\staging\stg_providers.sql
+[0m03:12:21.248599 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models\staging\stg_diagnosis.sql
+[0m03:12:21.622813 [error] [MainThread]: Encountered an error:
+Compilation Error in model dim_diagosis (models\marts\dim\dim_diagosis.sql)
+  
+  Warning: `dbt_utils.surrogate_key` has been replaced by `dbt_utils.generate_surrogate_key`. The new macro treats null values differently to empty strings. To restore the behaviour of the original macro, add a global variable in dbt_project.yml called `surrogate_key_treat_nulls_as_empty_strings` to your dbt_project.yml file with a value of True. The raqib_sf.dim_diagosis model triggered this warning. 
+  
+  > in macro default__surrogate_key (macros\sql\surrogate_key.sql)
+  > called by macro surrogate_key (macros\sql\surrogate_key.sql)
+  > called by model dim_diagosis (models\marts\dim\dim_diagosis.sql)
+[0m03:12:21.623840 [debug] [MainThread]: Command `dbt run` failed at 03:12:21.623840 after 3.70 seconds
+[0m03:12:21.623840 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002105FA26860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002100378D000>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002100378D990>]}
+[0m03:12:21.625355 [debug] [MainThread]: Flushing usage events
+[0m03:12:22.384092 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:24:53.318553 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E6F0726800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E6F1A4E920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E6F1A4FC40>]}
+
+
+============================== 03:24:53.323113 | df34a6b2-ada5-4e9e-83ef-d87bd2651b2f ==============================
+[0m03:24:53.323113 [info ] [MainThread]: Running with dbt=1.11.8
+[0m03:24:53.324135 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'D:\\Raqib\\raqib_sf_dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'D:\\Raqib\\raqib_sf_dbt\\logs'}
+[0m03:24:53.359247 [info ] [MainThread]: dbt version: 1.11.8
+[0m03:24:53.359247 [info ] [MainThread]: python version: 3.10.0
+[0m03:24:53.360757 [info ] [MainThread]: python path: C:\Users\bodyk\AppData\Local\Programs\Python\Python310\python.exe
+[0m03:24:53.360757 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m03:24:54.662046 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m03:24:54.663046 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m03:24:54.663046 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m03:24:54.771705 [info ] [MainThread]: Using profiles dir at D:\Raqib\raqib_sf_dbt
+[0m03:24:54.772718 [info ] [MainThread]: Using profiles.yml file at D:\Raqib\raqib_sf_dbt\profiles.yml
+[0m03:24:54.773725 [info ] [MainThread]: Using dbt_project.yml file at D:\Raqib\raqib_sf_dbt\dbt_project.yml
+[0m03:24:54.775716 [info ] [MainThread]: adapter type: snowflake
+[0m03:24:54.776715 [info ] [MainThread]: adapter version: 1.11.4
+[0m03:24:54.955454 [info ] [MainThread]: Configuration:
+[0m03:24:54.956466 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m03:24:54.957465 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m03:24:54.957465 [info ] [MainThread]: Required dependencies:
+[0m03:24:54.958467 [debug] [MainThread]: Executing "git --help"
+[0m03:24:55.005822 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m03:24:55.006836 [debug] [MainThread]: STDERR: "b''"
+[0m03:24:55.008837 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m03:24:55.009835 [info ] [MainThread]: Connection:
+[0m03:24:55.010834 [info ] [MainThread]:   account: OFNFMZZ-WH33726
+[0m03:24:55.011889 [info ] [MainThread]:   user: dbt_user
+[0m03:24:55.012880 [info ] [MainThread]:   database: dev
+[0m03:24:55.013878 [info ] [MainThread]:   warehouse: raqib_wh
+[0m03:24:55.015392 [info ] [MainThread]:   role: raqib_role
+[0m03:24:55.016402 [info ] [MainThread]:   schema: dbt_dev
+[0m03:24:55.017403 [info ] [MainThread]:   authenticator: None
+[0m03:24:55.017403 [info ] [MainThread]:   oauth_client_id: None
+[0m03:24:55.018400 [info ] [MainThread]:   query_tag: None
+[0m03:24:55.019401 [info ] [MainThread]:   client_session_keep_alive: False
+[0m03:24:55.020911 [info ] [MainThread]:   host: None
+[0m03:24:55.021927 [info ] [MainThread]:   port: None
+[0m03:24:55.022923 [info ] [MainThread]:   proxy_host: None
+[0m03:24:55.023924 [info ] [MainThread]:   proxy_port: None
+[0m03:24:55.023924 [info ] [MainThread]:   protocol: None
+[0m03:24:55.025437 [info ] [MainThread]:   connect_retries: 1
+[0m03:24:55.026459 [info ] [MainThread]:   connect_timeout: None
+[0m03:24:55.027453 [info ] [MainThread]:   retry_on_database_errors: False
+[0m03:24:55.028452 [info ] [MainThread]:   retry_all: False
+[0m03:24:55.029453 [info ] [MainThread]:   insecure_mode: False
+[0m03:24:55.030451 [info ] [MainThread]:   reuse_connections: True
+[0m03:24:55.030958 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m03:24:55.031969 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m03:24:55.032970 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m03:24:55.575377 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m03:24:55.688696 [debug] [MainThread]: Using snowflake connection "debug"
+[0m03:24:55.689692 [debug] [MainThread]: On debug: select 1 as id
+[0m03:24:55.689692 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m03:24:56.897853 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.208 seconds
+[0m03:24:56.898854 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m03:24:56.899857 [info ] [MainThread]: [32mAll checks passed![0m
+[0m03:24:56.902379 [debug] [MainThread]: Command `dbt debug` succeeded at 03:24:56.902379 after 3.72 seconds
+[0m03:24:56.903380 [debug] [MainThread]: Connection 'debug' was left open.
+[0m03:24:56.903380 [debug] [MainThread]: On debug: Close
+[0m03:24:57.053386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E6F0726800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E69276A0B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E694212DD0>]}
+[0m03:24:57.054388 [debug] [MainThread]: Flushing usage events
+[0m03:24:57.693062 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:25:28.249908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282CC1A6800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282CD5A8A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282CD5A8880>]}
+
+
+============================== 03:25:28.254265 | d7d8c74e-6931-44cb-b14b-b7258059e845 ==============================
+[0m03:25:28.254265 [info ] [MainThread]: Running with dbt=1.11.8
+[0m03:25:28.254265 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'D:\\Raqib\\raqib_sf_dbt', 'use_colors': 'True', 'invocation_command': 'dbt run --select dim_date', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'D:\\Raqib\\raqib_sf_dbt\\logs'}
+[0m03:25:29.378699 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m03:25:29.379699 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m03:25:29.379699 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m03:25:29.722043 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd7d8c74e-6931-44cb-b14b-b7258059e845', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282C95910C0>]}
+[0m03:25:29.828792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd7d8c74e-6931-44cb-b14b-b7258059e845', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282EE5D7BE0>]}
+[0m03:25:29.829791 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m03:25:30.284113 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m03:25:30.595088 [debug] [MainThread]: Partial parsing enabled: 15 files deleted, 15 files added, 3 files changed.
+[0m03:25:30.595088 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_patients.sql
+[0m03:25:30.596600 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_encounters.sql
+[0m03:25:30.596600 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_lab_analysis.sql
+[0m03:25:30.597616 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_diagosis.sql
+[0m03:25:30.598616 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_admission_type.sql
+[0m03:25:30.598616 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_patients_360.sql
+[0m03:25:30.599615 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_location.sql
+[0m03:25:30.599615 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_lab_types.sql
+[0m03:25:30.600616 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_services.sql
+[0m03:25:30.600616 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_providers_performance.sql
+[0m03:25:30.600616 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_clinical_events.sql
+[0m03:25:30.600616 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_emergency_contacts.sql
+[0m03:25:30.602127 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_date.sql
+[0m03:25:30.602127 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_provider.sql
+[0m03:25:30.603140 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_insurance.sql
+[0m03:25:30.603140 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_encounters.sql
+[0m03:25:30.604140 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_providers_performance.sql
+[0m03:25:30.604140 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_emergency_contacts.sql
+[0m03:25:30.605140 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_drugs.sql
+[0m03:25:30.605661 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_lab_analysis.sql
+[0m03:25:30.606682 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\marts\dim_admission_type.sql
+[0m03:25:30.607712 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\marts\dim_date.sql
+[0m03:25:30.608696 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_patients_360.sql
+[0m03:25:30.608696 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_clinical_events.sql
+[0m03:25:30.608696 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_services.sql
+[0m03:25:30.609695 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_prescriptions.sql
+[0m03:25:30.609695 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\marts\dim_location.sql
+[0m03:25:30.610695 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_transfers.sql
+[0m03:25:30.610695 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_diagnosis.sql
+[0m03:25:30.610695 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models\staging\stg_admissions.sql
+[0m03:25:30.612207 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models\staging\stg_providers.sql
+[0m03:25:30.612207 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models\staging\stg_diagnosis.sql
+[0m03:25:31.137596 [error] [MainThread]: Encountered an error:
+Compilation Error in model dim_diagosis (models\marts\dim\dim_diagosis.sql)
+  
+  Warning: `dbt_utils.surrogate_key` has been replaced by `dbt_utils.generate_surrogate_key`. The new macro treats null values differently to empty strings. To restore the behaviour of the original macro, add a global variable in dbt_project.yml called `surrogate_key_treat_nulls_as_empty_strings` to your dbt_project.yml file with a value of True. The raqib_sf.dim_diagosis model triggered this warning. 
+  
+  > in macro default__surrogate_key (macros\sql\surrogate_key.sql)
+  > called by macro surrogate_key (macros\sql\surrogate_key.sql)
+  > called by model dim_diagosis (models\marts\dim\dim_diagosis.sql)
+[0m03:25:31.141116 [debug] [MainThread]: Command `dbt run` failed at 03:25:31.140606 after 3.02 seconds
+[0m03:25:31.142123 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282CC1A6800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282F008A320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282F008B520>]}
+[0m03:25:31.143159 [debug] [MainThread]: Flushing usage events
+[0m03:25:31.697081 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:26:20.812255 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECA20567A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECA34589D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECA3458820>]}
+
+
+============================== 03:26:20.818345 | bf789f3e-d251-4afa-bb4e-de1a9a045588 ==============================
+[0m03:26:20.818345 [info ] [MainThread]: Running with dbt=1.11.8
+[0m03:26:20.818345 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'D:\\Raqib\\raqib_sf_dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run --select dim_date', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'D:\\Raqib\\raqib_sf_dbt\\logs'}
+[0m03:26:22.044936 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m03:26:22.045939 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m03:26:22.045939 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m03:26:22.385280 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bf789f3e-d251-4afa-bb4e-de1a9a045588', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECC442F550>]}
+[0m03:26:22.486347 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bf789f3e-d251-4afa-bb4e-de1a9a045588', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECA32016C0>]}
+[0m03:26:22.488349 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m03:26:22.947282 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m03:26:23.258651 [debug] [MainThread]: Partial parsing enabled: 15 files deleted, 15 files added, 3 files changed.
+[0m03:26:23.259662 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_provider.sql
+[0m03:26:23.260674 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_clinical_events.sql
+[0m03:26:23.261663 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_patients_360.sql
+[0m03:26:23.261663 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_date.sql
+[0m03:26:23.261663 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_diagosis.sql
+[0m03:26:23.262660 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_encounters.sql
+[0m03:26:23.262660 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_lab_types.sql
+[0m03:26:23.262660 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_lab_analysis.sql
+[0m03:26:23.262660 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_insurance.sql
+[0m03:26:23.264167 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_patients.sql
+[0m03:26:23.264167 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_location.sql
+[0m03:26:23.264167 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_admission_type.sql
+[0m03:26:23.265178 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_emergency_contacts.sql
+[0m03:26:23.265178 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\history\int_providers_performance.sql
+[0m03:26:23.265178 [debug] [MainThread]: Partial parsing: added file: raqib_sf://models\marts\dim\dim_services.sql
+[0m03:26:23.266177 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_patients_360.sql
+[0m03:26:23.266177 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_diagnosis.sql
+[0m03:26:23.267179 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_encounters.sql
+[0m03:26:23.267179 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_services.sql
+[0m03:26:23.267179 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\marts\dim_admission_type.sql
+[0m03:26:23.267179 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\marts\dim_location.sql
+[0m03:26:23.267179 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_transfers.sql
+[0m03:26:23.268688 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_providers_performance.sql
+[0m03:26:23.268688 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_emergency_contacts.sql
+[0m03:26:23.268688 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\marts\dim_date.sql
+[0m03:26:23.269700 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_drugs.sql
+[0m03:26:23.269700 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_prescriptions.sql
+[0m03:26:23.269700 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_lab_analysis.sql
+[0m03:26:23.270701 [debug] [MainThread]: Partial parsing: deleted file: raqib_sf://models\intermediate\int_clinical_events.sql
+[0m03:26:23.270701 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models\staging\stg_diagnosis.sql
+[0m03:26:23.271699 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models\staging\stg_providers.sql
+[0m03:26:23.272206 [debug] [MainThread]: Partial parsing: updated file: raqib_sf://models\staging\stg_admissions.sql
+[0m03:26:24.095199 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.raqib_sf.int_clinical_events' (models\history\int_clinical_events.sql) depends on a node named 'int_diagnosis' which was not found
+[0m03:26:24.097200 [debug] [MainThread]: Command `dbt run` failed at 03:26:24.096205 after 3.40 seconds
+[0m03:26:24.097200 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECA20567A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECC5F4C5B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECC5F4E4A0>]}
+[0m03:26:24.097200 [debug] [MainThread]: Flushing usage events
+[0m03:26:24.744063 [debug] [MainThread]: An error was encountered while trying to flush usage events
