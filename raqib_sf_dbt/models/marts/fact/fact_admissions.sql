@@ -26,7 +26,10 @@ dim_date as (
     select *
     from {{ ref('dim_date') }}
 ),
-
+dim_time as (
+    select *
+    from {{ ref('dim_time') }}
+)
 
 select
     {{ dbt_utils.generate_surrogate_key(['admission_id', 'patient_id', 'admitted_in_timestamp']) }} as admission_key,
@@ -34,18 +37,20 @@ select
     dim_patients.patient_key,
     dim_provider.provider_key,
     dim_admission_type.admission_type_key,
+    dim_insurance.insurance_key,
     dim_date.date_key as admitted_date_key,
+    dim_time.time_key as admitted_time_key,
     dim_date.date_key as discharged_date_key,
+    dim_time.time_key as discharged_time_key,
     admission_location_dim.location_key as admission_location_key,
     discharge_location_dim.location_key as discharge_location_key,
-    stg_admissions.insurance_type,
+    stg_admissions.admitted_in_timestamp,
+    stg_admissions.admitted_out_timestamp,
     stg_admissions.total_cost,
     stg_admissions.payer_coverage,
     stg_admissions.hospital_expire_flag,
-    dim_admission_type.admission_type_key as admission_type_key,
-    dim_insurance.insurance_key,
-    
-    
+    stg_admissions.primary_sdk,
+    datediff(day, stg_admissions.admitted_in_timestamp, stg_admissions.admitted_out_timestamp) as length_of_stay
 
 from stg_admissions
 
@@ -63,3 +68,5 @@ left join dim_location as admission_location_dim on lower(stg_admissions.admissi
 left join dim_location as discharge_location_dim on lower(stg_admissions.discharge_location) = lower(discharge_location_dim.location_name)
 
 left join dim_date on cast(stg_admissions.admitted_in_timestamp as date) = dim_date.date_key
+
+left join dim_time on cast(stg_admissions.admitted_in_timestamp as time) = dim_time.time_key
