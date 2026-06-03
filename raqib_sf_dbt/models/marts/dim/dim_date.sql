@@ -5,7 +5,7 @@ WITH DateRange AS (
 ),
 Dates AS (
     SELECT
-        DATEADD(DAY, Offset, '2015-01-01'::DATE) AS Date_Val
+        DATEADD(DAY, Offset, '1900-01-01'::DATE) AS Date_Val
     FROM DateRange
 )
 
