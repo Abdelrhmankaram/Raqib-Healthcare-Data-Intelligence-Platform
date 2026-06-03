@@ -4,7 +4,7 @@ with stg_lab_specimen_types as (
 )
 
 select
-    {{ dbt_utils.generate_surrogate_key(['item_id', 'label', 'category']) }} AS specimen_type_key,
+    {{ dbt_utils.generate_surrogate_key(['item_id', 'label', 'category_type']) }} AS specimen_type_key,
     *
 
 from stg_lab_specimen_types

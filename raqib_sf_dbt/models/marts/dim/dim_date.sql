@@ -1,54 +1,24 @@
-WITH TimeRange AS (
-    SELECT
-        ROW_NUMBER() OVER (ORDER BY SEQ4()) - 1 AS Offset_Seconds
-    FROM TABLE(GENERATOR(ROWCOUNT => 400000000))
-),
-DateTimes AS (
-    SELECT
-        DATEADD(
-            SECOND,
-            Offset_Seconds,
-            '1900-01-01 00:00:00'::TIMESTAMP_NTZ
-        ) AS DATE_TIME_VAL
-    FROM TimeRange
-)
-
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['DATE_TIME_VAL']) }} AS DATE_TIME_KEY,
-
-    DATE_TIME_VAL,
-
-    YEAR(DATE_TIME_VAL) AS YEAR,
-    QUARTER(DATE_TIME_VAL) AS QUARTER,
-
-    MONTH(DATE_TIME_VAL) AS MONTH,
-    MONTHNAME(DATE_TIME_VAL) AS MONTH_NAME,
-
-    DAY(DATE_TIME_VAL) AS DAY,
-
-    WEEKOFYEAR(DATE_TIME_VAL) AS WEEK_NUMBER,
-
-    DAYOFWEEKISO(DATE_TIME_VAL) AS DAY_NUMBER,
-
-    CASE DAYNAME(DATE_TIME_VAL)
-        WHEN 'Mon' THEN 'Monday'
-        WHEN 'Tue' THEN 'Tuesday'
-        WHEN 'Wed' THEN 'Wednesday'
-        WHEN 'Thu' THEN 'Thursday'
-        WHEN 'Fri' THEN 'Friday'
-        WHEN 'Sat' THEN 'Saturday'
-        WHEN 'Sun' THEN 'Sunday'
-    END AS DAY_NAME,
-
-    HOUR(DATE_TIME_VAL) AS HOUR,
-    MINUTE(DATE_TIME_VAL) AS MINUTE,
-    SECOND(DATE_TIME_VAL) AS SECOND,
-
-    CASE
-        WHEN DAYOFWEEKISO(DATE_TIME_VAL) IN (6, 7) THEN 1
-        ELSE 0
-    END AS IS_WEEKEND
-
-FROM DateTimes
-WHERE DATE_TIME_VAL <= '2026-12-31 23:59:59'::TIMESTAMP_NTZ
-ORDER BY DATE_TIME_KEY;
+    {{ dbt_utils.generate_surrogate_key(['date_bk']) }} AS date_key,
+    date_bk,
+    year,
+    month,
+    month_name,
+    day_name, 
+    is_weekend 
+FROM (
+SELECT
+    DATEADD(DAY, SEQ4(), '2000-01-01'::DATE) AS date_bk,
+    
+    YEAR(date_bk) AS year,
+    MONTH(date_bk) AS month,
+    MONTHNAME(date_bk) AS month_name,
+    DAYNAME(date_bk) AS day_name,
+    
+    CASE 
+        WHEN DAYOFWEEKISO(date_bk) IN (6, 7) THEN 1 
+        ELSE 0 
+    END AS is_weekend
+FROM TABLE(GENERATOR(ROWCOUNT => 10000))
+WHERE date_bk <= '2026-12-31'::DATE
+)

@@ -1,11 +1,11 @@
 with services as (
     select *
-    from {{ ref('int_services') }}
+    from {{ ref('stg_services') }}
 )
 
 select    
-    service_key,
+    {{ dbt_utils.generate_surrogate_key(['service_id']) }} AS service_key,
     service_name,
     service_sub_type,
-    category, 
+    category 
 from services

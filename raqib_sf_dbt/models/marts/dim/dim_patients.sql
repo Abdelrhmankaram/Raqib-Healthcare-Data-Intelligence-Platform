@@ -5,7 +5,7 @@ with patients as (
 )
 
 SELECT
-    dbt_utils.surrogate_key(['patient_id']) AS patient_key,
+    {{ dbt_utils.generate_surrogate_key(['patient_id']) }} AS patient_key,
     patient_id,
     ssn,
     full_name,
