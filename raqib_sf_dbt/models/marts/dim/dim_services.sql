@@ -3,8 +3,9 @@ with services as (
     from {{ ref('int_services') }}
 )
 
-select    service_key,
-        service_name,
-     service_sub_type,
-     category, 
-     from services
+select    
+    service_key,
+    service_name,
+    service_sub_type,
+    category, 
+from services
