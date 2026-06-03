@@ -7,7 +7,7 @@ SELECT
     admission_id,
     patient_id,
     admission_provider_id AS provider_id,
-    CAST(admission_datetime_in AS TIMESTAMP) AS admitted_in_timestamp,
+    CAST(admission_datetime_in AS TIMESTAMP) AS admitted_in_timestamp, 
     CAST(admission_datetime_out AS TIMESTAMP) AS admitted_out_timestamp,
     UPPER(LEFT(admission_type, 1)) || LOWER(SUBSTR(admission_type, 2)) AS admission_type,
     admission_location,
