@@ -1,36 +1,31 @@
-WITH TimeRange AS (
+WITH DateRange AS (
     SELECT
-        ROW_NUMBER() OVER (ORDER BY SEQ4()) - 1 AS Offset_Seconds
-    FROM TABLE(GENERATOR(ROWCOUNT => 400000000))
+        ROW_NUMBER() OVER (ORDER BY SEQ4()) - 1 AS Offset
+    FROM TABLE(GENERATOR(ROWCOUNT => 50000))
 ),
-DateTimes AS (
+Dates AS (
     SELECT
-        DATEADD(
-            SECOND,
-            Offset_Seconds,
-            '1900-01-01 00:00:00'::TIMESTAMP_NTZ
-        ) AS DATE_TIME_VAL
-    FROM TimeRange
+        DATEADD(DAY, Offset, '2015-01-01'::DATE) AS Date_Val
+    FROM DateRange
 )
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['DATE_TIME_VAL']) }} AS DATE_TIME_KEY,
+    TO_NUMBER(TO_CHAR(Date_Val, 'YYYYMMDD')) AS DATE_KEY,
+    Date_Val AS FULL_DATE,
 
-    DATE_TIME_VAL,
+    DAY(Date_Val) AS DAY,
+    MONTH(Date_Val) AS MONTH,
+    MONTHNAME(Date_Val) AS MONTH_NAME,
 
-    YEAR(DATE_TIME_VAL) AS YEAR,
-    QUARTER(DATE_TIME_VAL) AS QUARTER,
+    QUARTER(Date_Val) AS QUARTER,
+    YEAR(Date_Val) AS YEAR,
 
-    MONTH(DATE_TIME_VAL) AS MONTH,
-    MONTHNAME(DATE_TIME_VAL) AS MONTH_NAME,
+    WEEKOFYEAR(Date_Val) AS WEEK_NUMBER,
 
-    DAY(DATE_TIME_VAL) AS DAY,
+    /* Day number within week (Monday=1 ... Sunday=7) */
+    DAYOFWEEKISO(Date_Val) AS DAY_NUMBER,
 
-    WEEKOFYEAR(DATE_TIME_VAL) AS WEEK_NUMBER,
-
-    DAYOFWEEKISO(DATE_TIME_VAL) AS DAY_NUMBER,
-
-    CASE DAYNAME(DATE_TIME_VAL)
+    CASE DAYNAME(Date_Val)
         WHEN 'Mon' THEN 'Monday'
         WHEN 'Tue' THEN 'Tuesday'
         WHEN 'Wed' THEN 'Wednesday'
@@ -40,15 +35,11 @@ SELECT
         WHEN 'Sun' THEN 'Sunday'
     END AS DAY_NAME,
 
-    HOUR(DATE_TIME_VAL) AS HOUR,
-    MINUTE(DATE_TIME_VAL) AS MINUTE,
-    SECOND(DATE_TIME_VAL) AS SECOND,
-
     CASE
-        WHEN DAYOFWEEKISO(DATE_TIME_VAL) IN (6, 7) THEN 1
+        WHEN DAYOFWEEKISO(Date_Val) IN (6, 7) THEN 1
         ELSE 0
     END AS IS_WEEKEND
 
-FROM DateTimes
-WHERE DATE_TIME_VAL <= '2026-12-31 23:59:59'::TIMESTAMP_NTZ
-ORDER BY DATE_TIME_KEY;
+FROM Dates
+WHERE Date_Val <= '2026-12-31'::DATE
+ORDER BY DATE_KEY;
