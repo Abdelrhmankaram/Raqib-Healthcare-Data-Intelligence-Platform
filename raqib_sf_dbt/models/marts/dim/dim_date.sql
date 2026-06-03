@@ -8,15 +8,13 @@ DateTimes AS (
         DATEADD(
             SECOND,
             Offset_Seconds,
-            '2015-01-01 00:00:00'::TIMESTAMP_NTZ
+            '1900-01-01 00:00:00'::TIMESTAMP_NTZ
         ) AS DATE_TIME_VAL
     FROM TimeRange
 )
 
 SELECT
-    TO_NUMBER(
-        TO_CHAR(DATE_TIME_VAL, 'YYYYMMDDHH24MISS')
-    ) AS DATE_TIME_KEY,
+    {{ dbt_utils.generate_surrogate_key(['DATE_TIME_VAL']) }} AS DATE_TIME_KEY,
 
     DATE_TIME_VAL,
 
