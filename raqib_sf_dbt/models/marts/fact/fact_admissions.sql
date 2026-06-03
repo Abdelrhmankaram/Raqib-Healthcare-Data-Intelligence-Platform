@@ -33,7 +33,6 @@ dim_time as (
 
 select
     {{ dbt_utils.generate_surrogate_key(['admission_id', 'patient_id', 'admitted_in_timestamp']) }} as admission_key,
-    stg_admissions.admission_id,
     dim_patients.patient_key,
     dim_provider.provider_key,
     dim_admission_type.admission_type_key,
