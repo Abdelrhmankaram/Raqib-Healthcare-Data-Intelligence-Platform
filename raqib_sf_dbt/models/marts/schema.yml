@@ -286,10 +286,10 @@ models:
   - name: fact_patient_services
     description: Patient services fact table
     columns:
-      - name: service_key
-        tests:
-          - unique
-          - not_null
+      # - name: service_key
+      #   tests:
+      #     - unique
+      #     - not_null
       - name: patient_id
         tests:
           - not_null

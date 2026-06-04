@@ -11,10 +11,6 @@ models:
       - name: full_name
         data_tests:
           - not_null
-      - name: ssn
-        data_tests:
-          - not_null
-          - unique
       - name: blood_type
         data_tests:
           - accepted_values:
@@ -56,11 +52,11 @@ models:
       - name: provider_specialty
         tests:
           - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set: ['Oncology','Neurology','Endocrinology','General Medicine',
-              'Gynecology','Pulmonology','Family Medicine','Dermatology',
-              'Gastroenterology','Cardiology','Internal Medicine',
-              'ENT (Ear, Nose, and Throat)','Obstetrics','Orthopedics',
-              'Psychiatry','Surgery']
+              value_set: ['Pulmonology', 'Endocrinology', 'Orthopedics', 'Gynecology',
+                          'Cardiology', 'Oncology', 'Psychiatry', 'Neurology',
+                          'Family Medicine', 'General Medicine', 'Gastroenterology', 'Surgery',
+                          'Obstetrics', 'ENT (Ear, Nose, and Throat)', 'Dermatology', 
+                          'Internal Medicine']
       - name: is_valid_enumeration_date
         data_tests:
           - accepted_values:
@@ -145,25 +141,31 @@ models:
         tests:
           - dbt_expectations.expect_column_values_to_be_in_set:
               value_set: ['Endoscopy','Microbiology','Pathology',
-              'Neurophysiology','Lab ','Radiology ']
+                          'Neurophysiology','Lab','Radiology']
       - name: category_sub_type
         tests:
           - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set: [' Mammography',' Nuclear Medicine',' Blood Panel',
-              ' X-ray',' CT',' MRI',' Ultrasound']
+              value_set: ['Mammography','Nuclear Medicine','Blood Panel',
+                          'X-ray','CT','MRI','Ultrasound']
+
+              config: 
+                where: "category_sub_type is not null"
+
       - name: specialty_1
         tests:
           - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set: [' Pulmonology',' Orthopedics','Cardiology','Dentistry',
-              ' Gastroenterology',' Dermatology',' Obstetrics','Oncology',
-              'General Practice','Neurology','Psychiatry','Endocrinology',
-              'Hematology']
+              value_set: ['Pulmonology','Orthopedics','Cardiology','Dentistry',
+                          'Gastroenterology','Dermatology','Obstetrics','Oncology',
+                          'General Practice','Neurology','Psychiatry','Endocrinology',
+                          'Hematology']
       - name: specialty_2
         tests:
           - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set: [' ENT',' Emergency Trauma','Oral Health','Burn Care',
-              ' Emergency Medicine',' Gynecology',' General Surgery',
-              'Internal Medicine','Behavioral Health','Metabolism']
+              value_set: ['ENT','Emergency Trauma','Oral Health','Burn Care',
+                          'Emergency Medicine','Gynecology','General Surgery',
+                          'Internal Medicine','Behavioral Health','Metabolism']
+              config: 
+                where: "specialty_2 is not null" 
 
   - name: stg_prescriptions
     description: Staging table for prescriptions

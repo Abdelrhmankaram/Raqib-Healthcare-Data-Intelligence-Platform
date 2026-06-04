@@ -4,6 +4,7 @@ with dim_diagnosis as (
 
 select 
     {{ dbt_utils.generate_surrogate_key(['diagnosis_id', 'domain', 'sub_domain_key']) }} as diagnosis_key,
+    diagnosis_id,
     description,
     description_type,
     sub_domain_key,

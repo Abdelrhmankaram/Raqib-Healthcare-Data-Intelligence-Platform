@@ -1,11 +1,24 @@
 with services as (
-    select *
+
+    select
+        service_id,
+        service_name,
+        service_sub_type,
+        category,
+        row_number() over (
+            partition by service_id
+            order by service_name asc
+        ) as rn
     from {{ ref('stg_services') }}
+
 )
 
-select    
-    {{ dbt_utils.generate_surrogate_key(['service_id']) }} AS service_dim_key,
+select
+    {{ dbt_utils.generate_surrogate_key(['service_id']) }} as service_dim_key,
+    service_id,
     service_name,
     service_sub_type,
-    category 
+    category
 from services
+where rn = 1
+

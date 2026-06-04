@@ -7,6 +7,7 @@ SELECT
 
     t.transfer_id,
     dp.patient_key,
+    t.patient_id,
     ie.encounter_key,
     dd.date_key                                 AS transfer_date_key,
     dt.time_key                                 AS transfer_time_key,

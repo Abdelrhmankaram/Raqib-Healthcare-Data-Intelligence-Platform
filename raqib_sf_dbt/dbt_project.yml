@@ -33,7 +33,7 @@ models:
     +materialized: view
 
     staging:
-      +materialized: ephemeral
+      +materialized: view
       +schema: staging
       +tags: ["staging"]
 
