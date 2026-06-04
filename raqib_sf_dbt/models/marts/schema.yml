@@ -8,19 +8,20 @@ models:
     description: Patient dimension table
     columns:
       - name: patient_key
-        description: Surrogate key
         tests:
           - unique
           - not_null
       - name: patient_id
-        description: Business key
         tests:
           - unique
           - not_null
       - name: full_name
         tests:
           - not_null
-      - name: birthdate
+      - name: emergency_contact_name
+        tests:
+          - not_null
+      - name: emergency_contact_phone_number
         tests:
           - not_null
 
@@ -152,23 +153,6 @@ models:
         tests:
           - not_null
 
-  - name: dim_emergency_contacts
-    description: Emergency contacts dimension table
-    columns:
-      - name: contact_key
-        description: Surrogate key
-        tests:
-          - unique
-          - not_null
-      - name: patient_id
-        tests:
-          - not_null
-      - name: emergency_contact_name
-        tests:
-          - not_null
-      - name: emergency_contact_phone_number
-        tests:
-          - not_null
 
   # ============ FACTS ============
   - name: fact_encounters
