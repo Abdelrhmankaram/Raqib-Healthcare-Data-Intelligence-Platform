@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 SELECT
     lab_event_key,
     lab_event_id,

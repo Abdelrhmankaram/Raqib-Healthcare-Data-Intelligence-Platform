@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 WITH patients AS (
     SELECT
         patient_id,

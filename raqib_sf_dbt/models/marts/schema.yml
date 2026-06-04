@@ -2,18 +2,18 @@ version: 2
 
 models:
 
-  # ============ DIMENSION TABLES ============
+  # ============ DIMENSIONS ============
 
   - name: dim_patients
     description: Patient dimension table
     columns:
       - name: patient_key
-        description: Surrogate key for patient
+        description: Surrogate key
         tests:
           - unique
           - not_null
       - name: patient_id
-        description: Patient business key
+        description: Business key
         tests:
           - unique
           - not_null
@@ -25,29 +25,34 @@ models:
           - not_null
 
   - name: dim_provider
-    description: Healthcare provider dimension table
+    description: Provider dimension table
     columns:
       - name: provider_key
-        description: Surrogate key for provider
+        description: Surrogate key
         tests:
           - unique
           - not_null
       - name: provider_id
-        description: Provider business key
+        description: Business key
         tests:
           - unique
+          - not_null
+      - name: provider_full_name
+        tests:
+          - not_null
+      - name: provider_specialty
+        tests:
           - not_null
 
   - name: dim_admission_type
     description: Admission type dimension table
     columns:
-      - name: admission_key
-        description: Surrogate key for admission type
+      - name: admission_type_key
+        description: Surrogate key
         tests:
           - unique
           - not_null
       - name: admission_type
-        description: Type of admission
         tests:
           - not_null
 
@@ -55,12 +60,11 @@ models:
     description: Location dimension table
     columns:
       - name: location_key
-        description: Surrogate key for location
+        description: Surrogate key
         tests:
           - unique
           - not_null
       - name: location_name
-        description: Location name
         tests:
           - not_null
 
@@ -68,11 +72,18 @@ models:
     description: Date dimension table
     columns:
       - name: date_key
-        description: Date dimension surrogate key
+        description: Surrogate key
+        tests:
+          - unique
+          - not_null
+      - name: date_bk
         tests:
           - unique
           - not_null
       - name: year
+        tests:
+          - not_null
+      - name: month
         tests:
           - not_null
 
@@ -80,7 +91,11 @@ models:
     description: Time dimension table
     columns:
       - name: time_key
-        description: Time dimension surrogate key
+        description: Surrogate key
+        tests:
+          - unique
+          - not_null
+      - name: time_bk
         tests:
           - unique
           - not_null
@@ -91,151 +106,216 @@ models:
   - name: dim_diagnosis
     description: Diagnosis dimension table
     columns:
-      - name: diagnosis_id
-        description: Diagnosis business key
+      - name: diagnosis_key
+        description: Surrogate key
         tests:
           - unique
           - not_null
+      - name: diagnosis_id
+        description: Business key
+        tests:
+          - unique
+          - not_null
+      - name: description
+        tests:
+          - not_null
+      - name: domain
+        tests:
+          - not_null
 
   - name: dim_lab_types
-    description: Lab test types dimension table
+    description: Lab specimen types dimension table
     columns:
-      - name: lab_type_id
-        description: Lab type business key
+      - name: specimen_type_key
+        description: Surrogate key
+        tests:
+          - unique
+          - not_null
+      - name: item_id
+        description: Business key
+        tests:
+          - unique
+          - not_null
+      - name: label
         tests:
           - not_null
 
   - name: dim_services
     description: Services dimension table
     columns:
-      - name: service_id
-        description: Service business key
+      - name: service_dim_key
+        description: Surrogate key
+        tests:
+          - unique
+          - not_null
+      - name: service_name
         tests:
           - not_null
 
-  # ============ FACT TABLES ============
-
-
-  - name: fact_patient_services
-    description: Fact table for patient services
+  - name: dim_emergency_contacts
+    description: Emergency contacts dimension table
     columns:
-      - name: patient_key
-        description: Foreign key to dim_patients
+      - name: contact_key
+        description: Surrogate key
+        tests:
+          - unique
+          - not_null
+      - name: patient_id
         tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('dim_patients')
-                field: patient_key
-      - name: service_id
-        description: Foreign key to dim_services
+      - name: emergency_contact_name
         tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('dim_services')
-                field: service_id
-      - name: provider_key
-        description: Foreign key to dim_provider
-        tests:
-          - relationships:
-              arguments:
-                to: ref('dim_provider')
-                field: provider_key
-      - name: date_key
-        description: Foreign key to dim_date
+      - name: emergency_contact_phone_number
         tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('dim_date')
-                field: date_key
 
-  - name: fact_transfers
-    description: Fact table for patient transfers
+  # ============ FACTS ============
+
+  - name: fact_encounters
+    description: Core encounter fact table
     columns:
-      - name: patient_key
-        description: Foreign key to dim_patients
+      - name: encounter_key
+        tests:
+          - unique
+          - not_null
+      - name: admission_id
+        tests:
+          - unique
+          - not_null
+      - name: patient_id
         tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('dim_patients')
-                field: patient_key
-      - name: transfer_from_location_key
-        description: Foreign key to dim_location (transfer from)
-        tests:
-          - relationships:
-              arguments:
-                to: ref('dim_location')
-                field: location_key
-      - name: transfer_to_location_key
-        description: Foreign key to dim_location (transfer to)
-        tests:
-          - relationships:
-              arguments:
-                to: ref('dim_location')
-                field: location_key
-      - name: transfer_date_key
-        description: Foreign key to dim_date
+      - name: provider_id
         tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('dim_date')
-                field: date_key
+      - name: length_of_stay_days
+        tests:
+          - not_null
+      - name: total_cost
+        tests:
+          - not_null
+      - name: discharge_status
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Deceased', 'Alive']
+      - name: age_group
+        tests:
+          - accepted_values:
+              values: ['Child', 'Teen', 'Adult', 'Senior']
+
+  - name: fact_clinical_events
+    description: Unified clinical events fact table
+    columns:
+      - name: event_key
+        tests:
+          - unique
+          - not_null
+      - name: admission_id
+        tests:
+          - not_null
+      - name: patient_id
+        tests:
+          - not_null
+      - name: event_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Diagnosis', 'Lab', 'Medication']
+      - name: event_cost
+        tests:
+          - not_null
 
   - name: fact_lab_results
-    description: Fact table for lab results
+    description: Detailed lab results fact table
     columns:
-      - name: patient_key
-        description: Foreign key to dim_patients
+      - name: lab_event_key
+        tests:
+          - unique
+          - not_null
+      - name: patient_id
         tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('dim_patients')
-                field: patient_key
-      - name: lab_type_id
-        description: Foreign key to dim_lab_types
+      - name: admission_id
         tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('dim_lab_types')
-                field: lab_type_id
-      - name: provider_key
-        description: Foreign key to dim_provider
-        tests:
-          - relationships:
-              arguments:
-                to: ref('dim_provider')
-                field: provider_key
-      - name: date_key
-        description: Foreign key to dim_date
+      - name: lab_done_at
         tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('dim_date')
-                field: date_key
+      - name: abnormal_flag
+        tests:
+          - accepted_values:
+              values: ['High', 'Low', 'Normal']
+
+  - name: fact_providers_performance
+    description: Provider performance fact table
+    columns:
+      - name: provider_performance_key
+        tests:
+          - unique
+          - not_null
+      - name: provider_id
+        tests:
+          - unique
+          - not_null
+      - name: total_encounters
+        tests:
+          - not_null
+      - name: mortality_rate
+        tests:
+          - not_null
 
   - name: fact_patient_finances
-    description: Fact table for patient financial data
+    description: Patient financial fact table
     columns:
       - name: patient_key
-        description: Foreign key to dim_patients
+        tests:
+          - unique
+          - not_null
+      - name: patient_id
         tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('dim_patients')
-                field: patient_key
-      - name: total_cost
-        description: Total cost
+      - name: healthcare_expenses
         tests:
           - not_null
-      - name: payer_coverage
-        description: Payer coverage amount
+      - name: total_admissions_cost
+        tests:
+          - not_null
+
+  - name: fact_patient_services
+    description: Patient services fact table
+    columns:
+      - name: service_key
+        tests:
+          - unique
+          - not_null
+      - name: patient_id
+        tests:
+          - not_null
+      - name: admission_id
+        tests:
+          - not_null
+      - name: cost
+        tests:
+          - not_null
+
+  - name: fact_transfers
+    description: Patient transfers fact table
+    columns:
+      - name: transfer_key
+        tests:
+          - unique
+          - not_null
+      - name: transfer_id
+        tests:
+          - not_null
+      - name: patient_id
+        tests:
+          - not_null
+      - name: from_department
+        tests:
+          - not_null
+      - name: to_department
         tests:
           - not_null

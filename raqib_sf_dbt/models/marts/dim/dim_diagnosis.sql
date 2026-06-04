@@ -1,4 +1,3 @@
-{{ config(materialized='table') }}
 with dim_diagnosis as (
     select * from {{ ref('stg_diagnosis') }}
 )

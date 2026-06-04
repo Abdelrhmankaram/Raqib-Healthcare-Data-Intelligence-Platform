@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 with services as (
     select *
     from {{ ref('stg_services') }}
