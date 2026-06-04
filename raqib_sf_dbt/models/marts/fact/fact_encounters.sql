@@ -1,19 +1,15 @@
-{{ config(materialized='incremental', unique_key='encounter_key') }}
-
 SELECT
+    -- الـ Keys الأساسية (Surrogate Keys)
     ie.encounter_key,
-    ie.admission_id,
-    ie.patient_id,
-    ie.provider_id,
-
     dp.patient_key,
     dpr.provider_key,
     dat.admission_type_key,
-    dl_adm.location_key  as admission_location_key,
-    dl_dis.location_key  as discharge_location_key,
-    dd.date_key as admitted_date_key,
-    dt.time_key as admitted_time_key,
+    dl_adm.location_key AS admission_location_key,
+    dl_dis.location_key AS discharge_location_key,
+    dd.date_key AS admitted_date_key,
+    dt.time_key AS admitted_time_key,
 
+    -- البيانات الوصفية (Metrics & Attributes)
     ie.primary_sdk,
     ie.provider_specialty,
     ie.admitted_at,

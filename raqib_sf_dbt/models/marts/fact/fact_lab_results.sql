@@ -4,10 +4,9 @@ SELECT
     dp.patient_key,
     dpr.provider_key,
     dst.specimen_type_key,
-    dd.date_key  as lab_date_key,
-    dt.time_key  as lab_time_key,
+    dd.date_key AS lab_date_key,
+    dt.time_key AS lab_time_key,
 
-    lr.lab_event_id,
     lr.lab_done_at,
     lr.lab_stored_at,
     lr.test_name,

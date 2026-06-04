@@ -23,5 +23,6 @@ LEFT JOIN {{ ref('dim_services') }} dse
     ON s.service_id = dse.service_id
 
 {% if is_incremental() %}
-WHERE s.admission_id NOT IN (SELECT encounter_key FROM {{ this }})
+  WHERE {{ dbt_utils.generate_surrogate_key(['s.service_id', 's.patient_id', 's.admission_id']) }} 
+        NOT IN (SELECT service_key FROM {{ this }})
 {% endif %}

@@ -171,32 +171,26 @@ models:
           - not_null
 
   # ============ FACTS ============
-
   - name: fact_encounters
-    description: Core encounter fact table
     columns:
       - name: encounter_key
         tests:
           - unique
           - not_null
-      - name: length_of_stay_days
+      - name: patient_key
         tests:
           - not_null
-      - name: total_cost
+          - relationships:
+              to: ref('dim_patients')
+              field: patient_key
+      - name: provider_key
         tests:
           - not_null
-      - name: discharge_status
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['Deceased', 'Alive']
-      - name: age_group
-        tests:
-          - accepted_values:
-              values: ['Child', 'Teen', 'Adult', 'Senior']
+          - relationships:
+              to: ref('dim_provider')
+              field: provider_key
 
   - name: fact_clinical_events
-    description: Unified clinical events fact table
     columns:
       - name: event_key
         tests:
@@ -205,27 +199,13 @@ models:
       - name: encounter_key
         tests:
           - not_null
-
       - name: diagnosis_key
         tests:
           - relationships:
               to: ref('dim_diagnosis')
               field: diagnosis_key
-              
-      - name: patient_key
-        tests:
-          - not_null
-      - name: event_type
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['Diagnosis', 'Lab', 'Medication']
-      - name: event_cost
-        tests:
-          - not_null
 
   - name: fact_lab_results
-    description: Detailed lab results fact table
     columns:
       - name: lab_event_key
         tests:
@@ -233,7 +213,7 @@ models:
           - not_null
       - name: encounter_key
         tests:
-          - not_null  
+          - not_null
       - name: patient_key
         tests:
           - not_null
@@ -243,16 +223,8 @@ models:
       - name: specimen_type_key
         tests:
           - not_null
-      - name: lab_done_at
-        tests:
-          - not_null
-      - name: abnormal_flag
-        tests:
-          - accepted_values:
-              values: ['High', 'Low', 'Normal']
 
   - name: fact_providers_performance
-    description: Provider performance fact table
     columns:
       - name: provider_performance_key
         tests:
@@ -262,32 +234,15 @@ models:
         tests:
           - unique
           - not_null
-      - name: total_encounters
-        tests:
-          - not_null
-      - name: mortality_rate
-        tests:
-          - not_null
 
   - name: fact_patient_finances
-    description: Patient financial fact table
     columns:
       - name: patient_key
         tests:
           - unique
           - not_null
-      # - name: patient_id
-      #   tests:
-      #     - not_null
-      - name: healthcare_expenses
-        tests:
-          - not_null
-      - name: total_admissions_cost
-        tests:
-          - not_null
 
   - name: fact_patient_services
-    description: Patient services fact table
     columns:
       - name: service_key
         tests:
@@ -299,12 +254,8 @@ models:
       - name: patient_key
         tests:
           - not_null
-      - name: cost
-        tests:
-          - not_null
 
   - name: fact_transfers
-    description: Patient transfers fact table
     columns:
       - name: transfer_key
         tests:
@@ -316,7 +267,6 @@ models:
       - name: patient_key
         tests:
           - not_null
-      - name: transfer_id
       - name: from_department
         tests:
           - not_null

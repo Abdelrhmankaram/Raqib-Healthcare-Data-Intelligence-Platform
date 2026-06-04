@@ -20,7 +20,6 @@ encounter_finances AS (
 
 SELECT
     {{ dbt_utils.generate_surrogate_key(['p.patient_id']) }} AS patient_key,
-    p.patient_id,
     p.healthcare_expenses,
     p.healthcare_coverage,
     p.income_usd,

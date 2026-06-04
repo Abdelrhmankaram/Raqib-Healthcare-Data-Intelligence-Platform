@@ -7,11 +7,11 @@ SELECT
         't.admission_id'
     ]) }} as transfer_key,
 
-    t.transfer_id,
     dp.patient_key,
     ie.encounter_key,
-    dd.date_key  as transfer_date_key,
-    dt.time_key  as transfer_time_key,
+    dd.date_key as transfer_date_key,
+    dt.time_key as transfer_time_key,
+
     t.from_department,
     t.to_department,
     t.is_same_department_transfer,
@@ -28,7 +28,5 @@ LEFT JOIN {{ ref('dim_time') }} dt
     ON CAST(t.transfer_datetime AS TIME) = dt.time_bk
 
 {% if is_incremental() %}
-WHERE t.transfer_datetime > (SELECT MAX(transfer_datetime) FROM 
-    {{ ref('stg_transfers') }} t2 
-    JOIN {{ this }} th ON {{ dbt_utils.generate_surrogate_key(['t2.transfer_id', 't2.patient_id', 't2.admission_id']) }} = th.transfer_key)
+WHERE t.transfer_datetime > (SELECT MAX(transfer_datetime) FROM {{ this }})
 {% endif %}

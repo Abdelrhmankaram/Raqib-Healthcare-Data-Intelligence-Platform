@@ -73,14 +73,12 @@ prescription_metrics AS (
 SELECT
     {{ dbt_utils.generate_surrogate_key(['p.provider_id']) }} AS provider_performance_key,
     dp.provider_key,
-    p.provider_id,
-
+    
     p.provider_full_name,
     p.provider_specialty,
     p.provider_city,
     p.provider_state_code,
 
-   
     COALESCE(em.total_encounters, 0) AS total_encounters,
     COALESCE(em.unique_patients, 0) AS unique_patients,
     COALESCE(dm.total_diagnoses, 0) AS total_diagnoses,
@@ -104,5 +102,3 @@ LEFT JOIN lab_metrics lm
 
 LEFT JOIN prescription_metrics pm
     ON p.provider_id = pm.provider_id
-
-

@@ -1,14 +1,13 @@
 SELECT
     ce.event_key,
     ie.encounter_key,
-    ce.patient_id,
     dp.patient_key,
+    dd.date_key AS event_date_key,
+    ddx.diagnosis_key,
     ce.event_type,
     ce.event_name,
     ce.event_date,
-    ce.event_cost,
-    dd.date_key AS event_date_key,
-    ddx.diagnosis_key 
+    ce.event_cost
 
 FROM {{ ref('int_clinical_events') }} ce
 LEFT JOIN {{ ref('int_encounters') }} ie
