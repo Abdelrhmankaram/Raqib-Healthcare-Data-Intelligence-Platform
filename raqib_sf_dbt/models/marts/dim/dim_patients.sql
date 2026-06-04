@@ -18,6 +18,6 @@ SELECT
     Race,
     ethnicity,
     spoken_language,
-    city,
+    city
     
 FROM patients

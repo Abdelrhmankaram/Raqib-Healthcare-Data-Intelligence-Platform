@@ -1,3 +1,5 @@
+{{ config(enabled=false) }}
+
 WITH patients AS (
     SELECT * FROM {{ ref('stg_patients') }}
 ),

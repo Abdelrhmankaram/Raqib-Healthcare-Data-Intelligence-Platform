@@ -1,34 +1,26 @@
-WITH lab_events AS (
-    SELECT *
-    FROM {{ ref('stg_lab_events') }}
-),
-
-specimen_types AS (
-    SELECT *
-    FROM {{ ref('stg_lab_specimen_types') }}
-)
+{{ config(materialized='table') }}
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['lab_event_id']) }} AS lab_event_id,
-    {{dbt_utils.generate_surrogate_key(['patient_id']) }} AS patient_id,
-    {{dbt_utils.generate_surrogate_key(['admission_id']) }} AS admission_id,
-    {{dbt_utils.generate_surrogate_key(['provider_id']) }} AS provider_id,
-
-    {{dbt_utils.generate_surrogate_key(['specimen_id']) }} AS specimen_id,
-    le.item_id,
-
-    le.lab_done_at as done_date_at,
-    le.lab_stored_at as stored_date_at,
-
-    le.result_value,
-    le.measurement_unit,
-
-    le.range_lower,
-    le.range_higher,
-
-    le.abnormal_flag,
-
-FROM lab_events le
-
-LEFT JOIN specimen_types st
-    ON le.item_id = st.item_id
+    lab_event_key,
+    lab_event_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    specimen_id,
+    item_id,
+    lab_done_at,
+    lab_stored_at,
+    test_name,
+    label_sub_type,
+    fluid,
+    category_type,
+    category_sub_type,
+    specialty_1,
+    specialty_2,
+    result_value,
+    measurement_unit,
+    range_lower,
+    range_higher,
+    abnormal_flag,
+    cost
+FROM {{ ref('int_lab_analysis') }}

@@ -7,31 +7,33 @@ WITH all_events AS (
         NULL::TIMESTAMP                                                  AS event_date,
         NULL::FLOAT                                                      AS cost,
         diagnosis_id::VARCHAR                                            AS source_id
-    FROM {{ ref('int_diagnosis') }}
+    FROM {{ ref('stg_diagnosis') }}
 
     UNION ALL
 
     SELECT 
-        admission_id, 
-        patient_id, 
+        le.admission_id, 
+        le.patient_id, 
         'Lab'                                                            AS event_type, 
-        test_name                                                        AS event_name, 
-        lab_done_at                                                      AS event_date,
-        cost,
-        lab_event_id::VARCHAR                                            AS source_id
-    FROM {{ ref('int_lab_analysis') }}
+        le.test_name                                                        AS event_name, 
+        le.lab_done_at                                                   AS event_date,
+        le.cost,
+        le.lab_event_id::VARCHAR                                         AS source_id
+    FROM {{ ref('int_lab_analysis') }} le
 
     UNION ALL
 
     SELECT 
-        admission_id, 
-        patient_id, 
+        p.admission_id, 
+        p.patient_id, 
         'Medication'                                                     AS event_type, 
-        drug_name                                                        AS event_name, 
-        prescription_date                                                AS event_date,
+        d.brand_name                                                     AS event_name, 
+        p.prescribed_date                                                AS event_date,
         NULL::FLOAT                                                      AS cost,
-        prescription_id::VARCHAR                                         AS source_id
-    FROM {{ ref('int_prescriptions') }}
+        p.prescription_id::VARCHAR                                       AS source_id
+    FROM {{ ref('stg_prescriptions') }} p
+    LEFT JOIN {{ ref('stg_drugs') }} d 
+        ON p.drug_id = d.drug_id
 ),
 
 events_with_date AS (

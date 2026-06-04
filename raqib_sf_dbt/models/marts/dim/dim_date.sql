@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 SELECT
     {{ dbt_utils.generate_surrogate_key(['date_bk']) }} AS date_key,
     date_bk,

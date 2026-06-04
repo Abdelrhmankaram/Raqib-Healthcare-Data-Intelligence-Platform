@@ -1,0 +1,22 @@
+SELECT
+    encounter_key,
+    admission_id,
+    patient_id,
+    provider_id,
+    primary_sdk,
+    provider_specialty,
+    admitted_at,
+    discharged_at,
+    is_active_encounter,
+    length_of_stay_days,
+    admission_type,
+    admission_location,
+    discharge_location,
+    total_cost,
+    payer_coverage,
+    coverage_percentage,
+    out_of_pocket_cost,
+    age_at_admission,
+    age_group,
+    discharge_status
+FROM {{ ref('int_encounters') }}

@@ -1,42 +1,26 @@
-with fact_transfers as (
+SELECT
+    {{ dbt_utils.generate_surrogate_key([
+        't.transfer_id',
+        't.patient_id',
+        't.admission_id'
+    ]) }}                                       AS transfer_key,
 
-    select
-        {{ dbt_utils.generate_surrogate_key([
-            'p.patient_key',
-            'pv.provider_key',
-            'a.admission_key'
-        ]) }} as transfer_key,
+    t.transfer_id,
+    dp.patient_key,
+    ie.encounter_key,
+    dd.date_key                                 AS transfer_date_key,
+    dt.time_key                                 AS transfer_time_key,
+    t.from_department,
+    t.to_department,
+    t.is_same_department_transfer,
+    t.transfer_reason
 
-        t.transfer_id,
-        p.patient_key,
-        pv.provider_key,
-        a.admission_key,
-
-        dd.date_key,
-        dt.time_key,
-
-        t.from_department,
-        t.to_department,
-        t.transfer_reason
-
-    from {{ ref('stg_transfers') }} as t
-
-    left join {{ ref('dim_patients') }} as p
-        on p.patient_id = t.patient_id
-
-    left join {{ ref('dim_provider') }} as pv
-        on t.provider_id = pv.provider_id
-
-    left join {{ ref('fact_admissions') }} as a
-        on a.admission_id = t.admission_id
-
-    left join {{ ref('dim_date') }} as dd
-        on cast(t.transfer_date_key as date) = dd.full_date
-
-    left join {{ ref('dim_time') }} as dt
-        on cast(t.transfer_date_key as time) = dt.full_time
-
-)
-
-select *
-from fact_transfers
+FROM {{ ref('stg_transfers') }} t
+LEFT JOIN {{ ref('dim_patients') }} dp
+    ON t.patient_id = dp.patient_id
+LEFT JOIN {{ ref('int_encounters') }} ie
+    ON t.admission_id = ie.admission_id
+LEFT JOIN {{ ref('dim_date') }} dd
+    ON CAST(t.transfer_datetime AS DATE) = dd.date_bk
+LEFT JOIN {{ ref('dim_time') }} dt
+    ON CAST(t.transfer_datetime AS TIME) = dt.time_bk

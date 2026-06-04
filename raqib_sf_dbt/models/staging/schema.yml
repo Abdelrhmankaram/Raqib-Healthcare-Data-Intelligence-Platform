@@ -116,7 +116,7 @@ models:
       - name: category_type
         tests:
           - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set: [,'Endoscopy','Microbiology','Pathology','Neurophysiology','Lab ','Radiology ']
+              value_set: ['Endoscopy','Microbiology','Pathology','Neurophysiology','Lab ','Radiology ']
 
       - name: category_sub_type
         tests:
@@ -135,8 +135,6 @@ models:
               value_set: [' ENT',' Emergency Trauma','Oral Health','Burn Care',' Emergency Medicine',' Gynecology',' General Surgery','Internal Medicine','Behavioral Health','Metabolism']
 
 
-
-      - name: 
   - name: stg_lab_events
 
     columns:

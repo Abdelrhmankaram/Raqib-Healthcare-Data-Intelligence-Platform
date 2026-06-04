@@ -74,8 +74,7 @@ SELECT
     {{ dbt_utils.generate_surrogate_key(['p.provider_id']) }} AS provider_performance_key,
     p.provider_id,
 
-    p.provider_first_name,
-    p.provider_last_name,
+    p.provider_full_name,
     p.provider_specialty,
     p.provider_city,
     p.provider_state_code,

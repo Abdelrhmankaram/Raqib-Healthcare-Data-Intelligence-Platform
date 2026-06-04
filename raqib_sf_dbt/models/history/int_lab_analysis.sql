@@ -14,10 +14,8 @@ SELECT
     le.patient_id,
     le.admission_id,
     le.provider_id,
-
     le.specimen_id,
     le.item_id,
-
     le.lab_done_at,
     le.lab_stored_at,
 

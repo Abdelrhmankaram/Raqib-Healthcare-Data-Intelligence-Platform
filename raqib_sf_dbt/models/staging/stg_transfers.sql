@@ -6,6 +6,7 @@ WITH raw_transfers AS (
 SELECT 
     transfer_id,
     patient_id,
+    admission_id,
     from_department,
     to_department,
     (from_department = to_department) AS is_same_department_transfer,
