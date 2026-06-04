@@ -7,7 +7,8 @@ SELECT
     ce.event_name,
     ce.event_date,
     ce.event_cost,
-    dd.date_key  as event_date_key
+    dd.date_key AS event_date_key,
+    ddx.diagnosis_key 
 
 FROM {{ ref('int_clinical_events') }} ce
 LEFT JOIN {{ ref('int_encounters') }} ie
@@ -16,3 +17,5 @@ LEFT JOIN {{ ref('dim_patients') }} dp
     ON ce.patient_id = dp.patient_id
 LEFT JOIN {{ ref('dim_date') }} dd
     ON CAST(ce.event_date AS DATE) = dd.date_bk
+LEFT JOIN {{ ref('dim_diagnosis') }} ddx  
+    ON ce.diagnosis_id = ddx.diagnosis_id

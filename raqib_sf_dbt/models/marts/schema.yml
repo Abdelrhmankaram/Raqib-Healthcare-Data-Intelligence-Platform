@@ -205,6 +205,13 @@ models:
       - name: encounter_key
         tests:
           - not_null
+
+      - name: diagnosis_key
+        tests:
+          - relationships:
+              to: ref('dim_diagnosis')
+              field: diagnosis_key
+              
       - name: patient_key
         tests:
           - not_null
