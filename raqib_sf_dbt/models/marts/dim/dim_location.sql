@@ -8,3 +8,7 @@ select
 {{ dbt_utils.generate_surrogate_key(['Location_Name']) }} as Location_Key,
 *
 from dim_location
+
+{% if is_incremental() %}
+    where {{ dbt_utils.generate_surrogate_key(['Location_Name']) }} not in (select Location_Key from {{ this }})
+{% endif %}

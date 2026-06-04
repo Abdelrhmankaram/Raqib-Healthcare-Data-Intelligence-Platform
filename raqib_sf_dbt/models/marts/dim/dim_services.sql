@@ -22,3 +22,7 @@ select
 from services
 where rn = 1
 
+{% if is_incremental() %}
+    and {{ dbt_utils.generate_surrogate_key(['service_id']) }} not in (select service_dim_key from {{ this }})
+{% endif %}
+

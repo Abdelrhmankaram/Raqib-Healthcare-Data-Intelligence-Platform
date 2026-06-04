@@ -1,3 +1,5 @@
+{{ config(unique_key='event_key') }}
+
 SELECT
     ce.event_key,
     ie.encounter_key,
@@ -18,3 +20,7 @@ LEFT JOIN {{ ref('dim_date') }} dd
     ON CAST(ce.event_date AS DATE) = dd.date_bk
 LEFT JOIN {{ ref('dim_diagnosis') }} ddx  
     ON ce.diagnosis_id = ddx.diagnosis_id
+
+    {% if is_incremental() %}
+    WHERE ce.event_date > (SELECT MAX(event_date) FROM {{ this }})
+    {% endif %}

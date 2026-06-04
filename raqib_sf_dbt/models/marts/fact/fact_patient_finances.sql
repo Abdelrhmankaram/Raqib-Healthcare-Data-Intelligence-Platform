@@ -29,3 +29,7 @@ SELECT
     COALESCE(ef.avg_coverage_percentage, 0)  AS avg_coverage_percentage
 FROM patients p
 LEFT JOIN encounter_finances ef ON p.patient_id = ef.patient_id
+
+{% if is_incremental() %}
+WHERE {{ dbt_utils.generate_surrogate_key(['p.patient_id']) }} NOT IN (SELECT patient_key FROM {{ this }})
+{% endif %}

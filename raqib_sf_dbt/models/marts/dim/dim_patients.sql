@@ -1,3 +1,5 @@
+{{ config(unique_key='patient_key') }}
+
 WITH patients AS (
     SELECT * FROM {{ ref('stg_patients') }}
 ),
@@ -25,3 +27,8 @@ SELECT
 FROM patients p
 LEFT JOIN emergency_contacts ec 
     ON p.patient_id = ec.patient_id
+
+
+    {% if is_incremental() %}
+        WHERE p.patient_id NOT IN (SELECT patient_id FROM {{ this }})
+        {% endif %}

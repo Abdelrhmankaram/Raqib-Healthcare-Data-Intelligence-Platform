@@ -15,3 +15,7 @@ SELECT
     specialty_1,
     specialty_2
 FROM stg_lab_specimen_types
+
+{% if is_incremental() %}
+    WHERE {{ dbt_utils.generate_surrogate_key(['item_id', 'label', 'category_type']) }} NOT IN (SELECT specimen_type_key FROM {{ this }})
+{% endif %}

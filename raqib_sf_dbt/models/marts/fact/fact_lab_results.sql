@@ -1,3 +1,5 @@
+{{ config(unique_key='lab_event_key') }}
+
 SELECT
     lr.lab_event_key,
     ie.encounter_key,
@@ -36,3 +38,7 @@ LEFT JOIN {{ ref('dim_date') }} dd
     ON CAST(lr.lab_done_at AS DATE) = dd.date_bk
 LEFT JOIN {{ ref('dim_time') }} dt
     ON CAST(lr.lab_done_at AS TIME) = dt.time_bk
+
+    {% if is_incremental() %}
+    WHERE lr.lab_done_at > (SELECT MAX(lab_done_at) FROM {{ this }})
+    {% endif %}
