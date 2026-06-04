@@ -179,16 +179,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: admission_id
-        tests:
-          - unique
-          - not_null
-      - name: patient_id
-        tests:
-          - not_null
-      - name: provider_id
-        tests:
-          - not_null
       - name: length_of_stay_days
         tests:
           - not_null
@@ -212,10 +202,10 @@ models:
         tests:
           - unique
           - not_null
-      - name: admission_id
+      - name: encounter_key
         tests:
           - not_null
-      - name: patient_id
+      - name: patient_key
         tests:
           - not_null
       - name: event_type
@@ -234,10 +224,16 @@ models:
         tests:
           - unique
           - not_null
-      - name: patient_id
+      - name: encounter_key
+        tests:
+          - not_null  
+      - name: patient_key
         tests:
           - not_null
-      - name: admission_id
+      - name: provider_key
+        tests:
+          - not_null
+      - name: specimen_type_key
         tests:
           - not_null
       - name: lab_done_at
@@ -255,7 +251,7 @@ models:
         tests:
           - unique
           - not_null
-      - name: provider_id
+      - name: provider_key
         tests:
           - unique
           - not_null
@@ -273,9 +269,9 @@ models:
         tests:
           - unique
           - not_null
-      - name: patient_id
-        tests:
-          - not_null
+      # - name: patient_id
+      #   tests:
+      #     - not_null
       - name: healthcare_expenses
         tests:
           - not_null
@@ -286,14 +282,14 @@ models:
   - name: fact_patient_services
     description: Patient services fact table
     columns:
-      # - name: service_key
-      #   tests:
-      #     - unique
-      #     - not_null
-      - name: patient_id
+      - name: service_key
+        tests:
+          - unique
+          - not_null
+      - name: encounter_key
         tests:
           - not_null
-      - name: admission_id
+      - name: patient_key
         tests:
           - not_null
       - name: cost
@@ -307,12 +303,13 @@ models:
         tests:
           - unique
           - not_null
+      - name: encounter_key
+        tests:
+          - not_null
+      - name: patient_key
+        tests:
+          - not_null
       - name: transfer_id
-        tests:
-          - not_null
-      - name: patient_id
-        tests:
-          - not_null
       - name: from_department
         tests:
           - not_null

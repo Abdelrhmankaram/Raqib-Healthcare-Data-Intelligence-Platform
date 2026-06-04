@@ -45,9 +45,9 @@ models:
     marts:
       +database: prod
       +schema: marts
-      +materialized: incremental
-      +incremental_strategy: merge
-      +on_schema_change: sync_all_columns 
+      +materialized: table
+      # +incremental_strategy: merge
+      # +on_schema_change: sync_all_columns 
       +tags: ["marts"]
 
 # data_tests:

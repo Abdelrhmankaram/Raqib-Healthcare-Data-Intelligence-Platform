@@ -1,24 +1,41 @@
+{{ config(materialized='table') }}
+
 SELECT
-    lab_event_key,
-    lab_event_id,
-    patient_id,
-    admission_id,
-    provider_id,
-    specimen_id,
-    item_id,
-    lab_done_at,
-    lab_stored_at,
-    test_name,
-    label_sub_type,
-    fluid,
-    category_type,
-    category_sub_type,
-    specialty_1,
-    specialty_2,
-    result_value,
-    measurement_unit,
-    range_lower,
-    range_higher,
-    abnormal_flag,
-    cost
-FROM {{ ref('int_lab_analysis') }}
+    lr.lab_event_key,
+    ie.encounter_key,
+    dp.patient_key,
+    dpr.provider_key,
+    dst.specimen_type_key,
+    dd.date_key  as lab_date_key,
+    dt.time_key  as lab_time_key,
+
+    lr.lab_event_id,
+    lr.lab_done_at,
+    lr.lab_stored_at,
+    lr.test_name,
+    lr.label_sub_type,
+    lr.fluid,
+    lr.category_type,
+    lr.category_sub_type,
+    lr.specialty_1,
+    lr.specialty_2,
+    lr.result_value,
+    lr.measurement_unit,
+    lr.range_lower,
+    lr.range_higher,
+    lr.abnormal_flag,
+    lr.cost
+
+FROM {{ ref('int_lab_analysis') }} lr
+LEFT JOIN {{ ref('int_encounters') }} ie
+    ON lr.admission_id = ie.admission_id
+LEFT JOIN {{ ref('dim_patients') }} dp
+    ON lr.patient_id = dp.patient_id
+LEFT JOIN {{ ref('dim_provider') }} dpr
+    ON lr.provider_id = dpr.provider_id
+LEFT JOIN {{ ref('dim_lab_types') }} dst
+    ON lr.item_id = dst.item_id
+LEFT JOIN {{ ref('dim_date') }} dd
+    ON CAST(lr.lab_done_at AS DATE) = dd.date_bk
+LEFT JOIN {{ ref('dim_time') }} dt
+    ON CAST(lr.lab_done_at AS TIME) = dt.time_bk

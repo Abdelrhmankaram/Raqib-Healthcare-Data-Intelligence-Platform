@@ -72,6 +72,7 @@ prescription_metrics AS (
 
 SELECT
     {{ dbt_utils.generate_surrogate_key(['p.provider_id']) }} AS provider_performance_key,
+    dp.provider_key,
     p.provider_id,
 
     p.provider_full_name,
@@ -88,6 +89,9 @@ SELECT
     COALESCE(em.mortality_rate, 0) AS mortality_rate
 
 FROM providers p
+
+LEFT JOIN {{ ref('dim_provider') }} dp
+    ON p.provider_id = dp.provider_id
 
 LEFT JOIN encounter_metrics em
     ON p.provider_id = em.provider_id

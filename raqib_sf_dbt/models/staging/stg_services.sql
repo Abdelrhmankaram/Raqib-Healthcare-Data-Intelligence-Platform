@@ -25,7 +25,12 @@ SELECT
     END AS service_sub_type,
     INITCAP(category) AS category,
     TRY_CAST(cost AS FLOAT) AS cost,
-    duration AS service_duration_in_minutes
+    duration AS service_duration_in_minutes,
+
+    ROW_NUMBER() OVER (
+        PARTITION BY service_id, patient_id, admission_id
+        ORDER BY service_id
+    ) AS rn
     
 FROM raw_services
 
