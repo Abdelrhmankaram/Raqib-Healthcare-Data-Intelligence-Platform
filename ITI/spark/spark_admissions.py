@@ -9,9 +9,9 @@ from pyspark.sql.types import (
 BOOTSTRAP_SERVERS = "broker-1:29092,broker-2:29092,broker-3:29092"
 TOPIC_ADMISSIONS = "admissions-topic"
 
-POSTGRES_URL = "jdbc:postgresql://dwh:5432/hospital"
-POSTGRES_USER = "dwh_admin"
-POSTGRES_PASS = "dwh123"
+POSTGRES_URL = "jdbc:postgresql://dwh:5432/postgres"
+POSTGRES_USER = "kafka_admin"
+POSTGRES_PASS = "kafka_admin_password"
 SPARK_TRIGGER_SECONDS = "10 seconds"
 SPARK_CHECKPOINT_DIR = "/tmp/spark-checkpoints"
 

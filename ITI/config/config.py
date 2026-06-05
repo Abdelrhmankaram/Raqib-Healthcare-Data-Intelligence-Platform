@@ -2,7 +2,12 @@
 # All Kafka broker and topic settings in one place.
 # Change only here — every other file imports from this module.
 
-BOOTSTRAP_SERVERS = "localhost:9092,localhost:9093,localhost:9094"
+import os
+from dotenv import load_dotenv
+
+load_dotenv() 
+
+BOOTSTRAP_SERVERS = "broker-1:29092,broker-2:29092,broker-3:29092"
 
 # ─── Topics ───────────────────────────────────────────────────────────────────
 TOPIC_PATIENTS    = "patients-topic"       # Receptionist → Doctor
@@ -32,8 +37,8 @@ def consumer_config(group_id: str) -> dict:
     }
 
 # ─── Spark ────────────────────────────────────────────────────────────────────
-POSTGRES_URL  = "jdbc:postgresql://localhost:5432/hospital"
-POSTGRES_USER = "admin"
-POSTGRES_PASS = "dwh123"
+POSTGRES_URL  = "jdbc:postgresql://dwh:5432/kafka_dwh"
+POSTGRES_USER = os.getenv("DATABASE_USER_DESTINATION")
+POSTGRES_PASS = os.getenv("DATABASE_PASSWORD_DESTINATION")
 SPARK_TRIGGER_SECONDS = "10 seconds"
 SPARK_CHECKPOINT_DIR  = "/tmp/spark-checkpoints"

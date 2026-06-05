@@ -15,9 +15,9 @@ TOPIC_PATIENTS    = "patients-topic"       # Receptionist → Doctor
 TOPIC_ADMISSIONS  = "admissions-topic"     # Doctor (Path A) → Spark
 TOPIC_TRANSFERS   = "transfers-topic"      # Doctor (Path B) → 2nd Doctor
 TOPIC_LAB_RESULTS = "lab-results-topic"   # Lab consumer → Spark
-POSTGRES_URL          = "jdbc:postgresql://dwh:5432/hospital"
-POSTGRES_USER         = "dwh_admin"
-POSTGRES_PASS         = "dwh123"
+POSTGRES_URL          = "jdbc:postgresql://dwh:5432/postgres"
+POSTGRES_USER         = "kafka_admin"
+POSTGRES_PASS         = "kafka_admin_password"
 SPARK_TRIGGER_SECONDS = "10 seconds"
 SPARK_CHECKPOINT_DIR  = "/tmp/spark-checkpoints"
 

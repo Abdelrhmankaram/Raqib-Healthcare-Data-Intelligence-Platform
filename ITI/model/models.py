@@ -5,6 +5,11 @@
 from dataclasses import dataclass, field
 from typing import Optional
 import json
+from datetime import datetime, timezone
+
+
+def now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
 
 
 # ─── Patient ──────────────────────────────────────────────────────────────────
@@ -30,6 +35,7 @@ class Patient:
     healthcare_expenses: float
     healthcare_coverage: float
     income:              float
+    created_at:          str = field(default_factory=now_iso)
 
     def to_json(self) -> str:
         return json.dumps(self.__dict__)
@@ -55,6 +61,8 @@ class Admission:
     total_cost:            float
     payer_coverage:        float
     hospital_expire_flag:  bool
+    primary_sdk:           str
+    created_at:            str = field(default_factory=now_iso)
 
     def to_json(self) -> str:
         return json.dumps(self.__dict__)
@@ -76,6 +84,7 @@ class Diagnosis:
     sub_domain_key:  str
     speciality:      str
     sub_domain:      str
+    created_at:      str = field(default_factory=now_iso)
 
     def to_json(self) -> str:
         return json.dumps(self.__dict__)
@@ -96,6 +105,7 @@ class Prescription:
     drug_id:          str
     prescribed_date:  str       # ISO timestamp
     status:           str       # ACTIVE | COMPLETED | CANCELLED
+    created_at:       str = field(default_factory=now_iso)
 
     def to_json(self) -> str:
         return json.dumps(self.__dict__)
@@ -116,6 +126,7 @@ class Service:
     service_category: str
     cost:             float
     duration:         int       # minutes
+    created_at:       str = field(default_factory=now_iso)
 
     def to_json(self) -> str:
         return json.dumps(self.__dict__)
@@ -142,6 +153,7 @@ class TransferEvent:
     transfer_datetime: str
     transfer_reason:  str
     doctor_notes:     str        # the original doctor's notes
+    created_at:       str = field(default_factory=now_iso)
 
     def to_json(self) -> str:
         return json.dumps(self.__dict__)
@@ -169,6 +181,7 @@ class LabEvent:
     range_lower:      float
     range_higher:     float
     abnormal_flag:    bool
+    created_at:       str = field(default_factory=now_iso)
 
     def to_json(self) -> str:
         return json.dumps(self.__dict__)
