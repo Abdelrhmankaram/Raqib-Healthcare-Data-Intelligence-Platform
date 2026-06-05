@@ -42,7 +42,7 @@ def handle_path_a(transfer: TransferEvent, producer: Producer):
 
     completed_admission = dict(transfer.admission)
     completed_admission.update({
-        "provider_id":           DOCTOR_PROVIDER_ID,
+        "admission_provider_id": DOCTOR_PROVIDER_ID,
         "admission_datetime_out": now_iso(),
         "discharge_location":    "Home",
         "total_cost":            4500.00,

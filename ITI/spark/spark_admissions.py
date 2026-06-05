@@ -20,7 +20,7 @@ SPARK_CHECKPOINT_DIR = "/tmp/spark-checkpoints"
 ADMISSION_SCHEMA = StructType([
     StructField("Admission_ID", StringType(), True),
     StructField("Patient_ID", StringType(), True),
-    StructField("Provider_ID", StringType(), True),
+    StructField("Admission_Provider_ID", StringType(), True),
     StructField("Admission_DateTime_In", StringType(), True),
     StructField("Admission_DateTime_Out", StringType(), True),
     StructField("Admission_Type", StringType(), True),
@@ -30,6 +30,7 @@ ADMISSION_SCHEMA = StructType([
     StructField("Total_Cost", DoubleType(), True),
     StructField("Payer_Coverage", DoubleType(), True),
     StructField("Hospital_Expire_Flag", BooleanType(), True),
+    StructField("Primary_SDK", StringType(), True),
 ])
 
 DIAGNOSIS_SCHEMA = StructType([
@@ -104,7 +105,7 @@ def process_batch(batch_df, batch_id):
             admissions.append({
                 "Admission_ID": str(adm.get("admission_id") or ""),
                 "Patient_ID": str(adm.get("patient_id") or ""),
-                "Provider_ID": str(adm.get("provider_id") or ""),
+                "Admission_Provider_ID": str(adm.get("admission_provider_id") or ""),
                 "Admission_DateTime_In": adm.get("admission_datetime_in") or None,
                 "Admission_DateTime_Out": adm.get("admission_datetime_out") or None,
                 "Admission_Type": str(adm.get("admission_type") or ""),
@@ -114,6 +115,7 @@ def process_batch(batch_df, batch_id):
                 "Total_Cost": float(adm.get("total_cost") or 0.0),
                 "Payer_Coverage": float(adm.get("payer_coverage") or 0.0),
                 "Hospital_Expire_Flag": bool(adm.get("hospital_expire_flag") or False),
+                "Primary_SDK": str(adm.get("primary_sdk") or ""),
             })
 
             # ── Diagnosis ──────────────────────────────────────────────────────

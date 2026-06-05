@@ -1,37 +1,39 @@
-from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig, RenderConfig
-from cosmos.profiles import SnowflakeEncryptedPrivateKeyPemProfileMapping
-from cosmos.constants import LoadMode
+from airflow import DAG
+from airflow.operators.bash import BashOperator
 from datetime import datetime
-from airflow.models import Variable
 
-private_key = Variable.get("snowflake_private_key")
+DBT_PROJECT_DIR = "/usr/local/airflow/raqib_sf_dbt"
+DBT_PROFILES_DIR = "/usr/local/airflow/.dbt"
 
-profile_config = ProfileConfig(
-    profile_name="raqib_sf",
-    target_name="dev",
-    profile_mapping=SnowflakeEncryptedPrivateKeyPemProfileMapping(
-        conn_id="Raqib_Snowflake",
-        profile_args={
-            "database": "DEV",
-            "schema": "dbt_dev",
-            "warehouse": "RAQIB_WH",
-            "role": "RAQIB_ROLE",
-            "private_key_passphrase": "q",
-            "private_key": private_key
-        }
-    )
-)
-
-dbt_dag = DbtDag(
+with DAG(
     dag_id="raqib_snowflake_pipeline",
-    project_config=ProjectConfig(
-        dbt_project_path="/usr/local/airflow/raqib_sf_dbt"  
-    ),
-    profile_config=profile_config,
-    execution_config=ExecutionConfig(
-        dbt_executable_path="/usr/local/bin/dbt"
-    ),
-    schedule=None,
     start_date=datetime(2024, 1, 1),
-    catchup=False
-)
+    schedule=None,
+    catchup=False,
+) as dag:
+
+    dbt_debug = BashOperator(
+        task_id="dbt_debug",
+        bash_command=f"""
+        cd {DBT_PROJECT_DIR}
+        dbt debug --profiles-dir {DBT_PROFILES_DIR}
+        """
+    )
+
+    dbt_run = BashOperator(
+        task_id="dbt_run",
+        bash_command=f"""
+        cd {DBT_PROJECT_DIR}
+        dbt run --profiles-dir {DBT_PROFILES_DIR}
+        """
+    )
+
+    dbt_test = BashOperator(
+        task_id="dbt_test",
+        bash_command=f"""
+        cd {DBT_PROJECT_DIR}
+        dbt test --profiles-dir {DBT_PROFILES_DIR}
+        """
+    )
+
+    dbt_debug >> dbt_run >> dbt_test

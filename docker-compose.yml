@@ -367,6 +367,7 @@
 
     airflow:
       image: apache/airflow:2.9.0
+      command: standalone
       container_name: airflow
       depends_on:
         - airflow-db
@@ -386,12 +387,12 @@
         SNOWFLAKE_SCHEMA: ${SNOWFLAKE_SCHEMA}
       volumes:
         - ./dags:/opt/airflow/dags
+        - /Users/user/Documents/Raqib/raqib_sf_dbt:/usr/local/airflow/raqib_sf_dbt
+        - /Users/user/Documents/Raqib/assets/rsa_key.p8:/usr/local/airflow/private_key.p8
       ports:
         - "8080:8080"
       networks:
         - dwh_network
-      command: standalone
-
     # ════════════════════════════════════════════════════════════════════════════
   networks:
     dwh_network:

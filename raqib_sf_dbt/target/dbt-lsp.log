@@ -30180,3 +30180,316 @@ The raqib_sf.dim_diagosis model triggered this warning.
 17:49:23.965381 [info ]: Loading ~/.dbt/profiles.yml
 17:51:01.438514 [info ]: Loading ~/.dbt/profiles.yml
 17:51:13.771288 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-06-05T18:46:32.941456Z | decd6f37-5d9c-4304-a71d-8c73924e3ecf ====================
+18:46:32.945444 [info ]: Starting dbt LSP server
+18:46:32.946571 [info ]: Connecting to LSP client on port 8000
+18:46:32.948032 [info ]: Successfully connected to LSP client
+18:46:32.948105 [info ]: Creating LSP service...
+18:46:33.302059 [info ]: Creating LSP server...
+18:46:33.302091 [info ]: Starting LSP server...
+18:46:33.497737 [info ]: Loading profiles.yml
+18:46:33.576414 [info ]: Waiting for lease on 'target' directory
+18:46:34.105301 [info ]: Started loading project
+18:46:34.107272 [info ]: Loading profiles.yml
+18:46:34.801181 [info ]: Loading packages.yml
+18:46:34.805096 [debug]:    Started loading packages
+18:46:34.832059 [debug]:     Loaded [  0.03s] packages
+18:46:34.843971 [info ]: Started parsing
+18:46:35.006155 [info ]: Finished loading project [  0.90s]
+18:46:35.082003 [debug]: Finished parsing models/marts/schema.yml [  0.01s]
+18:46:35.085526 [debug]: Finished parsing models/sources.yml [  0.00s]
+18:46:35.092018 [debug]: Finished parsing models/staging/schema.yml [  0.01s]
+18:46:35.158643 [debug]: Finished parsing models/history/int_clinical_events.sql [  0.03s]
+18:46:35.163161 [debug]: Finished parsing models/history/int_encounters.sql [  0.00s]
+18:46:35.165534 [debug]: Finished parsing models/history/int_lab_analysis.sql [  0.00s]
+18:46:35.168541 [debug]: Finished parsing models/history/int_patients_360.sql [  0.00s]
+18:46:35.170950 [debug]: Finished parsing models/marts/dim/dim_admission_type.sql [  0.00s]
+18:46:35.173705 [debug]: Finished parsing models/marts/dim/dim_date.sql [  0.00s]
+18:46:35.177905 [debug]: Finished parsing models/marts/dim/dim_diagnosis.sql [  0.00s]
+18:46:35.180404 [debug]: Finished parsing models/marts/dim/dim_lab_types.sql [  0.00s]
+18:46:35.182962 [debug]: Finished parsing models/marts/dim/dim_location.sql [  0.00s]
+18:46:35.185303 [debug]: Finished parsing models/marts/dim/dim_patients.sql [  0.00s]
+18:46:35.187664 [debug]: Finished parsing models/marts/dim/dim_provider.sql [  0.00s]
+18:46:35.189549 [debug]: Finished parsing models/marts/dim/dim_services.sql [  0.00s]
+18:46:35.192006 [debug]: Finished parsing models/marts/dim/dim_time.sql [  0.00s]
+18:46:35.193836 [debug]: Finished parsing models/marts/fact/fact_clinical_events.sql [  0.00s]
+18:46:35.195550 [debug]: Finished parsing models/marts/fact/fact_encounters.sql [  0.00s]
+18:46:35.197418 [debug]: Finished parsing models/marts/fact/fact_lab_results.sql [  0.00s]
+18:46:35.199231 [debug]: Finished parsing models/marts/fact/fact_patient_finances.sql [  0.00s]
+18:46:35.201542 [debug]: Finished parsing models/marts/fact/fact_patient_services.sql [  0.00s]
+18:46:35.203781 [debug]: Finished parsing models/marts/fact/fact_providers_performance.sql [  0.00s]
+18:46:35.206241 [debug]: Finished parsing models/marts/fact/fact_transfers.sql [  0.00s]
+18:46:35.207754 [debug]: Finished parsing models/staging/stg_admissions.sql [  0.00s]
+18:46:35.209409 [debug]: Finished parsing models/staging/stg_diagnosis.sql [  0.00s]
+18:46:35.211174 [debug]: Finished parsing models/staging/stg_drugs.sql [  0.00s]
+18:46:35.212720 [debug]: Finished parsing models/staging/stg_emergency_contacts.sql [  0.00s]
+18:46:35.214202 [debug]: Finished parsing models/staging/stg_lab_events.sql [  0.00s]
+18:46:35.215521 [debug]: Finished parsing models/staging/stg_lab_specimen_types.sql [  0.00s]
+18:46:35.216747 [debug]: Finished parsing models/staging/stg_patients.sql [  0.00s]
+18:46:35.218475 [debug]: Finished parsing models/staging/stg_prescriptions.sql [  0.00s]
+18:46:35.219729 [debug]: Finished parsing models/staging/stg_providers.sql [  0.00s]
+18:46:35.221042 [debug]: Finished parsing models/staging/stg_services.sql [  0.00s]
+18:46:35.260665 [debug]: Finished parsing models/staging/stg_transfers.sql [  0.04s]
+18:46:35.284575 [info ]: Finished parsing [  0.44s]
+18:46:35.929967 [info ]: DOWNLOADING deferral manifest
+18:46:37.505537 [warn ]: dbt1203: Failed to download deferral manifest from the dbt platform for project 70471823531787, continuing without deferral. 404 Not Found: No deferral environment defined for project with ID 70471823531787 To target a specific environment, set `defer-env-id` in your dbt_project.yml under the `dbt-cloud` block.
+18:46:37.506954 [info ]: Cached model count updated: 31 models (estimate)
+18:46:37.506979 [info ]: Cached model count updated: 30 models (accurate)
+18:46:37.510149 [info ]: Started scheduling
+18:46:37.513028 [info ]: Finished scheduling [  0.00s]
+18:46:37.513472 [debug]: Compilation - 0 nodes selected: {}
+18:46:37.513717 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+18:46:37.513733 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+18:46:37.513782 [info ]: Started scheduling
+18:46:37.515399 [info ]: Finished scheduling [  0.00s]
+18:46:37.522343 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "DRUGS" }) and interval: None
+18:46:37.522585 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "EMERGENCY_CONTACTS" }) and interval: None
+18:46:37.522616 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "LAB_EVENTS" }) and interval: None
+18:46:37.522643 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "PRESCRIPTIONS" }) and interval: None
+18:46:37.522665 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "PROVIDERS" }) and interval: None
+18:46:37.522690 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "LAB_SPECIMEN_TYPES" }) and interval: None
+18:46:37.522720 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "ADMISSIONS" }) and interval: None
+18:46:37.522734 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "DIAGNOSIS" }) and interval: None
+18:46:37.522744 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "TRANSFERS" }) and interval: None
+18:46:37.522755 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "PATIENTS" }) and interval: None
+18:46:37.522765 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW", schema: "PUBLIC", table: "SERVICES" }) and interval: None
+18:46:37.529515 [info ]: DOWNLOADING deferral manifest
+18:46:38.862446 [warn ]: dbt1203: Failed to download deferral manifest from the dbt platform for project 70471823531787, continuing without deferral. 404 Not Found: No deferral environment defined for project with ID 70471823531787 To target a specific environment, set `defer-env-id` in your dbt_project.yml under the `dbt-cloud` block.
+18:46:39.798833 [info ]: Started building task graph
+18:46:39.800322 [info ]: Finished building task graph [  0.00s]
+18:46:39.829225 [info ]: Started scheduling
+18:46:39.829425 [info ]: Finished scheduling [  0.00s]
+18:46:39.832275 [info ]: Cached model count updated: 30 models (accurate)
+18:46:41.065696 [info ]: Started loading project
+18:46:41.066512 [info ]: Loading profiles.yml
+18:46:41.209186 [info ]: Cached model count updated: 31 models (estimate)
+18:46:41.209232 [info ]: Cached model count updated: 30 models (accurate)
+18:46:41.209395 [info ]: Started scheduling
+18:46:41.210244 [info ]: Finished scheduling [  0.00s]
+18:46:41.210288 [debug]: Compilation - 30 nodes selected: {"model.raqib_sf.dim_admission_type", "model.raqib_sf.dim_date", "model.raqib_sf.dim_diagnosis", "model.raqib_sf.dim_lab_types", "model.raqib_sf.dim_location", "model.raqib_sf.dim_patients", "model.raqib_sf.dim_provider", "model.raqib_sf.dim_services", "model.raqib_sf.dim_time", "model.raqib_sf.fact_clinical_events", "model.raqib_sf.fact_encounters", "model.raqib_sf.fact_lab_results", "model.raqib_sf.fact_patient_finances", "model.raqib_sf.fact_patient_services", "model.raqib_sf.fact_providers_performance", "model.raqib_sf.fact_transfers", "model.raqib_sf.int_clinical_events", "model.raqib_sf.int_encounters", "model.raqib_sf.int_lab_analysis", "model.raqib_sf.stg_admissions", "model.raqib_sf.stg_diagnosis", "model.raqib_sf.stg_drugs", "model.raqib_sf.stg_emergency_contacts", "model.raqib_sf.stg_lab_events", "model.raqib_sf.stg_lab_specimen_types", "model.raqib_sf.stg_patients", "model.raqib_sf.stg_prescriptions", "model.raqib_sf.stg_providers", "model.raqib_sf.stg_services", "model.raqib_sf.stg_transfers"}
+18:46:41.214266 [info ]: DOWNLOADING deferral manifest
+18:46:41.214335 [info ]: Finished loading project [  0.15s]
+18:46:42.889137 [warn ]: dbt1203: Failed to download deferral manifest from the dbt platform for project 70471823531787, continuing without deferral. 404 Not Found: No deferral environment defined for project with ID 70471823531787 To target a specific environment, set `defer-env-id` in your dbt_project.yml under the `dbt-cloud` block.
+18:46:42.902482 [debug]:    Started downloading relations (1 items)
+18:46:44.908563 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "PROD"."DBT_DEV_MARTS" LIMIT 10000
+18:46:45.632844 [debug]:   Finished [  2.73s] downloading relations (1 items)
+18:46:46.761425 [info ]: Started building task graph
+18:46:46.778766 [info ]: Finished building task graph [  0.02s]
+18:46:46.785762 [info ]: Started rendering (30 nodes)
+18:46:46.788204 [info ]: Started model dbt_dev_marts.fact_transfers
+18:46:46.789342 [debug]: Started rendering model dbt_dev_marts.fact_transfers
+18:46:46.791015 [info ]: Started model dbt_dev_staging.stg_transfers
+18:46:46.791058 [debug]: Started rendering model dbt_dev_staging.stg_transfers
+18:46:46.791099 [info ]: Started model dbt_dev_marts.fact_providers_performance
+18:46:46.791126 [debug]: Started rendering model dbt_dev_marts.fact_providers_performance
+18:46:46.791160 [info ]: Started model dbt_dev_marts.fact_patient_services
+18:46:46.791186 [debug]: Started rendering model dbt_dev_marts.fact_patient_services
+18:46:46.791227 [info ]: Started model dbt_dev_marts.fact_patient_finances
+18:46:46.791251 [debug]: Started rendering model dbt_dev_marts.fact_patient_finances
+18:46:46.791283 [info ]: Started model dbt_dev_marts.fact_lab_results
+18:46:46.791307 [debug]: Started rendering model dbt_dev_marts.fact_lab_results
+18:46:46.791341 [info ]: Started model dbt_dev_marts.fact_encounters
+18:46:46.791363 [debug]: Started rendering model dbt_dev_marts.fact_encounters
+18:46:46.791397 [info ]: Started model dbt_dev_marts.fact_clinical_events
+18:46:46.791423 [debug]: Started rendering model dbt_dev_marts.fact_clinical_events
+18:46:46.791463 [info ]: Started model dbt_dev.int_clinical_events
+18:46:46.791489 [debug]: Started rendering model dbt_dev.int_clinical_events
+18:46:46.791523 [info ]: Started model dbt_dev_staging.stg_prescriptions
+18:46:46.791545 [debug]: Started rendering model dbt_dev_staging.stg_prescriptions
+18:46:46.791580 [info ]: Started model dbt_dev_staging.stg_drugs
+18:46:46.791601 [debug]: Started rendering model dbt_dev_staging.stg_drugs
+18:46:46.791632 [info ]: Started model dbt_dev.int_lab_analysis
+18:46:46.791652 [debug]: Started rendering model dbt_dev.int_lab_analysis
+18:46:46.791686 [info ]: Started model dbt_dev_staging.stg_lab_events
+18:46:46.791709 [debug]: Started rendering model dbt_dev_staging.stg_lab_events
+18:46:46.791741 [info ]: Started model dbt_dev.int_encounters
+18:46:46.791763 [debug]: Started rendering model dbt_dev.int_encounters
+18:46:46.791798 [info ]: Started model dbt_dev_marts.dim_time
+18:46:46.791873 [debug]: Started rendering model dbt_dev_marts.dim_time
+18:46:46.791972 [info ]: Started model dbt_dev_marts.dim_services
+18:46:46.792009 [debug]: Started rendering model dbt_dev_marts.dim_services
+18:46:46.792055 [info ]: Started model dbt_dev_staging.stg_services
+18:46:46.792084 [debug]: Started rendering model dbt_dev_staging.stg_services
+18:46:46.792128 [info ]: Started model dbt_dev_marts.dim_provider
+18:46:46.792162 [debug]: Started rendering model dbt_dev_marts.dim_provider
+18:46:46.792235 [info ]: Started model dbt_dev_staging.stg_providers
+18:46:46.792330 [debug]: Started rendering model dbt_dev_staging.stg_providers
+18:46:46.792372 [info ]: Started model dbt_dev_marts.dim_patients
+18:46:46.792398 [debug]: Started rendering model dbt_dev_marts.dim_patients
+18:46:46.792433 [info ]: Started model dbt_dev_staging.stg_patients
+18:46:46.792457 [debug]: Started rendering model dbt_dev_staging.stg_patients
+18:46:46.792489 [info ]: Started model dbt_dev_staging.stg_emergency_contacts
+18:46:46.792512 [debug]: Started rendering model dbt_dev_staging.stg_emergency_contacts
+18:46:46.792544 [info ]: Started model dbt_dev_marts.dim_location
+18:46:46.792566 [debug]: Started rendering model dbt_dev_marts.dim_location
+18:46:46.792598 [info ]: Started model dbt_dev_marts.dim_lab_types
+18:46:46.792622 [debug]: Started rendering model dbt_dev_marts.dim_lab_types
+18:46:46.792654 [info ]: Started model dbt_dev_staging.stg_lab_specimen_types
+18:46:46.792675 [debug]: Started rendering model dbt_dev_staging.stg_lab_specimen_types
+18:46:46.792706 [info ]: Started model dbt_dev_marts.dim_diagnosis
+18:46:46.792728 [debug]: Started rendering model dbt_dev_marts.dim_diagnosis
+18:46:46.792760 [info ]: Started model dbt_dev_staging.stg_diagnosis
+18:46:46.792781 [debug]: Started rendering model dbt_dev_staging.stg_diagnosis
+18:46:46.792814 [info ]: Started model dbt_dev_marts.dim_date
+18:46:46.792837 [debug]: Started rendering model dbt_dev_marts.dim_date
+18:46:46.793847 [info ]: Started model dbt_dev_marts.dim_admission_type
+18:46:46.793892 [debug]: Started rendering model dbt_dev_marts.dim_admission_type
+18:46:46.794062 [info ]: Started model dbt_dev_staging.stg_admissions
+18:46:46.794142 [debug]: Started rendering model dbt_dev_staging.stg_admissions
+18:46:46.822376 [debug]: Compiled SQL for node model.raqib_sf.stg_lab_specimen_types at target/.lsp/compiled/models/staging/stg_lab_specimen_types.sql
+18:46:46.822773 [debug]: Compiled SQL for node model.raqib_sf.stg_patients at target/.lsp/compiled/models/staging/stg_patients.sql
+18:46:46.822887 [debug]: Compiled SQL for node model.raqib_sf.stg_drugs at target/.lsp/compiled/models/staging/stg_drugs.sql
+18:46:46.823101 [debug]: Compiled SQL for node model.raqib_sf.stg_lab_events at target/.lsp/compiled/models/staging/stg_lab_events.sql
+18:46:46.823159 [debug]: Compiled SQL for node model.raqib_sf.stg_emergency_contacts at target/.lsp/compiled/models/staging/stg_emergency_contacts.sql
+18:46:46.823663 [debug]: Compiled SQL for node model.raqib_sf.stg_providers at target/.lsp/compiled/models/staging/stg_providers.sql
+18:46:46.824072 [debug]: Compiled SQL for node model.raqib_sf.stg_services at target/.lsp/compiled/models/staging/stg_services.sql
+18:46:46.833016 [debug]: Compiled SQL for node model.raqib_sf.stg_diagnosis at target/.lsp/compiled/models/staging/stg_diagnosis.sql
+18:46:46.834874 [debug]: Finished rendering [  0.04s] model dbt_dev_staging.stg_emergency_contacts [success]
+18:46:46.836471 [info ]: Started analyzing (30 nodes)
+18:46:46.836503 [debug]: Started analyzing model dbt_dev_staging.stg_emergency_contacts
+18:46:46.836645 [debug]: Finished rendering [  0.04s] model dbt_dev_staging.stg_lab_events [success]
+18:46:46.836704 [debug]: Started analyzing model dbt_dev_staging.stg_lab_events
+18:46:46.836794 [debug]: Finished rendering [  0.04s] model dbt_dev_staging.stg_providers [success]
+18:46:46.836835 [debug]: Started analyzing model dbt_dev_staging.stg_providers
+18:46:46.836876 [debug]: Finished rendering [  0.04s] model dbt_dev_staging.stg_patients [success]
+18:46:46.836936 [debug]: Started analyzing model dbt_dev_staging.stg_patients
+18:46:46.837045 [debug]: Finished rendering [  0.04s] model dbt_dev_staging.stg_services [success]
+18:46:46.837092 [debug]: Started analyzing model dbt_dev_staging.stg_services
+18:46:46.837141 [debug]: Finished rendering [  0.05s] model dbt_dev_staging.stg_drugs [success]
+18:46:46.837175 [debug]: Started analyzing model dbt_dev_staging.stg_drugs
+18:46:46.837215 [debug]: Finished rendering [  0.04s] model dbt_dev_staging.stg_lab_specimen_types [success]
+18:46:46.837249 [debug]: Started analyzing model dbt_dev_staging.stg_lab_specimen_types
+18:46:46.837329 [debug]: Finished rendering [  0.04s] model dbt_dev_staging.stg_diagnosis [success]
+18:46:46.837370 [debug]: Started analyzing model dbt_dev_staging.stg_diagnosis
+18:46:46.838955 [debug]: Compiled SQL for node model.raqib_sf.stg_admissions at target/.lsp/compiled/models/staging/stg_admissions.sql
+18:46:46.840366 [debug]: Compiled SQL for node model.raqib_sf.stg_prescriptions at target/.lsp/compiled/models/staging/stg_prescriptions.sql
+18:46:46.846023 [debug]: Finished rendering [  0.05s] model dbt_dev_staging.stg_admissions [success]
+18:46:46.846238 [debug]: Started analyzing model dbt_dev_staging.stg_admissions
+18:46:46.852187 [debug]: Compiled SQL for node model.raqib_sf.stg_transfers at target/.lsp/compiled/models/staging/stg_transfers.sql
+18:46:46.867341 [debug]: Compiled SQL for node model.raqib_sf.dim_patients at target/.lsp/compiled/models/marts/dim/dim_patients.sql
+18:46:46.868817 [debug]: Compiled SQL for node model.raqib_sf.dim_time at target/.lsp/compiled/models/marts/dim/dim_time.sql
+18:46:46.872980 [debug]: Compiled SQL for node model.raqib_sf.fact_providers_performance at target/.lsp/compiled/models/marts/fact/fact_providers_performance.sql
+18:46:46.873443 [debug]: Compiled SQL for node model.raqib_sf.fact_encounters at target/.lsp/compiled/models/marts/fact/fact_encounters.sql
+18:46:46.874599 [debug]: Compiled SQL for node model.raqib_sf.int_clinical_events at target/.lsp/compiled/models/history/int_clinical_events.sql
+18:46:46.875436 [debug]: Compiled SQL for node model.raqib_sf.dim_date at target/.lsp/compiled/models/marts/dim/dim_date.sql
+18:46:46.878957 [debug]: Compiled SQL for node model.raqib_sf.int_lab_analysis at target/.lsp/compiled/models/history/int_lab_analysis.sql
+18:46:46.877025 [debug]: Compiled SQL for node model.raqib_sf.fact_clinical_events at target/.lsp/compiled/models/marts/fact/fact_clinical_events.sql
+18:46:46.882099 [debug]: Compiled SQL for node model.raqib_sf.fact_lab_results at target/.lsp/compiled/models/marts/fact/fact_lab_results.sql
+18:46:46.883556 [debug]: Compiled SQL for node model.raqib_sf.int_encounters at target/.lsp/compiled/models/history/int_encounters.sql
+18:46:46.885112 [debug]: Compiled SQL for node model.raqib_sf.dim_admission_type at target/.lsp/compiled/models/marts/dim/dim_admission_type.sql
+18:46:46.885346 [debug]: Compiled SQL for node model.raqib_sf.dim_lab_types at target/.lsp/compiled/models/marts/dim/dim_lab_types.sql
+18:46:46.887568 [debug]: Compiled SQL for node model.raqib_sf.fact_patient_finances at target/.lsp/compiled/models/marts/fact/fact_patient_finances.sql
+18:46:46.889109 [debug]: Compiled SQL for node model.raqib_sf.dim_services at target/.lsp/compiled/models/marts/dim/dim_services.sql
+18:46:46.889652 [debug]: Compiled SQL for node model.raqib_sf.dim_diagnosis at target/.lsp/compiled/models/marts/dim/dim_diagnosis.sql
+18:46:46.890650 [debug]: Compiled SQL for node model.raqib_sf.dim_location at target/.lsp/compiled/models/marts/dim/dim_location.sql
+18:46:46.892082 [debug]: Compiled SQL for node model.raqib_sf.dim_provider at target/.lsp/compiled/models/marts/dim/dim_provider.sql
+18:46:46.892056 [debug]: Compiled SQL for node model.raqib_sf.fact_transfers at target/.lsp/compiled/models/marts/fact/fact_transfers.sql
+18:46:46.894064 [debug]: Compiled SQL for node model.raqib_sf.fact_patient_services at target/.lsp/compiled/models/marts/fact/fact_patient_services.sql
+18:46:46.995822 [info ]:  Succeeded [  0.20s] model dbt_dev_staging.stg_emergency_contacts (view)
+18:46:46.995968 [debug]: Finished analyzing [  0.16s] model dbt_dev_staging.stg_emergency_contacts [success]
+18:46:46.996282 [debug]: Finished rendering [  0.20s] model dbt_dev_marts.dim_patients [success]
+18:46:46.996352 [debug]: Started analyzing model dbt_dev_marts.dim_patients
+18:46:46.996420 [debug]: Finished rendering [  0.20s] model dbt_dev_staging.stg_prescriptions [success]
+18:46:46.996463 [debug]: Started analyzing model dbt_dev_staging.stg_prescriptions
+18:46:46.996580 [debug]: Finished rendering [  0.20s] model dbt_dev_marts.dim_time [success]
+18:46:46.996708 [debug]: Started analyzing model dbt_dev_marts.dim_time
+18:46:46.996792 [debug]: Finished rendering [  0.21s] model dbt_dev_staging.stg_transfers [success]
+18:46:46.996829 [debug]: Started analyzing model dbt_dev_staging.stg_transfers
+18:46:46.996886 [debug]: Finished rendering [  0.21s] model dbt_dev_marts.fact_providers_performance [success]
+18:46:46.996918 [debug]: Started analyzing model dbt_dev_marts.fact_providers_performance
+18:46:47.017239 [info ]:  Succeeded [  0.22s] model dbt_dev_staging.stg_lab_events (view)
+18:46:47.017305 [debug]: Finished analyzing [  0.18s] model dbt_dev_staging.stg_lab_events [success]
+18:46:47.017402 [debug]: Finished rendering [  0.23s] model dbt_dev_marts.fact_encounters [success]
+18:46:47.017487 [debug]: Started analyzing model dbt_dev_marts.fact_encounters
+18:46:47.017570 [debug]: Started analyzing model dbt_dev_marts.dim_date
+18:46:47.017720 [debug]: Finished rendering [  0.23s] model dbt_dev.int_clinical_events [success]
+18:46:47.017792 [debug]: Started analyzing model dbt_dev.int_clinical_events
+18:46:47.017869 [debug]: Finished rendering [  0.23s] model dbt_dev_marts.dim_date [success]
+18:46:47.017950 [debug]: Finished rendering [  0.23s] model dbt_dev.int_lab_analysis [success]
+18:46:47.017996 [debug]: Started analyzing model dbt_dev.int_lab_analysis
+18:46:47.021591 [info ]:  Succeeded [  0.23s] model dbt_dev_staging.stg_providers (view)
+18:46:47.021778 [debug]: Finished analyzing [  0.18s] model dbt_dev_staging.stg_providers [success]
+18:46:47.021933 [debug]: Finished rendering [  0.23s] model dbt_dev_marts.fact_clinical_events [success]
+18:46:47.021986 [debug]: Started analyzing model dbt_dev_marts.fact_clinical_events
+18:46:47.022109 [debug]: Finished rendering [  0.23s] model dbt_dev_marts.fact_lab_results [success]
+18:46:47.022168 [debug]: Started analyzing model dbt_dev_marts.fact_lab_results
+18:46:47.024907 [info ]:  Succeeded [  0.23s] model dbt_dev_staging.stg_drugs (view)
+18:46:47.025211 [debug]: Finished analyzing [  0.19s] model dbt_dev_staging.stg_drugs [success]
+18:46:47.025307 [debug]: Finished rendering [  0.23s] model dbt_dev.int_encounters [success]
+18:46:47.025348 [debug]: Started analyzing model dbt_dev.int_encounters
+18:46:47.073791 [info ]:  Succeeded [  0.28s] model dbt_dev_marts.fact_clinical_events (incremental)
+18:46:47.073974 [debug]: Finished analyzing [  0.05s] model dbt_dev_marts.fact_clinical_events [success]
+18:46:47.074344 [info ]:  Succeeded [  0.28s] model dbt_dev_marts.dim_patients (incremental)
+18:46:47.074659 [debug]: Finished analyzing [  0.08s] model dbt_dev_marts.dim_patients [success]
+18:46:47.074849 [info ]:  Succeeded [  0.28s] model dbt_dev_marts.fact_encounters (incremental)
+18:46:47.074953 [debug]: Finished analyzing [  0.06s] model dbt_dev_marts.fact_encounters [success]
+18:46:47.075018 [debug]: Finished rendering [  0.28s] model dbt_dev_marts.dim_admission_type [success]
+18:46:47.075064 [debug]: Started analyzing model dbt_dev_marts.dim_admission_type
+18:46:47.076523 [info ]:  Succeeded [  0.28s] model dbt_dev_staging.stg_prescriptions (view)
+18:46:47.076583 [debug]: Finished analyzing [  0.08s] model dbt_dev_staging.stg_prescriptions [success]
+18:46:47.076650 [debug]: Finished rendering [  0.28s] model dbt_dev_marts.dim_services [success]
+18:46:47.076696 [debug]: Started analyzing model dbt_dev_marts.dim_services
+18:46:47.084825 [info ]:  Succeeded [  0.29s] model dbt_dev_staging.stg_services (view)
+18:46:47.084885 [debug]: Finished analyzing [  0.25s] model dbt_dev_staging.stg_services [success]
+18:46:47.084947 [debug]: Finished rendering [  0.29s] model dbt_dev_marts.dim_lab_types [success]
+18:46:47.085009 [debug]: Started analyzing model dbt_dev_marts.dim_lab_types
+18:46:47.088650 [info ]:  Succeeded [  0.29s] model dbt_dev_marts.dim_date (table)
+18:46:47.088711 [debug]: Finished analyzing [  0.07s] model dbt_dev_marts.dim_date [success]
+18:46:47.089470 [info ]:  Succeeded [  0.29s] model dbt_dev_staging.stg_admissions (view)
+18:46:47.089546 [debug]: Finished analyzing [  0.24s] model dbt_dev_staging.stg_admissions [success]
+18:46:47.089615 [debug]: Finished rendering [  0.30s] model dbt_dev_marts.dim_diagnosis [success]
+18:46:47.089660 [debug]: Started analyzing model dbt_dev_marts.dim_diagnosis
+18:46:47.095585 [info ]:  Succeeded [  0.30s] model dbt_dev_marts.dim_time (table)
+18:46:47.095647 [debug]: Finished analyzing [  0.10s] model dbt_dev_marts.dim_time [success]
+18:46:47.099673 [info ]:  Succeeded [  0.31s] model dbt_dev_staging.stg_transfers (view)
+18:46:47.099732 [debug]: Finished analyzing [  0.10s] model dbt_dev_staging.stg_transfers [success]
+18:46:47.099816 [debug]: Finished rendering [  0.31s] model dbt_dev_marts.fact_patient_finances [success]
+18:46:47.099863 [debug]: Started analyzing model dbt_dev_marts.fact_patient_finances
+18:46:47.111771 [info ]:  Succeeded [  0.32s] model dbt_dev_marts.fact_lab_results (incremental)
+18:46:47.111834 [debug]: Finished analyzing [  0.09s] model dbt_dev_marts.fact_lab_results [success]
+18:46:47.111920 [debug]: Finished rendering [  0.32s] model dbt_dev_marts.dim_location [success]
+18:46:47.111966 [debug]: Started analyzing model dbt_dev_marts.dim_location
+18:46:47.126941 [info ]:  Succeeded [  0.33s] model dbt_dev_marts.dim_location (incremental)
+18:46:47.127005 [debug]: Finished analyzing [  0.02s] model dbt_dev_marts.dim_location [success]
+18:46:47.127111 [debug]: Finished rendering [  0.34s] model dbt_dev_marts.fact_transfers [success]
+18:46:47.127164 [debug]: Started analyzing model dbt_dev_marts.fact_transfers
+18:46:47.149511 [info ]:  Succeeded [  0.36s] model dbt_dev.int_encounters (view)
+18:46:47.149698 [debug]: Finished analyzing [  0.12s] model dbt_dev.int_encounters [success]
+18:46:47.149792 [debug]: Finished rendering [  0.36s] model dbt_dev_marts.dim_provider [success]
+18:46:47.149847 [debug]: Started analyzing model dbt_dev_marts.dim_provider
+18:46:47.153644 [info ]:  Succeeded [  0.36s] model dbt_dev_marts.dim_diagnosis (incremental)
+18:46:47.153714 [debug]: Finished analyzing [  0.06s] model dbt_dev_marts.dim_diagnosis [success]
+18:46:47.153886 [info ]:  Succeeded [  0.36s] model dbt_dev_marts.dim_provider (incremental)
+18:46:47.153976 [debug]: Finished analyzing [  0.00s] model dbt_dev_marts.dim_provider [success]
+18:46:47.154142 [debug]: Finished rendering [  0.36s] model dbt_dev_marts.fact_patient_services [success]
+18:46:47.154224 [info ]: Finished rendering [  0.37s] (30 nodes, 0 skipped, 0 errors)
+18:46:47.154315 [debug]: Started analyzing model dbt_dev_marts.fact_patient_services
+18:46:47.164179 [info ]:  Succeeded [  0.37s] model dbt_dev_staging.stg_lab_specimen_types (view)
+18:46:47.164249 [debug]: Finished analyzing [  0.33s] model dbt_dev_staging.stg_lab_specimen_types [success]
+18:46:47.165448 [info ]:  Succeeded [  0.37s] model dbt_dev_marts.dim_lab_types (incremental)
+18:46:47.165543 [debug]: Finished analyzing [  0.08s] model dbt_dev_marts.dim_lab_types [success]
+18:46:47.166218 [info ]:  Succeeded [  0.37s] model dbt_dev_staging.stg_patients (view)
+18:46:47.166318 [debug]: Finished analyzing [  0.33s] model dbt_dev_staging.stg_patients [success]
+18:46:47.167419 [info ]:  Succeeded [  0.37s] model dbt_dev_marts.dim_admission_type (incremental)
+18:46:47.167471 [debug]: Finished analyzing [  0.09s] model dbt_dev_marts.dim_admission_type [success]
+18:46:47.167917 [info ]:  Succeeded [  0.38s] model dbt_dev.int_lab_analysis (view)
+18:46:47.167968 [debug]: Finished analyzing [  0.15s] model dbt_dev.int_lab_analysis [success]
+18:46:47.169527 [info ]:  Succeeded [  0.38s] model dbt_dev.int_clinical_events (view)
+18:46:47.169599 [debug]: Finished analyzing [  0.15s] model dbt_dev.int_clinical_events [success]
+18:46:47.170776 [info ]:  Succeeded [  0.38s] model dbt_dev_marts.fact_transfers (incremental)
+18:46:47.170871 [debug]: Finished analyzing [  0.04s] model dbt_dev_marts.fact_transfers [success]
+18:46:47.173101 [info ]:  Succeeded [  0.38s] model dbt_dev_marts.dim_services (incremental)
+18:46:47.173162 [debug]: Finished analyzing [  0.10s] model dbt_dev_marts.dim_services [success]
+18:46:47.174009 [info ]:  Succeeded [  0.38s] model dbt_dev_marts.fact_patient_finances (incremental)
+18:46:47.174073 [debug]: Finished analyzing [  0.07s] model dbt_dev_marts.fact_patient_finances [success]
+18:46:47.175081 [info ]:  Succeeded [  0.38s] model dbt_dev_marts.fact_patient_services (incremental)
+18:46:47.175148 [debug]: Finished analyzing [  0.02s] model dbt_dev_marts.fact_patient_services [success]
+18:46:47.183832 [info ]:  Succeeded [  0.39s] model dbt_dev_staging.stg_diagnosis (view)
+18:46:47.184286 [debug]: Finished analyzing [  0.35s] model dbt_dev_staging.stg_diagnosis [success]
+18:46:47.189443 [info ]:  Succeeded [  0.40s] model dbt_dev_marts.fact_providers_performance (table)
+18:46:47.189553 [debug]: Finished analyzing [  0.19s] model dbt_dev_marts.fact_providers_performance [success]
+18:46:47.189592 [info ]: Finished analyzing [  0.35s] (30 nodes, 0 skipped, 0 errors)
+18:46:47.221751 [info ]: Started scheduling
+18:46:47.222817 [info ]: Finished scheduling [  0.00s]
+18:46:47.238112 [info ]: Cached model count updated: 30 models (accurate)

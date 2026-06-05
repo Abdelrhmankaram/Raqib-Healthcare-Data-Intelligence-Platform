@@ -165,14 +165,16 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('dim_patients')
-              field: patient_key
+              arguments:
+                to: ref('dim_patients')
+                field: patient_key
       - name: provider_key
         tests:
           - not_null
           - relationships:
-              to: ref('dim_provider')
-              field: provider_key
+              arguments:
+                to: ref('dim_provider')
+                field: provider_key
 
   - name: fact_clinical_events
     columns:
@@ -186,8 +188,9 @@ models:
       - name: diagnosis_key
         tests:
           - relationships:
-              to: ref('dim_diagnosis')
-              field: diagnosis_key
+              arguments:
+                to: ref('dim_diagnosis')
+                field: diagnosis_key
 
   - name: fact_lab_results
     columns:

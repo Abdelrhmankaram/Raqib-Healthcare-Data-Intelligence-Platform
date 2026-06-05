@@ -146803,3 +146803,1987 @@ LEFT JOIN prod.dbt_dev_marts.dim_diagnosis ddx
 [0m00:58:36.778067 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ACC67F2A80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ACC33D9910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ACC5BBE660>]}
 [0m00:58:36.778067 [debug] [MainThread]: Flushing usage events
 [0m00:58:37.748576 [debug] [MainThread]: An error was encountered while trying to flush usage events
+==================== 2026-06-05T18:33:30.367757Z | 019e990f-cdda-7af1-8723-9f4ba824df89 ====================
+18:33:30.370867 [info ]: dbt-fusion 2.0.0-preview.173
+18:33:30.378083 [info ]: Started loading project
+18:33:30.427850 [info ]: Loading profiles.yml
+18:33:31.525320 [info ]:    Started resolving packages from packages.yml
+18:33:41.735442 [warn ]: dbt1076: Package 'dbt_expectations' has been moved to 'metaplane/dbt_expectations'. Please update your package reference.
+18:33:41.736604 [warn ]: dbt1080: Package 'dbt_expectations' may not be compatible with your dbt version: Required dbt version does not match current version. Check Package Hub (https://hub.getdbt.com) for compatible versions or contact the package maintainer.
+18:33:45.163252 [warn ]: dbt1076: Package 'dbt_date' has been moved to 'godatadriven/dbt_date'. Please update your package reference.
+18:33:45.163336 [warn ]: dbt1080: Package 'dbt_date' may not be compatible with your dbt version: Required dbt version does not match current version. Check Package Hub (https://hub.getdbt.com) for compatible versions or contact the package maintainer.
+18:33:45.168317 [info ]:   Finished [ 13.64s] resolving packages from packages.yml (3 items)
+18:33:45.172096 [debug]:    Started loading packages
+18:33:45.215647 [debug]:     Loaded [  0.04s] packages
+18:33:45.227076 [info ]: Finished loading project [ 14.85s]
+18:33:45.236569 [info ]: Started parsing
+18:33:45.820201 [debug]: Finished parsing models/marts/schema.yml [  0.01s]
+18:33:45.823075 [debug]: Finished parsing models/sources.yml [  0.00s]
+18:33:45.827684 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+18:33:45.904870 [debug]: Finished parsing models/history/int_clinical_events.sql [  0.04s]
+18:33:45.909338 [debug]: Finished parsing models/history/int_encounters.sql [  0.00s]
+18:33:45.912866 [debug]: Finished parsing models/history/int_lab_analysis.sql [  0.00s]
+18:33:45.919526 [debug]: Finished parsing models/history/int_patients_360.sql [  0.01s]
+18:33:45.931316 [debug]: Finished parsing models/marts/dim/dim_admission_type.sql [  0.01s]
+18:33:45.943153 [debug]: Finished parsing models/marts/dim/dim_date.sql [  0.01s]
+18:33:45.952956 [debug]: Finished parsing models/marts/dim/dim_diagnosis.sql [  0.01s]
+18:33:45.963722 [debug]: Finished parsing models/marts/dim/dim_lab_types.sql [  0.01s]
+18:33:45.968798 [debug]: Finished parsing models/marts/dim/dim_location.sql [  0.01s]
+18:33:45.977859 [debug]: Finished parsing models/marts/dim/dim_patients.sql [  0.01s]
+18:33:45.983499 [debug]: Finished parsing models/marts/dim/dim_provider.sql [  0.01s]
+18:33:45.989937 [debug]: Finished parsing models/marts/dim/dim_services.sql [  0.01s]
+18:33:45.994902 [debug]: Finished parsing models/marts/dim/dim_time.sql [  0.00s]
+18:33:45.999395 [debug]: Finished parsing models/marts/fact/fact_clinical_events.sql [  0.00s]
+18:33:46.004308 [debug]: Finished parsing models/marts/fact/fact_encounters.sql [  0.00s]
+18:33:46.008057 [debug]: Finished parsing models/marts/fact/fact_lab_results.sql [  0.00s]
+18:33:46.012880 [debug]: Finished parsing models/marts/fact/fact_patient_finances.sql [  0.00s]
+18:33:46.019474 [debug]: Finished parsing models/marts/fact/fact_patient_services.sql [  0.01s]
+18:33:46.023519 [debug]: Finished parsing models/marts/fact/fact_providers_performance.sql [  0.00s]
+18:33:46.031076 [debug]: Finished parsing models/marts/fact/fact_transfers.sql [  0.01s]
+18:33:46.034079 [debug]: Finished parsing models/staging/stg_admissions.sql [  0.00s]
+18:33:46.039344 [debug]: Finished parsing models/staging/stg_diagnosis.sql [  0.00s]
+18:33:46.041651 [debug]: Finished parsing models/staging/stg_drugs.sql [  0.00s]
+18:33:46.043985 [debug]: Finished parsing models/staging/stg_emergency_contacts.sql [  0.00s]
+18:33:46.047086 [debug]: Finished parsing models/staging/stg_lab_events.sql [  0.00s]
+18:33:46.050150 [debug]: Finished parsing models/staging/stg_lab_specimen_types.sql [  0.00s]
+18:33:46.054231 [debug]: Finished parsing models/staging/stg_patients.sql [  0.00s]
+18:33:46.057832 [debug]: Finished parsing models/staging/stg_prescriptions.sql [  0.00s]
+18:33:46.060676 [debug]: Finished parsing models/staging/stg_providers.sql [  0.00s]
+18:33:46.063582 [debug]: Finished parsing models/staging/stg_services.sql [  0.00s]
+18:33:46.066398 [debug]: Finished parsing models/staging/stg_transfers.sql [  0.00s]
+18:33:46.144969 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/marts/schema.yml:190:22
+18:33:46.154538 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/marts/schema.yml:169:22
+18:33:46.156480 [error]: dbt0102: Deprecated test arguments: ["field", "to"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/marts/schema.yml:175:22
+18:33:46.265008 [error]: dbt0102: Deprecated test arguments: ["value_set"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:148:26
+18:33:46.268003 [error]: dbt0102: Deprecated test arguments: ["value_set"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:143:26
+18:33:46.272154 [error]: dbt0102: Deprecated test arguments: ["value_set"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:157:26
+18:33:46.275700 [error]: dbt0102: Deprecated test arguments: ["value_set"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:164:26
+18:33:46.311392 [error]: dbt0102: Deprecated test arguments: ["value_set"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:55:26
+18:33:46.371930 [debug]: Finished parsing target/generic_tests/not_null_dim_lab_types_label.sql [  0.00s]
+18:33:46.372457 [debug]: Finished parsing target/generic_tests/not_null_stg_lab_events_lab_event_id.sql [  0.00s]
+18:33:46.374499 [debug]: Finished parsing target/generic_tests/not_null_dim_admission_type_admission_type.sql [  0.01s]
+18:33:46.376686 [debug]: Finished parsing target/generic_tests/accepted_values_stg_prescripti_db78af8e3c819e40a3f49463da179481.sql [  0.01s]
+18:33:46.378652 [debug]: Finished parsing target/generic_tests/unique_fact_providers_performance_provider_performance_key.sql [  0.01s]
+18:33:46.380885 [debug]: Finished parsing target/generic_tests/relationships_fact_encounters_d9031aaf045c9ab0c7c4d2376f458b64.sql [  0.01s]
+18:33:46.382571 [debug]: Finished parsing target/generic_tests/not_null_stg_lab_events_patient_id.sql [  0.01s]
+18:33:46.383225 [debug]: Finished parsing target/generic_tests/not_null_dim_provider_provider_key.sql [  0.02s]
+18:33:46.385877 [debug]: Finished parsing target/generic_tests/not_null_stg_diagnosis_domain.sql [  0.02s]
+18:33:46.386361 [debug]: Finished parsing target/generic_tests/unique_dim_lab_types_specimen_type_key.sql [  0.01s]
+18:33:46.388183 [debug]: Finished parsing target/generic_tests/unique_dim_admission_type_admission_type_key.sql [  0.01s]
+18:33:46.389717 [debug]: Finished parsing target/generic_tests/accepted_values_stg_providers_b886e6d149912138e907c621f5a643f9.sql [  0.01s]
+18:33:46.390608 [debug]: Finished parsing target/generic_tests/not_null_fact_providers_performance_provider_performance_key.sql [  0.01s]
+18:33:46.392386 [debug]: Finished parsing target/generic_tests/not_null_fact_encounters_provider_key.sql [  0.01s]
+18:33:46.392388 [debug]: Finished parsing target/generic_tests/not_null_dim_provider_provider_specialty.sql [  0.01s]
+18:33:46.394647 [debug]: Finished parsing target/generic_tests/not_null_stg_lab_events_specimen_id.sql [  0.01s]
+18:33:46.396797 [debug]: Finished parsing target/generic_tests/not_null_stg_diagnosis_patient_id.sql [  0.01s]
+18:33:46.399032 [debug]: Finished parsing target/generic_tests/not_null_dim_lab_types_specimen_type_key.sql [  0.01s]
+18:33:46.401005 [debug]: Finished parsing target/generic_tests/not_null_dim_admission_type_admission_type_key.sql [  0.01s]
+18:33:46.405585 [debug]: Finished parsing target/generic_tests/unique_dim_date_date_bk.sql [  0.00s]
+18:33:46.405724 [debug]: Finished parsing target/generic_tests/unique_dim_location_location_key.sql [  0.01s]
+18:33:46.407319 [debug]: Finished parsing target/generic_tests/relationships_fact_encounters_a4086faf32ff48c6cc18bba9c1883a21.sql [  0.01s]
+18:33:46.407325 [debug]: Finished parsing target/generic_tests/relationships_stg_diagnosis_4059f59818e689ab23f0e424b285a270.sql [  0.01s]
+18:33:46.407355 [debug]: Finished parsing target/generic_tests/accepted_values_stg_providers_is_valid_join_date__true__false.sql [  0.02s]
+18:33:46.407883 [debug]: Finished parsing target/generic_tests/unique_dim_services_service_dim_key.sql [  0.02s]
+18:33:46.407896 [debug]: Finished parsing target/generic_tests/not_null_dim_date_date_bk.sql [  0.00s]
+18:33:46.410055 [debug]: Finished parsing target/generic_tests/not_null_dim_location_location_key.sql [  0.00s]
+18:33:46.410169 [debug]: Finished parsing target/generic_tests/not_null_stg_diagnosis_provider_id.sql [  0.00s]
+18:33:46.412669 [debug]: Finished parsing target/generic_tests/dbt_expectations_expect_column_d18100a07a263994daedaca112484419.sql [  0.02s]
+18:33:46.412730 [debug]: Finished parsing target/generic_tests/not_null_dim_services_service_dim_key.sql [  0.00s]
+18:33:46.412955 [debug]: Finished parsing target/generic_tests/not_null_fact_transfers_encounter_key.sql [  0.02s]
+18:33:46.415258 [debug]: Finished parsing target/generic_tests/relationships_stg_diagnosis_19a6c743afd86469ff72ab9c26989bdc.sql [  0.01s]
+18:33:46.416620 [debug]: Finished parsing target/generic_tests/dbt_expectations_expect_column_a7ffad161031dd40fd483e3c905c47d9.sql [  0.00s]
+18:33:46.419597 [debug]: Finished parsing target/generic_tests/not_null_fact_transfers_from_department.sql [  0.01s]
+18:33:46.419888 [debug]: Finished parsing target/generic_tests/not_null_stg_diagnosis_sub_domain_key.sql [  0.00s]
+18:33:46.420756 [debug]: Finished parsing target/generic_tests/unique_stg_lab_specimen_types_item_id.sql [  0.00s]
+18:33:46.423094 [debug]: Finished parsing target/generic_tests/not_null_stg_providers_provider_full_name.sql [  0.02s]
+18:33:46.423555 [debug]: Finished parsing target/generic_tests/not_null_fact_transfers_patient_key.sql [  0.00s]
+18:33:46.423587 [debug]: Finished parsing target/generic_tests/not_null_stg_drugs_brand_name.sql [  0.00s]
+18:33:46.424198 [debug]: Finished parsing target/generic_tests/unique_dim_date_date_key.sql [  0.02s]
+18:33:46.425954 [debug]: Finished parsing target/generic_tests/accepted_values_stg_providers_ca8815a036f0927f0557c6d4460d3681.sql [  0.00s]
+18:33:46.426077 [debug]: Finished parsing target/generic_tests/not_null_stg_lab_specimen_types_item_id.sql [  0.01s]
+18:33:46.426708 [debug]: Finished parsing target/generic_tests/not_null_dim_location_location_name.sql [  0.02s]
+18:33:46.429046 [debug]: Finished parsing target/generic_tests/not_null_dim_date_date_key.sql [  0.00s]
+18:33:46.429254 [debug]: Finished parsing target/generic_tests/unique_stg_providers_provider_id.sql [  0.00s]
+18:33:46.429488 [debug]: Finished parsing target/generic_tests/unique_stg_drugs_drug_id.sql [  0.01s]
+18:33:46.429751 [debug]: Finished parsing target/generic_tests/not_null_dim_patients_emergency_contact_name.sql [  0.00s]
+18:33:46.431727 [debug]: Finished parsing target/generic_tests/not_null_dim_date_month.sql [  0.00s]
+18:33:46.431889 [debug]: Finished parsing target/generic_tests/not_null_fact_lab_results_encounter_key.sql [  0.02s]
+18:33:46.432242 [debug]: Finished parsing target/generic_tests/not_null_fact_transfers_to_department.sql [  0.01s]
+18:33:46.432483 [debug]: Finished parsing target/generic_tests/not_null_stg_drugs_drug_id.sql [  0.00s]
+18:33:46.432515 [debug]: Finished parsing target/generic_tests/not_null_stg_providers_provider_id.sql [  0.00s]
+18:33:46.435186 [debug]: Finished parsing target/generic_tests/not_null_dim_date_year.sql [  0.00s]
+18:33:46.435353 [debug]: Finished parsing target/generic_tests/not_null_dim_patients_emergency_contact_phone_number.sql [  0.01s]
+18:33:46.435520 [debug]: Finished parsing target/generic_tests/accepted_values_stg_emergency__aa28b9ed11ddb231eaf72be10de000e8.sql [  0.00s]
+18:33:46.438036 [debug]: Finished parsing target/generic_tests/unique_fact_transfers_transfer_key.sql [  0.01s]
+18:33:46.438174 [debug]: Finished parsing target/generic_tests/not_null_dim_diagnosis_description.sql [  0.00s]
+18:33:46.438957 [debug]: Finished parsing target/generic_tests/not_null_dim_patients_full_name.sql [  0.00s]
+18:33:46.441050 [debug]: Finished parsing target/generic_tests/not_null_stg_emergency_contacts_emergency_contact_phone_number.sql [  0.01s]
+18:33:46.441172 [debug]: Finished parsing target/generic_tests/not_null_fact_transfers_transfer_key.sql [  0.00s]
+18:33:46.441404 [debug]: Finished parsing target/generic_tests/dbt_expectations_expect_column_c08bf579db948a33bcebc4cb18a6d2e2.sql [  0.02s]
+18:33:46.441680 [debug]: Finished parsing target/generic_tests/unique_fact_lab_results_lab_event_key.sql [  0.01s]
+18:33:46.441784 [debug]: Finished parsing target/generic_tests/unique_dim_diagnosis_diagnosis_id.sql [  0.00s]
+18:33:46.443948 [debug]: Finished parsing target/generic_tests/accepted_values_stg_emergency__d00bbb6cef9f63eab6568f179c7537f4.sql [  0.00s]
+18:33:46.444447 [debug]: Finished parsing target/generic_tests/unique_dim_patients_patient_id.sql [  0.01s]
+18:33:46.444638 [debug]: Finished parsing target/generic_tests/not_null_fact_lab_results_lab_event_key.sql [  0.00s]
+18:33:46.444743 [debug]: Finished parsing target/generic_tests/unique_stg_admissions_admission_id.sql [  0.00s]
+18:33:46.445396 [debug]: Finished parsing target/generic_tests/dbt_expectations_expect_column_e48c7d32db13bc01456ad4d07feebc62.sql [  0.01s]
+18:33:46.447401 [debug]: Finished parsing target/generic_tests/not_null_dim_diagnosis_diagnosis_id.sql [  0.01s]
+18:33:46.447686 [debug]: Finished parsing target/generic_tests/not_null_fact_lab_results_patient_key.sql [  0.00s]
+18:33:46.447837 [debug]: Finished parsing target/generic_tests/not_null_dim_patients_patient_id.sql [  0.00s]
+18:33:46.448270 [debug]: Finished parsing target/generic_tests/not_null_stg_admissions_admission_id.sql [  0.00s]
+18:33:46.448374 [debug]: Finished parsing target/generic_tests/not_null_stg_emergency_contacts_patient_id.sql [  0.00s]
+18:33:46.450488 [debug]: Finished parsing target/generic_tests/unique_dim_patients_patient_key.sql [  0.00s]
+18:33:46.450823 [debug]: Finished parsing target/generic_tests/not_null_stg_services_patient_id.sql [  0.01s]
+18:33:46.450955 [debug]: Finished parsing target/generic_tests/not_null_fact_lab_results_provider_key.sql [  0.00s]
+18:33:46.451134 [debug]: Finished parsing target/generic_tests/unique_dim_diagnosis_diagnosis_key.sql [  0.00s]
+18:33:46.451824 [debug]: Finished parsing target/generic_tests/not_null_stg_admissions_admitted_at.sql [  0.00s]
+18:33:46.453491 [debug]: Finished parsing target/generic_tests/relationships_stg_emergency_co_e9d4772d57b70939143447cff8d2174a.sql [  0.01s]
+18:33:46.453527 [debug]: Finished parsing target/generic_tests/not_null_fact_lab_results_specimen_type_key.sql [  0.00s]
+18:33:46.454065 [debug]: Finished parsing target/generic_tests/not_null_dim_patients_patient_key.sql [  0.00s]
+18:33:46.454156 [debug]: Finished parsing target/generic_tests/not_null_stg_services_service_id.sql [  0.00s]
+18:33:46.454795 [debug]: Finished parsing target/generic_tests/dbt_expectations_expect_column_ac65129fc98595fb24bc354435362224.sql [  0.01s]
+18:33:46.456228 [debug]: Finished parsing target/generic_tests/not_null_dim_diagnosis_diagnosis_key.sql [  0.01s]
+18:33:46.456401 [debug]: Finished parsing target/generic_tests/not_null_stg_admissions_patient_id.sql [  0.00s]
+18:33:46.456575 [debug]: Finished parsing target/generic_tests/accepted_values_stg_lab_events_abnormal_flag__High__Low__Normal.sql [  0.00s]
+18:33:46.458199 [debug]: Finished parsing target/generic_tests/not_null_dim_provider_provider_full_name.sql [  0.00s]
+18:33:46.458379 [debug]: Finished parsing target/generic_tests/unique_fact_patient_finances_patient_key.sql [  0.00s]
+18:33:46.458677 [debug]: Finished parsing target/generic_tests/not_null_stg_admissions_total_cost.sql [  0.00s]
+18:33:46.458783 [debug]: Finished parsing target/generic_tests/not_null_dim_diagnosis_domain.sql [  0.00s]
+18:33:46.459170 [debug]: Finished parsing target/generic_tests/accepted_values_stg_patients_efff47f36e79436d2d3159e77680cd3b.sql [  0.00s]
+18:33:46.461166 [debug]: Finished parsing target/generic_tests/not_null_stg_transfers_from_department.sql [  0.01s]
+18:33:46.461556 [debug]: Finished parsing target/generic_tests/not_null_fact_patient_finances_patient_key.sql [  0.00s]
+18:33:46.461790 [debug]: Finished parsing target/generic_tests/not_null_stg_diagnosis_admission_id.sql [  0.00s]
+18:33:46.461926 [debug]: Finished parsing target/generic_tests/unique_dim_provider_provider_id.sql [  0.00s]
+18:33:46.462154 [debug]: Finished parsing target/generic_tests/not_null_stg_lab_events_item_id.sql [  0.01s]
+18:33:46.462282 [debug]: Finished parsing target/generic_tests/unique_dim_lab_types_item_id.sql [  0.00s]
+18:33:46.464981 [debug]: Finished parsing target/generic_tests/not_null_stg_patients_full_name.sql [  0.01s]
+18:33:46.465132 [debug]: Finished parsing target/generic_tests/not_null_fact_patient_services_encounter_key.sql [  0.00s]
+18:33:46.465154 [debug]: Finished parsing target/generic_tests/not_null_stg_transfers_patient_id.sql [  0.00s]
+18:33:46.465149 [debug]: Finished parsing target/generic_tests/not_null_dim_provider_provider_id.sql [  0.00s]
+18:33:46.465079 [debug]: Finished parsing target/generic_tests/relationships_stg_diagnosis_b94c2fc0e5333381a2e0cd0619fe0be8.sql [  0.00s]
+18:33:46.465783 [debug]: Finished parsing target/generic_tests/unique_stg_lab_events_lab_event_id.sql [  0.00s]
+18:33:46.467907 [debug]: Finished parsing target/generic_tests/accepted_values_stg_patients_4a7ab238074561ac1b985f641ac61c5c.sql [  0.00s]
+18:33:46.468045 [debug]: Finished parsing target/generic_tests/not_null_fact_patient_services_patient_key.sql [  0.00s]
+18:33:46.468192 [debug]: Finished parsing target/generic_tests/not_null_dim_lab_types_item_id.sql [  0.01s]
+18:33:46.468481 [debug]: Finished parsing target/generic_tests/unique_stg_diagnosis_diagnosis_id.sql [  0.00s]
+18:33:46.470371 [debug]: Finished parsing target/generic_tests/unique_stg_patients_patient_id.sql [  0.00s]
+18:33:46.470672 [debug]: Finished parsing target/generic_tests/unique_fact_patient_services_service_key.sql [  0.00s]
+18:33:46.471072 [debug]: Finished parsing target/generic_tests/not_null_stg_diagnosis_diagnosis_id.sql [  0.00s]
+18:33:46.472804 [debug]: Finished parsing target/generic_tests/not_null_stg_patients_patient_id.sql [  0.00s]
+18:33:46.473157 [debug]: Finished parsing target/generic_tests/not_null_fact_patient_services_service_key.sql [  0.00s]
+18:33:46.475186 [debug]: Finished parsing target/generic_tests/not_null_stg_prescriptions_patient_id.sql [  0.00s]
+18:33:46.475442 [debug]: Finished parsing target/generic_tests/unique_fact_providers_performance_provider_key.sql [  0.00s]
+18:33:46.481122 [debug]: Finished parsing target/generic_tests/not_null_stg_prescriptions_prescription_id.sql [  0.01s]
+18:33:46.483196 [debug]: Finished parsing target/generic_tests/unique_dim_provider_provider_key.sql [  0.02s]
+18:33:46.483625 [debug]: Finished parsing target/generic_tests/unique_stg_prescriptions_prescription_id.sql [  0.00s]
+18:33:46.484060 [debug]: Finished parsing target/generic_tests/not_null_stg_transfers_to_department.sql [  0.02s]
+18:33:46.490742 [debug]: Finished parsing target/generic_tests/not_null_stg_transfers_transfer_id.sql [  0.01s]
+18:33:46.494897 [debug]: Finished parsing target/generic_tests/unique_stg_transfers_transfer_id.sql [  0.00s]
+18:33:46.500945 [debug]: Finished parsing target/generic_tests/not_null_fact_providers_performance_provider_key.sql [  0.03s]
+18:33:46.502078 [debug]: Finished parsing target/generic_tests/not_null_dim_services_service_name.sql [  0.09s]
+18:33:46.507268 [debug]: Finished parsing target/generic_tests/not_null_dim_time_hour.sql [  0.00s]
+18:33:46.531707 [debug]: Finished parsing target/generic_tests/unique_dim_time_time_bk.sql [  0.02s]
+18:33:46.538805 [debug]: Finished parsing target/generic_tests/not_null_dim_time_time_bk.sql [  0.01s]
+18:33:46.540962 [debug]: Finished parsing target/generic_tests/unique_dim_time_time_key.sql [  0.00s]
+18:33:46.545325 [debug]: Finished parsing target/generic_tests/not_null_dim_time_time_key.sql [  0.00s]
+18:33:46.548743 [debug]: Finished parsing target/generic_tests/relationships_fact_clinical_ev_80abfd06a184cc2bfc88a0920afc1058.sql [  0.00s]
+18:33:46.552271 [debug]: Finished parsing target/generic_tests/not_null_fact_clinical_events_encounter_key.sql [  0.00s]
+18:33:46.555225 [debug]: Finished parsing target/generic_tests/unique_fact_clinical_events_event_key.sql [  0.00s]
+18:33:46.560747 [debug]: Finished parsing target/generic_tests/not_null_fact_clinical_events_event_key.sql [  0.01s]
+18:33:46.563285 [debug]: Finished parsing target/generic_tests/unique_fact_encounters_encounter_key.sql [  0.00s]
+18:33:46.565911 [debug]: Finished parsing target/generic_tests/not_null_fact_encounters_encounter_key.sql [  0.00s]
+18:33:46.568024 [debug]: Finished parsing target/generic_tests/not_null_fact_encounters_patient_key.sql [  0.00s]
+18:33:47.225610 [info ]: Finished parsing [  1.99s]
+18:33:55.426018 [info ]: New version available 2.0.0-preview.186 (run `dbt system update`)
+18:33:57.186971 [info ]: suggestion: Run 'dbt deps' to see the latest fusion compatible packages. For compatibility errors, try the autofix script: https://github.com/dbt-labs/dbt-autofix
+18:33:57.186971 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 4 warnings and 8 errors for target 'dev' [26.8s]
+==================== 2026-06-05T18:37:14.459644Z | 019e9913-3934-7af3-af83-eb1915f6f2a2 ====================
+18:37:14.464279 [info ]: dbt-fusion 2.0.0-preview.173
+18:37:15.457784 [info ]:    Started resolving packages from packages.yml
+18:37:16.080558 [warn ]: dbt1076: Package 'dbt_expectations' has been moved to 'metaplane/dbt_expectations'. Please update your package reference.
+18:37:16.082776 [warn ]: dbt1080: Package 'dbt_expectations' may not be compatible with your dbt version: Required dbt version does not match current version. Check Package Hub (https://hub.getdbt.com) for compatible versions or contact the package maintainer.
+18:37:16.156847 [warn ]: dbt1076: Package 'dbt_date' has been moved to 'godatadriven/dbt_date'. Please update your package reference.
+18:37:16.156900 [warn ]: dbt1080: Package 'dbt_date' may not be compatible with your dbt version: Required dbt version does not match current version. Check Package Hub (https://hub.getdbt.com) for compatible versions or contact the package maintainer.
+18:37:16.162546 [info ]:   Finished [  0.70s] resolving packages from packages.yml (3 items)
+18:37:16.163588 [info ]: Installing packages
+18:37:16.289511 [info ]: Installing dbt-labs/dbt_utils
+18:37:19.784160 [info ]:  Installed dbt-labs/dbt_utils: 1.3.3
+18:37:19.784358 [info ]: Installing calogica/dbt_expectations
+18:37:25.410762 [info ]:  Installed calogica/dbt_expectations: 0.10.4
+18:37:25.412076 [info ]: Installing calogica/dbt_date
+18:37:27.514679 [info ]:  Installed calogica/dbt_date: 0.10.1
+18:37:27.515463 [info ]:  Installed 3 packages
+18:37:27.597547 [info ]: 
+==================== Execution Summary =====================
+Finished 'deps' with 4 warnings [13.1s]
+[0m21:38:58.811980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f516270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11081f9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11081fc50>]}
+
+
+============================== 21:38:58.886615 | 6b63a20a-9337-4aa1-9b7d-3fbcb0817829 ==============================
+[0m21:38:58.886615 [info ] [MainThread]: Running with dbt=1.11.11
+[0m21:38:58.887595 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'empty': 'False', 'static_parser': 'True', 'warn_error': 'None', 'target_path': 'None', 'debug': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'log_path': '/Users/user/Documents/Raqib/raqib_sf_dbt/logs', 'version_check': 'True', 'profiles_dir': '/Users/user/Documents/Raqib/raqib_sf_dbt', 'fail_fast': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'use_experimental_parser': 'False', 'write_json': 'True', 'use_colors': 'True', 'no_print': 'None', 'log_format': 'default'}
+[0m21:39:03.675234 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m21:39:03.675980 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m21:39:03.676534 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m21:39:04.117507 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6b63a20a-9337-4aa1-9b7d-3fbcb0817829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fa202b0>]}
+[0m21:39:04.289369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6b63a20a-9337-4aa1-9b7d-3fbcb0817829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111855480>]}
+[0m21:39:04.293395 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m21:39:04.516250 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m21:39:04.777204 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m21:39:04.778355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '6b63a20a-9337-4aa1-9b7d-3fbcb0817829', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d8be50>]}
+[0m21:39:08.233997 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test
+`dbt_expectations.expect_column_values_to_be_in_set` defined on 'stg_providers'
+in package 'raqib_sf' (models/staging/schema.yml). Arguments to generic tests
+should be nested under the `arguments` property.
+[0m21:39:08.234759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '6b63a20a-9337-4aa1-9b7d-3fbcb0817829', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111f1c7d0>]}
+[0m21:39:08.636479 [error] [MainThread]: Encountered an error:
+Compilation Error in test relationships_fact_clinical_events_ref_dim_diagnosis___diagnosis_key__diagnosis_key (models/marts/schema.yml)
+  macro 'dbt_macro__test_relationships' takes no keyword argument 'aruments'
+[0m21:39:08.637409 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 6 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m21:39:08.638864 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 9.947408, "process_in_blocks": "0", "process_kernel_time": 1.672124, "process_mem_max_rss": "167268352", "process_out_blocks": "0", "process_user_time": 11.334199}
+[0m21:39:08.640044 [debug] [MainThread]: Command `dbt run` failed at 21:39:08.639808 after 9.95 seconds
+[0m21:39:08.640779 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11079fe70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d46eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111e19f30>]}
+[0m21:39:08.641311 [debug] [MainThread]: Flushing usage events
+[0m21:39:09.471212 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:42:57.263031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1109ae900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111b97750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111b97890>]}
+
+
+============================== 21:42:57.277711 | 53651031-f11f-4172-8d38-af28f800c237 ==============================
+[0m21:42:57.277711 [info ] [MainThread]: Running with dbt=1.11.11
+[0m21:42:57.279932 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/user/Documents/Raqib/raqib_sf_dbt/logs', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'quiet': 'False', 'target_path': 'None', 'no_print': 'None', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'fail_fast': 'False', 'introspect': 'True', 'write_json': 'True', 'partial_parse': 'True', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'empty': 'False', 'log_format': 'default', 'use_colors': 'True', 'profiles_dir': '/Users/user/Documents/Raqib/raqib_sf_dbt'}
+[0m21:42:58.114429 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m21:42:58.115709 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m21:42:58.116403 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m21:42:58.682906 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '53651031-f11f-4172-8d38-af28f800c237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110ea1220>]}
+[0m21:42:58.890722 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '53651031-f11f-4172-8d38-af28f800c237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112ac1260>]}
+[0m21:42:58.893944 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m21:42:59.401372 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m21:42:59.793432 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m21:42:59.795500 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '53651031-f11f-4172-8d38-af28f800c237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113f74f50>]}
+[0m21:43:07.868745 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test
+`dbt_expectations.expect_column_values_to_be_in_set` defined on 'stg_providers'
+in package 'raqib_sf' (models/staging/schema.yml). Arguments to generic tests
+should be nested under the `arguments` property.
+[0m21:43:07.870208 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '53651031-f11f-4172-8d38-af28f800c237', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113faa5d0>]}
+[0m21:43:08.347643 [error] [MainThread]: Encountered an error:
+Compilation Error in test relationships_fact_clinical_events_ref_dim_diagnosis___diagnosis_key__diagnosis_key (models/marts/schema.yml)
+  macro 'dbt_macro__test_relationships' takes no keyword argument 'aruments'
+[0m21:43:08.348597 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 6 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m21:43:08.349512 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 11.352204, "process_in_blocks": "0", "process_kernel_time": 1.027937, "process_mem_max_rss": "150081536", "process_out_blocks": "0", "process_user_time": 10.800275}
+[0m21:43:08.350270 [debug] [MainThread]: Command `dbt run` failed at 21:43:08.350100 after 11.35 seconds
+[0m21:43:08.350884 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111a93e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114139550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114005b20>]}
+[0m21:43:08.351508 [debug] [MainThread]: Flushing usage events
+[0m21:43:09.058548 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:45:02.835567 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f32900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b11b750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b11b890>]}
+
+
+============================== 21:45:02.847776 | fbceec08-2460-40bd-b316-e7589d9f788c ==============================
+[0m21:45:02.847776 [info ] [MainThread]: Running with dbt=1.11.11
+[0m21:45:02.850066 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/user/Documents/Raqib/raqib_sf_dbt/logs', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'invocation_command': 'dbt run', 'printer_width': '80', 'static_parser': 'True', 'quiet': 'False', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'empty': 'False', 'no_print': 'None', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/user/Documents/Raqib/raqib_sf_dbt', 'introspect': 'True', 'cache_selected_only': 'False', 'write_json': 'True', 'partial_parse': 'True', 'target_path': 'None', 'log_format': 'default', 'log_cache_events': 'False', 'debug': 'False', 'use_colors': 'True'}
+[0m21:45:03.580343 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m21:45:03.581114 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m21:45:03.581680 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m21:45:03.903287 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a425220>]}
+[0m21:45:04.021180 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cd79260>]}
+[0m21:45:04.024174 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m21:45:04.242636 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m21:45:04.494314 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m21:45:04.495268 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d528f50>]}
+[0m21:45:08.835479 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test
+`dbt_expectations.expect_column_values_to_be_in_set` defined on 'stg_providers'
+in package 'raqib_sf' (models/staging/schema.yml). Arguments to generic tests
+should be nested under the `arguments` property.
+[0m21:45:08.836807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d5565d0>]}
+[0m21:45:10.420050 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.raqib_sf.intermediate
+[0m21:45:10.470180 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d220ad0>]}
+[0m21:45:10.942486 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/user/Documents/Raqib/raqib_sf_dbt/target/manifest.json
+[0m21:45:10.947985 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/user/Documents/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m21:45:11.034103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d4f5b20>]}
+[0m21:45:11.035771 [info ] [MainThread]: Found 30 models, 134 data tests, 11 sources, 920 macros
+[0m21:45:11.036992 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d884e90>]}
+[0m21:45:11.051426 [info ] [MainThread]: 
+[0m21:45:11.052374 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m21:45:11.053025 [info ] [MainThread]: 
+[0m21:45:11.054074 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m21:45:11.068151 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_prod'
+[0m21:45:11.075681 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m21:45:11.088804 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_dev'
+[0m21:45:11.238711 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m21:45:11.239496 [debug] [ThreadPool]: Using snowflake connection "list_dev"
+[0m21:45:11.239987 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m21:45:11.240582 [debug] [ThreadPool]: Using snowflake connection "list_prod"
+[0m21:45:11.241085 [debug] [ThreadPool]: On list_dev: show terse schemas in database dev
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev"} */
+[0m21:45:11.241581 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:45:11.242234 [debug] [ThreadPool]: On list_prod: show terse schemas in database prod
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_prod"} */
+[0m21:45:11.242853 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:45:11.243654 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:45:15.035450 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 3.793 seconds
+[0m21:45:15.036094 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 3.795 seconds
+[0m21:45:15.039180 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 3.796 seconds
+[0m21:45:15.045956 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_prod, now list_prod_dbt_dev_marts)
+[0m21:45:15.046643 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_dbt_dev_staging)
+[0m21:45:15.053195 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_dbt_dev)
+[0m21:45:15.062126 [debug] [ThreadPool]: Using snowflake connection "list_prod_dbt_dev_marts"
+[0m21:45:15.066841 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev_staging"
+[0m21:45:15.069989 [debug] [ThreadPool]: Using snowflake connection "list_dev_dbt_dev"
+[0m21:45:15.070466 [debug] [ThreadPool]: On list_prod_dbt_dev_marts: show objects in prod.dbt_dev_marts
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_prod_dbt_dev_marts"} */;
+[0m21:45:15.070911 [debug] [ThreadPool]: On list_dev_dbt_dev_staging: show objects in dev.dbt_dev_staging
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev_staging"} */;
+[0m21:45:15.071350 [debug] [ThreadPool]: On list_dev_dbt_dev: show objects in dev.dbt_dev
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "connection_name": "list_dev_dbt_dev"} */;
+[0m21:45:15.199969 [debug] [ThreadPool]: SQL status: SUCCESS 17 in 0.128 seconds
+[0m21:45:15.249732 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.177 seconds
+[0m21:45:15.263865 [debug] [ThreadPool]: SQL status: SUCCESS 11 in 0.192 seconds
+[0m21:45:15.271321 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dd381b0>]}
+[0m21:45:15.275616 [debug] [Thread-2 (]: Began running node model.raqib_sf.dim_date
+[0m21:45:15.276148 [debug] [Thread-3 (]: Began running node model.raqib_sf.dim_time
+[0m21:45:15.276624 [debug] [Thread-5 (]: Began running node model.raqib_sf.stg_diagnosis
+[0m21:45:15.277200 [debug] [Thread-4 (]: Began running node model.raqib_sf.stg_admissions
+[0m21:45:15.277773 [info ] [Thread-2 (]: 1 of 30 START sql table model prod.dbt_dev_marts.dim_date ...................... [RUN]
+[0m21:45:15.278419 [info ] [Thread-3 (]: 2 of 30 START sql table model prod.dbt_dev_marts.dim_time ...................... [RUN]
+[0m21:45:15.279126 [info ] [Thread-5 (]: 4 of 30 START sql view model dbt_dev_staging.stg_diagnosis ..................... [RUN]
+[0m21:45:15.279753 [info ] [Thread-4 (]: 3 of 30 START sql view model dbt_dev_staging.stg_admissions .................... [RUN]
+[0m21:45:15.280321 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_prod_dbt_dev_marts, now model.raqib_sf.dim_date)
+[0m21:45:15.280812 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev_staging, now model.raqib_sf.dim_time)
+[0m21:45:15.281450 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.raqib_sf.stg_diagnosis'
+[0m21:45:15.281936 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_dev_dbt_dev, now model.raqib_sf.stg_admissions)
+[0m21:45:15.282404 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.dim_date
+[0m21:45:15.282861 [debug] [Thread-3 (]: Began compiling node model.raqib_sf.dim_time
+[0m21:45:15.283311 [debug] [Thread-5 (]: Began compiling node model.raqib_sf.stg_diagnosis
+[0m21:45:15.283989 [debug] [Thread-4 (]: Began compiling node model.raqib_sf.stg_admissions
+[0m21:45:15.299615 [debug] [Thread-3 (]: Writing injected SQL for node "model.raqib_sf.dim_time"
+[0m21:45:15.295463 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.dim_date"
+[0m21:45:15.303543 [debug] [Thread-5 (]: Writing injected SQL for node "model.raqib_sf.stg_diagnosis"
+[0m21:45:15.307466 [debug] [Thread-4 (]: Writing injected SQL for node "model.raqib_sf.stg_admissions"
+[0m21:45:15.309119 [debug] [Thread-3 (]: Began executing node model.raqib_sf.dim_time
+[0m21:45:15.309757 [debug] [Thread-2 (]: Began executing node model.raqib_sf.dim_date
+[0m21:45:15.328824 [debug] [Thread-4 (]: Began executing node model.raqib_sf.stg_admissions
+[0m21:45:15.341024 [debug] [Thread-5 (]: Began executing node model.raqib_sf.stg_diagnosis
+[0m21:45:15.426374 [debug] [Thread-3 (]: Writing runtime sql for node "model.raqib_sf.dim_time"
+[0m21:45:15.429815 [debug] [Thread-5 (]: Writing runtime sql for node "model.raqib_sf.stg_diagnosis"
+[0m21:45:15.430410 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.dim_date"
+[0m21:45:15.437610 [debug] [Thread-4 (]: Writing runtime sql for node "model.raqib_sf.stg_admissions"
+[0m21:45:15.439763 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.stg_diagnosis"
+[0m21:45:15.440333 [debug] [Thread-5 (]: On model.raqib_sf.stg_diagnosis: create or replace   view dev.dbt_dev_staging.stg_diagnosis
+  
+  
+  
+  
+  as (
+    WITH raw_diagnosis AS (
+    SELECT * 
+    FROM raw.public.diagnosis
+)
+
+SELECT 
+    diagnosis_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    sub_domain_key,
+    TRIM(REGEXP_REPLACE(description, '\\s*\\([^)]+\\)', '')) AS description,
+    REGEXP_SUBSTR(description, '\\(([^)]+)\\)', 1, 1, 'e', 1) AS description_type,
+    TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 1)) AS domain,
+    NULLIF(TRIM(SPLIT_PART(REGEXP_REPLACE(SPLIT_PART(sub_domain, ' – ', 2), '\\s*/\\s*', ' & '), ' & ', 2)), '') AS sub_domain
+FROM raw_diagnosis
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.stg_diagnosis"} */;
+[0m21:45:15.441677 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.stg_admissions"
+[0m21:45:15.442263 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m21:45:15.442882 [debug] [Thread-4 (]: On model.raqib_sf.stg_admissions: create or replace   view dev.dbt_dev_staging.stg_admissions
+  
+  
+  
+  
+  as (
+    WITH raw_admissions AS (
+    SELECT * 
+    FROM raw.public.admissions
+)
+
+SELECT 
+    admission_id,
+    patient_id,
+    admission_provider_id                                       AS provider_id,
+    CAST(ADMISSION_DATETIME_IN AS TIMESTAMP)                    AS admitted_at,
+    CAST(ADMISSION_DATETIME_OUT AS TIMESTAMP)                   AS discharged_at,
+    UPPER(LEFT(admission_type, 1)) 
+        || LOWER(SUBSTR(admission_type, 2))                     AS admission_type,
+    admission_location,
+    discharge_location,
+    INITCAP(insurance_type)                                     AS insurance_type,
+    total_cost,
+    payer_coverage,
+    hospital_expire_flag,
+    primary_sdk
+FROM raw_admissions
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.stg_admissions"} */;
+[0m21:45:15.443977 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.dim_date"
+[0m21:45:15.495496 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.dim_time"
+[0m21:45:15.496468 [debug] [Thread-2 (]: On model.raqib_sf.dim_date: create or replace transient table prod.dbt_dev_marts.dim_date
+    
+    
+    
+    as (
+
+SELECT
+    md5(cast(coalesce(cast(date_bk as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS date_key,
+    date_bk,
+    year,
+    month,
+    month_name,
+    day_name, 
+    is_weekend 
+FROM (
+SELECT
+    DATEADD(DAY, SEQ4(), '1941-01-01'::DATE) AS date_bk,
+    
+    YEAR(date_bk) AS year,
+    MONTH(date_bk) AS month,
+    MONTHNAME(date_bk) AS month_name,
+    DAYNAME(date_bk) AS day_name,
+    
+    CASE 
+        WHEN DAYOFWEEKISO(date_bk) IN (6, 7) THEN 1 
+        ELSE 0 
+    END AS is_weekend
+FROM TABLE(GENERATOR(ROWCOUNT => 32000))
+WHERE date_bk <= '2026-12-31'::DATE
+)
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_date"} */;
+[0m21:45:15.497106 [debug] [Thread-3 (]: On model.raqib_sf.dim_time: create or replace transient table prod.dbt_dev_marts.dim_time
+    
+    
+    
+    as (
+
+SELECT
+    md5(cast(coalesce(cast(time_bk as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS time_key,
+    time_bk,
+    hour,
+    minute,
+    second,
+    time_of_day
+FROM (
+SELECT   
+    TIMEADD(SECOND, SEQ4(), '00:00:00'::TIME) AS time_bk,
+    
+    HOUR(time_bk) AS hour,
+    MINUTE(time_bk) AS minute,
+    SECOND(time_bk) AS second,
+    
+    CASE 
+        WHEN HOUR(time_bk) < 6 THEN 'Night'
+        WHEN HOUR(time_bk) < 12 THEN 'Morning'
+        WHEN HOUR(time_bk) < 18 THEN 'Afternoon'
+        ELSE 'Evening'
+    END AS time_of_day
+
+FROM TABLE(GENERATOR(ROWCOUNT => 86400))
+)
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_time"} */;
+[0m21:45:15.805245 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.308 seconds
+[0m21:45:15.848302 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a39aa30>]}
+[0m21:45:15.849484 [info ] [Thread-4 (]: 3 of 30 OK created sql view model dbt_dev_staging.stg_admissions ............... [[32mSUCCESS 1[0m in 0.56s]
+[0m21:45:15.850349 [debug] [Thread-4 (]: Finished running node model.raqib_sf.stg_admissions
+[0m21:45:15.850905 [debug] [Thread-4 (]: Began running node model.raqib_sf.stg_drugs
+[0m21:45:15.851761 [info ] [Thread-4 (]: 5 of 30 START sql view model dbt_dev_staging.stg_drugs ......................... [RUN]
+[0m21:45:15.852506 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.raqib_sf.stg_admissions, now model.raqib_sf.stg_drugs)
+[0m21:45:15.853008 [debug] [Thread-4 (]: Began compiling node model.raqib_sf.stg_drugs
+[0m21:45:15.857674 [debug] [Thread-4 (]: Writing injected SQL for node "model.raqib_sf.stg_drugs"
+[0m21:45:15.858631 [debug] [Thread-4 (]: Began executing node model.raqib_sf.stg_drugs
+[0m21:45:15.862645 [debug] [Thread-4 (]: Writing runtime sql for node "model.raqib_sf.stg_drugs"
+[0m21:45:15.865088 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.stg_drugs"
+[0m21:45:15.866744 [debug] [Thread-4 (]: On model.raqib_sf.stg_drugs: create or replace   view dev.dbt_dev_staging.stg_drugs
+  
+  
+  
+  
+  as (
+    with raw_drugs as (
+    select * 
+    from raw.public.drugs
+)
+
+select 
+    drug_id,
+    case 
+        when brand_name is not null then initcap(brand_name)
+        when brand_name is null and generic_name ilike 'Atropine Sulfate Injection%' then 'AtroPen'
+        when brand_name is null and generic_name ilike 'Midazolam Injection%' then 'Versed'
+        when brand_name is null and generic_name = 'Tadalafil' then 'Cialis'
+    end as brand_name,
+    case 
+        when generic_name is not null then initcap(generic_name) 
+        when generic_name is null then brand_name
+    end as generic_name,
+    initcap(route) as route,
+    indications,
+    dosage,
+    contraindications,
+    side_effects,
+    warnings,
+    has_contraindications,
+    has_side_effects
+    
+from raw_drugs
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.stg_drugs"} */;
+[0m21:45:16.129164 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.262 seconds
+[0m21:45:16.132381 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10de47050>]}
+[0m21:45:16.133235 [info ] [Thread-4 (]: 5 of 30 OK created sql view model dbt_dev_staging.stg_drugs .................... [[32mSUCCESS 1[0m in 0.28s]
+[0m21:45:16.134215 [debug] [Thread-4 (]: Finished running node model.raqib_sf.stg_drugs
+[0m21:45:16.134849 [debug] [Thread-4 (]: Began running node model.raqib_sf.stg_emergency_contacts
+[0m21:45:16.135589 [info ] [Thread-4 (]: 6 of 30 START sql view model dbt_dev_staging.stg_emergency_contacts ............ [RUN]
+[0m21:45:16.136215 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.raqib_sf.stg_drugs, now model.raqib_sf.stg_emergency_contacts)
+[0m21:45:16.136712 [debug] [Thread-4 (]: Began compiling node model.raqib_sf.stg_emergency_contacts
+[0m21:45:16.141405 [debug] [Thread-4 (]: Writing injected SQL for node "model.raqib_sf.stg_emergency_contacts"
+[0m21:45:16.142388 [debug] [Thread-4 (]: Began executing node model.raqib_sf.stg_emergency_contacts
+[0m21:45:16.145938 [debug] [Thread-4 (]: Writing runtime sql for node "model.raqib_sf.stg_emergency_contacts"
+[0m21:45:16.147764 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.stg_emergency_contacts"
+[0m21:45:16.148322 [debug] [Thread-4 (]: On model.raqib_sf.stg_emergency_contacts: create or replace   view dev.dbt_dev_staging.stg_emergency_contacts
+  
+  
+  
+  
+  as (
+    WITH raw_emergency_contacts AS (
+    SELECT *
+    FROM raw.public.emergency_contacts
+)
+
+SELECT
+    Patient_ID AS patient_id,
+    INITCAP(emergency_contact_name) AS emergency_contact_name,
+    emergency_contact_relationship,
+    emergency_contact_bloodtype,
+    emergency_contact_number AS emergency_contact_phone_number,
+    REGEXP_LIKE(emergency_contact_number, '^\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}$') AS is_valid_phone_number
+    
+FROM raw_emergency_contacts
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.stg_emergency_contacts"} */;
+[0m21:45:16.159121 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.717 seconds
+[0m21:45:16.162210 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1120027b0>]}
+[0m21:45:16.162989 [info ] [Thread-5 (]: 4 of 30 OK created sql view model dbt_dev_staging.stg_diagnosis ................ [[32mSUCCESS 1[0m in 0.88s]
+[0m21:45:16.163860 [debug] [Thread-5 (]: Finished running node model.raqib_sf.stg_diagnosis
+[0m21:45:16.164773 [debug] [Thread-5 (]: Began running node model.raqib_sf.stg_lab_events
+[0m21:45:16.166177 [info ] [Thread-5 (]: 7 of 30 START sql view model dbt_dev_staging.stg_lab_events .................... [RUN]
+[0m21:45:16.167570 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.raqib_sf.stg_diagnosis, now model.raqib_sf.stg_lab_events)
+[0m21:45:16.168252 [debug] [Thread-5 (]: Began compiling node model.raqib_sf.stg_lab_events
+[0m21:45:16.172412 [debug] [Thread-5 (]: Writing injected SQL for node "model.raqib_sf.stg_lab_events"
+[0m21:45:16.173429 [debug] [Thread-5 (]: Began executing node model.raqib_sf.stg_lab_events
+[0m21:45:16.177358 [debug] [Thread-5 (]: Writing runtime sql for node "model.raqib_sf.stg_lab_events"
+[0m21:45:16.178927 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.stg_lab_events"
+[0m21:45:16.179469 [debug] [Thread-5 (]: On model.raqib_sf.stg_lab_events: create or replace   view dev.dbt_dev_staging.stg_lab_events
+  
+  
+  
+  
+  as (
+    WITH raw_lab_events AS (
+
+    SELECT *
+    FROM raw.public.lab_events
+
+)
+
+SELECT
+    lab_event_id,
+    patient_id,
+    admission_id,
+    specimen_id,
+    item_id,
+    provider_id,
+    CAST(done_datetime AS TIMESTAMP)    AS lab_done_at,
+    CAST(stored_datetime AS TIMESTAMP)  AS lab_stored_at,
+    TRY_CAST(value AS FLOAT) AS result_value,
+    TRIM(measurement_unit) AS measurement_unit,
+    TRY_CAST(range_lower AS FLOAT) AS range_lower,
+    TRY_CAST(range_higher AS FLOAT) AS range_higher,
+    TRIM(abnormal_flag) AS abnormal_flag,
+    TRY_CAST(cost AS FLOAT) AS cost
+
+FROM raw_lab_events 
+
+--  CONVERT_TIMEZONE('UTC', done_datetime::TIMESTAMP_TZ)    AS lab_done_at,
+--     CONVERT_TIMEZONE('UTC', stored_datetime::TIMESTAMP_TZ)  AS lab_stored_at,
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.stg_lab_events"} */;
+[0m21:45:16.376305 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.227 seconds
+[0m21:45:16.378933 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112083b30>]}
+[0m21:45:16.379721 [info ] [Thread-4 (]: 6 of 30 OK created sql view model dbt_dev_staging.stg_emergency_contacts ....... [[32mSUCCESS 1[0m in 0.24s]
+[0m21:45:16.380601 [debug] [Thread-4 (]: Finished running node model.raqib_sf.stg_emergency_contacts
+[0m21:45:16.381136 [debug] [Thread-4 (]: Began running node model.raqib_sf.stg_lab_specimen_types
+[0m21:45:16.381849 [info ] [Thread-4 (]: 8 of 30 START sql view model dbt_dev_staging.stg_lab_specimen_types ............ [RUN]
+[0m21:45:16.382589 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.raqib_sf.stg_emergency_contacts, now model.raqib_sf.stg_lab_specimen_types)
+[0m21:45:16.383095 [debug] [Thread-4 (]: Began compiling node model.raqib_sf.stg_lab_specimen_types
+[0m21:45:16.387213 [debug] [Thread-4 (]: Writing injected SQL for node "model.raqib_sf.stg_lab_specimen_types"
+[0m21:45:16.388146 [debug] [Thread-4 (]: Began executing node model.raqib_sf.stg_lab_specimen_types
+[0m21:45:16.392126 [debug] [Thread-4 (]: Writing runtime sql for node "model.raqib_sf.stg_lab_specimen_types"
+[0m21:45:16.394318 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.stg_lab_specimen_types"
+[0m21:45:16.395007 [debug] [Thread-4 (]: On model.raqib_sf.stg_lab_specimen_types: create or replace   view dev.dbt_dev_staging.stg_lab_specimen_types
+  
+  
+  
+  
+  as (
+    WITH raw_lab_specimen_types AS (
+    SELECT *
+    FROM raw.public.lab_specimen_types
+)
+
+SELECT 
+    itemid AS item_id,
+    CASE 
+        WHEN CONTAINS(label, '(') THEN TRIM(SPLIT_PART(label, '(', 1))
+        ELSE label
+    END AS label,
+    CASE 
+        WHEN CONTAINS(label, '(') THEN TRIM(REPLACE(SPLIT_PART(label, '(', 2), ')', ''))
+        ELSE NULL
+    END AS label_sub_type,
+    fluid,
+    CASE 
+        WHEN CONTAINS(category, '–') THEN TRIM(SPLIT_PART(category, '–', 1))
+        ELSE category
+    END AS category_type,
+    CASE   
+        WHEN CONTAINS(category, '–') THEN TRIM(SPLIT_PART(category, '–', 2))
+        ELSE NULL
+    END AS category_sub_type,
+    sub_domain_key,
+    TRIM(SPLIT_PART(REGEXP_REPLACE(specialty, '\\s*/\\s*', ' & '), ' & ', 1)) AS specialty_1,
+    NULLIF(TRIM(SPLIT_PART(REGEXP_REPLACE(specialty, '\\s*/\\s*', ' & '), ' & ', 2)), '') AS specialty_2,
+    
+FROM raw_lab_specimen_types
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.stg_lab_specimen_types"} */;
+[0m21:45:16.415246 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.235 seconds
+[0m21:45:16.418193 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dcedd30>]}
+[0m21:45:16.419109 [info ] [Thread-5 (]: 7 of 30 OK created sql view model dbt_dev_staging.stg_lab_events ............... [[32mSUCCESS 1[0m in 0.25s]
+[0m21:45:16.420082 [debug] [Thread-5 (]: Finished running node model.raqib_sf.stg_lab_events
+[0m21:45:16.420643 [debug] [Thread-5 (]: Began running node model.raqib_sf.stg_patients
+[0m21:45:16.421347 [info ] [Thread-5 (]: 9 of 30 START sql view model dbt_dev_staging.stg_patients ...................... [RUN]
+[0m21:45:16.421975 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.raqib_sf.stg_lab_events, now model.raqib_sf.stg_patients)
+[0m21:45:16.422466 [debug] [Thread-5 (]: Began compiling node model.raqib_sf.stg_patients
+[0m21:45:16.427118 [debug] [Thread-5 (]: Writing injected SQL for node "model.raqib_sf.stg_patients"
+[0m21:45:16.428096 [debug] [Thread-5 (]: Began executing node model.raqib_sf.stg_patients
+[0m21:45:16.431675 [debug] [Thread-5 (]: Writing runtime sql for node "model.raqib_sf.stg_patients"
+[0m21:45:16.434352 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.stg_patients"
+[0m21:45:16.434959 [debug] [Thread-5 (]: On model.raqib_sf.stg_patients: create or replace   view dev.dbt_dev_staging.stg_patients
+  
+  
+  
+  
+  as (
+    WITH raw_patients AS (
+    SELECT *
+    FROM raw.public.patients
+)
+
+SELECT 
+    patient_id,
+    ssn,
+    INITCAP(first_name || ' ' || last_name) AS full_name,
+    birthdate::DATE AS birthdate,
+    YEAR(birthdate::DATE) AS birth_year,
+    deathdate::DATE AS deathdate,
+    CASE 
+        WHEN deathdate IS NOT NULL THEN TRUE
+        ELSE FALSE
+    END AS is_dead,
+    blood_type,
+    CASE 
+        WHEN marital = 'S' THEN 'Single'
+        WHEN marital = 'M' THEN 'Married'
+        WHEN marital = 'D' THEN 'Divorced'
+        WHEN marital = 'W' THEN 'Widowed'
+    END AS marital_status,
+    INITCAP(REPLACE(race, '/', ' / ')) AS race,
+    CASE
+        WHEN UPPER(TRIM(ethnicity)) IN ('HISPANIC', 'HISPANIC OR LATINO')
+            THEN 'Hispanic or Latino'
+        WHEN UPPER(TRIM(ethnicity)) IN ('NONHISPANIC', 'NOT HISPANIC OR LATINO')
+            THEN 'Not Hispanic or Latino'
+        ELSE 'Unknown'
+    END AS ethnicity,
+    CASE 
+        WHEN gender = 'F' THEN 'Female'
+        WHEN gender = 'M' THEN 'Male'
+        ELSE 'Unknown'
+    END AS gender,
+    INITCAP(language) AS spoken_language,
+    INITCAP(TRIM(SPLIT_PART(birthplace, ',', 1))) AS birth_city,
+    CASE UPPER(TRIM(SPLIT_PART(birthplace, ',',2)))
+    WHEN 'CT' THEN 'Connecticut'
+    WHEN 'ME' THEN 'Maine'
+    WHEN 'MA' THEN 'Massachusetts'
+    WHEN 'NH' THEN 'New Hampshire'
+    WHEN 'RI' THEN 'Rhode Island'
+    WHEN 'VT' THEN 'Vermont'
+    WHEN 'NY' THEN 'New York'
+    END AS birth_state,
+    address,
+    INITCAP(city) AS city,
+    CASE UPPER(TRIM(country))
+        WHEN 'US' THEN 'United States'
+        WHEN 'UK' THEN 'United Kingdom' 
+    END AS country,
+    CAST(healthcare_expenses AS FLOAT) AS healthcare_expenses,
+    CAST(healthcare_coverage AS FLOAT) AS healthcare_coverage,
+    income AS income_usd
+  
+FROM raw_patients
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.stg_patients"} */;
+[0m21:45:16.476101 [debug] [Thread-2 (]: SQL status: SUCCESS 31411 in 0.978 seconds
+[0m21:45:16.478655 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ddb22d0>]}
+[0m21:45:16.479483 [info ] [Thread-2 (]: 1 of 30 OK created sql table model prod.dbt_dev_marts.dim_date ................. [[32mSUCCESS 31411[0m in 1.20s]
+[0m21:45:16.480373 [debug] [Thread-2 (]: Finished running node model.raqib_sf.dim_date
+[0m21:45:16.480912 [debug] [Thread-2 (]: Began running node model.raqib_sf.stg_prescriptions
+[0m21:45:16.481645 [info ] [Thread-2 (]: 10 of 30 START sql view model dbt_dev_staging.stg_prescriptions ................ [RUN]
+[0m21:45:16.482498 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.raqib_sf.dim_date, now model.raqib_sf.stg_prescriptions)
+[0m21:45:16.483058 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.stg_prescriptions
+[0m21:45:16.487421 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.stg_prescriptions"
+[0m21:45:16.488491 [debug] [Thread-2 (]: Began executing node model.raqib_sf.stg_prescriptions
+[0m21:45:16.492377 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.stg_prescriptions"
+[0m21:45:16.494058 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.stg_prescriptions"
+[0m21:45:16.494726 [debug] [Thread-2 (]: On model.raqib_sf.stg_prescriptions: create or replace   view dev.dbt_dev_staging.stg_prescriptions
+  
+  
+  
+  
+  as (
+    WITH raw_prescriptions AS (
+    SELECT *
+    FROM raw.public.prescriptions 
+)
+SELECT 
+    prescription_id,
+    patient_id,
+    admission_id,
+    provider_id,
+    drug_id,
+    CAST(prescribed_date AS TIMESTAMP) AS prescribed_date,
+    INITCAP(status) AS status
+FROM raw_prescriptions
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.stg_prescriptions"} */;
+[0m21:45:16.588381 [debug] [Thread-3 (]: SQL status: SUCCESS 86400 in 1.089 seconds
+[0m21:45:16.591280 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dcef830>]}
+[0m21:45:16.592106 [info ] [Thread-3 (]: 2 of 30 OK created sql table model prod.dbt_dev_marts.dim_time ................. [[32mSUCCESS 86400[0m in 1.31s]
+[0m21:45:16.593016 [debug] [Thread-3 (]: Finished running node model.raqib_sf.dim_time
+[0m21:45:16.593572 [debug] [Thread-3 (]: Began running node model.raqib_sf.stg_providers
+[0m21:45:16.594539 [info ] [Thread-3 (]: 11 of 30 START sql view model dbt_dev_staging.stg_providers .................... [RUN]
+[0m21:45:16.595481 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.raqib_sf.dim_time, now model.raqib_sf.stg_providers)
+[0m21:45:16.596225 [debug] [Thread-3 (]: Began compiling node model.raqib_sf.stg_providers
+[0m21:45:16.600692 [debug] [Thread-3 (]: Writing injected SQL for node "model.raqib_sf.stg_providers"
+[0m21:45:16.601622 [debug] [Thread-3 (]: Began executing node model.raqib_sf.stg_providers
+[0m21:45:16.605590 [debug] [Thread-3 (]: Writing runtime sql for node "model.raqib_sf.stg_providers"
+[0m21:45:16.608105 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.stg_providers"
+[0m21:45:16.608695 [debug] [Thread-3 (]: On model.raqib_sf.stg_providers: create or replace   view dev.dbt_dev_staging.stg_providers
+  
+  
+  
+  
+  as (
+    WITH raw_providers AS (
+    SELECT * 
+    FROM raw.public.providers
+)
+
+SELECT 
+    npi AS provider_id,
+    INITCAP(provider_first_name || ' ' || provider_last_name) AS provider_full_name,
+    INITCAP(provider_name_prefix)                             AS provider_name_prefix,
+    REGEXP_LIKE(provider_name_prefix, '\\.$')                 AS is_valid_prefix,
+    INITCAP(provider_address)                                 AS provider_address,
+    INITCAP(provider_city)                                    AS provider_city,
+    TRIM(provider_state_code)                                 AS provider_state_code,
+    TRIM(provider_country_code)                               AS provider_country_code,
+    provider_postal_code,
+    CASE 
+        WHEN provider_sex_code IN ('M','m') THEN 'Male'
+        WHEN provider_sex_code IN ('F','f') THEN 'Female'
+        ELSE 'Unknown'
+    END                                                       AS provider_gender,
+    provider_telephone_number,
+    CAST(provider_enumeration_date AS DATE)                   AS provider_enumeration_date,
+    CASE 
+        WHEN CAST(provider_enumeration_date AS DATE) IS NOT NULL THEN TRUE
+        ELSE FALSE
+    END                                                       AS is_valid_enumeration_date,
+    CAST(provider_join_date AS DATE)                          AS provider_join_date,
+    CASE 
+        WHEN CAST(provider_join_date AS DATE) IS NOT NULL THEN TRUE
+        ELSE FALSE
+    END                                                       AS is_valid_join_date,
+    provider_specialty
+
+FROM raw_providers
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.stg_providers"} */;
+[0m21:45:16.650342 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.255 seconds
+[0m21:45:16.653500 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ddb3d10>]}
+[0m21:45:16.654355 [info ] [Thread-4 (]: 8 of 30 OK created sql view model dbt_dev_staging.stg_lab_specimen_types ....... [[32mSUCCESS 1[0m in 0.27s]
+[0m21:45:16.655275 [debug] [Thread-4 (]: Finished running node model.raqib_sf.stg_lab_specimen_types
+[0m21:45:16.655861 [debug] [Thread-4 (]: Began running node model.raqib_sf.stg_services
+[0m21:45:16.656778 [info ] [Thread-4 (]: 12 of 30 START sql view model dbt_dev_staging.stg_services ..................... [RUN]
+[0m21:45:16.657625 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.raqib_sf.stg_lab_specimen_types, now model.raqib_sf.stg_services)
+[0m21:45:16.658298 [debug] [Thread-4 (]: Began compiling node model.raqib_sf.stg_services
+[0m21:45:16.663921 [debug] [Thread-4 (]: Writing injected SQL for node "model.raqib_sf.stg_services"
+[0m21:45:16.665565 [debug] [Thread-4 (]: Began executing node model.raqib_sf.stg_services
+[0m21:45:16.670092 [debug] [Thread-4 (]: Writing runtime sql for node "model.raqib_sf.stg_services"
+[0m21:45:16.672033 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.stg_services"
+[0m21:45:16.672613 [debug] [Thread-4 (]: On model.raqib_sf.stg_services: create or replace   view dev.dbt_dev_staging.stg_services
+  
+  
+  
+  
+  as (
+    WITH raw_services AS (
+    SELECT *
+    FROM raw.public.services
+)
+
+SELECT 
+    patient_id,
+    admission_id,
+    service_id,
+    REGEXP_LIKE(service_id, '^SVC[0-9]+$') AS is_valid_service_id,
+    CASE 
+        WHEN CONTAINS(service_name, '–') 
+        THEN TRIM(SPLIT_PART(service_name, '–', 1))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(SPLIT_PART(service_name, '(', 1))
+        ELSE service_name 
+    END AS service_name,
+
+    CASE 
+        WHEN CONTAINS(service_name, '–')
+        THEN TRIM(SPLIT_PART(service_name, '–', 2))
+        WHEN CONTAINS(service_name, '(')
+        THEN TRIM(REPLACE(SPLIT_PART(service_name, '(', 2), ')', ''))
+        ELSE NULL
+    END AS service_sub_type,
+    INITCAP(category) AS category,
+    TRY_CAST(cost AS FLOAT) AS cost,
+    duration AS service_duration_in_minutes,
+
+    ROW_NUMBER() OVER (
+        PARTITION BY service_id, patient_id, admission_id
+        ORDER BY service_id
+    ) AS rn
+    
+FROM raw_services
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.stg_services"} */;
+[0m21:45:16.692964 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.257 seconds
+[0m21:45:16.696208 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ddb2210>]}
+[0m21:45:16.696970 [info ] [Thread-5 (]: 9 of 30 OK created sql view model dbt_dev_staging.stg_patients ................. [[32mSUCCESS 1[0m in 0.27s]
+[0m21:45:16.697948 [debug] [Thread-5 (]: Finished running node model.raqib_sf.stg_patients
+[0m21:45:16.698496 [debug] [Thread-5 (]: Began running node model.raqib_sf.stg_transfers
+[0m21:45:16.699226 [info ] [Thread-5 (]: 13 of 30 START sql view model dbt_dev_staging.stg_transfers .................... [RUN]
+[0m21:45:16.699866 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.raqib_sf.stg_patients, now model.raqib_sf.stg_transfers)
+[0m21:45:16.700363 [debug] [Thread-5 (]: Began compiling node model.raqib_sf.stg_transfers
+[0m21:45:16.704593 [debug] [Thread-5 (]: Writing injected SQL for node "model.raqib_sf.stg_transfers"
+[0m21:45:16.705583 [debug] [Thread-5 (]: Began executing node model.raqib_sf.stg_transfers
+[0m21:45:16.709946 [debug] [Thread-5 (]: Writing runtime sql for node "model.raqib_sf.stg_transfers"
+[0m21:45:16.712154 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.stg_transfers"
+[0m21:45:16.712995 [debug] [Thread-5 (]: On model.raqib_sf.stg_transfers: create or replace   view dev.dbt_dev_staging.stg_transfers
+  
+  
+  
+  
+  as (
+    WITH raw_transfers AS (
+    SELECT *
+    FROM raw.public.transfers
+)
+
+SELECT 
+    transfer_id,
+    patient_id,
+    admission_id,
+    from_department,
+    to_department,
+    (from_department = to_department) AS is_same_department_transfer,
+    CAST(transfer_datetime AS TIMESTAMP) AS transfer_datetime,
+    transfer_reason
+FROM raw_transfers
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.stg_transfers"} */;
+[0m21:45:16.755496 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.260 seconds
+[0m21:45:16.759210 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dced010>]}
+[0m21:45:16.763489 [info ] [Thread-2 (]: 10 of 30 OK created sql view model dbt_dev_staging.stg_prescriptions ........... [[32mSUCCESS 1[0m in 0.28s]
+[0m21:45:16.767543 [debug] [Thread-2 (]: Finished running node model.raqib_sf.stg_prescriptions
+[0m21:45:16.768509 [debug] [Thread-2 (]: Began running node model.raqib_sf.dim_admission_type
+[0m21:45:16.769413 [info ] [Thread-2 (]: 14 of 30 START sql incremental model prod.dbt_dev_marts.dim_admission_type ..... [RUN]
+[0m21:45:16.770894 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.raqib_sf.stg_prescriptions, now model.raqib_sf.dim_admission_type)
+[0m21:45:16.771927 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.dim_admission_type
+[0m21:45:16.788133 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.dim_admission_type"
+[0m21:45:16.789059 [debug] [Thread-2 (]: Began executing node model.raqib_sf.dim_admission_type
+[0m21:45:16.874596 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.265 seconds
+[0m21:45:16.883063 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ddb37d0>]}
+[0m21:45:16.888329 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.dim_admission_type"
+[0m21:45:16.889254 [info ] [Thread-3 (]: 11 of 30 OK created sql view model dbt_dev_staging.stg_providers ............... [[32mSUCCESS 1[0m in 0.29s]
+[0m21:45:16.889923 [debug] [Thread-2 (]: On model.raqib_sf.dim_admission_type: create or replace  temporary view prod.dbt_dev_marts.dim_admission_type__dbt_tmp
+  
+  
+  
+  
+  as (
+    with dim_admission_type as (
+    select distinct admission_type as admission_type from dev.dbt_dev_staging.stg_admissions
+)
+
+select 
+md5(cast(coalesce(cast(admission_type as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as admission_type_Key,
+*
+from dim_admission_type
+
+
+    where md5(cast(coalesce(cast(admission_type as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) not in (select admission_type_Key from prod.dbt_dev_marts.dim_admission_type)
+
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_admission_type"} */;
+[0m21:45:16.891436 [debug] [Thread-3 (]: Finished running node model.raqib_sf.stg_providers
+[0m21:45:16.892516 [debug] [Thread-3 (]: Began running node model.raqib_sf.dim_location
+[0m21:45:16.893152 [info ] [Thread-3 (]: 15 of 30 START sql incremental model prod.dbt_dev_marts.dim_location ........... [RUN]
+[0m21:45:16.894392 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.raqib_sf.stg_providers, now model.raqib_sf.dim_location)
+[0m21:45:16.895234 [debug] [Thread-3 (]: Began compiling node model.raqib_sf.dim_location
+[0m21:45:16.908979 [debug] [Thread-3 (]: Writing injected SQL for node "model.raqib_sf.dim_location"
+[0m21:45:16.910855 [debug] [Thread-3 (]: Began executing node model.raqib_sf.dim_location
+[0m21:45:16.919331 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.dim_location"
+[0m21:45:16.920265 [debug] [Thread-3 (]: On model.raqib_sf.dim_location: create or replace  temporary view prod.dbt_dev_marts.dim_location__dbt_tmp
+  
+  
+  
+  
+  as (
+    with dim_location as (
+    select distinct admission_location as Location_Name from dev.dbt_dev_staging.stg_admissions
+    union
+    select distinct discharge_location from dev.dbt_dev_staging.stg_admissions
+)
+
+select 
+md5(cast(coalesce(cast(Location_Name as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as Location_Key,
+*
+from dim_location
+
+
+    where md5(cast(coalesce(cast(Location_Name as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) not in (select Location_Key from prod.dbt_dev_marts.dim_location)
+
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_location"} */;
+[0m21:45:16.932112 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.259 seconds
+[0m21:45:16.936520 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11209c710>]}
+[0m21:45:16.937362 [info ] [Thread-4 (]: 12 of 30 OK created sql view model dbt_dev_staging.stg_services ................ [[32mSUCCESS 1[0m in 0.28s]
+[0m21:45:16.938320 [debug] [Thread-4 (]: Finished running node model.raqib_sf.stg_services
+[0m21:45:16.938875 [debug] [Thread-4 (]: Began running node model.raqib_sf.dim_diagnosis
+[0m21:45:16.939555 [info ] [Thread-4 (]: 16 of 30 START sql incremental model prod.dbt_dev_marts.dim_diagnosis .......... [RUN]
+[0m21:45:16.940349 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.raqib_sf.stg_services, now model.raqib_sf.dim_diagnosis)
+[0m21:45:16.940875 [debug] [Thread-4 (]: Began compiling node model.raqib_sf.dim_diagnosis
+[0m21:45:16.948915 [debug] [Thread-4 (]: Writing injected SQL for node "model.raqib_sf.dim_diagnosis"
+[0m21:45:16.950341 [debug] [Thread-4 (]: Began executing node model.raqib_sf.dim_diagnosis
+[0m21:45:16.955481 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_diagnosis"
+[0m21:45:16.956053 [debug] [Thread-4 (]: On model.raqib_sf.dim_diagnosis: create or replace  temporary view prod.dbt_dev_marts.dim_diagnosis__dbt_tmp
+  
+  
+  
+  
+  as (
+    with dim_diagnosis as (
+    select * from dev.dbt_dev_staging.stg_diagnosis
+)
+
+select 
+    md5(cast(coalesce(cast(diagnosis_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(domain as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(sub_domain_key as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as diagnosis_key,
+    diagnosis_id,
+    description,
+    description_type,
+    sub_domain_key,
+    domain,
+    sub_domain
+from dim_diagnosis
+
+
+    where md5(cast(coalesce(cast(diagnosis_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(domain as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(sub_domain_key as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) not in (select diagnosis_key from prod.dbt_dev_marts.dim_diagnosis)
+
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_diagnosis"} */;
+[0m21:45:16.963264 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.249 seconds
+[0m21:45:16.968296 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11209dfd0>]}
+[0m21:45:16.969354 [info ] [Thread-5 (]: 13 of 30 OK created sql view model dbt_dev_staging.stg_transfers ............... [[32mSUCCESS 1[0m in 0.27s]
+[0m21:45:16.970409 [debug] [Thread-5 (]: Finished running node model.raqib_sf.stg_transfers
+[0m21:45:16.971305 [debug] [Thread-5 (]: Began running node model.raqib_sf.dim_lab_types
+[0m21:45:16.972166 [info ] [Thread-5 (]: 17 of 30 START sql incremental model prod.dbt_dev_marts.dim_lab_types .......... [RUN]
+[0m21:45:16.972905 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.raqib_sf.stg_transfers, now model.raqib_sf.dim_lab_types)
+[0m21:45:16.973547 [debug] [Thread-5 (]: Began compiling node model.raqib_sf.dim_lab_types
+[0m21:45:16.982962 [debug] [Thread-5 (]: Writing injected SQL for node "model.raqib_sf.dim_lab_types"
+[0m21:45:16.983906 [debug] [Thread-5 (]: Began executing node model.raqib_sf.dim_lab_types
+[0m21:45:16.990557 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_lab_types"
+[0m21:45:16.991141 [debug] [Thread-5 (]: On model.raqib_sf.dim_lab_types: create or replace  temporary view prod.dbt_dev_marts.dim_lab_types__dbt_tmp
+  
+  
+  
+  
+  as (
+    WITH stg_lab_specimen_types AS (
+    SELECT *
+    FROM dev.dbt_dev_staging.stg_lab_specimen_types
+)
+
+SELECT
+    md5(cast(coalesce(cast(item_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(label as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(category_type as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS specimen_type_key,
+    item_id,
+    label,
+    label_sub_type,
+    fluid,
+    category_type,
+    category_sub_type,
+    sub_domain_key,
+    specialty_1,
+    specialty_2
+FROM stg_lab_specimen_types
+
+
+    WHERE md5(cast(coalesce(cast(item_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(label as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(category_type as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) NOT IN (SELECT specimen_type_key FROM prod.dbt_dev_marts.dim_lab_types)
+
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_lab_types"} */;
+[0m21:45:17.198581 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.277 seconds
+[0m21:45:17.211828 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.dim_location"
+[0m21:45:17.213347 [debug] [Thread-3 (]: On model.raqib_sf.dim_location: describe table prod.dbt_dev_marts.dim_location__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_location"} */
+[0m21:45:17.214453 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.322 seconds
+[0m21:45:17.215554 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.259 seconds
+[0m21:45:17.219695 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.dim_admission_type"
+[0m21:45:17.223412 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_diagnosis"
+[0m21:45:17.224038 [debug] [Thread-2 (]: On model.raqib_sf.dim_admission_type: describe table prod.dbt_dev_marts.dim_admission_type__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_admission_type"} */
+[0m21:45:17.225414 [debug] [Thread-4 (]: On model.raqib_sf.dim_diagnosis: describe table prod.dbt_dev_marts.dim_diagnosis__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_diagnosis"} */
+[0m21:45:17.275403 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.284 seconds
+[0m21:45:17.279673 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_lab_types"
+[0m21:45:17.280391 [debug] [Thread-5 (]: On model.raqib_sf.dim_lab_types: describe table prod.dbt_dev_marts.dim_lab_types__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_lab_types"} */
+[0m21:45:17.332910 [debug] [Thread-3 (]: SQL status: SUCCESS 2 in 0.117 seconds
+[0m21:45:17.346049 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.dim_location"
+[0m21:45:17.347069 [debug] [Thread-3 (]: On model.raqib_sf.dim_location: describe table prod.dbt_dev_marts.dim_location
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_location"} */
+[0m21:45:17.351354 [debug] [Thread-4 (]: SQL status: SUCCESS 7 in 0.124 seconds
+[0m21:45:17.363708 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_diagnosis"
+[0m21:45:17.367073 [debug] [Thread-4 (]: On model.raqib_sf.dim_diagnosis: describe table prod.dbt_dev_marts.dim_diagnosis
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_diagnosis"} */
+[0m21:45:17.373199 [debug] [Thread-2 (]: SQL status: SUCCESS 2 in 0.147 seconds
+[0m21:45:17.381384 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.dim_admission_type"
+[0m21:45:17.386285 [debug] [Thread-2 (]: On model.raqib_sf.dim_admission_type: describe table prod.dbt_dev_marts.dim_admission_type
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_admission_type"} */
+[0m21:45:17.398348 [debug] [Thread-5 (]: SQL status: SUCCESS 10 in 0.117 seconds
+[0m21:45:17.409166 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_lab_types"
+[0m21:45:17.410110 [debug] [Thread-5 (]: On model.raqib_sf.dim_lab_types: describe table prod.dbt_dev_marts.dim_lab_types
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_lab_types"} */
+[0m21:45:17.480281 [debug] [Thread-2 (]: SQL status: SUCCESS 2 in 0.093 seconds
+[0m21:45:17.490877 [debug] [Thread-4 (]: SQL status: SUCCESS 7 in 0.123 seconds
+[0m21:45:17.499085 [debug] [Thread-3 (]: SQL status: SUCCESS 2 in 0.151 seconds
+[0m21:45:17.553540 [debug] [Thread-5 (]: SQL status: SUCCESS 10 in 0.142 seconds
+[0m21:45:17.589458 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.dim_admission_type"
+[0m21:45:17.594888 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_diagnosis"
+[0m21:45:17.606497 [debug] [Thread-2 (]: On model.raqib_sf.dim_admission_type: describe table prod.dbt_dev_marts.dim_admission_type__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_admission_type"} */
+[0m21:45:17.611882 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.dim_location"
+[0m21:45:17.625258 [debug] [Thread-4 (]: On model.raqib_sf.dim_diagnosis: describe table prod.dbt_dev_marts.dim_diagnosis__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_diagnosis"} */
+[0m21:45:17.640717 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_lab_types"
+[0m21:45:17.644662 [debug] [Thread-3 (]: On model.raqib_sf.dim_location: describe table prod.dbt_dev_marts.dim_location__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_location"} */
+[0m21:45:17.648060 [debug] [Thread-5 (]: On model.raqib_sf.dim_lab_types: describe table prod.dbt_dev_marts.dim_lab_types__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_lab_types"} */
+[0m21:45:17.746712 [debug] [Thread-3 (]: SQL status: SUCCESS 2 in 0.096 seconds
+[0m21:45:17.757710 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.dim_location"
+[0m21:45:17.759743 [debug] [Thread-3 (]: On model.raqib_sf.dim_location: describe table "PROD"."DBT_DEV_MARTS"."DIM_LOCATION"
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_location"} */
+[0m21:45:17.762481 [debug] [Thread-5 (]: SQL status: SUCCESS 10 in 0.111 seconds
+[0m21:45:17.764772 [debug] [Thread-2 (]: SQL status: SUCCESS 2 in 0.123 seconds
+[0m21:45:17.775950 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_lab_types"
+[0m21:45:17.787224 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.dim_admission_type"
+[0m21:45:17.789353 [debug] [Thread-4 (]: SQL status: SUCCESS 7 in 0.143 seconds
+[0m21:45:17.790483 [debug] [Thread-5 (]: On model.raqib_sf.dim_lab_types: describe table "PROD"."DBT_DEV_MARTS"."DIM_LAB_TYPES"
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_lab_types"} */
+[0m21:45:17.791975 [debug] [Thread-2 (]: On model.raqib_sf.dim_admission_type: describe table "PROD"."DBT_DEV_MARTS"."DIM_ADMISSION_TYPE"
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_admission_type"} */
+[0m21:45:17.803279 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_diagnosis"
+[0m21:45:17.807927 [debug] [Thread-4 (]: On model.raqib_sf.dim_diagnosis: describe table "PROD"."DBT_DEV_MARTS"."DIM_DIAGNOSIS"
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_diagnosis"} */
+[0m21:45:17.893457 [debug] [Thread-3 (]: SQL status: SUCCESS 2 in 0.133 seconds
+[0m21:45:17.915692 [debug] [Thread-4 (]: SQL status: SUCCESS 7 in 0.106 seconds
+[0m21:45:17.923154 [debug] [Thread-5 (]: SQL status: SUCCESS 10 in 0.119 seconds
+[0m21:45:17.971977 [debug] [Thread-4 (]: 
+    In "PROD"."DBT_DEV_MARTS"."DIM_DIAGNOSIS":
+        Schema changed: True
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: [{'column_name': 'DIAGNOSIS_ID', 'new_type': 'character varying(16777216)'}]
+  
+[0m21:45:17.969490 [debug] [Thread-3 (]: 
+    In "PROD"."DBT_DEV_MARTS"."DIM_LOCATION":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m21:45:17.975721 [debug] [Thread-5 (]: 
+    In "PROD"."DBT_DEV_MARTS"."DIM_LAB_TYPES":
+        Schema changed: True
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: [{'column_name': 'ITEM_ID', 'new_type': 'character varying(16777216)'}]
+  
+[0m21:45:17.982703 [debug] [Thread-2 (]: SQL status: SUCCESS 2 in 0.175 seconds
+[0m21:45:18.026887 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_lab_types"
+[0m21:45:18.028391 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_diagnosis"
+[0m21:45:18.051327 [debug] [Thread-2 (]: 
+    In "PROD"."DBT_DEV_MARTS"."DIM_ADMISSION_TYPE":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m21:45:18.060171 [debug] [Thread-3 (]: Writing runtime sql for node "model.raqib_sf.dim_location"
+[0m21:45:18.060827 [debug] [Thread-5 (]: On model.raqib_sf.dim_lab_types: alter  table "PROD"."DBT_DEV_MARTS"."DIM_LAB_TYPES" alter "ITEM_ID" set data type character varying(16777216)
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_lab_types"} */;
+[0m21:45:18.062195 [debug] [Thread-4 (]: On model.raqib_sf.dim_diagnosis: alter  table "PROD"."DBT_DEV_MARTS"."DIM_DIAGNOSIS" alter "DIAGNOSIS_ID" set data type character varying(16777216)
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_diagnosis"} */;
+[0m21:45:18.065018 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.dim_admission_type"
+[0m21:45:18.070140 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.dim_location"
+[0m21:45:18.072879 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.dim_admission_type"
+[0m21:45:18.074715 [debug] [Thread-3 (]: On model.raqib_sf.dim_location: -- back compat for old kwarg name
+  
+  begin
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_location"} */;
+[0m21:45:18.077007 [debug] [Thread-2 (]: On model.raqib_sf.dim_admission_type: -- back compat for old kwarg name
+  
+  begin
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_admission_type"} */;
+[0m21:45:18.184671 [debug] [Thread-4 (]: Snowflake adapter: Snowflake query id: 01c4da05-0001-cfa7-0002-8ab6000caec2
+[0m21:45:18.186071 [debug] [Thread-4 (]: Snowflake adapter: Snowflake error: 002108 (22000): SQL compilation error: cannot change column DIAGNOSIS_ID from type NUMBER(38,0) to VARCHAR(16777216)
+
+[0m21:45:18.193976 [debug] [Thread-5 (]: Snowflake adapter: Snowflake query id: 01c4da05-0001-cff9-0002-8ab6000ccbc2
+[0m21:45:18.195781 [debug] [Thread-5 (]: Snowflake adapter: Snowflake error: 002108 (22000): SQL compilation error: cannot change column ITEM_ID from type NUMBER(38,0) to VARCHAR(16777216)
+
+[0m21:45:18.198252 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.117 seconds
+[0m21:45:18.208037 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.127 seconds
+[0m21:45:18.210206 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.dim_admission_type"
+[0m21:45:18.211669 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.dim_location"
+[0m21:45:18.213251 [debug] [Thread-2 (]: On model.raqib_sf.dim_admission_type: insert into prod.dbt_dev_marts.dim_admission_type ("ADMISSION_TYPE_KEY", "ADMISSION_TYPE")
+        (
+            select "ADMISSION_TYPE_KEY", "ADMISSION_TYPE"
+            from prod.dbt_dev_marts.dim_admission_type__dbt_tmp
+        )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_admission_type"} */;
+[0m21:45:18.215976 [debug] [Thread-3 (]: On model.raqib_sf.dim_location: insert into prod.dbt_dev_marts.dim_location ("LOCATION_KEY", "LOCATION_NAME")
+        (
+            select "LOCATION_KEY", "LOCATION_NAME"
+            from prod.dbt_dev_marts.dim_location__dbt_tmp
+        )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_location"} */;
+[0m21:45:18.243218 [debug] [Thread-5 (]: Database Error in model dim_lab_types (models/marts/dim/dim_lab_types.sql)
+  002108 (22000): SQL compilation error: cannot change column ITEM_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  
+[0m21:45:18.264464 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10deae150>]}
+[0m21:45:18.265785 [debug] [Thread-4 (]: Database Error in model dim_diagnosis (models/marts/dim/dim_diagnosis.sql)
+  002108 (22000): SQL compilation error: cannot change column DIAGNOSIS_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  
+[0m21:45:18.267880 [error] [Thread-5 (]: 17 of 30 ERROR creating sql incremental model prod.dbt_dev_marts.dim_lab_types . [[31mERROR[0m in 1.29s]
+[0m21:45:18.270573 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11209f3b0>]}
+[0m21:45:18.272521 [debug] [Thread-5 (]: Finished running node model.raqib_sf.dim_lab_types
+[0m21:45:18.275771 [error] [Thread-4 (]: 16 of 30 ERROR creating sql incremental model prod.dbt_dev_marts.dim_diagnosis . [[31mERROR[0m in 1.33s]
+[0m21:45:18.278244 [debug] [Thread-5 (]: Began running node model.raqib_sf.int_lab_analysis
+[0m21:45:18.280629 [debug] [Thread-8 (]: Marking all children of 'model.raqib_sf.dim_lab_types' to be skipped because of status 'error'.  Reason: Database Error in model dim_lab_types (models/marts/dim/dim_lab_types.sql)
+  002108 (22000): SQL compilation error: cannot change column ITEM_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  .
+[0m21:45:18.285693 [info ] [Thread-5 (]: 18 of 30 START sql view model dbt_dev.int_lab_analysis ......................... [RUN]
+[0m21:45:18.288025 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.raqib_sf.dim_lab_types, now model.raqib_sf.int_lab_analysis)
+[0m21:45:18.283146 [debug] [Thread-4 (]: Finished running node model.raqib_sf.dim_diagnosis
+[0m21:45:18.289117 [debug] [Thread-5 (]: Began compiling node model.raqib_sf.int_lab_analysis
+[0m21:45:18.290825 [debug] [Thread-4 (]: Began running node model.raqib_sf.dim_patients
+[0m21:45:18.292236 [debug] [Thread-8 (]: Marking all children of 'model.raqib_sf.dim_diagnosis' to be skipped because of status 'error'.  Reason: Database Error in model dim_diagnosis (models/marts/dim/dim_diagnosis.sql)
+  002108 (22000): SQL compilation error: cannot change column DIAGNOSIS_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  .
+[0m21:45:18.299010 [info ] [Thread-4 (]: 19 of 30 START sql incremental model prod.dbt_dev_marts.dim_patients ........... [RUN]
+[0m21:45:18.304518 [debug] [Thread-5 (]: Writing injected SQL for node "model.raqib_sf.int_lab_analysis"
+[0m21:45:18.306086 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.raqib_sf.dim_diagnosis, now model.raqib_sf.dim_patients)
+[0m21:45:18.307533 [debug] [Thread-4 (]: Began compiling node model.raqib_sf.dim_patients
+[0m21:45:18.321715 [debug] [Thread-4 (]: Writing injected SQL for node "model.raqib_sf.dim_patients"
+[0m21:45:18.323208 [debug] [Thread-5 (]: Began executing node model.raqib_sf.int_lab_analysis
+[0m21:45:18.329821 [debug] [Thread-4 (]: Began executing node model.raqib_sf.dim_patients
+[0m21:45:18.337178 [debug] [Thread-5 (]: Writing runtime sql for node "model.raqib_sf.int_lab_analysis"
+[0m21:45:18.342207 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_patients"
+[0m21:45:18.343511 [debug] [Thread-4 (]: On model.raqib_sf.dim_patients: create or replace  temporary view prod.dbt_dev_marts.dim_patients__dbt_tmp
+  
+  
+  
+  
+  as (
+    
+
+WITH patients AS (
+    SELECT * FROM dev.dbt_dev_staging.stg_patients
+),
+emergency_contacts AS (
+    SELECT * FROM dev.dbt_dev_staging.stg_emergency_contacts
+)
+
+SELECT
+    md5(cast(coalesce(cast(p.patient_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS patient_key,
+    p.patient_id,
+    p.ssn,
+    p.full_name,
+    p.birthdate,
+    p.birth_year,
+    p.deathdate,
+    p.is_dead,
+    p.blood_type,
+    p.marital_status,
+    p.Race,
+    p.ethnicity,
+    p.spoken_language,
+    p.city,
+    ec.emergency_contact_name,
+    ec.emergency_contact_phone_number
+FROM patients p
+LEFT JOIN emergency_contacts ec 
+    ON p.patient_id = ec.patient_id
+
+
+    
+        WHERE p.patient_id NOT IN (SELECT patient_id FROM prod.dbt_dev_marts.dim_patients)
+        
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_patients"} */;
+[0m21:45:18.348776 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.int_lab_analysis"
+[0m21:45:18.349778 [debug] [Thread-5 (]: On model.raqib_sf.int_lab_analysis: create or replace   view dev.dbt_dev.int_lab_analysis
+  
+  
+  
+  
+  as (
+    WITH lab_events AS (
+    SELECT *
+    FROM dev.dbt_dev_staging.stg_lab_events
+),
+
+specimen_types AS (
+    SELECT *
+    FROM dev.dbt_dev_staging.stg_lab_specimen_types
+)
+
+SELECT
+    md5(cast(coalesce(cast(lab_event_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS lab_event_key,
+    le.lab_event_id,
+    le.patient_id,
+    le.admission_id,
+    le.provider_id,
+    le.specimen_id,
+    le.item_id,
+    le.lab_done_at,
+    le.lab_stored_at,
+
+    st.label AS test_name,
+    st.label_sub_type,
+    st.fluid,
+    st.category_type,
+    st.category_sub_type,
+    st.specialty_1,
+    st.specialty_2,
+
+    le.result_value,
+    le.measurement_unit,
+
+    le.range_lower,
+    le.range_higher,
+
+    le.abnormal_flag,
+
+    le.cost
+
+FROM lab_events le
+
+LEFT JOIN specimen_types st
+    ON le.item_id = st.item_id
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.int_lab_analysis"} */;
+[0m21:45:18.692716 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.342 seconds
+[0m21:45:18.698410 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10de5f590>]}
+[0m21:45:18.700111 [info ] [Thread-5 (]: 18 of 30 OK created sql view model dbt_dev.int_lab_analysis .................... [[32mSUCCESS 1[0m in 0.41s]
+[0m21:45:18.701905 [debug] [Thread-5 (]: Finished running node model.raqib_sf.int_lab_analysis
+[0m21:45:18.702979 [debug] [Thread-5 (]: Began running node model.raqib_sf.dim_provider
+[0m21:45:18.704216 [info ] [Thread-5 (]: 20 of 30 START sql incremental model prod.dbt_dev_marts.dim_provider ........... [RUN]
+[0m21:45:18.705763 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.raqib_sf.int_lab_analysis, now model.raqib_sf.dim_provider)
+[0m21:45:18.707436 [debug] [Thread-5 (]: Began compiling node model.raqib_sf.dim_provider
+[0m21:45:18.720791 [debug] [Thread-5 (]: Writing injected SQL for node "model.raqib_sf.dim_provider"
+[0m21:45:18.722341 [debug] [Thread-5 (]: Began executing node model.raqib_sf.dim_provider
+[0m21:45:18.730260 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_provider"
+[0m21:45:18.730942 [debug] [Thread-5 (]: On model.raqib_sf.dim_provider: create or replace  temporary view prod.dbt_dev_marts.dim_provider__dbt_tmp
+  
+  
+  
+  
+  as (
+    
+
+WITH stg_providers AS (
+    SELECT *
+    FROM dev.dbt_dev_staging.stg_providers
+)
+
+SELECT 
+    md5(cast(coalesce(cast(provider_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(provider_full_name as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(provider_specialty as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS provider_key,
+    *
+FROM stg_providers
+
+    
+        WHERE md5(cast(coalesce(cast(provider_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(provider_full_name as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(provider_specialty as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) NOT IN (SELECT provider_key FROM prod.dbt_dev_marts.dim_provider)
+    
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_provider"} */;
+[0m21:45:18.754161 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.409 seconds
+[0m21:45:18.763040 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_patients"
+[0m21:45:18.763995 [debug] [Thread-4 (]: On model.raqib_sf.dim_patients: describe table prod.dbt_dev_marts.dim_patients__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_patients"} */
+[0m21:45:18.868569 [debug] [Thread-4 (]: SQL status: SUCCESS 16 in 0.103 seconds
+[0m21:45:18.880419 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_patients"
+[0m21:45:18.881809 [debug] [Thread-4 (]: On model.raqib_sf.dim_patients: describe table prod.dbt_dev_marts.dim_patients
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_patients"} */
+[0m21:45:18.972857 [debug] [Thread-2 (]: SQL status: SUCCESS 0 in 0.755 seconds
+[0m21:45:18.974417 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.dim_admission_type"
+[0m21:45:18.975203 [debug] [Thread-2 (]: On model.raqib_sf.dim_admission_type: COMMIT
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_admission_type"} */
+[0m21:45:18.987193 [debug] [Thread-4 (]: SQL status: SUCCESS 16 in 0.104 seconds
+[0m21:45:19.001107 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_patients"
+[0m21:45:19.002362 [debug] [Thread-4 (]: On model.raqib_sf.dim_patients: describe table prod.dbt_dev_marts.dim_patients__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_patients"} */
+[0m21:45:19.007418 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.275 seconds
+[0m21:45:19.015761 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_provider"
+[0m21:45:19.017044 [debug] [Thread-5 (]: On model.raqib_sf.dim_provider: describe table prod.dbt_dev_marts.dim_provider__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_provider"} */
+[0m21:45:19.105993 [debug] [Thread-4 (]: SQL status: SUCCESS 16 in 0.102 seconds
+[0m21:45:19.118989 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_patients"
+[0m21:45:19.119834 [debug] [Thread-4 (]: On model.raqib_sf.dim_patients: describe table "PROD"."DBT_DEV_MARTS"."DIM_PATIENTS"
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_patients"} */
+[0m21:45:19.135076 [debug] [Thread-5 (]: SQL status: SUCCESS 17 in 0.117 seconds
+[0m21:45:19.155420 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_provider"
+[0m21:45:19.156470 [debug] [Thread-5 (]: On model.raqib_sf.dim_provider: describe table prod.dbt_dev_marts.dim_provider
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_provider"} */
+[0m21:45:19.183913 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.208 seconds
+[0m21:45:19.204392 [debug] [Thread-2 (]: Applying DROP to: prod.dbt_dev_marts.dim_admission_type__dbt_tmp
+[0m21:45:19.218565 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.dim_admission_type"
+[0m21:45:19.220818 [debug] [Thread-2 (]: On model.raqib_sf.dim_admission_type: drop view if exists prod.dbt_dev_marts.dim_admission_type__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_admission_type"} */
+[0m21:45:19.223817 [debug] [Thread-4 (]: SQL status: SUCCESS 16 in 0.103 seconds
+[0m21:45:19.235222 [debug] [Thread-4 (]: 
+    In "PROD"."DBT_DEV_MARTS"."DIM_PATIENTS":
+        Schema changed: True
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: [{'column_name': 'PATIENT_ID', 'new_type': 'character varying(16777216)'}]
+  
+[0m21:45:19.238886 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_patients"
+[0m21:45:19.240188 [debug] [Thread-4 (]: On model.raqib_sf.dim_patients: alter  table "PROD"."DBT_DEV_MARTS"."DIM_PATIENTS" alter "PATIENT_ID" set data type character varying(16777216)
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_patients"} */;
+[0m21:45:19.244902 [debug] [Thread-3 (]: SQL status: SUCCESS 0 in 0.999 seconds
+[0m21:45:19.247161 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.dim_location"
+[0m21:45:19.249264 [debug] [Thread-3 (]: On model.raqib_sf.dim_location: COMMIT
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_location"} */
+[0m21:45:19.272503 [debug] [Thread-5 (]: SQL status: SUCCESS 17 in 0.115 seconds
+[0m21:45:19.287294 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_provider"
+[0m21:45:19.288585 [debug] [Thread-5 (]: On model.raqib_sf.dim_provider: describe table prod.dbt_dev_marts.dim_provider__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_provider"} */
+[0m21:45:19.343982 [debug] [Thread-4 (]: Snowflake adapter: Snowflake query id: 01c4da05-0001-cfa7-0002-8ab6000caee6
+[0m21:45:19.345370 [debug] [Thread-4 (]: Snowflake adapter: Snowflake error: 002108 (22000): SQL compilation error: cannot change column PATIENT_ID from type NUMBER(38,0) to VARCHAR(16777216)
+
+[0m21:45:19.374276 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.152 seconds
+[0m21:45:19.378546 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112197c50>]}
+[0m21:45:19.383390 [debug] [Thread-4 (]: Database Error in model dim_patients (models/marts/dim/dim_patients.sql)
+  002108 (22000): SQL compilation error: cannot change column PATIENT_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  
+[0m21:45:19.379572 [info ] [Thread-2 (]: 14 of 30 OK created sql incremental model prod.dbt_dev_marts.dim_admission_type  [[32mSUCCESS 0[0m in 2.61s]
+[0m21:45:19.385189 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10744e390>]}
+[0m21:45:19.387323 [debug] [Thread-2 (]: Finished running node model.raqib_sf.dim_admission_type
+[0m21:45:19.390275 [debug] [Thread-2 (]: Began running node model.raqib_sf.int_encounters
+[0m21:45:19.389150 [error] [Thread-4 (]: 19 of 30 ERROR creating sql incremental model prod.dbt_dev_marts.dim_patients .. [[31mERROR[0m in 1.08s]
+[0m21:45:19.391559 [info ] [Thread-2 (]: 21 of 30 START sql view model dbt_dev.int_encounters ........................... [RUN]
+[0m21:45:19.393650 [debug] [Thread-4 (]: Finished running node model.raqib_sf.dim_patients
+[0m21:45:19.394722 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.raqib_sf.dim_admission_type, now model.raqib_sf.int_encounters)
+[0m21:45:19.395775 [debug] [Thread-4 (]: Began running node model.raqib_sf.dim_services
+[0m21:45:19.397584 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.int_encounters
+[0m21:45:19.399102 [debug] [Thread-8 (]: Marking all children of 'model.raqib_sf.dim_patients' to be skipped because of status 'error'.  Reason: Database Error in model dim_patients (models/marts/dim/dim_patients.sql)
+  002108 (22000): SQL compilation error: cannot change column PATIENT_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  .
+[0m21:45:19.400950 [debug] [Thread-5 (]: SQL status: SUCCESS 17 in 0.111 seconds
+[0m21:45:19.401932 [info ] [Thread-4 (]: 22 of 30 START sql incremental model prod.dbt_dev_marts.dim_services ........... [RUN]
+[0m21:45:19.414468 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.int_encounters"
+[0m21:45:19.431151 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_provider"
+[0m21:45:19.439300 [debug] [Thread-5 (]: On model.raqib_sf.dim_provider: describe table "PROD"."DBT_DEV_MARTS"."DIM_PROVIDER"
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_provider"} */
+[0m21:45:19.435565 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.raqib_sf.dim_patients, now model.raqib_sf.dim_services)
+[0m21:45:19.437910 [debug] [Thread-2 (]: Began executing node model.raqib_sf.int_encounters
+[0m21:45:19.443943 [debug] [Thread-4 (]: Began compiling node model.raqib_sf.dim_services
+[0m21:45:19.470449 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.int_encounters"
+[0m21:45:19.478523 [debug] [Thread-4 (]: Writing injected SQL for node "model.raqib_sf.dim_services"
+[0m21:45:19.485260 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.int_encounters"
+[0m21:45:19.486702 [debug] [Thread-4 (]: Began executing node model.raqib_sf.dim_services
+[0m21:45:19.487616 [debug] [Thread-2 (]: On model.raqib_sf.int_encounters: create or replace   view dev.dbt_dev.int_encounters
+  
+  
+  
+  
+  as (
+    WITH admissions AS (
+    SELECT *
+    FROM dev.dbt_dev_staging.stg_admissions
+),
+
+patients AS (
+    SELECT *
+    FROM dev.dbt_dev_staging.stg_patients
+),
+
+providers AS (
+    SELECT *
+    FROM dev.dbt_dev_staging.stg_providers
+),
+
+base AS (
+    SELECT
+        md5(cast(coalesce(cast(a.admission_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT))  AS encounter_key,
+        a.admission_id,
+        a.patient_id,
+        a.provider_id,
+        a.primary_sdk,
+        a.admitted_at,
+        a.discharged_at,
+
+        CASE
+            WHEN a.discharged_at IS NULL THEN TRUE
+            ELSE FALSE
+        END                                                         AS is_active_encounter,
+
+        a.admission_type,
+        a.admission_location,
+        a.discharge_location,
+        a.total_cost,
+        a.payer_coverage,
+        a.hospital_expire_flag,
+        p.birthdate,
+        pr.provider_specialty
+
+    FROM admissions a
+    LEFT JOIN patients p  ON a.patient_id  = p.patient_id
+    LEFT JOIN providers pr ON a.provider_id = pr.provider_id
+),
+
+final AS (
+    SELECT
+        encounter_key,
+        admission_id,
+        patient_id,
+        provider_id,
+        primary_sdk,
+        provider_specialty,
+
+        admitted_at,
+        discharged_at,
+        is_active_encounter,
+
+        DATEDIFF(
+            'day',
+            admitted_at,
+            COALESCE(discharged_at, CURRENT_TIMESTAMP)
+        )                                                           AS length_of_stay_days,
+
+        admission_type,
+        admission_location,
+        discharge_location,
+
+        total_cost,
+        payer_coverage,
+
+        ROUND(
+            payer_coverage / NULLIF(total_cost, 0) * 100, 1
+        )                                                           AS coverage_percentage,
+
+        total_cost - payer_coverage                                 AS out_of_pocket_cost,
+
+        DATEDIFF(
+            'year',
+            birthdate,
+            admitted_at
+        )                                                           AS age_at_admission,
+
+        CASE
+            WHEN DATEDIFF('year', birthdate, admitted_at) < 12
+                THEN 'Child'
+            WHEN DATEDIFF('year', birthdate, admitted_at) BETWEEN 12 AND 17
+                THEN 'Teen'
+            WHEN DATEDIFF('year', birthdate, admitted_at) BETWEEN 18 AND 60
+                THEN 'Adult'
+            ELSE 'Senior'
+        END                                                         AS age_group,
+
+        CASE
+            WHEN hospital_expire_flag THEN 'Deceased'
+            ELSE 'Alive'
+        END                                                         AS discharge_status
+
+    FROM base
+)
+
+SELECT *
+FROM final
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.int_encounters"} */;
+[0m21:45:19.495808 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_services"
+[0m21:45:19.496911 [debug] [Thread-4 (]: On model.raqib_sf.dim_services: create or replace  temporary view prod.dbt_dev_marts.dim_services__dbt_tmp
+  
+  
+  
+  
+  as (
+    with services as (
+
+    select
+        service_id,
+        service_name,
+        service_sub_type,
+        category,
+        row_number() over (
+            partition by service_id
+            order by service_name asc
+        ) as rn
+    from dev.dbt_dev_staging.stg_services
+
+)
+
+select
+    md5(cast(coalesce(cast(service_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as service_dim_key,
+    service_id,
+    service_name,
+    service_sub_type,
+    category
+from services
+where rn = 1
+
+
+    and md5(cast(coalesce(cast(service_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) not in (select service_dim_key from prod.dbt_dev_marts.dim_services)
+
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_services"} */;
+[0m21:45:19.507558 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.257 seconds
+[0m21:45:19.512195 [debug] [Thread-3 (]: Applying DROP to: prod.dbt_dev_marts.dim_location__dbt_tmp
+[0m21:45:19.513333 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.dim_location"
+[0m21:45:19.514363 [debug] [Thread-3 (]: On model.raqib_sf.dim_location: drop view if exists prod.dbt_dev_marts.dim_location__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_location"} */
+[0m21:45:19.576033 [debug] [Thread-5 (]: SQL status: SUCCESS 17 in 0.136 seconds
+[0m21:45:19.582156 [debug] [Thread-5 (]: 
+    In "PROD"."DBT_DEV_MARTS"."DIM_PROVIDER":
+        Schema changed: True
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: [{'column_name': 'PROVIDER_ID', 'new_type': 'character varying(16777216)'}]
+  
+[0m21:45:19.583615 [debug] [Thread-5 (]: Using snowflake connection "model.raqib_sf.dim_provider"
+[0m21:45:19.584216 [debug] [Thread-5 (]: On model.raqib_sf.dim_provider: alter  table "PROD"."DBT_DEV_MARTS"."DIM_PROVIDER" alter "PROVIDER_ID" set data type character varying(16777216)
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_provider"} */;
+[0m21:45:19.666919 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.151 seconds
+[0m21:45:19.670737 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ddb3950>]}
+[0m21:45:19.672401 [info ] [Thread-3 (]: 15 of 30 OK created sql incremental model prod.dbt_dev_marts.dim_location ...... [[32mSUCCESS 0[0m in 2.78s]
+[0m21:45:19.674583 [debug] [Thread-3 (]: Finished running node model.raqib_sf.dim_location
+[0m21:45:19.690887 [debug] [Thread-5 (]: Snowflake adapter: Snowflake query id: 01c4da05-0001-cff9-0002-8ab6000ccbea
+[0m21:45:19.692264 [debug] [Thread-5 (]: Snowflake adapter: Snowflake error: 002108 (22000): SQL compilation error: cannot change column PROVIDER_ID from type NUMBER(38,0) to VARCHAR(16777216)
+
+[0m21:45:19.720687 [debug] [Thread-5 (]: Database Error in model dim_provider (models/marts/dim/dim_provider.sql)
+  002108 (22000): SQL compilation error: cannot change column PROVIDER_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  
+[0m21:45:19.721718 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112164590>]}
+[0m21:45:19.723337 [error] [Thread-5 (]: 20 of 30 ERROR creating sql incremental model prod.dbt_dev_marts.dim_provider .. [[31mERROR[0m in 1.02s]
+[0m21:45:19.726020 [debug] [Thread-5 (]: Finished running node model.raqib_sf.dim_provider
+[0m21:45:19.727302 [debug] [Thread-8 (]: Marking all children of 'model.raqib_sf.dim_provider' to be skipped because of status 'error'.  Reason: Database Error in model dim_provider (models/marts/dim/dim_provider.sql)
+  002108 (22000): SQL compilation error: cannot change column PROVIDER_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  .
+[0m21:45:19.728631 [debug] [Thread-3 (]: Began running node model.raqib_sf.fact_providers_performance
+[0m21:45:19.730586 [info ] [Thread-3 (]: 23 of 30 SKIP relation dbt_dev_marts.fact_providers_performance ................ [[33mSKIP[0m]
+[0m21:45:19.732102 [debug] [Thread-3 (]: Finished running node model.raqib_sf.fact_providers_performance
+[0m21:45:19.760972 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.263 seconds
+[0m21:45:19.767736 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_services"
+[0m21:45:19.768755 [debug] [Thread-4 (]: On model.raqib_sf.dim_services: describe table prod.dbt_dev_marts.dim_services__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_services"} */
+[0m21:45:19.865149 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.368 seconds
+[0m21:45:19.870257 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121652b0>]}
+[0m21:45:19.876039 [debug] [Thread-4 (]: SQL status: SUCCESS 5 in 0.106 seconds
+[0m21:45:19.886493 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_services"
+[0m21:45:19.887479 [debug] [Thread-4 (]: On model.raqib_sf.dim_services: describe table prod.dbt_dev_marts.dim_services
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_services"} */
+[0m21:45:19.991075 [debug] [Thread-4 (]: SQL status: SUCCESS 5 in 0.100 seconds
+[0m21:45:20.003069 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_services"
+[0m21:45:20.004327 [debug] [Thread-4 (]: On model.raqib_sf.dim_services: describe table prod.dbt_dev_marts.dim_services__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_services"} */
+[0m21:45:20.111425 [debug] [Thread-4 (]: SQL status: SUCCESS 5 in 0.106 seconds
+[0m21:45:20.123369 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_services"
+[0m21:45:20.124597 [debug] [Thread-4 (]: On model.raqib_sf.dim_services: describe table "PROD"."DBT_DEV_MARTS"."DIM_SERVICES"
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_services"} */
+[0m21:45:20.216784 [debug] [Thread-4 (]: SQL status: SUCCESS 5 in 0.091 seconds
+[0m21:45:20.222654 [debug] [Thread-4 (]: 
+    In "PROD"."DBT_DEV_MARTS"."DIM_SERVICES":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m21:45:20.225167 [debug] [Thread-4 (]: Writing runtime sql for node "model.raqib_sf.dim_services"
+[0m21:45:20.227279 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_services"
+[0m21:45:20.228239 [debug] [Thread-4 (]: On model.raqib_sf.dim_services: -- back compat for old kwarg name
+  
+  begin
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_services"} */;
+[0m21:45:20.343682 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.114 seconds
+[0m21:45:20.345068 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_services"
+[0m21:45:20.346339 [debug] [Thread-4 (]: On model.raqib_sf.dim_services: insert into prod.dbt_dev_marts.dim_services ("SERVICE_DIM_KEY", "SERVICE_ID", "SERVICE_NAME", "SERVICE_SUB_TYPE", "CATEGORY")
+        (
+            select "SERVICE_DIM_KEY", "SERVICE_ID", "SERVICE_NAME", "SERVICE_SUB_TYPE", "CATEGORY"
+            from prod.dbt_dev_marts.dim_services__dbt_tmp
+        )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_services"} */;
+[0m21:45:20.797339 [debug] [Thread-2 (]: An error was encountered while trying to send an event
+[0m21:45:20.804420 [info ] [Thread-2 (]: 21 of 30 OK created sql view model dbt_dev.int_encounters ...................... [[32mSUCCESS 1[0m in 0.48s]
+[0m21:45:20.806539 [debug] [Thread-2 (]: Finished running node model.raqib_sf.int_encounters
+[0m21:45:20.808452 [debug] [Thread-5 (]: Began running node model.raqib_sf.fact_encounters
+[0m21:45:20.809822 [debug] [Thread-3 (]: Began running node model.raqib_sf.fact_lab_results
+[0m21:45:20.811037 [debug] [Thread-2 (]: Began running node model.raqib_sf.fact_patient_finances
+[0m21:45:20.812223 [info ] [Thread-5 (]: 24 of 30 SKIP relation dbt_dev_marts.fact_encounters ........................... [[33mSKIP[0m]
+[0m21:45:20.813794 [info ] [Thread-3 (]: 25 of 30 SKIP relation dbt_dev_marts.fact_lab_results .......................... [[33mSKIP[0m]
+[0m21:45:20.815202 [info ] [Thread-2 (]: 26 of 30 START sql incremental model prod.dbt_dev_marts.fact_patient_finances .. [RUN]
+[0m21:45:20.816675 [debug] [Thread-5 (]: Finished running node model.raqib_sf.fact_encounters
+[0m21:45:20.818045 [debug] [Thread-3 (]: Finished running node model.raqib_sf.fact_lab_results
+[0m21:45:20.819299 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.raqib_sf.int_encounters, now model.raqib_sf.fact_patient_finances)
+[0m21:45:20.820752 [debug] [Thread-5 (]: Began running node model.raqib_sf.fact_transfers
+[0m21:45:20.822249 [debug] [Thread-3 (]: Began running node model.raqib_sf.int_clinical_events
+[0m21:45:20.823622 [debug] [Thread-2 (]: Began compiling node model.raqib_sf.fact_patient_finances
+[0m21:45:20.824925 [info ] [Thread-5 (]: 27 of 30 SKIP relation dbt_dev_marts.fact_transfers ............................ [[33mSKIP[0m]
+[0m21:45:20.826599 [info ] [Thread-3 (]: 28 of 30 START sql view model dbt_dev.int_clinical_events ...................... [RUN]
+[0m21:45:20.834478 [debug] [Thread-5 (]: Finished running node model.raqib_sf.fact_transfers
+[0m21:45:20.835440 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.raqib_sf.dim_location, now model.raqib_sf.int_clinical_events)
+[0m21:45:20.845670 [debug] [Thread-2 (]: Writing injected SQL for node "model.raqib_sf.fact_patient_finances"
+[0m21:45:20.847009 [debug] [Thread-3 (]: Began compiling node model.raqib_sf.int_clinical_events
+[0m21:45:20.862848 [debug] [Thread-3 (]: Writing injected SQL for node "model.raqib_sf.int_clinical_events"
+[0m21:45:20.864466 [debug] [Thread-2 (]: Began executing node model.raqib_sf.fact_patient_finances
+[0m21:45:20.866014 [debug] [Thread-3 (]: Began executing node model.raqib_sf.int_clinical_events
+[0m21:45:20.887979 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.fact_patient_finances"
+[0m21:45:20.897956 [debug] [Thread-3 (]: Writing runtime sql for node "model.raqib_sf.int_clinical_events"
+[0m21:45:20.899488 [debug] [Thread-2 (]: On model.raqib_sf.fact_patient_finances: create or replace  temporary view prod.dbt_dev_marts.fact_patient_finances__dbt_tmp
+  
+  
+  
+  
+  as (
+    WITH patients AS (
+    SELECT
+        patient_id,
+        healthcare_expenses,
+        healthcare_coverage,
+        income_usd
+    FROM dev.dbt_dev_staging.stg_patients
+),
+
+encounter_finances AS (
+    SELECT
+        patient_id,
+        SUM(total_cost)          AS total_admissions_cost,
+        SUM(payer_coverage)      AS total_payer_coverage,
+        SUM(out_of_pocket_cost)  AS total_out_of_pocket,
+        AVG(coverage_percentage) AS avg_coverage_percentage
+    FROM dev.dbt_dev.int_encounters
+    GROUP BY patient_id
+)
+
+SELECT
+    md5(cast(coalesce(cast(p.patient_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS patient_key,
+    p.healthcare_expenses,
+    p.healthcare_coverage,
+    p.income_usd,
+    COALESCE(ef.total_admissions_cost, 0)    AS total_admissions_cost,
+    COALESCE(ef.total_payer_coverage, 0)     AS total_payer_coverage,
+    COALESCE(ef.total_out_of_pocket, 0)      AS total_out_of_pocket,
+    COALESCE(ef.avg_coverage_percentage, 0)  AS avg_coverage_percentage
+FROM patients p
+LEFT JOIN encounter_finances ef ON p.patient_id = ef.patient_id
+
+
+WHERE md5(cast(coalesce(cast(p.patient_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) NOT IN (SELECT patient_key FROM prod.dbt_dev_marts.fact_patient_finances)
+
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.fact_patient_finances"} */;
+[0m21:45:20.907640 [debug] [Thread-3 (]: Using snowflake connection "model.raqib_sf.int_clinical_events"
+[0m21:45:20.909651 [debug] [Thread-3 (]: On model.raqib_sf.int_clinical_events: create or replace   view dev.dbt_dev.int_clinical_events
+  
+  
+  
+  
+  as (
+    WITH all_events AS (
+    SELECT 
+        admission_id, 
+        patient_id, 
+        'Diagnosis' AS event_type, 
+        description AS event_name, 
+        NULL::TIMESTAMP AS event_date,
+        NULL::FLOAT AS cost,
+        diagnosis_id::VARCHAR AS source_id,
+        diagnosis_id::VARCHAR AS diagnosis_id 
+    FROM dev.dbt_dev_staging.stg_diagnosis
+
+    UNION ALL
+
+    SELECT 
+        le.admission_id, 
+        le.patient_id, 
+        'Lab' AS event_type, 
+        le.test_name AS event_name, 
+        le.lab_done_at AS event_date,
+        le.cost,
+        le.lab_event_id::VARCHAR AS source_id,
+        NULL::VARCHAR AS diagnosis_id
+    FROM dev.dbt_dev.int_lab_analysis le
+
+    UNION ALL
+
+    SELECT 
+        p.admission_id, 
+        p.patient_id, 
+        'Medication' AS event_type, 
+        d.brand_name AS event_name, 
+        p.prescribed_date AS event_date,
+        NULL::FLOAT AS cost,
+        p.prescription_id::VARCHAR AS source_id,
+        NULL::VARCHAR AS diagnosis_id 
+    FROM dev.dbt_dev_staging.stg_prescriptions p
+    LEFT JOIN dev.dbt_dev_staging.stg_drugs d 
+        ON p.drug_id = d.drug_id
+),
+
+events_with_date AS (
+    SELECT
+        ae.admission_id,
+        ae.patient_id,
+        ae.event_type,
+        ae.event_name,
+        ae.source_id,
+        ae.cost,
+        ae.diagnosis_id, 
+        COALESCE(ae.event_date, e.admitted_at) AS event_date
+    FROM all_events ae
+    LEFT JOIN dev.dbt_dev.int_encounters e 
+        ON ae.admission_id = e.admission_id
+)
+
+SELECT
+    md5(cast(coalesce(cast(admission_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(event_type as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(event_date as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(event_name as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(source_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS event_key,
+
+    admission_id,
+    patient_id,
+    event_type,
+    event_name,
+    event_date,
+    COALESCE(cost, 0) AS event_cost,
+    diagnosis_id 
+
+FROM events_with_date
+  )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.int_clinical_events"} */;
+[0m21:45:21.218883 [debug] [Thread-4 (]: SQL status: SUCCESS 0 in 0.871 seconds
+[0m21:45:21.219941 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_services"
+[0m21:45:21.221415 [debug] [Thread-4 (]: On model.raqib_sf.dim_services: COMMIT
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_services"} */
+[0m21:45:21.288286 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.387 seconds
+[0m21:45:21.295266 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.fact_patient_finances"
+[0m21:45:21.295979 [debug] [Thread-2 (]: On model.raqib_sf.fact_patient_finances: describe table prod.dbt_dev_marts.fact_patient_finances__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.fact_patient_finances"} */
+[0m21:45:21.415578 [debug] [Thread-2 (]: SQL status: SUCCESS 8 in 0.119 seconds
+[0m21:45:21.422615 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.fact_patient_finances"
+[0m21:45:21.423278 [debug] [Thread-2 (]: On model.raqib_sf.fact_patient_finances: describe table prod.dbt_dev_marts.fact_patient_finances
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.fact_patient_finances"} */
+[0m21:45:21.435880 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.213 seconds
+[0m21:45:21.441305 [debug] [Thread-4 (]: Applying DROP to: prod.dbt_dev_marts.dim_services__dbt_tmp
+[0m21:45:21.442607 [debug] [Thread-4 (]: Using snowflake connection "model.raqib_sf.dim_services"
+[0m21:45:21.443224 [debug] [Thread-4 (]: On model.raqib_sf.dim_services: drop view if exists prod.dbt_dev_marts.dim_services__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.dim_services"} */
+[0m21:45:21.518826 [debug] [Thread-2 (]: SQL status: SUCCESS 8 in 0.095 seconds
+[0m21:45:21.524893 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.fact_patient_finances"
+[0m21:45:21.525665 [debug] [Thread-2 (]: On model.raqib_sf.fact_patient_finances: describe table prod.dbt_dev_marts.fact_patient_finances__dbt_tmp
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.fact_patient_finances"} */
+[0m21:45:21.576863 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.133 seconds
+[0m21:45:21.580046 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10de5f2f0>]}
+[0m21:45:21.581049 [info ] [Thread-4 (]: 22 of 30 OK created sql incremental model prod.dbt_dev_marts.dim_services ...... [[32mSUCCESS 0[0m in 2.14s]
+[0m21:45:21.582293 [debug] [Thread-4 (]: Finished running node model.raqib_sf.dim_services
+[0m21:45:21.583263 [debug] [Thread-5 (]: Began running node model.raqib_sf.fact_patient_services
+[0m21:45:21.584028 [info ] [Thread-5 (]: 29 of 30 SKIP relation dbt_dev_marts.fact_patient_services ..................... [[33mSKIP[0m]
+[0m21:45:21.585198 [debug] [Thread-5 (]: Finished running node model.raqib_sf.fact_patient_services
+[0m21:45:21.628003 [debug] [Thread-2 (]: SQL status: SUCCESS 8 in 0.102 seconds
+[0m21:45:21.635492 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.fact_patient_finances"
+[0m21:45:21.636461 [debug] [Thread-2 (]: On model.raqib_sf.fact_patient_finances: describe table "PROD"."DBT_DEV_MARTS"."FACT_PATIENT_FINANCES"
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.fact_patient_finances"} */
+[0m21:45:21.723623 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.811 seconds
+[0m21:45:21.727038 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10deadf10>]}
+[0m21:45:21.728243 [info ] [Thread-3 (]: 28 of 30 OK created sql view model dbt_dev.int_clinical_events ................. [[32mSUCCESS 1[0m in 0.89s]
+[0m21:45:21.729991 [debug] [Thread-3 (]: Finished running node model.raqib_sf.int_clinical_events
+[0m21:45:21.731536 [debug] [Thread-2 (]: SQL status: SUCCESS 8 in 0.094 seconds
+[0m21:45:21.735662 [debug] [Thread-2 (]: 
+    In "PROD"."DBT_DEV_MARTS"."FACT_PATIENT_FINANCES":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m21:45:21.736340 [debug] [Thread-4 (]: Began running node model.raqib_sf.fact_clinical_events
+[0m21:45:21.737873 [debug] [Thread-2 (]: Writing runtime sql for node "model.raqib_sf.fact_patient_finances"
+[0m21:45:21.738584 [info ] [Thread-4 (]: 30 of 30 SKIP relation dbt_dev_marts.fact_clinical_events ...................... [[33mSKIP[0m]
+[0m21:45:21.739584 [debug] [Thread-4 (]: Finished running node model.raqib_sf.fact_clinical_events
+[0m21:45:21.741231 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.fact_patient_finances"
+[0m21:45:21.741854 [debug] [Thread-2 (]: On model.raqib_sf.fact_patient_finances: -- back compat for old kwarg name
+  
+  begin
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.fact_patient_finances"} */;
+[0m21:45:21.855059 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.113 seconds
+[0m21:45:21.855800 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.fact_patient_finances"
+[0m21:45:21.856417 [debug] [Thread-2 (]: On model.raqib_sf.fact_patient_finances: insert into prod.dbt_dev_marts.fact_patient_finances ("PATIENT_KEY", "HEALTHCARE_EXPENSES", "HEALTHCARE_COVERAGE", "INCOME_USD", "TOTAL_ADMISSIONS_COST", "TOTAL_PAYER_COVERAGE", "TOTAL_OUT_OF_POCKET", "AVG_COVERAGE_PERCENTAGE")
+        (
+            select "PATIENT_KEY", "HEALTHCARE_EXPENSES", "HEALTHCARE_COVERAGE", "INCOME_USD", "TOTAL_ADMISSIONS_COST", "TOTAL_PAYER_COVERAGE", "TOTAL_OUT_OF_POCKET", "AVG_COVERAGE_PERCENTAGE"
+            from prod.dbt_dev_marts.fact_patient_finances__dbt_tmp
+        )
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.fact_patient_finances"} */;
+[0m21:45:23.063316 [debug] [Thread-2 (]: SQL status: SUCCESS 0 in 1.206 seconds
+[0m21:45:23.064085 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.fact_patient_finances"
+[0m21:45:23.064682 [debug] [Thread-2 (]: On model.raqib_sf.fact_patient_finances: COMMIT
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.fact_patient_finances"} */
+[0m21:45:23.192868 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.128 seconds
+[0m21:45:23.198112 [debug] [Thread-2 (]: Applying DROP to: prod.dbt_dev_marts.fact_patient_finances__dbt_tmp
+[0m21:45:23.199129 [debug] [Thread-2 (]: Using snowflake connection "model.raqib_sf.fact_patient_finances"
+[0m21:45:23.199714 [debug] [Thread-2 (]: On model.raqib_sf.fact_patient_finances: drop view if exists prod.dbt_dev_marts.fact_patient_finances__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "raqib_sf", "target_name": "dev", "node_id": "model.raqib_sf.fact_patient_finances"} */
+[0m21:45:23.338039 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.138 seconds
+[0m21:45:23.342960 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fbceec08-2460-40bd-b316-e7589d9f788c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11213b3b0>]}
+[0m21:45:23.344454 [info ] [Thread-2 (]: 26 of 30 OK created sql incremental model prod.dbt_dev_marts.fact_patient_finances  [[32mSUCCESS 0[0m in 2.52s]
+[0m21:45:23.346030 [debug] [Thread-2 (]: Finished running node model.raqib_sf.fact_patient_finances
+[0m21:45:23.348389 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:45:23.349053 [debug] [MainThread]: Connection 'model.raqib_sf.fact_patient_finances' was left open.
+[0m21:45:23.349536 [debug] [MainThread]: On model.raqib_sf.fact_patient_finances: Close
+[0m21:45:24.061967 [debug] [MainThread]: Connection 'model.raqib_sf.int_clinical_events' was left open.
+[0m21:45:24.062542 [debug] [MainThread]: On model.raqib_sf.int_clinical_events: Close
+[0m21:45:24.221653 [debug] [MainThread]: Connection 'model.raqib_sf.dim_services' was left open.
+[0m21:45:24.222222 [debug] [MainThread]: On model.raqib_sf.dim_services: Close
+[0m21:45:24.380023 [debug] [MainThread]: Connection 'model.raqib_sf.dim_provider' was left open.
+[0m21:45:24.380577 [debug] [MainThread]: On model.raqib_sf.dim_provider: Close
+[0m21:45:24.538177 [info ] [MainThread]: 
+[0m21:45:24.539282 [info ] [MainThread]: Finished running 13 incremental models, 3 table models, 14 view models in 0 hours 0 minutes and 13.48 seconds (13.48s).
+[0m21:45:24.548574 [debug] [MainThread]: Command end result
+[0m21:45:24.684071 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/user/Documents/Raqib/raqib_sf_dbt/target/manifest.json
+[0m21:45:24.693069 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/user/Documents/Raqib/raqib_sf_dbt/target/semantic_manifest.json
+[0m21:45:24.708417 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/user/Documents/Raqib/raqib_sf_dbt/target/run_results.json
+[0m21:45:24.708916 [info ] [MainThread]: 
+[0m21:45:24.709448 [info ] [MainThread]: [31mCompleted with 4 errors, 0 partial successes, and 0 warnings:[0m
+[0m21:45:24.709926 [info ] [MainThread]: 
+[0m21:45:24.710506 [error] [MainThread]: [31mFailure in model dim_lab_types (models/marts/dim/dim_lab_types.sql)[0m
+[0m21:45:24.711045 [error] [MainThread]:   Database Error in model dim_lab_types (models/marts/dim/dim_lab_types.sql)
+  002108 (22000): SQL compilation error: cannot change column ITEM_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  
+[0m21:45:24.711485 [info ] [MainThread]: 
+[0m21:45:24.711998 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/marts/dim/dim_lab_types.sql
+[0m21:45:24.712449 [info ] [MainThread]: 
+[0m21:45:24.713202 [error] [MainThread]: [31mFailure in model dim_diagnosis (models/marts/dim/dim_diagnosis.sql)[0m
+[0m21:45:24.714208 [error] [MainThread]:   Database Error in model dim_diagnosis (models/marts/dim/dim_diagnosis.sql)
+  002108 (22000): SQL compilation error: cannot change column DIAGNOSIS_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  
+[0m21:45:24.715134 [info ] [MainThread]: 
+[0m21:45:24.716067 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/marts/dim/dim_diagnosis.sql
+[0m21:45:24.716779 [info ] [MainThread]: 
+[0m21:45:24.717721 [error] [MainThread]: [31mFailure in model dim_patients (models/marts/dim/dim_patients.sql)[0m
+[0m21:45:24.718857 [error] [MainThread]:   Database Error in model dim_patients (models/marts/dim/dim_patients.sql)
+  002108 (22000): SQL compilation error: cannot change column PATIENT_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  
+[0m21:45:24.719817 [info ] [MainThread]: 
+[0m21:45:24.720860 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/marts/dim/dim_patients.sql
+[0m21:45:24.721825 [info ] [MainThread]: 
+[0m21:45:24.722979 [error] [MainThread]: [31mFailure in model dim_provider (models/marts/dim/dim_provider.sql)[0m
+[0m21:45:24.723940 [error] [MainThread]:   Database Error in model dim_provider (models/marts/dim/dim_provider.sql)
+  002108 (22000): SQL compilation error: cannot change column PROVIDER_ID from type NUMBER(38,0) to VARCHAR(16777216)
+  
+[0m21:45:24.724851 [info ] [MainThread]: 
+[0m21:45:24.725980 [info ] [MainThread]:   compiled code at target/compiled/raqib_sf/models/marts/dim/dim_provider.sql
+[0m21:45:24.726700 [info ] [MainThread]: 
+[0m21:45:24.727327 [info ] [MainThread]: Done. PASS=20 WARN=0 ERROR=4 SKIP=6 NO-OP=0 TOTAL=30
+[0m21:45:24.728221 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 5 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m21:45:24.729470 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 22.022316, "process_in_blocks": "0", "process_kernel_time": 1.070737, "process_mem_max_rss": "176844800", "process_out_blocks": "0", "process_user_time": 13.48768}
+[0m21:45:24.730297 [debug] [MainThread]: Command `dbt run` failed at 21:45:24.730045 after 22.02 seconds
+[0m21:45:24.731270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d662210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a11b3b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121af8f0>]}
+[0m21:45:24.732036 [debug] [MainThread]: Flushing usage events
+[0m21:45:25.283179 [debug] [MainThread]: An error was encountered while trying to flush usage events

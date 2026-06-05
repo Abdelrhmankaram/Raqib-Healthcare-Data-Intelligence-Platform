@@ -90,7 +90,7 @@ def handle_path_a(patient: Patient, producer: Producer):
     admission = Admission(
         admission_id=admission_id,
         patient_id=patient.patient_id,
-        provider_id=DOCTOR_PROVIDER_ID,
+        admission_provider_id=DOCTOR_PROVIDER_ID,
         admission_datetime_in=now_iso(),
         admission_datetime_out=None,
         admission_type="ELECTIVE",
@@ -100,6 +100,7 @@ def handle_path_a(patient: Patient, producer: Producer):
         total_cost=1500.00,
         payer_coverage=1200.00,
         hospital_expire_flag=False,
+        primary_sdk="ITI",
     )
 
     diagnosis = Diagnosis(
@@ -162,7 +163,7 @@ def handle_path_b(patient: Patient, producer: Producer):
     admission = Admission(
         admission_id=admission_id,
         patient_id=patient.patient_id,
-        provider_id=DOCTOR_PROVIDER_ID,
+        admission_provider_id=DOCTOR_PROVIDER_ID,
         admission_datetime_in=now_iso(),
         admission_datetime_out=None,
         admission_type="URGENT",
@@ -172,6 +173,7 @@ def handle_path_b(patient: Patient, producer: Producer):
         total_cost=0.0,
         payer_coverage=0.0,
         hospital_expire_flag=False,
+        primary_sdk="ITI",
     )
 
     service = Service(

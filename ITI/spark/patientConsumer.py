@@ -111,11 +111,8 @@ def process_batch(batch_df, batch_id):
 def main():
     spark = SparkSession.builder \
         .appName("HospitalPatientsStream") \
-        .config(
-        "spark.jars.packages",
-        "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,"
-        "org.postgresql:postgresql:42.7.1"
-    ) \
+        .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.postgresql:postgresql:42.7.1") \
+        .config("spark.jars.ivySettings", "/path/to/ivysettings.xml") \
         .getOrCreate()
 
     spark.sparkContext.setLogLevel("WARN")
