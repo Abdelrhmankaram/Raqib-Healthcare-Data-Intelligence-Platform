@@ -51,7 +51,7 @@ class Patient:
 class Admission:
     admission_id:          str
     patient_id:            int
-    provider_id:           str
+    admission_provider_id: str
     admission_datetime_in: str
     admission_datetime_out: Optional[str]
     admission_type:        str        # EMERGENCY | URGENT | ELECTIVE
