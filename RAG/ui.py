@@ -9,10 +9,11 @@ from ollama import embed, list_models
 
 # Try to import snowflake functions, but don't fail if module is not installed
 try:
-    from snowflake import query_patient_data, search_patients
-    SNOWFLAKE_AVAILABLE = True
+    from snowflake_methods import query_patient_data, search_patients, SNOWFLAKE_AVAILABLE
 except ImportError:
     SNOWFLAKE_AVAILABLE = False
+    query_patient_data = None
+    search_patients = None
 
 
 def render_sidebar(ollama_url: str) -> tuple[str, str, str, int, int, int, dict]:
@@ -122,9 +123,9 @@ def process_document(
 
 def process_snowflake_data(patient_id: str, search_term: str, embed_model: str, ollama_url: str) -> bool:
     """Process Snowflake patient data and prepare for querying."""
-    if not SNOWFLAKE_AVAILABLE:
-        st.error("Snowflake module not installed. Install with: pip install snowflake-connector-python")
-        return False
+    # if not SNOWFLAKE_AVAILABLE:
+    #     st.error("Snowflake module not installed. Install with: pip install snowflake-connector-python")
+    #     return False
 
     patient_data = None
 

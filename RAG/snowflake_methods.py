@@ -18,9 +18,16 @@ def get_snowflake_connection():
         return None
     
     try:
+        # Extract account identifier from full hostname if needed
+        server_url = SNOWFLAKE_CONFIG["server_url"]
+        if ".snowflakecomputing.com" in server_url:
+            account = server_url.split(".snowflakecomputing.com")[0]
+        else:
+            account = server_url
+        
         conn = connect(
-            account=SNOWFLAKE_CONFIG["account"],
-            user=SNOWFLAKE_CONFIG["user"],
+            account=account,
+            user=SNOWFLAKE_CONFIG["username"],
             password=SNOWFLAKE_CONFIG["password"],
             warehouse=SNOWFLAKE_CONFIG["warehouse"],
             database=SNOWFLAKE_CONFIG["database"],
@@ -32,7 +39,7 @@ def get_snowflake_connection():
         return None
 
 
-def query_patient_data(patient_id: str) -> dict | None:
+def query_patient_data(patient_id: str) -> dict | None: 
     """Query patient data from Snowflake by patient ID."""
     conn = get_snowflake_connection()
     if not conn:
@@ -43,8 +50,8 @@ def query_patient_data(patient_id: str) -> dict | None:
         # Adjust the query to match your Snowflake schema
         query = f"""
         SELECT *
-        FROM patients
-        WHERE patient_id = '{patient_id}'
+        FROM PROD.DBT_DEV_MARTS.DIM_PATIENTS
+        WHERE patient_key = '{patient_id}'
         LIMIT 1
         """
         cursor.execute(query)
