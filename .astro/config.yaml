@@ -1,6 +1,0 @@
-project:
-    name: raqib
-
-ports:
-  webserver: 8080
-  postgres: 5433

@@ -1,0 +1,380 @@
+---
+  # ════════════════════════════════════════════════════════════════════════════
+  #  Common kafka broker environment variables
+  # ════════════════════════════════════════════════════════════════════════════
+  x-kafka-broker-env: &kafka-broker-env
+    KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT'
+
+    # ── Bumped from 1 → 3 now that we have 3 brokers ──────────────────────────
+    KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 3
+    KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 3
+    KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 2            # needs 2 ISR ACKs for transactions
+    KAFKA_DEFAULT_REPLICATION_FACTOR: 3
+    KAFKA_MIN_INSYNC_REPLICAS: 2                      # producer acks=all needs 2 replicas
+
+    KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+    KAFKA_JMX_HOSTNAME: localhost
+    KAFKA_ENABLE_KRAFT: yes
+    KAFKA_PROCESS_ROLES: 'broker,controller'
+
+    # ── 3 voters now — all 3 nodes participate in Raft quorum ─────────────────
+    KAFKA_CONTROLLER_QUORUM_VOTERS: '1@broker-1:29093,2@broker-2:29093,3@broker-3:29093'
+
+    KAFKA_INTER_BROKER_LISTENER_NAME: 'PLAINTEXT'
+    KAFKA_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
+    KAFKA_CFG_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
+    KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+    KAFKA_METADATA_LOG_DIR: /tmp/kraft-metadata-logs
+
+    # ── Cluster ID — must be identical across all 3 brokers ───────────────────
+    CLUSTER_ID: 'MTkwSDkzMDg5KTdFNDJCRU'
+    KAFKA_CLUSTER_ID: 'MTkwSDkzMDg5KTdFNDJCRU'
+    KAFKA_KRAFT_CLUSTER_ID: 'MTkwSDkzMDg5KTdFNDJCRU'
+
+  # ════════════════════════════════════════════════════════════════════════════
+  #  Common kafka broker configuration
+  # ════════════════════════════════════════════════════════════════════════════
+  x-kafka-broker-common: &kafka-broker-common
+    image: confluentinc/cp-kafka:7.6.3
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - dwh_network
+    healthcheck:
+      test: ["CMD", "bash", "-c", "kafka-broker-api-versions --bootstrap-server localhost:9092 > /dev/null 2>&1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  # ════════════════════════════════════════════════════════════════════════════
+  #  Common kafka connect environment variables
+  # ════════════════════════════════════════════════════════════════════════════
+  x-kafka-connect-env: &kafka-connect-env
+    # ── All 3 brokers in bootstrap — connect picks the best one ───────────────
+    CONNECT_BOOTSTRAP_SERVERS: 'broker-1:29092,broker-2:29092,broker-3:29092'
+
+    CONNECT_GROUP_ID: compose-connect-group
+    CONNECT_OFFSET_FLUSH_INTERVAL_MS: 10000
+
+    CONNECT_CONFIG_STORAGE_TOPIC: docker-connect-configs
+    CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 3      # bumped from 2 → 3
+
+    CONNECT_OFFSET_STORAGE_TOPIC: docker-connect-offsets
+    CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 3      # bumped from 2 → 3
+
+    CONNECT_STATUS_STORAGE_TOPIC: docker-connect-status
+    CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 3      # bumped from 2 → 3
+
+    CONNECT_KEY_CONVERTER: org.apache.kafka.connect.storage.StringConverter
+    CONNECT_VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
+    CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
+
+    CLASSPATH: /usr/share/java/monitoring-interceptors/monitoring-interceptors-7.6.1.jar
+    CONNECT_PRODUCER_INTERCEPTOR_CLASSES: "io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor"
+    CONNECT_CONSUMER_INTERCEPTOR_CLASSES: "io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor"
+
+    CONNECT_ERRORS_RETRY_TIMEOUT: 90000
+    CONNECT_ERRORS_RETRY_DELAY_MAX_MS: 120000
+    CONNECT_PLUGIN_PATH: /usr/share/java,/usr/share/confluent-hub-components,/data/connect-jars
+    CONNECT_LOG4J_LOGGERS: org.apache.zookeeper=ERROR,org.I0Itec.zkclient=ERROR,org.reflections=ERROR
+    CONNECT_LOG4J_APPENDER_STDOUT_LAYOUT_CONVERSIONPATTERN: "[%d] %p %X{connector.context}%m (%c:%L)%n"
+
+    DATABASE_HOSTNAME_SOURCE: $DATABASE_HOSTNAME_SOURCE
+    DATABASE_PORT: $DATABASE_PORT
+    DATABASE_USER_SOURCE: $DATABASE_USER_SOURCE
+    DATABASE_PASSWORD_SOURCE: $DATABASE_PASSWORD_SOURCE
+    DATABASE_DB_NAME_SOURCE: $DATABASE_DB_NAME_SOURCE
+
+  # ════════════════════════════════════════════════════════════════════════════
+  #  Common kafka connect configuration
+  # ════════════════════════════════════════════════════════════════════════════
+  x-kafka-connect-common: &kafka-connect-common
+    image: confluentinc/cp-kafka-connect:7.6.3
+    depends_on:
+      broker-1:
+        condition: service_healthy
+      broker-2:
+        condition: service_healthy
+      broker-3:
+        condition: service_healthy          # ← added
+      schema-registry:
+        condition: service_started
+      postgres:
+        condition: service_started
+      dwh:
+        condition: service_started
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: "4g"
+        reservations:
+          cpus: '0.5'
+          memory: "4g"
+    volumes:
+      - $PWD/Connectors Config:/Connectors-Config
+      - $PWD/init/init_kafka_connect.sh:/docker-entrypoint-initdb.d/init_kafka_connect.sh
+    env_file:
+      - $PWD/.env
+    entrypoint: ["/bin/bash", "/docker-entrypoint-initdb.d/init_kafka_connect.sh"]
+    networks:
+      - dwh_network
+
+  # ════════════════════════════════════════════════════════════════════════════
+  services:
+  # ════════════════════════════════════════════════════════════════════════════
+
+    # ── Broker 1 ───────────────────────────────────────────────────────────────
+    broker-1:
+      <<: *kafka-broker-common
+      hostname: broker-1
+      container_name: broker-1
+      ports:
+        - "9092:9092"
+        - "9101:9101"
+      environment:
+        <<: *kafka-broker-env
+        KAFKA_NODE_ID: 1
+        KAFKA_LISTENERS: 'PLAINTEXT://broker-1:29092,CONTROLLER://broker-1:29093,PLAINTEXT_HOST://0.0.0.0:9092'
+        KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://broker-1:29092,PLAINTEXT_HOST://localhost:9092'
+        KAFKA_JMX_PORT: 9101
+
+    # ── Broker 2 ───────────────────────────────────────────────────────────────
+    broker-2:
+      <<: *kafka-broker-common
+      hostname: broker-2
+      container_name: broker-2
+      ports:
+        - "9093:9092"
+        - "9102:9101"
+      environment:
+        <<: *kafka-broker-env
+        KAFKA_NODE_ID: 2
+        KAFKA_LISTENERS: 'PLAINTEXT://broker-2:29092,CONTROLLER://broker-2:29093,PLAINTEXT_HOST://0.0.0.0:9092'
+        KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://broker-2:29092,PLAINTEXT_HOST://localhost:9093'
+        KAFKA_JMX_PORT: 9102
+
+    # ── Broker 3 (new) ─────────────────────────────────────────────────────────
+    broker-3:
+      <<: *kafka-broker-common
+      hostname: broker-3
+      container_name: broker-3
+      ports:
+        - "9094:9092"                       # external port 9094
+        - "9103:9101"                       # JMX port 9103
+      environment:
+        <<: *kafka-broker-env
+        KAFKA_NODE_ID: 3
+        KAFKA_LISTENERS: 'PLAINTEXT://broker-3:29092,CONTROLLER://broker-3:29093,PLAINTEXT_HOST://0.0.0.0:9092'
+        KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://broker-3:29092,PLAINTEXT_HOST://localhost:9094'
+        KAFKA_JMX_PORT: 9103
+
+    # ── Schema Registry ────────────────────────────────────────────────────────
+    schema-registry:
+      image: confluentinc/cp-schema-registry:7.6.1
+      hostname: schema-registry
+      container_name: schema-registry
+      restart: unless-stopped
+      depends_on:
+        broker-1:
+          condition: service_healthy
+        broker-2:
+          condition: service_healthy
+        broker-3:
+          condition: service_healthy        # ← added
+      ports:
+        - "8081:8081"
+      environment:
+        SCHEMA_REGISTRY_HOST_NAME: schema-registry
+        # ── All 3 brokers ─────────────────────────────────────────────────────
+        SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'broker-1:29092,broker-2:29092,broker-3:29092'
+        SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
+        SCHEMA_REGISTRY_ACCESS_CONTROL_ALLOW_ORIGIN: '*'
+        SCHEMA_REGISTRY_ACCESS_CONTROL_ALLOW_METHODS: 'GET,POST,PUT,OPTIONS'
+        SCHEMA_REGISTRY_KAFKASTORE_TOPIC_REPLICATION_FACTOR: 3   # ← added
+        SCHEMA_REGISTRY_SCHEMA_COMPATIBILITY_LEVEL: BACKWARD      # ← added
+      deploy:
+        resources:
+          limits:
+            cpus: '0.5'
+            memory: "2g"
+          reservations:
+            cpus: '0.5'
+            memory: "2g"
+      networks:
+        - dwh_network
+
+    # ── Kafka Connect 1 ────────────────────────────────────────────────────────
+    kafka-connect-1:
+      <<: *kafka-connect-common
+      hostname: connect-1
+      container_name: kafka-connect-1
+      ports:
+        - "8083:8083"
+      environment:
+        <<: *kafka-connect-env
+        CONNECT_REST_PORT: 8083
+        CONNECT_LISTENERS: http://0.0.0.0:8083
+        CONNECT_REST_ADVERTISED_HOST_NAME: "connect-1"
+
+    # ── Kafka Connect 2 ────────────────────────────────────────────────────────
+    kafka-connect-2:
+      <<: *kafka-connect-common
+      hostname: connect-2
+      container_name: kafka-connect-2
+      ports:
+        - "8084:8084"
+      environment:
+        <<: *kafka-connect-env
+        CONNECT_REST_PORT: 8084
+        CONNECT_LISTENERS: http://0.0.0.0:8084
+        CONNECT_REST_ADVERTISED_HOST_NAME: "connect-2"
+
+    # ── Kafka UI ───────────────────────────────────────────────────────────────
+    kafka-ui:
+      container_name: kafka-ui
+      image: provectuslabs/kafka-ui:latest
+      platform: linux/amd64
+      restart: unless-stopped
+      ports:
+        - "8090:8080"
+      depends_on:
+        broker-1:
+          condition: service_healthy
+        broker-2:
+          condition: service_healthy
+        broker-3:
+          condition: service_healthy        # ← added
+      environment:
+        KAFKA_CLUSTERS_0_NAME: local
+        # ── All 3 brokers ─────────────────────────────────────────────────────
+        KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: 'broker-1:29092,broker-2:29092,broker-3:29092'
+        KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schema-registry:8081   # ← shows schemas in UI
+      deploy:
+        resources:
+          limits:
+            cpus: '0.5'
+            memory: "3g"
+          reservations:
+            cpus: '0.5'
+            memory: "3g"
+      networks:
+        - dwh_network
+
+    # ── Source Postgres ────────────────────────────────────────────────────────
+    postgres:
+      image: postgres:latest
+      container_name: postgres
+      ports:
+        - "5433:5432"
+      volumes:
+        - $PWD/Source Database:/Source-Database
+        - $PWD/init/restore-backup.sh:/docker-entrypoint-initdb.d/restore-backup.sh
+      environment:
+        POSTGRES_USER: $DATABASE_USER_SOURCE
+        POSTGRES_PASSWORD: $DATABASE_PASSWORD_SOURCE
+        POSTGRES_DB: $DATABASE_DB_NAME_SOURCE
+        RESTORE_ENV: staging
+      command: ["postgres", "-c", "wal_level=logical"]
+      networks:
+        - dwh_network
+
+    # ── Data Warehouse Postgres ────────────────────────────────────────────────
+    dwh:
+      image: postgres:latest
+      container_name: dwh
+      ports:
+        - "5434:5432"
+      volumes:
+        - $PWD/init/init-dwh.sql:/docker-entrypoint-initdb.d/init-dwh.sql
+      environment:
+        POSTGRES_USER: $DATABASE_USER_DESTINATION
+        POSTGRES_PASSWORD: $DATABASE_PASSWORD_DESTINATION
+        POSTGRES_DB: $DATABASE_DB_NAME_DESTINATION
+      networks:
+        - dwh_network
+
+    # ── pgAdmin ────────────────────────────────────────────────────────────────
+    pgadmin:
+      image: dpage/pgadmin4
+      restart: on-failure
+      container_name: pgadmin
+      environment:
+        - PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL}
+        - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASSWORD}
+      ports:
+        - "5050:80"
+      depends_on:
+        - postgres
+        - dwh
+      networks:
+        - dwh_network
+
+    # ── SQLMesh ────────────────────────────────────────────────────────────────
+    sqlmesh:
+      image: python:3.11-slim
+      container_name: sqlmesh
+      ports:
+        - "8000:8000"
+      depends_on:
+        - dwh
+      volumes:
+        - $PWD/sqlmesh/:/app/sqlmesh
+        - $PWD/init/init-sqlmesh.sh:/docker-entrypoint-initdb.d/init-sqlmesh.sh
+      working_dir: /app/sqlmesh
+      entrypoint: ["/bin/sh", "/docker-entrypoint-initdb.d/init-sqlmesh.sh"]
+      networks:
+        - dwh_network
+
+    # ── Spark Development Environment ──────────────────────────────────────────
+    spark:
+      image: quay.io/jupyter/all-spark-notebook:spark-3.5.3
+      container_name: spark-notebook
+      ports:
+        - "8888:8888" 
+        - "4040:4040" 
+        - "18080:18080" 
+      environment:
+        - PYSPARK_PYTHON=python3
+        - PYSPARK_DRIVER_PYTHON_OPTS='notebook --ip=0.0.0.0 --no-browser --allow-root'
+        - GRANT_SUDO=yes
+      volumes:
+        - ./ITI:/home/jovyan/work 
+      networks:
+        - dwh_network
+      depends_on:
+        broker-1:
+          condition: service_healthy
+        broker-2:
+          condition: service_healthy
+        broker-3:
+          condition: service_healthy
+      user: root 
+
+    airflow:
+      image: apache/airflow:2.9.0
+      container_name: airflow
+      environment:
+        AIRFLOW__CORE__EXECUTOR: LocalExecutor
+        AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@dwh:5432/airflow
+        AIRFLOW__CORE__LOAD_EXAMPLES: false
+        AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+        AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+        AWS_DEFAULT_REGION: ${AWS_REGION}
+        S3_BUCKET_NAME: ${S3_BUCKET_NAME}
+      volumes:
+        - ./dags:/opt/airflow/dags
+      ports:
+        - "8080:8080"
+      networks:
+        - dwh_network
+      command: standalone
+
+    # ════════════════════════════════════════════════════════════════════════════
+  networks:
+    dwh_network:
+      driver: bridge
