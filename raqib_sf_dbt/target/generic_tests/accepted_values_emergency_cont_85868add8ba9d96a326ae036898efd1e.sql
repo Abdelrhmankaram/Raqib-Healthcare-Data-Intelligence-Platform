@@ -1,0 +1,1 @@
+{{ test_accepted_values(column_name="is_valid_phone_number", model=get_where_subquery(ref('emergency_contacts')), values=[true,false]) }}

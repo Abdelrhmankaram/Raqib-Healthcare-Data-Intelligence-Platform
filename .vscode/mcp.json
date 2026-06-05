@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "datamate": {
+      "url": "http://localhost:7700/mcp",
+      "type": "http",
+      "updatedAt": "2026-06-03T14:06:07.120Z"
+    }
+  }
+}

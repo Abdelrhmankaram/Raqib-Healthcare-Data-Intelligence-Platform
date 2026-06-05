@@ -1,0 +1,246 @@
+version: 2
+
+models:
+  - name: stg_patients
+    description: Staging table for patients
+    columns:
+      - name: patient_id
+        data_tests:
+          - unique
+          - not_null
+      - name: full_name
+        data_tests:
+          - not_null
+      - name: blood_type
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["A+", "AB+", "B+", "O+", "O-", "AB-", "A-", "B-"]
+      - name: marital_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Married', 'Single', 'Divorced', 'Widowed', 'Unknown']
+
+  - name: stg_admissions
+    description: Staging table for admissions
+    columns:
+      - name: admission_id
+        data_tests:
+          - unique
+          - not_null
+      - name: patient_id
+        data_tests:
+          - not_null
+      - name: admitted_at
+        data_tests:
+          - not_null
+      - name: total_cost
+        data_tests:
+          - not_null
+
+  - name: stg_providers
+    description: Staging table for providers
+    columns:
+      - name: provider_id
+        data_tests:
+          - unique
+          - not_null
+      - name: provider_full_name
+        data_tests:
+          - not_null
+      - name: provider_specialty
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['Pulmonology', 'Endocrinology', 'Orthopedics', 'Gynecology',
+                          'Cardiology', 'Oncology', 'Psychiatry', 'Neurology',
+                          'Family Medicine', 'General Medicine', 'Gastroenterology', 'Surgery',
+                          'Obstetrics', 'ENT (Ear, Nose, and Throat)', 'Dermatology', 
+                          'Internal Medicine']
+      - name: is_valid_enumeration_date
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [true, false]
+      - name: is_valid_join_date
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [true, false]
+      - name: provider_gender
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Female', 'Male', 'Unknown']
+
+  - name: stg_diagnosis
+    description: Staging table for diagnoses
+    columns:
+      - name: diagnosis_id
+        data_tests:
+          - unique
+          - not_null
+      - name: admission_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_admissions')
+                field: admission_id
+      - name: provider_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_providers')
+                field: provider_id
+      - name: patient_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_patients')
+                field: patient_id
+      - name: sub_domain_key
+        data_tests:
+          - not_null
+      - name: domain
+        data_tests:
+          - not_null
+
+  - name: stg_lab_events
+    description: Staging table for lab events
+    columns:
+      - name: lab_event_id
+        data_tests:
+          - unique
+          - not_null
+      - name: patient_id
+        data_tests:
+          - not_null
+      - name: specimen_id
+        data_tests:
+          - not_null
+      - name: item_id
+        data_tests:
+          - not_null
+      - name: abnormal_flag
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['High', 'Low', 'Normal']
+
+  - name: stg_lab_specimen_types
+    description: Staging table for lab specimen types
+    columns:
+      - name: item_id
+        data_tests:
+          - unique
+          - not_null
+      - name: category_type
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['Endoscopy','Microbiology','Pathology',
+                          'Neurophysiology','Lab','Radiology']
+      - name: category_sub_type
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['Mammography','Nuclear Medicine','Blood Panel',
+                          'X-ray','CT','MRI','Ultrasound']
+
+              config: 
+                where: "category_sub_type is not null"
+
+      - name: specialty_1
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['Pulmonology','Orthopedics','Cardiology','Dentistry',
+                          'Gastroenterology','Dermatology','Obstetrics','Oncology',
+                          'General Practice','Neurology','Psychiatry','Endocrinology',
+                          'Hematology']
+      - name: specialty_2
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['ENT','Emergency Trauma','Oral Health','Burn Care',
+                          'Emergency Medicine','Gynecology','General Surgery',
+                          'Internal Medicine','Behavioral Health','Metabolism']
+              config: 
+                where: "specialty_2 is not null" 
+
+  - name: stg_prescriptions
+    description: Staging table for prescriptions
+    columns:
+      - name: prescription_id
+        data_tests:
+          - not_null
+          - unique
+      - name: patient_id
+        data_tests:
+          - not_null
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Completed', 'Active', 'Discontinued']
+
+  - name: stg_drugs
+    description: Staging table for drugs
+    columns:
+      - name: drug_id
+        data_tests:
+          - unique
+          - not_null
+      - name: brand_name
+        data_tests:
+          - not_null
+
+  - name: stg_services
+    description: Staging table for services
+    columns:
+      - name: service_id
+        data_tests:
+          - not_null
+      - name: patient_id
+        data_tests:
+          - not_null
+
+  - name: stg_transfers
+    description: Staging table for transfers
+    columns:
+      - name: transfer_id
+        data_tests:
+          - not_null
+          - unique
+      - name: patient_id
+        data_tests:
+          - not_null
+      - name: from_department
+        data_tests:
+          - not_null
+      - name: to_department
+        data_tests:
+          - not_null
+
+  - name: stg_emergency_contacts
+    description: Staging table for emergency contacts
+    columns:
+      - name: patient_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_patients')
+                field: patient_id
+      - name: emergency_contact_phone_number
+        data_tests:
+          - not_null
+      - name: emergency_contact_bloodtype
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["A+", "AB+", "B+", "O+", "O-", "AB-", "A-", "B-"]
+      - name: is_valid_phone_number
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [true, false]

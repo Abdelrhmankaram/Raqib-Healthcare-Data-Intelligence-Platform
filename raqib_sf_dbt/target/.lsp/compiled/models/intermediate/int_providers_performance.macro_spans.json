@@ -1,0 +1,158 @@
+[
+  {
+    "macro_span": {
+      "start": {
+        "line": 3,
+        "col": 10,
+        "index": 42
+      },
+      "stop": {
+        "line": 3,
+        "col": 36,
+        "index": 68
+      }
+    },
+    "expanded_span": {
+      "start": {
+        "line": 125,
+        "col": 10,
+        "index": 3727
+      },
+      "stop": {
+        "line": 125,
+        "col": 35,
+        "index": 3752
+      }
+    }
+  },
+  {
+    "macro_span": {
+      "start": {
+        "line": 8,
+        "col": 10,
+        "index": 111
+      },
+      "stop": {
+        "line": 8,
+        "col": 37,
+        "index": 138
+      }
+    },
+    "expanded_span": {
+      "start": {
+        "line": 130,
+        "col": 10,
+        "index": 3795
+      },
+      "stop": {
+        "line": 130,
+        "col": 36,
+        "index": 3821
+      }
+    }
+  },
+  {
+    "macro_span": {
+      "start": {
+        "line": 13,
+        "col": 10,
+        "index": 180
+      },
+      "stop": {
+        "line": 13,
+        "col": 36,
+        "index": 206
+      }
+    },
+    "expanded_span": {
+      "start": {
+        "line": 135,
+        "col": 10,
+        "index": 3863
+      },
+      "stop": {
+        "line": 135,
+        "col": 35,
+        "index": 3888
+      }
+    }
+  },
+  {
+    "macro_span": {
+      "start": {
+        "line": 18,
+        "col": 10,
+        "index": 249
+      },
+      "stop": {
+        "line": 18,
+        "col": 37,
+        "index": 276
+      }
+    },
+    "expanded_span": {
+      "start": {
+        "line": 140,
+        "col": 10,
+        "index": 3931
+      },
+      "stop": {
+        "line": 140,
+        "col": 36,
+        "index": 3957
+      }
+    }
+  },
+  {
+    "macro_span": {
+      "start": {
+        "line": 23,
+        "col": 10,
+        "index": 322
+      },
+      "stop": {
+        "line": 23,
+        "col": 40,
+        "index": 352
+      }
+    },
+    "expanded_span": {
+      "start": {
+        "line": 145,
+        "col": 10,
+        "index": 4003
+      },
+      "stop": {
+        "line": 145,
+        "col": 39,
+        "index": 4032
+      }
+    }
+  },
+  {
+    "macro_span": {
+      "start": {
+        "line": 74,
+        "col": 5,
+        "index": 1241
+      },
+      "stop": {
+        "line": 74,
+        "col": 62,
+        "index": 1298
+      }
+    },
+    "expanded_span": {
+      "start": {
+        "line": 196,
+        "col": 5,
+        "index": 4921
+      },
+      "stop": {
+        "line": 196,
+        "col": 95,
+        "index": 5011
+      }
+    }
+  }
+]
