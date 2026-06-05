@@ -393,7 +393,95 @@
         - "8080:8080"
       networks:
         - dwh_network
-    # ════════════════════════════════════════════════════════════════════════════
+
+    # ════════════════════════════════════════════════════════════════════════
+    # MONITORING STACK
+    # ════════════════════════════════════════════════════════════════════════
+
+    # ── Prometheus ────────────────────────────────────────────────────────────
+    prometheus:
+      image: prom/prometheus:latest
+      container_name: prometheus
+      restart: unless-stopped
+      ports:
+        - "9090:9090"
+      volumes:
+        - $PWD/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+        - prometheus_data:/prometheus
+      command:
+        - '--config.file=/etc/prometheus/prometheus.yml'
+        - '--storage.tsdb.path=/prometheus'
+        - '--storage.tsdb.retention.time=15d'
+        - '--web.enable-lifecycle'
+      networks:
+        - dwh_network
+      depends_on:
+        - kafka-exporter
+        - postgres-exporter
+
+    # ── Kafka Exporter ────────────────────────────────────────────────────────
+    # Exposes Kafka metrics: consumer lag, topic offsets, partition counts
+    kafka-exporter:
+      image: danielqsj/kafka-exporter:latest
+      container_name: kafka-exporter
+      restart: unless-stopped
+      ports:
+        - "9308:9308"
+      command:
+        - '--kafka.server=broker-1:29092'
+        - '--kafka.server=broker-2:29092'
+        - '--kafka.server=broker-3:29092'
+        - '--web.listen-address=:9308'
+      networks:
+        - dwh_network
+      depends_on:
+        broker-1:
+          condition: service_healthy
+        broker-2:
+          condition: service_healthy
+        broker-3:
+          condition: service_healthy
+
+    # ── Postgres Exporter (DWH) ───────────────────────────────────────────────
+    # Exposes DWH Postgres metrics: table sizes, row counts, connections, etc.
+    postgres-exporter:
+      image: prometheuscommunity/postgres-exporter:latest
+      container_name: postgres-exporter
+      restart: unless-stopped
+      ports:
+        - "9187:9187"
+      environment:
+        DATA_SOURCE_NAME: "postgresql://${DATABASE_USER_DESTINATION}:${DATABASE_PASSWORD_DESTINATION}@dwh:5432/${DATABASE_DB_NAME_DESTINATION}?sslmode=disable"
+      networks:
+        - dwh_network
+      depends_on:
+        - dwh
+
+    # ── Grafana ───────────────────────────────────────────────────────────────
+    grafana:
+      image: grafana/grafana:latest
+      container_name: grafana
+      restart: unless-stopped
+      ports:
+        - "3000:3000"
+      environment:
+        GF_SECURITY_ADMIN_USER: admin
+        GF_SECURITY_ADMIN_PASSWORD: admin123
+        GF_USERS_ALLOW_SIGN_UP: "false"
+        # Auto-provision datasources on startup
+        GF_PATHS_PROVISIONING: /etc/grafana/provisioning
+      volumes:
+        - grafana_data:/var/lib/grafana
+        - $PWD/monitoring/grafana/provisioning:/etc/grafana/provisioning
+      networks:
+        - dwh_network
+      depends_on:
+        - prometheus
+        - dwh
   networks:
     dwh_network:
       driver: bridge
+
+  volumes:
+    prometheus_data:
+    grafana_data:

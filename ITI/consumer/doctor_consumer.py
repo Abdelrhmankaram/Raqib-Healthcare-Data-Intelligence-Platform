@@ -29,7 +29,6 @@ from model.models import (
 )
 
 
-path_selection=input("choose path please")
 # ── Static provider id for this doctor ────────────────────────────────────────
 DOCTOR_PROVIDER_ID  = "PROV-DR-001"
 DOCTOR_DEPARTMENT   = "General Medicine"

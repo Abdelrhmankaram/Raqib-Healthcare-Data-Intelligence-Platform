@@ -180,7 +180,7 @@ class LabEvent:
     measurement_unit: str
     range_lower:      float
     range_higher:     float
-    abnormal_flag:    bool
+    abnormal_flag:    str
     created_at:       str = field(default_factory=now_iso)
 
     def to_json(self) -> str:

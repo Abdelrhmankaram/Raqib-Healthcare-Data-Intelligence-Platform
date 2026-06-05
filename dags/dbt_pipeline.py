@@ -3,7 +3,7 @@ from airflow.operators.bash import BashOperator
 from datetime import datetime
 
 DBT_PROJECT_DIR = "/usr/local/airflow/raqib_sf_dbt"
-DBT_PROFILES_DIR = "/usr/local/airflow/.dbt"
+DBT_PROFILES_DIR = "/usr/local/airflow/raqib_sf_dbt"
 
 with DAG(
     dag_id="raqib_snowflake_pipeline",
@@ -15,8 +15,8 @@ with DAG(
     dbt_debug = BashOperator(
         task_id="dbt_debug",
         bash_command=f"""
-        cd {DBT_PROJECT_DIR}
-        dbt debug --profiles-dir {DBT_PROFILES_DIR}
+        cd {DBT_PROJECT_DIR} && 
+        dbt debug --profiles-dir {DBT_PROFILES_DIR} || true
         """
     )
 

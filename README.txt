@@ -19,3 +19,11 @@ python spark/spark_lab.py
 
 # Terminal 6 — Produce patients (run last)
 python producer/receptionist_producer.py
+
+make doctor
+make lab
+make doctor2
+make spark-patients
+make spark-admissions
+make spark-lab
+make produce   # last
