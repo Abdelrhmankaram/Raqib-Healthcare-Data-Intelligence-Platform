@@ -39,8 +39,10 @@
   - [Lab Consumer](#lab-consumer)
   - [2nd Doctor Consumer](#2nd-doctor-consumer)
   - [Spark Streaming Jobs](#spark-streaming-jobs)
-- [📦 Batch Layer — ELT Pipeline](#-batch-layer--elt-pipeline)
+- [📦 Streaming Layer — ELT Pipeline](#streaming-layer--elt-pipeline)
   - [Airflow DAG: hospital_postgres_to_s3](#airflow-dag-hospital_postgres_to_s3)
+- [📦 Batch Layer — ELT Pipeline](#-batch-layer--elt-pipeline)
+  - [Airflow DAG: dbt_pipeline](#airflow-dag-dbt_pipeline)
 - [❄️ Snowflake + dbt Transformations](#%EF%B8%8F-snowflake--dbt-transformations)
   - [RAW Layer](#raw-layer)
   - [Staging Layer](#staging-layer)
@@ -87,6 +89,7 @@ Raqib integrates advanced data engineering principles into a **unified healthcar
 ```
 
 **Key properties:**
+
 - 🔒 **Reliable** — fault-tolerant with 3-broker KRaft Kafka cluster, replication factor 3
 - ✅ **Data Quality Validated** — dbt tests for nulls, uniqueness, and referential integrity
 - ⚡ **Real-Time & Low-Latency** — Spark triggers every 10 seconds
@@ -96,51 +99,7 @@ Raqib integrates advanced data engineering principles into a **unified healthcar
 
 ## 🏛️ Full Architecture
 
-```
-╔══════════════════════════════════════════════════════════════════════════════════╗
-║                    HealthCare Data Intelligence Platform                        ║
-║         Reliable · Data Quality Validated · Real-Time · Scalable & Secure      ║
-╠══════════════════════════╦═══════════════════════════════════════════════════════╣
-║   DATA SOURCES           ║                  DOCKER INFRASTRUCTURE               ║
-║                          ║                                                       ║
-║  📊 PhysioNet            ║  ┌─────────────────────────────────────────────────┐ ║
-║  🧬 Synthea              ║  │              BATCH LAYER                        │ ║
-║  💊 OpenFDA              ║  │                                                 │ ║
-║  🏛️  CMS.gov             ║  │  Apache Airflow (Orchestration)                 │ ║
-║  🏥 Streaming events     ║  │       │                                         │ ║
-║                          ║  │       ▼                                         │ ║
-║                          ║  │  Snowflake ──► dbt Transform ──► Great Exp.     │ ║
-║                          ║  │  (Warehouse)   (Staging/Int/     (Validation)   │ ║
-║                          ║  │                 Marts)                          │ ║
-║                          ║  └─────────────────────┬───────────────────────────┘ ║
-║                          ║                        │ Unified Destination         ║
-║                          ║              ┌─────────▼────────────┐                ║
-║                          ║              │     SNOWFLAKE        │                ║
-║                          ║              │  OLAP · Real-Time    │                ║
-║                          ║              │  Batch Sink │ Stream │                ║
-║                          ║              │  Sink       │ OLAP   │                ║
-║                          ║              └─────────────┬────────┘                ║
-║                          ║                            │                         ║
-║                          ║  ┌─────────────────────────▼───────────────────────┐ ║
-║                          ║  │              STREAMING LAYER                    │ ║
-║                          ║  │                                                 │ ║
-║                          ║  │  Apache Kafka (3 brokers, KRaft, Schema Reg.)   │ ║
-║                          ║  │       │                                         │ ║
-║                          ║  │       ▼                                         │ ║
-║                          ║  │  Apache Spark (Structured Streaming)            │ ║
-║                          ║  │       │                                         │ ║
-║                          ║  │       ▼                                         │ ║
-║                          ║  │  PostgreSQL DWH ─────────────────────────────► S3║
-║                          ║  └─────────────────────────────────────────────────┘ ║
-╠══════════════════════════╩═══════════════════════════════════════════════════════╣
-║            SERVING LAYER            │           DATA LAKE                       ║
-║  📊 Power BI Dashboard              │  🪣 AWS S3                                ║
-║  🤖 RAG Chatbot (DocChat)           │     hospital/{table}/date=YYYY-MM-DD/     ║
-║  📈 Grafana (real-time ops)         │     *.parquet                             ║
-║  🔭 Prometheus (metrics)            │                                           ║
-╚══════════════════════════════════════════════════════════════════════════════════╝
-```
-
+![alt text](visuals/architecture.png)
 ---
 
 ## 📁 Project Structure
@@ -253,6 +212,7 @@ Raqib/
 ## 🛠️ Tech Stack
 
 ### 🔴 Streaming Layer
+
 | Component | Technology | Version | Purpose |
 |---|---|---|---|
 | Message Broker | Apache Kafka (Confluent Platform) | 7.6.3 | Fault-tolerant event bus, KRaft mode (no ZooKeeper) |
@@ -263,6 +223,7 @@ Raqib/
 | Python Kafka Client | confluent-kafka | 2.4.0 | Producer/consumer in pure Python |
 
 ### 🟠 Batch Layer
+
 | Component | Technology | Version | Purpose |
 |---|---|---|---|
 | Orchestration | Apache Airflow | 2.9.0 | Schedules daily Postgres → S3 → Snowflake ELT |
@@ -273,6 +234,7 @@ Raqib/
 | Data Lineage | OpenMetadata | — | Tracks model lineage across the warehouse |
 
 ### 🟡 Serving Layer
+
 | Component | Technology | Purpose |
 |---|---|---|
 | BI Dashboard | Power BI | 6-page healthcare analytics dashboard |
@@ -280,6 +242,7 @@ Raqib/
 | Operational Dashboard | Grafana | Real-time Kafka lag + Postgres metrics |
 
 ### 🔵 Infrastructure
+
 | Component | Technology | Purpose |
 |---|---|---|
 | Source Database | PostgreSQL (logical replication) | Hospital operational DB (port 5433) |
@@ -379,22 +342,10 @@ streamlit run App.py
 
 The cluster runs **3 brokers in KRaft mode** (no ZooKeeper) using Confluent Platform 7.6.3. All 3 nodes participate in the Raft controller quorum.
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    Distributed KRaft Broker Cluster                 │
-│                                                                     │
-│  broker-1 (Node 1)          broker-2 (Node 2)      broker-3 (Node 3)│
-│  Controller + Broker        Controller Quorum       Broker only      │
-│  :29092 (internal)          :29092 (internal)       :29092 (internal)│
-│  :9092  (external)          :9093  (external)       :9094  (external)│
-│  :9101  (JMX)               :9102  (JMX)            :9103  (JMX)     │
-│                                                                     │
-│  Controller Quorum: 1@broker-1:29093, 2@broker-2:29093,            │
-│                     3@broker-3:29093                                │
-└─────────────────────────────────────────────────────────────────────┘
-```
+![alt text](visuals/cluster_setup.png)
 
 **Reliability guarantees:**
+
 - `replication.factor=3` — every partition exists on all 3 brokers
 - `min.insync.replicas=2` — at least 2 replicas must acknowledge writes
 - `acks=all` on the producer — no data loss even if 1 broker goes down
@@ -439,30 +390,10 @@ PRODUCER_CONFIG = {
 
 The `doctor_consumer.py` is the core clinical routing engine. It consumes `patients-topic` and sends each patient down one of three paths:
 
-```
-patients-topic
-      │
-      ▼
- doctor_consumer.py
-      │
-      ├── PATH A — Direct Cure/Admission
-      │     Builds: Admission + Diagnosis + 2 Prescriptions
-      │     Produces to: admissions-topic
-      │     Spark reads → writes admissions, diagnosis, prescriptions, (transfers if present) to Postgres
-      │
-      ├── PATH B — Transfer to Specialist
-      │     Builds: Service record + TransferEvent + doctor notes
-      │     Produces to: transfers-topic
-      │     → 2nd Doctor Consumer takes over (same 3 paths, recursive)
-      │
-      └── PATH C — Lab Required
-            Builds: LabEvent with event_type=LAB_REQUEST
-            Produces to: lab-results-topic
-            → Lab Consumer fills results → produces back as LAB_RESULT
-            → Spark lab_stream reads LAB_RESULT → writes lab_events to Postgres
-```
+![alt text](visuals/doctor_consumer.png)
 
 **Static provider details used by Doctor:**
+
 - Provider ID: `PROV-DR-001` · Department: `General Medicine` · Room: `A101`
 - Receiving provider (transfers): `PROV-DR-002` · Department: `Cardiology` · Room: `B205`
 - Lab provider: `PROV-LAB-001`
@@ -492,6 +423,7 @@ Spark's `lab_stream` then picks up the `LAB_RESULT` events and writes them to Po
 ### Spark Streaming Jobs
 
 All 3 jobs run inside the `spark-notebook` container with:
+
 - `trigger=10 seconds`
 - `maxOffsetsPerTrigger=100–200`
 - `checkpointLocation=/tmp/spark-checkpoints/{job}`
@@ -528,7 +460,7 @@ make produce
 
 ---
 
-## 📦 Batch Layer — ELT Pipeline
+## Streaming Layer - ELT Pipeline
 
 ### Airflow DAG: hospital_postgres_to_s3
 
@@ -537,30 +469,20 @@ make produce
 The DAG performs a one-to-one table export for 6 tables:
 `admissions`, `diagnosis`, `lab_events`, `patients`, `prescriptions`, `transfers`
 
-```
-PostgreSQL DWH (dwh:5432)
-        │
-        │  SELECT * WHERE created_at::date = today
-        │
-        ▼
-   Export Tasks (Python / SQLAlchemy / pandas)
-        │  df.to_parquet() → /tmp/{table}_{date}.parquet
-        │
-        ▼
-  Amazon S3: raqib-streaming-pipeline-raw-bucket
-        │  s3://...bucket.../hospital/{table}/date=YYYY-MM-DD/{table}.parquet
-        │
-        ▼
-  Load Tasks (snowflake-connector-python)
-        │  COPY INTO <TABLE>
-        │  FILE_FORMAT = (TYPE = PARQUET)
-        │  MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE
-        │  ON_ERROR = CONTINUE
-        │
-        ▼
-  Snowflake Raw Tables
-  ADMISSIONS | DIAGNOSIS | LAB_EVENTS | PATIENTS | PRESCRIPTIONS | TRANSFERS
-```
+![alt text](visuals/kafka_to_s3.png)
+
+---
+
+## Batch Layer - ELT Pipeline
+
+### Airflow DAG: dbt_pipeline
+
+**Schedule:** `@daily` | **Catchup:** False | **Retries:** 2
+
+The DAG performs the full dbt pipeline:
+`dbt debug`, `dbt run`, `dbt test`
+
+![alt text](visuals/dbt_pipeline.jpeg)
 
 ---
 
@@ -589,8 +511,12 @@ stg_lab_events         stg_diagnosis          stg_prescriptions
 stg_transfers          stg_services           stg_emergency_contacts
 stg_drugs              stg_lab_specimen_types
 ```
+**Data Model**
+
+![alt text](visuals/stg_data_model.png)
 
 **Built-in dbt tests** (from `schema.yml`):
+
 - `not_null` on every primary key and critical FK
 - `unique` on all surrogate keys
 - `accepted_values` for categorical fields (e.g. `abnormal_flag` must be `High|Low|Normal`)
@@ -607,6 +533,9 @@ Staging data is clean but **atomic and siloed** — one table per entity. The in
 | `int_encounters` | admissions + patients + providers | `length_of_stay_days`, `age_at_admission`, `age_group`, `coverage_percentage`, `out_of_pocket_cost`, `discharge_status` |
 | `int_clinical_events` | admissions + diagnosis + events | Unified chronological event stream per patient |
 | `int_lab_analysis` | lab_events + lab_specimen_types + providers | `category_type`, `category_sub_type`, `specialty_1`, `specialty_2`, full specimen context |
+**Data Model**
+
+![alt text](visuals/int_data_model.png)
 
 ### Data Marts (Galaxy Schema)
 
@@ -638,6 +567,10 @@ The final consumption layer. Organized as a **Fact Constellation (Galaxy Schema)
 | `fact_patient_services` | Service_Duration_In_Minutes, Cost |
 | `fact_providers_performance` | Total_Encounters, Unique_Patients, Total_Diagnoses, Total_Lab_Orders, Total_Prescriptions, Mortality_Rate |
 
+**Data Model**
+
+![alt text](visuals/batch_data_model.png)
+
 **Run dbt:**
 
 ```bash
@@ -663,6 +596,7 @@ dbt docs serve
 A Streamlit application powered by local Ollama models. Supports two modes:
 
 ### Mode 1 — Document Upload
+
 Upload any TXT, MD, or PDF file and ask questions about it.
 
 ```
@@ -676,9 +610,11 @@ User question → embed() → retrieve() top-K chunks (cosine similarity)
 ```
 
 ### Mode 2 — Snowflake Patient Query
+
 Type a patient name or ID to pull their complete record from Snowflake directly into the RAG context, then ask natural-language questions about their history, lab results, or admissions.
 
 **Configuration** (in `constants.py`):
+
 ```python
 DEFAULT_CHAT_MODEL  = "llama3"
 DEFAULT_EMBED_MODEL = "nomic-embed-text"
@@ -701,9 +637,14 @@ DEFAULT_OLLAMA_URL  = "http://localhost:11434"
 | **Diagnoses & Lab Results** | Lab count by test name + abnormal flag, Labs by Specialty, Diagnosis count (500K) |
 | **Transfers & Departments** | Transfers by Reason, Sankey diagram of inter-department patient flows |
 
+![alt text](visuals/dashboard1.png)
+
+![alt text](visuals/dashboard2.png)
+
 ### Grafana — Real-Time Operational Dashboard
 
 Live metrics from Prometheus, including:
+
 - PostgreSQL Overview (connections, locks, transactions, query times)
 - Kafka Overview (broker status, topic partition counts)
 - Kafka Consumer Groups (lag per group per topic)
@@ -713,38 +654,15 @@ Live metrics from Prometheus, including:
 
 ## 🔭 Monitoring & Observability
 
-```
-PostgreSQL DWH ──CDC/Changes──► Apache Kafka
-                                     │
-                              ┌──────▼──────┐
-                              │  EXPORTERS  │
-                              │             │
-                  postgres_exporter    kafka_exporter
-                  (dwh:9187)           (kafka:9308)
-                      │                    │
-                      └────────┬───────────┘
-                               │ scrape/collect
-                               ▼
-                          Prometheus (9090)
-                          Time Series DB
-                               │
-                               │ query metrics
-                               ▼
-                          Grafana (3000)
-                          Dashboards:
-                          • PostgreSQL Overview
-                          • PostgreSQL Connections
-                          • Kafka Overview
-                          • Kafka Topics
-                          • Kafka Consumer Groups
-                          • Kafka Lag
-```
+![alt text](visuals/Monitoring.png)
 
 **What gets scraped:**
+
 - `postgres-exporter` → DB metrics: table sizes, row counts, active connections, locks, query duration
 - `kafka-exporter` → broker metrics: consumer lag, topic offsets, partition counts, under-replicated partitions
 
 Grafana datasource and dashboards are **auto-provisioned** from `monitoring/grafana/provisioning/` on container startup.
+![alt text](visuals/grafana.png)
 
 ---
 
@@ -755,21 +673,21 @@ Grafana datasource and dashboards are **auto-provisioned** from `monitoring/graf
 | 🟢 Kafka Broker 1 | `9092` | `localhost:9092` |
 | 🟢 Kafka Broker 2 | `9093` | `localhost:9093` |
 | 🟢 Kafka Broker 3 | `9094` | `localhost:9094` |
-| 🗂️ Schema Registry | `8081` | http://localhost:8081 |
-| 🔌 Kafka Connect 1 | `8083` | http://localhost:8083 |
-| 🔌 Kafka Connect 2 | `8084` | http://localhost:8084 |
-| 🖥️ Kafka UI | `8090` | http://localhost:8090 |
+| 🗂️ Schema Registry | `8081` | <http://localhost:8081> |
+| 🔌 Kafka Connect 1 | `8083` | <http://localhost:8083> |
+| 🔌 Kafka Connect 2 | `8084` | <http://localhost:8084> |
+| 🖥️ Kafka UI | `8090` | <http://localhost:8090> |
 | 🐘 Source Postgres | `5433` | `localhost:5433` |
 | 🐘 DWH Postgres | `5434` | `localhost:5434` |
-| 🛠️ pgAdmin | `5050` | http://localhost:5050 |
-| 🌟 Spark Notebook | `8888` | http://localhost:8888 |
-| 🔥 Spark UI | `4040` | http://localhost:4040 |
-| ✈️ Airflow | `8080` | http://localhost:8080 |
-| 🔮 SQLMesh | `8000` | http://localhost:8000 |
-| 🔭 Prometheus | `9090` | http://localhost:9090 |
-| 📊 Grafana | `3000` | http://localhost:3000 (admin / admin123) |
-| 📤 Kafka Exporter | `9308` | http://localhost:9308/metrics |
-| 📤 Postgres Exporter | `9187` | http://localhost:9187/metrics |
+| 🛠️ pgAdmin | `5050` | <http://localhost:5050> |
+| 🌟 Spark Notebook | `8888` | <http://localhost:8888> |
+| 🔥 Spark UI | `4040` | <http://localhost:4040> |
+| ✈️ Airflow | `8080` | <http://localhost:8080> |
+| 🔮 SQLMesh | `8000` | <http://localhost:8000> |
+| 🔭 Prometheus | `9090` | <http://localhost:9090> |
+| 📊 Grafana | `3000` | <http://localhost:3000> (admin / admin123) |
+| 📤 Kafka Exporter | `9308` | <http://localhost:9308/metrics> |
+| 📤 Postgres Exporter | `9187` | <http://localhost:9187/metrics> |
 
 ---
 
@@ -777,20 +695,10 @@ Grafana datasource and dashboards are **auto-provisioned** from `monitoring/graf
 
 The streaming layer writes to **8 normalized tables** in PostgreSQL. All child tables reference both `patient_id` and `admission_id` for fast reporting.
 
-```
-Patients (1) ──────────────────────────────── (N) Admissions
-                                                        │
-                              ┌─────────────────────────┤
-                              │             │           │
-                          (N) Diagnoses  (N) Prescriptions
-                              │             │
-                          (N) Lab_Events (N) Services
-                              │
-                          (N) Transfer_Events
-                          (N) Emergency_Contacts
-```
+![alt text](visuals/streaming_data_model.png)
 
 **Relationship summary:**
+
 - One Patient → many Admissions
 - One Admission → many Diagnoses, Prescriptions, Lab Events, Services, Transfer Events
 - All tables include `created_at TIMESTAMP` for auditing and data lineage
