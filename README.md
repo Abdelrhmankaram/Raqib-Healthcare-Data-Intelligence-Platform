@@ -723,6 +723,4 @@ The streaming layer writes to **8 normalized tables** in PostgreSQL. All child t
 
 **Built with ❤️ by Team Raqib — ITI Data Engineering Track**
 
-*Sama Wael · Youssef Makram · Israa Ehab · Belal Waleed · Abdelrahman Karam*
-
 </div>
